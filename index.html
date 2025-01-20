@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Cosy Café Menu</title>
+    <style>
+        /* Global Styles */
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f0f2f1;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        h1,
+        h2 {
+            font-family: 'Playfair Display', serif;
+        }
+
+        /* Header */
+        header {
+            background-color: #2b2d2f;
+            color: white;
+            text-align: center;
+            padding: 50px 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 3.5rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            margin-top: 15px;
+            font-weight: 300;
+        }
+
+        /* Menu Section */
+        section {
+            margin: 60px auto;
+            max-width: 1200px;
+            padding: 0 20px;
+        }
+
+        .menu-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        h2 {
+            font-size: 2.7rem;
+            color: #2b2d2f;
+            font-weight: bold;
+            letter-spacing: 1px;
+            margin-bottom: 20px;
+            padding-bottom: 8px;
+            border-bottom: 4px solid #2b2d2f;
+        }
+
+        .menu-category {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 30px;
+            justify-items: center;
+        }
+
+        /* Menu Items */
+        .menu-item {
+            background-color: #fff;
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease-in-out;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .menu-item:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .menu-item h3 {
+            font-size: 2rem;
+            color: #2b2d2f;
+            margin-bottom: 12px;
+        }
+
+        .menu-item p {
+            font-size: 1.1rem;
+            color: #777;
+            margin-bottom: 25px;
+        }
+
+        .price {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #5c4f3f;
+        }
+
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            transition: opacity 0.3s ease-in-out;
+        }
+
+        .modal-content {
+            background-color: #fff;
+            border-radius: 15px;
+            padding: 20px;
+            max-width: 90%;
+            max-height: 80%;
+            overflow: auto;
+            position: relative;
+        }
+
+        .modal img {
+            width: 100%;
+            height: auto;
+            border-radius: 15px;
+            display: none;
+        }
+
+        .spinner {
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #2b2d2f;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            animation: spin 0.7s linear infinite;
+            margin: 0 auto;
+        }
+
+        /* Close Button */
+        .close-btn {
+            position: absolute;
+            top: 2px;
+            right: 2px;
+            font-size: 2rem;
+            font-weight: bold;
+            color: #5c4f3f;
+            background: none;
+            border: none;
+            cursor: pointer;
+            transition: transform 0.15s ease-in-out;
+        }
+
+        .close-btn:hover {
+            transform: scale(1.12);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #2b2d2f;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 60px;
+            font-size: 1rem;
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+        /* Loading Spinner Animation */
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .menu-category {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .menu-category {
+                grid-template-columns: 1fr;
+            }
+
+            header h1 {
+                font-size: 2.8rem;
+            }
+
+            h2 {
+                font-size: 2.3rem;
+            }
+
+            .menu-item h3 {
+                font-size: 1.6rem;
+            }
+
+            .price {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header>
+        <h1>Cosy Café Menu</h1>
+        <p>Where comfort meets taste</p>
+    </header>
+
+    <!-- Main Menu Section -->
+    <section>
+        <div class="menu-header">
+            <h2>Our Menu</h2>
+            <p>Indulge in our range of delicious drinks, desserts, and meals!</p>
+        </div>
+
+        <!-- Drinks -->
+        <h2>Drinks</h2>
+        <div class="menu-category">
+            <div class="menu-item" onclick="showImage('coffee')">
+                <h3>Coffee</h3>
+                <p>Rich espresso with a smooth finish.</p>
+                <div class="price">$3.50</div>
+            </div>
+            <div class="menu-item" onclick="showImage('latte')">
+                <h3>Latte</h3>
+                <p>Espresso with steamed milk, topped with foam.</p>
+                <div class="price">$4.00</div>
+            </div>
+            <div class="menu-item" onclick="showImage('greentea')">
+                <h3>Green Tea</h3>
+                <p>Refreshing and aromatic green tea.</p>
+                <div class="price">$2.50</div>
+            </div>
+        </div>
+
+        <!-- Desserts -->
+        <h2>Deserts</h2>
+        <div class="menu-category">
+            <div class="menu-item" onclick="showImage('chocolatecake')">
+                <h3>Chocolate Cake</h3>
+                <p>Moist and rich chocolate cake topped with ganache.</p>
+                <div class="price">$5.00</div>
+            </div>
+            <div class="menu-item" onclick="showImage('cheesecake')">
+                <h3>Cheesecake</h3>
+                <p>Classic cheesecake with a creamy texture.</p>
+                <div class="price">$5.50</div>
+            </div>
+            <div class="menu-item" onclick="showImage('fruittart')">
+                <h3>Fruit Tart</h3>
+                <p>Delicate pastry filled with custard and fresh fruit.</p>
+                <div class="price">$4.50</div>
+            </div>
+        </div>
+
+        <!-- Meals -->
+        <h2>Meals</h2>
+        <div class="menu-category">
+            <div class="menu-item" onclick="showImage('avocadotoast')">
+                <h3>Avocado Toast</h3>
+                <p>Fresh avocado spread on toasted sourdough.</p>
+                <div class="price">$7.00</div>
+            </div>
+            <div class="menu-item" onclick="showImage('caesarsalad')">
+                <h3>Caesar Salad</h3>
+                <p>Crunchy lettuce with Caesar dressing and croutons.</p>
+                <div class="price">$8.00</div>
+            </div>
+            <div class="menu-item" onclick="showImage('grilledsandwich')">
+                <h3>Grilled Sandwich</h3>
+                <p>Cheddar, ham, and tomato on toasted bread.</p>
+                <div class="price">$6.00</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Cosy Café. All rights reserved.</p>
+    </footer>
+
+    <!-- Modal for Image -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <button class="close-btn" onclick="closeImage()">X</button>
+            <div id="loadingSpinner" class="spinner"></div>
+            <img id="modalImage" src="" alt="Product Image">
+        </div>
+    </div>
+
+    <!-- JavaScript for Modal and Loading Animation -->
+    <script>
+        function showImage(product) {
+            let imageSrc = '';
+            switch (product) {
+                case 'coffee':
+                    imageSrc = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTb5bqC7IA8JdjL19Ko8baj61wNE8Qlab3GWw&s?text=Coffee';
+                    break;
+                case 'latte':
+                    imageSrc = 'https://via.placeholder.com/600x400.png?text=Latte';
+                    break;
+                case 'greentea':
+                    imageSrc = 'https://via.placeholder.com/600x400.png?text=Green+Tea';
+                    break;
+                case 'chocolatecake':
+                    imageSrc = 'https://via.placeholder.com/600x400.png?text=Chocolate+Cake';
+                    break;
+                case 'cheesecake':
+                    imageSrc = 'https://via.placeholder.com/600x400.png?text=Cheesecake';
+                    break;
+                case 'fruittart':
+                    imageSrc = 'https://via.placeholder.com/600x400.png?text=Fruit+Tart';
+                    break;
+                case 'avocadotoast':
+                    imageSrc = 'https://via.placeholder.com/600x400.png?text=Avocado+Toast';
+                    break;
+                case 'caesarsalad':
+                    imageSrc = 'https://via.placeholder.com/600x400.png?text=Caesar+Salad';
+                    break;
+                case 'grilledsandwich':
+                    imageSrc = 'https://via.placeholder.com/600x400.png?text=Grilled+Sandwich';
+                    break;
+                default:
+                    break;
+            }
+            const modalImage = document.getElementById('modalImage');
+            const loadingSpinner = document.getElementById('loadingSpinner');
+            modalImage.style.display = 'none'; // Hide image initially
+            loadingSpinner.style.display = 'block'; // Show loading spinner
+
+            modalImage.onload = function () {
+                loadingSpinner.style.display = 'none'; // Hide spinner once image is loaded
+                modalImage.style.display = 'block'; // Show image
+            };
+
+            modalImage.src = imageSrc; // Set image source
+            document.getElementById('modal').style.display = 'flex'; // Show modal
+        }
+
+        function closeImage() {
+            document.getElementById('modal').style.display = 'none'; // Close modal
+        }
+    </script>
+
+</body>
+
+</html>
