@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Cosy Café Menu</title>
     <style>
+
         /* Global Styles */
         body {
             font-family: 'Poppins', sans-serif;
@@ -221,6 +222,226 @@
                 font-size: 1.2rem;
             }
         }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   /* Slideshow Container */
+   .slideshow-container {
+            position: relative;
+            max-width: 50%;
+            margin: auto;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+            margin-top: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Hide all images by default */
+        .slide {
+            display: none;
+            width: 50%;
+            height: auto;
+            object-fit: cover;
+            border-radius: 15px;
+            transition: opacity 1s ease-in-out;
+        }
+
+        /* Stop Button */
+        .stop-button {
+            position: absolute;
+            top: 1px;
+            right: 1px;
+            background-color: rgba(0, 0, 0, 0.6);
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            font-size: 15px;
+            cursor: pointer;
+            border-radius: 5px;
+            z-index: 15;
+            transition: background-color 0.3s;
+        }
+
+        .stop-button:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+
+        /* Slideshow Message (Top-Right) */
+        .stop-message {
+            display: none;
+            position: absolute;
+            top: 1px;
+            right: 1px;
+            font-size: 15px;
+            color: white;
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 5px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        /* Navigation Arrows */
+        .prev,
+        .next {
+            position: absolute;
+            top: 50%;
+            background-color: rgba(0, 0, 0, 0.4);
+            color: white;
+            border: none;
+            padding: 16px;
+            cursor: pointer;
+            font-size: 20px;
+            font-weight: bold;
+            border-radius: 50%;
+            z-index: 10;
+            transition: background-color 0.3s;
+        }
+
+        .prev {
+            left: 15px;
+            transform: translateY(-50%);
+        }
+
+        .next {
+            right: 15px;
+            transform: translateY(-50%);
+        }
+
+        .prev:hover,
+        .next:hover {
+            background-color: rgba(0, 0, 0, 0.6);
+        }
+
+        /* Dots */
+        .dot-container {
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+        }
+
+        .dot {
+            height: 15px;
+            width: 15px;
+            margin: 0 5px;
+            background-color: rgba(0, 0, 0, 0.5);
+            border-radius: 50%;
+            display: inline-block;
+            transition: background-color 0.3s;
+            cursor: pointer;
+        }
+
+        .dot.active {
+            background-color: #2b2d2f;
+        }
+
+
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .prev,
+            .next {
+                padding: 12px;
+                font-size: 18px;
+            }
+
+            .dot {
+                height: 12px;
+                width: 12px;
+            }
+
+
+
+
+            .slideshow-container {
+            position: relative;
+            max-width: 80%;
+            margin: auto;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+            margin-top: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Hide all images by default */
+        .slide {
+            display: none;
+            width: 80%;
+            height: auto;
+            object-fit: cover;
+            border-radius: 15px;
+            transition: opacity 1s ease-in-out;
+        }
+
+
+        }
+
+
+
+
+
+        @media (max-width: 480px) {
+            .prev,
+            .next {
+                padding: 10px;
+                font-size: 16px;
+            }
+
+            .dot {
+                height: 10px;
+                width: 10px;
+            }
+
+
+
+
+               /* Slideshow Container */
+   .slideshow-container {
+            position: relative;
+            max-width: 100%;
+            margin: auto;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+            margin-top: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Hide all images by default */
+        .slide {
+            display: none;
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            border-radius: 15px;
+            transition: opacity 1s ease-in-out;
+        }
+
+        }
+
     </style>
 </head>
 
@@ -228,14 +449,45 @@
 
     <!-- Header -->
     <header>
-        <h1>Cosy Café Menu</h1>
-        <p>Where comfort meets taste</p>
+        <h1>Rose Café Menu</h1>
+        <p>Hayat Tatlıdır.</p>
     </header>
+
+
+    <!-- Slideshow Container -->
+    <div class="slideshow-container">
+
+        <!-- Slides -->
+        <img class="slide" src="http://www.rosecafe.site/menu/images/tr/sicak-icecekler/Kaampanya.jpg?text=Campaign+1" alt="Campaign 1">
+        <img class="slide" src="http://www.rosecafe.site/menu/images/tr/sicak-icecekler/Kampanya2.jpg?text=Campaign+2" alt="Campaign 2">
+        <img class="slide" src="http://www.rosecafe.site/menu/images/tr/sicak-icecekler/Kampanya3.jpg?text=Campaign+3" alt="Campaign 3">
+
+        <!-- Navigation Arrows -->
+        <button class="prev" onclick="plusSlides(-1)">&#10094;</button>
+        <button class="next" onclick="plusSlides(1)">&#10095;</button>
+
+        <!-- Dots -->
+        <div class="dot-container">
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
+        </div>
+
+        <!-- Stop Button -->
+        <button class="stop-button" onclick="stopSlideshow()">Durdur</button>
+
+        <!-- Slideshow Message (Top-Right) -->
+        <div class="stop-message" id="stopMessage" onclick="resumeSlideshow()">Devam</div>
+    </div>
+
+
+
+
 
     <!-- Main Menu Section -->
     <section>
         <div class="menu-header">
-            <h2>Our Menu</h2>
+            <h2>Menu</h2>
             <p>Indulge in our range of delicious drinks, desserts, and meals!</p>
         </div>
 
@@ -366,8 +618,97 @@
         function closeImage() {
             document.getElementById('modal').style.display = 'none'; // Close modal
         }
+
+
+
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        let slideIndex = 1;
+        let slideInterval;
+        let slideshowRunning = true;
+
+        // Function to show the current slide
+        function showSlides() {
+            let slides = document.getElementsByClassName("slide");
+            let dots = document.getElementsByClassName("dot");
+
+            if (slideIndex > slides.length) {
+                slideIndex = 1;
+            }
+            if (slideIndex < 1) {
+                slideIndex = slides.length;
+            }
+
+            // Hide all slides and remove active class from dots
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            for (let i = 0; i < dots.length; i++) {
+                dots[i].classList.remove("active");
+            }
+
+            // Show the current slide and set the active dot
+            slides[slideIndex - 1].style.display = "block";
+            dots[slideIndex - 1].classList.add("active");
+        }
+
+        // Function to change slides manually
+        function plusSlides(n) {
+            slideIndex += n;
+            showSlides();
+        }
+
+        // Function to navigate directly to a slide
+        function currentSlide(n) {
+            slideIndex = n;
+            showSlides();
+        }
+
+        // Start slideshow automatically every 5 seconds
+        function startSlideshow() {
+            slideInterval = setInterval(function () {
+                plusSlides(1);
+            }, 5000);
+        }
+
+        // Stop slideshow and display a message
+        function stopSlideshow() {
+            clearInterval(slideInterval);
+            slideshowRunning = false;
+            document.getElementById('stopMessage').style.display = 'block';
+            document.querySelector('.stop-button').style.display = 'none';
+        }
+
+        // Resume slideshow when the message is clicked
+        function resumeSlideshow() {
+            slideshowRunning = true;
+            document.getElementById('stopMessage').style.display = 'none';
+            document.querySelector('.stop-button').style.display = 'block';
+            startSlideshow();
+        }
+
+        // Initialize the slideshow
+        showSlides();
+        startSlideshow();
     </script>
 
 </body>
 
 </html>
+
+
