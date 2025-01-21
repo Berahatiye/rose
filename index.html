@@ -32,8 +32,7 @@
     margin-top: 0;
     padding-top: 10px; /* Slightly increased padding */
     padding-bottom: 10px; /* Slightly increased padding */
-    line-height: 1.2; /* Set to 1.2 for better line spacing */
-    font-size: 1.2rem; /* Font size for larger screens */
+    line-height: 0; /* Set to 1.2 for better line spacing */
 }
 
 /* Make the header more compact on smaller devices */
@@ -41,8 +40,7 @@
     .heado {
         padding-top: 8px;
         padding-bottom: 8px;
-        font-size: 1rem; /* Slightly smaller font for mobile */
-        line-height: 1; /* Maintain readability */
+        line-height: 0; /* Maintain readability */
     }
 }
 
@@ -51,7 +49,6 @@
     .heado {
         padding-top: 6px;
         padding-bottom: 6px;
-        font-size: 0.9rem; /* Even smaller font size for small screens */
         line-height: 0.9;
     }
 }
@@ -472,7 +469,12 @@
         }
 
 
-
+        .izah{
+            color: #666666;
+            font-weight: bold;
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.1rem;
+        }
 
         .neon-text {
             font-family: 'Dancing Script', cursive; /* Dancing Script font */
@@ -554,12 +556,12 @@
     <!-- Main Menu Section -->
     <section>
         <div class="menu-header">
-            <h2>Menu</h2>
-            <p>Indulge in our range of delicious drinks, desserts, and meals!</p>
+            <h2>MENU</h2>
+            <p class="izah">Ürünlerin üzerine tıklayarak örnek görsellerine ulaşabilirsiniz, afiyet olsun.</p>
         </div>
 
         <!-- Drinks -->
-        <h2>Drinks</h2>
+        <h2><i>İçecekler</i></h2>
         <div class="menu-category">
             <div class="menu-item" onclick="showImage('coffee')">
                 <h3>Coffee</h3>
@@ -579,7 +581,7 @@
         </div>
 
         <!-- Desserts -->
-        <h2>Deserts</h2>
+        <h2><i>Tatlılar</i></h2>
         <div class="menu-category">
             <div class="menu-item" onclick="showImage('chocolatecake')">
                 <h3>Chocolate Cake</h3>
