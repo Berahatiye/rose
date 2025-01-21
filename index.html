@@ -8,42 +8,57 @@
     <title>Cosy Café Menu</title>
     <style>
 
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
+
         /* Global Styles */
         body {
             font-family: 'Poppins', sans-serif;
-            background-color: #f0f2f1;
-            color: #333;
+            background-color: #F5F5DC;
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
-        h1,
-        h2 {
-            font-family: 'Playfair Display', serif;
-        }
+        .heado {
+    background-color: #383839;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    border-bottom-left-radius: 2rem;
+    border-bottom-right-radius: 2rem;
+    position: relative;
+    top: 0;
+    z-index: 10;
+    width: 100%;
+    margin-top: 0;
+    padding-top: 10px; /* Slightly increased padding */
+    padding-bottom: 10px; /* Slightly increased padding */
+    line-height: 1.2; /* Set to 1.2 for better line spacing */
+    font-size: 1.2rem; /* Font size for larger screens */
+}
 
-        /* Header */
-        header {
-            background-color: #2b2d2f;
-            color: white;
-            text-align: center;
-            padding: 50px 20px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-        }
+/* Make the header more compact on smaller devices */
+@media (max-width: 768px) {
+    .heado {
+        padding-top: 8px;
+        padding-bottom: 8px;
+        font-size: 1rem; /* Slightly smaller font for mobile */
+        line-height: 1; /* Maintain readability */
+    }
+}
 
-        header h1 {
-            margin: 0;
-            font-size: 3.5rem;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-        }
+/* Adjust further for extra small screens */
+@media (max-width: 480px) {
+    .heado {
+        padding-top: 6px;
+        padding-bottom: 6px;
+        font-size: 0.9rem; /* Even smaller font size for small screens */
+        line-height: 0.9;
+    }
+}
 
-        header p {
-            font-size: 1.2rem;
-            margin-top: 15px;
-            font-weight: 300;
-        }
+
+
+
 
         /* Menu Section */
         section {
@@ -57,6 +72,20 @@
             margin-bottom: 60px;
         }
 
+        .kampan{
+            font-size: 2.7rem;
+            color: #2b2d2f;
+            font-weight: bold;
+            letter-spacing: 1px;
+            margin-bottom: 20px;
+            padding-bottom: 8px;
+            border-bottom: 4px solid #2b2d2f;
+            font-family: 'Playfair Display', serif;
+            text-align: center;
+            max-width: 1200px;
+            margin-inline: auto;
+        }
+
         h2 {
             font-size: 2.7rem;
             color: #2b2d2f;
@@ -65,6 +94,8 @@
             margin-bottom: 20px;
             padding-bottom: 8px;
             border-bottom: 4px solid #2b2d2f;
+            font-family: 'Playfair Display', serif;
+            text-align: center;
         }
 
         .menu-category {
@@ -205,10 +236,8 @@
             .menu-category {
                 grid-template-columns: 1fr;
             }
+            
 
-            header h1 {
-                font-size: 2.8rem;
-            }
 
             h2 {
                 font-size: 2.3rem;
@@ -442,16 +471,54 @@
 
         }
 
+
+
+
+        .neon-text {
+            font-family: 'Dancing Script', cursive; /* Dancing Script font */
+            font-size: 3rem;
+            font-weight: bold;
+            color: #ffffff; /* White core for readability */
+            position: relative;
+            text-shadow: 
+                0 0 3px #ffffff,  /* Light white shadow for clearer text */
+                0 0 10px #ffffff, /* Stronger white shadow to enhance legibility */
+                0 0 20px #ff4da6, /* Pink neon glow */
+                0 0 40px #ff4da6, /* Intense pink glow */
+                0 0 60px #ff66cc, /* Blueish glow for depth */
+                0 0 80px #ff66cc; /* Blueish outer glow */
+        }
+
+        .neon-text::before {
+            content: "Rose Cafe"; /* Extra layer for pink neon glow */
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            color: transparent;
+            text-shadow: 
+                0 0 15px #ff4da6,  /* Extra glowing layer to enhance the neon look */
+                0 0 30px #ff66cc,  /* Blue glow for a brighter look */
+                0 0 50px #ff66cc, 
+                0 0 80px #ff99dd;  /* Soothing pinkish outer glow */
+            z-index: -1;
+            filter: blur(12px);  /* Stronger blur to enhance the glowing effect */
+        }
+
+        
     </style>
 </head>
 
 <body>
 
-    <!-- Header -->
-    <header>
-        <h1>Rose Café Menu</h1>
-        <p>Hayat Tatlıdır.</p>
-    </header>
+    
+    <div class="heado">
+            <p class="neon-text">Rose ile Hayat Tatlıdır.</p>
+    </div>
+
+
+    <h2 class="kampan">Kampanyalar</h2>
 
 
     <!-- Slideshow Container -->
