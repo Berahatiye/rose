@@ -31,16 +31,16 @@
     z-index: 10;
     width: 100%;
     margin-top: 0;
-    padding-top: 10px; /* Slightly increased padding */
-    padding-bottom: 10px; /* Slightly increased padding */
+    padding-top: 1px; /* Slightly increased padding */
+    padding-bottom: 1px; /* Slightly increased padding */
     line-height: 0; /* Set to 1.2 for better line spacing */
 }
 
 /* Make the header more compact on smaller devices */
 @media (max-width: 768px) {
     .heado {
-        padding-top: 8px;
-        padding-bottom: 8px;
+        padding-top: 1px;
+        padding-bottom: 1px;
         line-height: 0; /* Maintain readability */
     }
 }
@@ -48,8 +48,8 @@
 /* Adjust further for extra small screens */
 @media (max-width: 480px) {
     .heado {
-        padding-top: 6px;
-        padding-bottom: 6px;
+        padding-top: 1px;
+        padding-bottom: 1px;
         line-height: 0.9;
     }
 
@@ -472,13 +472,12 @@
             color: #ffffff; /* White core for readability */
             position: relative;
             text-shadow: 
-                0 0 3px #ffffff,  /* Light white shadow for clearer text */
-                0 0 10px #ffffff, /* Stronger white shadow to enhance legibility */
-                0 0 20px #ff4da6, /* Pink neon glow */
-                0 0 40px #ff4da6, /* Intense pink glow */
-                0 0 60px #ff66cc, /* Blueish glow for depth */
-                0 0 80px #ff66cc; /* Blueish outer glow */
-        }
+            0 0 1px #ffffff,  /* Light white shadow for clearer text */
+                0 0 50px #ffffff, /* Stronger white shadow to enhance legibility */
+                0 0 15px #ff4da6, /* Pink neon glow */
+                0 0 20px #ff4da6, /* Intense pink glow */
+                0 0 10px #ff66cc, /* Blueish glow for depth */
+                0 0 10px #ff66cc        }
 
         .neon-text::before {
             content: "Rose Cafe"; /* Extra layer for pink neon glow */
@@ -511,8 +510,8 @@
         .button {
             position: relative;
             padding: 15px 30px;
-            background-color: #6200ea;
-            color: white;
+            background-color: #ffb3c7;
+            color: #F9F6EE;
             border: none;
             border-radius: 5px;
             cursor: pointer;
@@ -526,7 +525,7 @@
         }
 
         .button:hover {
-            background-color: #3700b3;
+            background-color: #f799b1;
             transform: translateY(-2px);
         }
 
