@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Cosy Café Menu</title>
+    <title>Rose Cafe Menu</title>
     <style>
 
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
@@ -13,7 +13,7 @@
         /* Global Styles */
         body {
             font-family: 'Poppins', sans-serif;
-            background-color: #F5F5DC;
+            background-color: #ffdee5;
             margin: 0;
             padding: 0;
             box-sizing: border-box;
@@ -51,6 +51,7 @@
         padding-bottom: 6px;
         line-height: 0.9;
     }
+
 }
 
 
@@ -69,21 +70,14 @@
             margin-bottom: 60px;
         }
 
+
         .kampan{
-            font-size: 2.7rem;
-            color: #2b2d2f;
-            font-weight: bold;
-            letter-spacing: 1px;
-            margin-bottom: 20px;
-            padding-bottom: 8px;
-            border-bottom: 4px solid #2b2d2f;
-            font-family: 'Playfair Display', serif;
-            text-align: center;
-            max-width: 1200px;
-            margin-inline: auto;
+            padding: 0 20px;
         }
 
         h2 {
+            margin-inline: auto;
+            max-width: 1200px;
             font-size: 2.7rem;
             color: #2b2d2f;
             font-weight: bold;
@@ -509,6 +503,57 @@
         }
 
         
+
+
+
+
+
+
+
+    
+
+
+        .button {
+            position: relative;
+            padding: 15px 30px;
+            background-color: #6200ea;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            overflow: hidden;
+            text-align: center; /* Align text to the left */
+            margin-top: 5px;
+            font-size: 1.4rem;
+            font-family: 'Poppins', sans-serif;
+            font-weight: bold;
+        }
+
+        .button:hover {
+            background-color: #3700b3;
+            transform: translateY(-2px);
+        }
+
+        .context {
+            display: none; /* Initially hidden */
+            position: relative; /* Change to relative for better flow */
+            background-color: #F9F6EE;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            margin-top: 5px;
+            opacity: 0; /* Start with opacity 0 */
+            height: 0; /* Start with height 0 */
+            overflow: hidden; /* Hide overflow */
+            transition: opacity 0.3s ease, height 0.3s ease; /* Smooth transitions */
+        }
+
+        .context.show {
+            display: block; /* Change to block when shown */
+            opacity: 1; /* Fade in */
+            height: auto; /* Allow height to adjust */
+        }
     </style>
 </head>
 
@@ -516,12 +561,13 @@
 
     
     <div class="heado">
-            <p class="neon-text">Rose ile Hayat Tatlıdır.</p>
+            <p class="neon-text">Rose ile Hayat Tatlıdır</p>
     </div>
 
 
-    <h2 class="kampan">Kampanyalar</h2>
-
+    <div class="kampan">
+    <h2>Kampanyalar</h2>
+    </div>
 
     <!-- Slideshow Container -->
     <div class="slideshow-container">
@@ -557,10 +603,24 @@
     <section>
         <div class="menu-header">
             <h2>MENU</h2>
-            <p class="izah">Ürünlerin üzerine tıklayarak örnek görsellerine ulaşabilirsiniz, afiyet olsun.</p>
+            <p class="izah">Ürün sekmelerine tıklayarak örnek görsellerine ulaşabilirsiniz, afiyet olsun.</p>
+        </div>
+
+        
+        <div class="button" onclick="toggleContext('context1')">
+            İçecekler
+        </div>
+
+        <div class="button" onclick="toggleContext('context2')">
+            Tatlılar
+        </div>
+
+        <div class="button" onclick="toggleContext('context3')">
+            Meals
         </div>
 
         <!-- Drinks -->
+    <div class="context" id="context1"> 
         <h2><i>İçecekler</i></h2>
         <div class="menu-category">
             <div class="menu-item" onclick="showImage('coffee')">
@@ -579,8 +639,10 @@
                 <div class="price">$2.50</div>
             </div>
         </div>
-
+    </div>
+    
         <!-- Desserts -->
+    <div class="context" id="context2">
         <h2><i>Tatlılar</i></h2>
         <div class="menu-category">
             <div class="menu-item" onclick="showImage('chocolatecake')">
@@ -599,8 +661,11 @@
                 <div class="price">$4.50</div>
             </div>
         </div>
+    </div>
+
 
         <!-- Meals -->
+    <div class="context" id="context3">
         <h2>Meals</h2>
         <div class="menu-category">
             <div class="menu-item" onclick="showImage('avocadotoast')">
@@ -619,6 +684,8 @@
                 <div class="price">$6.00</div>
             </div>
         </div>
+    </div>
+
     </section>
 
     <!-- Footer -->
@@ -637,6 +704,30 @@
 
     <!-- JavaScript for Modal and Loading Animation -->
     <script>
+
+function toggleContext(contextId) {
+            // Get all context elements
+            const contexts = document.querySelectorAll('.context');
+            contexts.forEach(context => {
+                // If the context is not the one being clicked, hide it
+                if (context.id !== contextId) {
+                    context.classList.remove('show');
+                }
+            });
+
+            // Toggle the clicked context
+            const currentContext = document.getElementById(contextId);
+            if (currentContext.classList.contains('show')) {
+                currentContext.classList.remove('show');
+            } else {
+                currentContext.classList.add('show');
+            }
+        }
+
+
+
+
+
         function showImage(product) {
             let imageSrc = '';
             switch (product) {
