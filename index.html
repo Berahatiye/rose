@@ -90,6 +90,20 @@
             text-align: center;
         }
 
+        .menubaslik{
+            margin-inline: auto;
+            max-width: 85vh;
+            font-size: 2.7rem;
+            color: #2b2d2f;
+            font-weight: bold;
+            letter-spacing: 1px;
+            margin-bottom: 16px;
+            padding-bottom: 8px;
+            border-bottom: 4px solid #2b2d2f;
+            font-family: 'Poppins', sans-serif;
+            text-align: center;
+        }
+
         .menu-category {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -107,6 +121,7 @@
             transition: all 0.3s ease-in-out;
             cursor: pointer;
             position: relative;
+            width: 75%;
         }
 
         .menu-item:hover {
@@ -263,7 +278,7 @@
    /* Slideshow Container */
    .slideshow-container {
             position: relative;
-            max-width: 50%;
+            max-width: 100vh;
             margin: auto;
             border-radius: 15px;
             overflow: hidden;
@@ -396,7 +411,7 @@
 
             .slideshow-container {
             position: relative;
-            max-width: 80%;
+            max-width: 90vh;
             margin: auto;
             border-radius: 15px;
             overflow: hidden;
@@ -626,18 +641,17 @@
         <div class="menu-header">
             <h2>MENU</h2>
         </div>
-
         
         <div class="button" onclick="toggleContext('context1')">
-            İçecekler
+            Sıcak İçecekler
         </div>
 
         <div class="button" onclick="toggleContext('context2')">
-            Tatlılar
+            Türk Kahveleri
         </div>
 
         <div class="button" onclick="toggleContext('context3')">
-            Meals
+            Dünya Kahveleri
         </div>
 
         <div class="contextorg">
@@ -646,29 +660,93 @@
 
         <!-- Drinks -->
     <div class="context" id="context1"> 
-        <h2><i>İçecekler</i></h2>
+        <h2 class="menubaslik"><i>Sıcak İçecekler</i></h2>
         <div class="menu-category">
-            <div class="menu-item" onclick="showImage('coffee')">
-                <h3>Coffee</h3>
+            <div class="menu-item" onclick="showImage('cay')">
+                <h3>Çay</h3>
                 <p>Rich espresso with a smooth finish.</p>
-                <div class="price">$3.50</div>
+                <div class="price">20 ₺</div>
             </div>
-            <div class="menu-item" onclick="showImage('latte')">
-                <h3>Latte</h3>
+            <div class="menu-item" onclick="showImage('fincancay')">
+                <h3>Fincan Çay</h3>
                 <p>Espresso with steamed milk, topped with foam.</p>
-                <div class="price">$4.00</div>
+                <div class="price">24 ₺</div>
             </div>
-            <div class="menu-item" onclick="showImage('greentea')">
-                <h3>Green Tea</h3>
+            <div class="menu-item" onclick="showImage('sutlufincancay')">
+                <h3>Sütlü Fincan Çay</h3>
                 <p>Refreshing and aromatic green tea.</p>
-                <div class="price">$2.50</div>
+                <div class="price">30 ₺</div>
+            </div>
+            <div class="menu-item" onclick="showImage('yesilcay')">
+                <h3>Yeşil Çay</h3>
+                <p>Refreshing and aromatic green tea.</p>
+                <div class="price">65 ₺</div>
+            </div>
+            <div class="menu-item" onclick="showImage('kusburnu')">
+                <h3>Kuşburnu</h3>
+                <p>Refreshing and aromatic green tea.</p>
+                <div class="price">65 ₺</div>
+            </div>
+            <div class="menu-item" onclick="showImage('adacayi')">
+                <h3>Adaçayı</h3>
+                <p>Refreshing and aromatic green tea.</p>
+                <div class="price">65 ₺</div>
+            </div>
+            <div class="menu-item" onclick="showImage('ihlamur')">
+                <h3>Ihlamur</h3>
+                <p>Refreshing and aromatic green tea.</p>
+                <div class="price">65 ₺</div>
+            </div>
+            <div class="menu-item" onclick="showImage('kiscayi')">
+                <h3>Kış Çayı</h3>
+                <p>Refreshing and aromatic green tea.</p>
+                <div class="price">65 ₺</div>
+            </div>
+            <div class="menu-item" onclick="showImage('tazenanelimon')">
+                <h3>Taze Nane Limon</h3>
+                <p>Refreshing and aromatic green tea.</p>
+                <div class="price">65 ₺</div>
+            </div>
+            <div class="menu-item" onclick="showImage('bogurtlen')">
+                <h3>Böğürtlen</h3>
+                <p>Refreshing and aromatic green tea.</p>
+                <div class="price">65 ₺</div>
+            </div>
+            <div class="menu-item" onclick="showImage('sicaksut')">
+                <h3>Sıcak Süt</h3>
+                <p>Refreshing and aromatic green tea.</p>
+                <div class="price">55 ₺</div>
+            </div>
+            <div class="menu-item" onclick="showImage('ballisut')">
+                <h3>Ballı Süt</h3>
+                
+                <div class="price">65 ₺</div>
+            </div>
+            <div class="menu-item" onclick="showImage('salep')">
+                <h3>Salep</h3>
+                <div class="price">70 ₺</div>
+            </div>
+            <div class="menu-item" onclick="showImage('cikolatasalep')">
+                <h3>Çikolatalı Salep</h3>
+                <p>Gerçek Çikolata ile Harmanlanmış Eşsiz Lezzet</p>
+                <div class="price">80 ₺</div>
+            </div>
+            <div class="menu-item" onclick="showImage('sicakcikolata')">
+                <h3>Sıcak Çikolata</h3>
+                <p>Sütlü, Bitter veya Fildişi Seçenekleriyle</p>
+                <div class="price">80 ₺</div>
+            </div>
+            <div class="menu-item" onclick="showImage('turkkahvesicakcikolata')">
+                <h3>Türk Kahveli Sıcak Çikolata</h3>
+                <p>Sütlü, Bitter veya Fildişi Seçenekleriyle</p>
+                <div class="price">85 ₺</div>
             </div>
         </div>
     </div>
     
         <!-- Desserts -->
     <div class="context" id="context2">
-        <h2><i>Tatlılar</i></h2>
+        <h2 class="menubaslik"><i>Tatlılar</i></h2>
         <div class="menu-category">
             <div class="menu-item" onclick="showImage('chocolatecake')">
                 <h3>Chocolate Cake</h3>
@@ -691,7 +769,7 @@
 
         <!-- Meals -->
     <div class="context" id="context3">
-        <h2>Meals</h2>
+        <h2 class="menubaslik">Meals</h2>
         <div class="menu-category">
             <div class="menu-item" onclick="showImage('avocadotoast')">
                 <h3>Avocado Toast</h3>
@@ -762,32 +840,53 @@ function toggleContext(contextId) {
         function showImage(product) {
             let imageSrc = '';
             switch (product) {
-                case 'coffee':
-                    imageSrc = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTb5bqC7IA8JdjL19Ko8baj61wNE8Qlab3GWw&s?text=Coffee';
+                case 'cay':
+                    imageSrc = 'https://raw.githubusercontent.com/Berahatiye/rose/refs/heads/main/cay.jpg';
                     break;
-                case 'latte':
-                    imageSrc = 'https://www.alleycat.org/wp-content/uploads/2019/03/FELV-cat.jpg';
+                case 'fincancay':
+                    imageSrc = 'https://raw.githubusercontent.com/Berahatiye/rose/refs/heads/main/fincan.jpg';
                     break;
-                case 'greentea':
-                    imageSrc = 'https://via.placeholder.com/600x400.png?text=Green+Tea';
+                case 'sutlufincancay':
+                    imageSrc = 'https://github.com/Berahatiye/rose/blob/main/sutlu-cay.png?raw=true';
                     break;
-                case 'chocolatecake':
-                    imageSrc = 'https://via.placeholder.com/600x400.png?text=Chocolate+Cake';
+                case 'yesilcay':
+                    imageSrc = 'https://raw.githubusercontent.com/Berahatiye/rose/refs/heads/main/bitki1.jpg';
                     break;
-                case 'cheesecake':
-                    imageSrc = 'https://via.placeholder.com/600x400.png?text=Cheesecake';
+                case 'kusburnu':
+                    imageSrc = 'https://raw.githubusercontent.com/Berahatiye/rose/refs/heads/main/bitki1.jpg';
                     break;
-                case 'fruittart':
-                    imageSrc = 'https://via.placeholder.com/600x400.png?text=Fruit+Tart';
+                case 'adacayi':
+                    imageSrc = 'https://raw.githubusercontent.com/Berahatiye/rose/refs/heads/main/bogurtlen.jpg';
                     break;
-                case 'avocadotoast':
-                    imageSrc = 'https://via.placeholder.com/600x400.png?text=Avocado+Toast';
+                case 'ihlamur':
+                    imageSrc = 'https://raw.githubusercontent.com/Berahatiye/rose/refs/heads/main/bitki1.jpg';
                     break;
-                case 'caesarsalad':
-                    imageSrc = 'https://via.placeholder.com/600x400.png?text=Caesar+Salad';
+                case 'kiscayi':
+                    imageSrc = 'https://raw.githubusercontent.com/Berahatiye/rose/refs/heads/main/bitki1.jpg';
                     break;
-                case 'grilledsandwich':
-                    imageSrc = 'https://via.placeholder.com/600x400.png?text=Grilled+Sandwich';
+                case 'tazenanelimon':
+                    imageSrc = 'https://raw.githubusercontent.com/Berahatiye/rose/refs/heads/main/bitki1.jpg';
+                    break;
+                case 'bogurtlen':
+                    imageSrc = 'https://raw.githubusercontent.com/Berahatiye/rose/refs/heads/main/bogurtlen.jpg';
+                    break;
+                    case 'sicaksut':
+                    imageSrc = 'https://raw.githubusercontent.com/Berahatiye/rose/refs/heads/main/sicak-sut-3756.jpg';
+                    break;
+                    case 'ballisut':
+                    imageSrc = 'https://raw.githubusercontent.com/Berahatiye/rose/refs/heads/main/balli.jpg';
+                    break;
+                    case 'salep':
+                    imageSrc = 'https://raw.githubusercontent.com/Berahatiye/rose/refs/heads/main/salep.jpg';
+                    break;
+                    case 'cikolatasalep':
+                    imageSrc = 'https://raw.githubusercontent.com/Berahatiye/rose/refs/heads/main/cikolatasalep.jpg';
+                    break;
+                    case 'sicakcikolata':
+                    imageSrc = 'https://raw.githubusercontent.com/Berahatiye/rose/refs/heads/main/sicakcikolata.jpg';
+                    break;
+                    case 'turkkahvesicakcikolata':
+                    imageSrc = 'https://raw.githubusercontent.com/Berahatiye/rose/refs/heads/main/sicakcikolata.jpg';
                     break;
                 default:
                     break;
@@ -901,5 +1000,3 @@ function toggleContext(contextId) {
 </body>
 
 </html>
-
-
