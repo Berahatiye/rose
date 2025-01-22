@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Rose Cafe Menu</title>
+    <link rel="icon" type="image/x-icon" href="http://www.rosecafe.site/menu/images/main-logo.png">
     <style>
 
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
@@ -22,9 +23,9 @@
         .heado {
     background-color: #383839;
     text-align: center;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-    border-bottom-left-radius: 2rem;
-    border-bottom-right-radius: 2rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    border-bottom-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
     position: relative;
     top: 0;
     z-index: 10;
@@ -462,14 +463,6 @@
 
         }
 
-
-        .izah{
-            color: #666666;
-            font-weight: bold;
-            font-family: 'Poppins', sans-serif;
-            font-size: 1.1rem;
-        }
-
         .neon-text {
             font-family: 'Dancing Script', cursive; /* Dancing Script font */
             font-size: 3rem;
@@ -534,6 +527,33 @@
             background-color: #3700b3;
             transform: translateY(-2px);
         }
+
+
+
+        .rosecafelogo {
+            margin-inline: auto;
+            height: 5rem;
+            width: 5rem;
+            border-radius: 50%;
+        }
+
+        .contextorg {
+            display: grid; /* Initially hidden */
+            position: relative; /* Change to relative for better flow */
+            background-color: #F9F6EE;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            margin-top: 2rem;
+            overflow: hidden; /* Hide overflow */
+            transition: opacity 0.3s ease, height 0.3s ease; /* Smooth transitions */
+            text-align: center;
+            color: #666666;
+            font-weight: bold;
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.4rem;
+        }
+
 
         .context {
             display: none; /* Initially hidden */
@@ -603,7 +623,6 @@
     <section>
         <div class="menu-header">
             <h2>MENU</h2>
-            <p class="izah">Ürün sekmelerine tıklayarak örnek görsellerine ulaşabilirsiniz, afiyet olsun.</p>
         </div>
 
         
@@ -617,6 +636,11 @@
 
         <div class="button" onclick="toggleContext('context3')">
             Meals
+        </div>
+
+        <div class="contextorg">
+            <p>Seçtiğiniz türdeki ürünlerimiz burada görünecektir.</p>
+            <p>Ürün sekmelerine tıklayarak örnek görsellerine ulaşabilirsiniz, afiyet olsun.</p>
         </div>
 
         <!-- Drinks -->
@@ -690,6 +714,7 @@
 
     <!-- Footer -->
     <footer>
+        <img class="rosecafelogo" src="http://www.rosecafe.site/menu/images/main-logo.png" alt="Rose Cafe">
         <p>&copy; 2025 Cosy Café. All rights reserved.</p>
     </footer>
 
@@ -715,6 +740,11 @@ function toggleContext(contextId) {
                 }
             });
 
+
+            const contextOrg = document.querySelector('.contextorg');
+            contextOrg.style.display = 'none'; // Hide the contextorg element
+
+
             // Toggle the clicked context
             const currentContext = document.getElementById(contextId);
             if (currentContext.classList.contains('show')) {
@@ -722,7 +752,7 @@ function toggleContext(contextId) {
             } else {
                 currentContext.classList.add('show');
             }
-        }
+}
 
 
 
