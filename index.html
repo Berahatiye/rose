@@ -378,11 +378,11 @@
         }
 
         .dot {
-            height: 1.3rem;
-            width: 1.3rem;
+            height: 0.4rem;
+            width: 2.4rem;
             margin: 0 5px;
             background-color: rgba(0, 0, 0, 0.5);
-            border-radius: 50%;
+            border-radius: 50rem;
             display: inline-block;
             transition: background-color 0.3s;
             cursor: pointer;
@@ -403,8 +403,8 @@
             }
 
             .dot {
-                height: 1.2rem;
-                width: 1.2rem;
+                height: 0.6rem;
+                width: 3rem;
             }
 
 
@@ -447,8 +447,8 @@
             }
 
             .dot {
-                height: 1rem;
-                width: 1rem;
+                height: 0.5rem;
+                width: 3rem; 
             }
 
 
@@ -762,6 +762,22 @@
                 <h3>Antep Fıstıklı Türk Kahvesi</h3>
                 <div class="price">55 ₺</div>
             </div>
+            <div class="menu-item" onclick="showImage('doubleturkkahvesi')">
+                <h3>Double Türk Kahvesi</h3>
+                <div class="price">60 ₺</div>
+            </div>
+            <div class="menu-item" onclick="showImage('doubledibekkahvesi')">
+                <h3>Double Türk Kahvesi</h3>
+                <div class="price">65 ₺</div>
+            </div>
+            <div class="menu-item" onclick="showImage('doublecikolataliturkkahvesi')">
+                <h3>Double Çikolatalı Türk Kahvesi</h3>
+                <div class="price">70 ₺</div>
+            </div>
+            <div class="menu-item" onclick="showImage('doubledamlaturkkahvesi')">
+                <h3>Double Damla Sakızlı Türk Kahvesi</h3>
+                <div class="price">65 ₺</div>
+            </div>
         </div>
     </div>
 
@@ -884,7 +900,7 @@ function toggleContext(contextId) {
                     case 'sicakcikolata':
                     imageSrc = 'https://raw.githubusercontent.com/Berahatiye/rose/refs/heads/main/sicakcikolata.jpg';
                     break;
-                    case 'turkkahvesicakcikolata':
+                    case 'cikolataliturkkahvesi':
                     imageSrc = 'https://raw.githubusercontent.com/Berahatiye/rose/refs/heads/main/sicakcikolata.jpg';
                     break;
                     case 'turkkahvesi':
@@ -900,6 +916,18 @@ function toggleContext(contextId) {
                     imageSrc = 'https://raw.githubusercontent.com/Berahatiye/rose/refs/heads/main/turkkahve.jpg';
                     break;
                     case 'antepfistikliturkkahvesi':
+                    imageSrc = 'https://raw.githubusercontent.com/Berahatiye/rose/refs/heads/main/turkkahve.jpg';
+                    break;
+                    case 'doubleturkkahvesi':
+                    imageSrc = 'https://raw.githubusercontent.com/Berahatiye/rose/refs/heads/main/turkkahve.jpg';
+                    break;
+                    case 'doubledibekkahvesi':
+                    imageSrc = 'https://raw.githubusercontent.com/Berahatiye/rose/refs/heads/main/turkkahve.jpg';
+                    break;
+                    case 'doublecikolataliturkkahvesi':
+                    imageSrc = 'https://raw.githubusercontent.com/Berahatiye/rose/refs/heads/main/turkkahve.jpg';
+                    break;
+                    case 'doubledamlaturkkahvesi':
                     imageSrc = 'https://raw.githubusercontent.com/Berahatiye/rose/refs/heads/main/turkkahve.jpg';
                     break;
                 default:
