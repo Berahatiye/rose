@@ -332,7 +332,7 @@
             cursor: pointer;
             font-size: 20px;
             font-weight: bold;
-            border-radius: 50%;
+            border-radius: 1rem;
             z-index: 10;
             transition: background-color 0.3s;
         }
@@ -355,15 +355,15 @@
         /* Dots */
         .dot-container {
             position: absolute;
-            bottom: 10px;
+            bottom: 0;
             left: 50%;
             transform: translateX(-50%);
             display: flex;
         }
 
         .dot {
-            height: 15px;
-            width: 15px;
+            height: 1.3rem;
+            width: 1.3rem;
             margin: 0 5px;
             background-color: rgba(0, 0, 0, 0.5);
             border-radius: 50%;
@@ -373,7 +373,7 @@
         }
 
         .dot.active {
-            background-color: #2b2d2f;
+            background-color: #f799b1;
         }
 
 
@@ -387,8 +387,8 @@
             }
 
             .dot {
-                height: 12px;
-                width: 12px;
+                height: 1.2rem;
+                width: 1.2rem;
             }
 
 
@@ -431,8 +431,8 @@
             }
 
             .dot {
-                height: 10px;
-                width: 10px;
+                height: 1rem;
+                width: 1rem;
             }
 
 
@@ -901,3 +901,5 @@ function toggleContext(contextId) {
 </body>
 
 </html>
+
+
