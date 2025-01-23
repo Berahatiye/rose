@@ -90,20 +90,6 @@
             text-align: center;
         }
 
-        .menubaslik{
-            margin-inline: auto;
-            max-width: 85vh;
-            font-size: 2.7rem;
-            color: #2b2d2f;
-            font-weight: bold;
-            letter-spacing: 1px;
-            margin-bottom: 16px;
-            padding-bottom: 8px;
-            border-bottom: 4px solid #2b2d2f;
-            font-family: 'Poppins', sans-serif;
-            text-align: center;
-        }
-
         .menu-category {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -174,7 +160,7 @@
         }
 
         .modal img {
-            width: 100%;
+            width: 50vh;
             height: auto;
             border-radius: 15px;
             display: none;
@@ -395,7 +381,7 @@
 
 
         /* Responsive Design */
-        @media (max-width: 768px) {
+    @media (max-width: 768px) {
             .prev,
             .next {
                 padding: 12px;
@@ -406,8 +392,6 @@
                 height: 0.6rem;
                 width: 3rem;
             }
-
-
 
 
             .slideshow-container {
@@ -434,7 +418,20 @@
         }
 
 
+
+
+
+
+
+
+
+        .modal img {
+            width: 50vh;
+            height: auto;
+            border-radius: 15px;
+            display: none;
         }
+    }
 
 
 
@@ -478,7 +475,23 @@
             transition: opacity 1s ease-in-out;
         }
 
+
+
+
+
+
+
+        .modal img {
+            width: 100%;
+            height: auto;
+            border-radius: 15px;
+            display: none;
+        }
     }
+
+
+
+
 
         .neon-text {
             font-family: 'Dancing Script', cursive; /* Dancing Script font */
@@ -661,7 +674,6 @@
 
         <!-- Drinks -->
     <div class="context" id="context1"> 
-        <h2 class="menubaslik"><i>Sıcak İçecekler</i></h2>
         <div class="menu-category">
             <div class="menu-item" onclick="showImage('cay')">
                 <h3>Çay</h3>
@@ -736,7 +748,6 @@
     
         <!-- Desserts -->
     <div class="context" id="context2">
-        <h2 class="menubaslik"><i>Türk Kahveleri</i></h2>
         <div class="menu-category">
             <div class="menu-item" onclick="showImage('turkkahvesi')">
                 <h3>Türk Kahvesi</h3>
@@ -781,25 +792,85 @@
         </div>
     </div>
 
-
         <!-- Meals -->
     <div class="context" id="context3">
-        <h2 class="menubaslik">Meals</h2>
         <div class="menu-category">
-            <div class="menu-item" onclick="showImage('avocadotoast')">
-                <h3>Avocado Toast</h3>
-                <p>Fresh avocado spread on toasted sourdough.</p>
-                <div class="price">$7.00</div>
+            <div class="menu-item" onclick="showImage('espresso')">
+                <h3>Espresso</h3>
+                <div class="price">55 ₺</div>
             </div>
-            <div class="menu-item" onclick="showImage('caesarsalad')">
-                <h3>Caesar Salad</h3>
-                <p>Crunchy lettuce with Caesar dressing and croutons.</p>
-                <div class="price">$8.00</div>
+            <div class="menu-item" onclick="showImage('doubleespresso')">
+                <h3>Double Espresso</h3>
+                <div class="price">65 ₺</div>
             </div>
-            <div class="menu-item" onclick="showImage('grilledsandwich')">
-                <h3>Grilled Sandwich</h3>
-                <p>Cheddar, ham, and tomato on toasted bread.</p>
-                <div class="price">$6.00</div>
+            <div class="menu-item" onclick="showImage('latte')">
+                <h3>Caffe Latte</h3>
+                <p>Fındık, Irish, Caramel, Vanilya Seçenekleriyle</p>
+                <div class="price">80 ₺</div>
+            </div>
+            <div class="menu-item" onclick="showImage('cappuccino')">
+                <h3>Caffe Cappuccino</h3>
+                <div class="price">80 ₺</div>
+            </div>
+            <div class="menu-item" onclick="showImage('americano')">
+                <h3>Americano</h3>
+                <div class="price">75 ₺</div>
+            </div>
+            <div class="menu-item" onclick="showImage('sutluamericano')">
+                <h3>Sütlü Americano</h3>
+                <div class="price">80 ₺</div>
+            </div>
+            <div class="menu-item" onclick="showImage('caramelmaccioato')">
+                <h3>Caramel Macchiato</h3>
+                <div class="price">85 ₺</div>
+            </div>
+            <div class="menu-item" onclick="showImage('cafemocha')">
+                <h3>Cafe Mocha</h3>
+                <p>Sütlü, Bitter, Çikolata Seçenekleriyle</p>
+                <div class="price">90 ₺</div>
+            </div>
+            <div class="menu-item" onclick="showImage('espressoconpanna')">
+                <h3>Espresso Con Panna</h3>
+                <p>Çırpılmış krema ile tepesinde tek veya çift espresso ile birlikte</p>
+                <div class="price">75 ₺</div>
+            </div>
+            <div class="menu-item" onclick="showImage('cortado')">
+                <h3>Cortado</h3>
+                <p>Espresso ve az miktarda sıcak süt ile</p>
+                <div class="price">75 ₺</div>
+            </div>
+            <div class="menu-item" onclick="showImage('affogato')">
+                <h3>Affogato</h3>
+                <p>Dondurma üzerine sıcak espresso dökülerek hazırlanır</p>
+                <div class="price">85 ₺</div>
+            </div>
+            <div class="menu-item" onclick="showImage('filtrekahve')">
+                <h3>Filtre Kahve</h3>
+                <div class="price">60 ₺</div>
+            </div>
+            <div class="menu-item" onclick="showImage('aromalifiltrekahve')">
+                <h3>Aromalı Filtre Kahve</h3>
+                <p>Sütlü, Fındık, Irish ve Çikolata Seçenekleriyle</p>
+                <div class="price">65 ₺</div>
+            </div>
+            <div class="menu-item" onclick="showImage('icefiltrekahve')">
+                <h3>Ice Filtre Kahve</h3>
+                <p>Sütlü, Fındık, Irish ve Çikolata Seçenekleriyle</p>
+                <div class="price">75 ₺</div>
+            </div>
+            <div class="menu-item" onclick="showImage('icelatte')">
+                <h3>Ice Latte</h3>
+                <p>Fındık, Irish ve Çikolata Seçenekleriyle</p>
+                <div class="price">85 ₺</div>
+            </div>
+            <div class="menu-item" onclick="showImage('icemocha')">
+                <h3>Ice Mocha</h3>
+                <p>Sütlü, Bitter ve Fildişi Çikolata Seçenekleriyle</p>
+                <div class="price">90 ₺</div>
+            </div>
+            <div class="menu-item" onclick="showImage('icecaramelmacchiato')">
+                <h3>Ice Caramel Macchiato</h3>
+                <div class="price">85 ₺</div>
             </div>
         </div>
     </div>
@@ -900,7 +971,7 @@ function toggleContext(contextId) {
                     case 'sicakcikolata':
                     imageSrc = 'https://raw.githubusercontent.com/Berahatiye/rose/refs/heads/main/sicakcikolata.jpg';
                     break;
-                    case 'cikolataliturkkahvesi':
+                    case 'turkkahvesicakcikolata':
                     imageSrc = 'https://raw.githubusercontent.com/Berahatiye/rose/refs/heads/main/sicakcikolata.jpg';
                     break;
                     case 'turkkahvesi':
@@ -929,6 +1000,39 @@ function toggleContext(contextId) {
                     break;
                     case 'doubledamlaturkkahvesi':
                     imageSrc = 'https://raw.githubusercontent.com/Berahatiye/rose/refs/heads/main/turkkahve.jpg';
+                    break;
+                    case 'espresso':
+                    imageSrc = 'https://raw.githubusercontent.com/Berahatiye/rose/refs/heads/main/1espresso.jpg';
+                    break;
+                    case 'doubleespresso':
+                    imageSrc = 'https://raw.githubusercontent.com/Berahatiye/rose/refs/heads/main/2doubleespresso.jpg';
+                    break;
+                    case 'latte':
+                    imageSrc = 'https://raw.githubusercontent.com/Berahatiye/rose/refs/heads/main/3latte.jpg';
+                    break;
+                    case 'cappuccino':
+                    imageSrc = 'https://raw.githubusercontent.com/Berahatiye/rose/refs/heads/main/4cappuccino.jpg';
+                    break;
+                    case 'americano':
+                    imageSrc = 'https://raw.githubusercontent.com/Berahatiye/rose/refs/heads/main/5americano.jpg';
+                    break;
+                    case 'sutluamericano':
+                    imageSrc = 'https://raw.githubusercontent.com/Berahatiye/rose/refs/heads/main/6sutluamericano.jpg';
+                    break;
+                    case 'caramelmaccioato':
+                    imageSrc = 'https://raw.githubusercontent.com/Berahatiye/rose/refs/heads/main/7caramelmaccioato.jpg';
+                    break;
+                    case 'cafemocha':
+                    imageSrc = 'https://raw.githubusercontent.com/Berahatiye/rose/refs/heads/main/8cafe-mocha.jpg';
+                    break;
+                    case 'espressoconpanna':
+                    imageSrc = 'https://raw.githubusercontent.com/Berahatiye/rose/refs/heads/main/9espressoconpanna.jpg';
+                    break;
+                    case 'cortado':
+                    imageSrc = 'https://raw.githubusercontent.com/Berahatiye/rose/refs/heads/main/10cortado.jpg';
+                    break;
+                    case 'affogato':
+                    imageSrc = 'https://raw.githubusercontent.com/Berahatiye/rose/refs/heads/main/11affogato.jpg';
                     break;
                 default:
                     break;
