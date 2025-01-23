@@ -19,11 +19,12 @@
             padding: 0;
             box-sizing: border-box;
         }
+        
 
         .heado {
     background-color: #383839;
     text-align: center;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 10px 30px rgba(56, 56, 57, 0.3);
     border-bottom-left-radius: 1rem;
     border-bottom-right-radius: 1rem;
     position: relative;
@@ -80,7 +81,7 @@
             margin-inline: auto;
             max-width: 85vh;
             font-size: 2.7rem;
-            color: #2b2d2f;
+            color: #383839;
             font-weight: bold;
             letter-spacing: 1px;
             margin-bottom: 1px;
@@ -127,11 +128,11 @@
         .menu-item p {
             font-size: 1.1rem;
             color: #777;
-            margin-bottom: 25px;
+            margin-bottom: 20px;
         }
 
         .price {
-            font-size: 1.5rem;
+            font-size: 1.6rem;
             font-weight: bold;
             color: #5c4f3f;
         }
@@ -192,6 +193,32 @@
             transition: transform 0.15s ease-in-out;
         }
 
+        .line-bottom {
+        position: absolute;
+        height: 0.4rem;
+        background: #fa9db5;
+        width: 2rem;
+        transform: rotate(-45deg);
+        border-radius: 5px;
+        top: 1rem;
+        right: 0.1rem;
+        box-shadow: 0px 0px 3px 0px #fa9db5;
+    }
+
+    .line-top {
+        position: absolute;
+        height: 0.4rem;
+        background: #fa9db5;
+        width: 2rem;
+        transform: rotate(45deg);
+        border-radius: 5px;
+        top: 1rem;
+        right: 0.1rem;
+        box-shadow: 0px 0px 3px 0px #fa9db5;
+    }
+
+
+
         .close-btn:hover {
             transform: scale(1.12);
         }
@@ -244,7 +271,7 @@
             }
 
             .price {
-                font-size: 1.2rem;
+                font-size: 1.6rem;
             }
         }
 
@@ -1073,67 +1100,81 @@
         
                     <div class="menu-item" onclick="showImage('magnolya')">
                         <h3>Magnolya</h3>
-                        <p>Taze ve El Yapımı</p>
+                        <p>Çilekli ve Muzlu seçenekleri,</p>
+                        <p>Sütlü Çikolata, Gold Çikolata ve Bitter Çikolata seçenekleri,</p>
+                        <p><i>10 ₺ fark karşılığında;</i> Lotuslu ve Kitkat seçenekleriyle birlikte.</p>
+                        <p><i>(Bütün tercihler; bir seçenek ile sınırldır.)</i></p>
                         <div class="price">120 ₺</div>
                     </div>
                    
                     <div class="menu-item" onclick="showImage('madamerose')">
                         <h3>Madame Rose</h3>
-                        <p>Taze ve El Yapımı</p>
+                        <p>Sütlü Kakaolu Kek üzerinde; Belçika Çikolatalı Krema, Meyve Parçaları, Prenses Krema ve Krep Kıtırı ile.</p>
                         <div class="price">160 ₺</div>
                     </div>
         
                     <div class="menu-item" onclick="showImage('sansebastian')">
                         <h3>San Sebastian</h3>
-                        <p>Taze ve El Yapımı</p>
+                        <p>Sütlü Çikolata, Gold Çikolata ve Bitter Çikolata seçenekleriyle birlikte.</p>
+                        <p><i>(Bütün tercihler; bir seçenek ile sınırldır.)</i></p>
                         <div class="price">160 ₺</div>
                     </div>
 
                     <div class="menu-item" onclick="showImage('rosespecial')">
                         <h3>Rose Special</h3>
-                        <p>Taze ve El Yapımı</p>
+                        <p>Ekler Hamuru, Pattisserie Krema, Çikolata ile;</p>
+                        <p>Çilek ve Muz seçenekleriyle birlikte.</p>
                         <div class="price">170 ₺</div>
                     </div>
 
                     <div class="menu-item" onclick="showImage('waffle')">
                         <h3>Waffle</h3>
-                        <p>Taze ve El Yapımı</p>
+                        <p>30 ₺ fark ile Dondurma</p>
+                        <p>40 ₺ fark ile Bol Çikolata</p>
                         <div class="price">165 ₺</div>
                     </div>
 
                     <div class="menu-item" onclick="showImage('helenistik')">
                         <h3>Helenistik</h3>
-                        <p>Taze ve El Yapımı</p>
+                        <p>Belçika Çikolatası, Çilek, Muz, Krem şanti ile birlikte Eşsiz Bir Tat</p>
                         <div class="price">170 ₺</div>
                     </div>
 
                     <div class="menu-item" onclick="showImage('dubaicikolatatatli')">
                         <h3>Dubai Çikolatası Tatlısı</h3>
-                        <p>Taze ve El Yapımı</p>
+                        <p>Dubai Çikolatası ve Kesme Dondurma ile servis edilir.</p>
                         <div class="price">210 ₺</div>
                     </div>
 
                     <div class="menu-item" onclick="showImage('dubaicikolata')">
                         <h3>Dubai Çikolatası</h3>
-                        <p>Taze ve El Yapımı</p>
+                        <p>El Yapımıdır.</p>
                         <div class="price">450 ₺</div>
                     </div>
 
                     <div class="menu-item" onclick="showImage('cheescake')">
                         <h3>Cheescake</h3>
-                        <p>Taze ve El Yapımı</p>
+                        <p>Frambuaz Püre, Böğürtlen Püre, Limon Püre ve 5 ₺ farkı ile Çilek Püre seçenekleri,</p>
+                        <p>Her birinde 5 ₺ fark ile; Sütlü Çikolata, Gold Çikolata ve Bitter Çikolata seçenekleri,</p>
+                        <p>5 ₺ fark ile; Kitkat ve 10 ₺ fark ile; Lotus </p>
+                        <p><i>(Bütün tercihler; bir seçenek ile sınırldır.)</i></p>
                         <div class="price">150 ₺</div>
                     </div>
 
                     <div class="menu-item" onclick="showImage('dondurmabrowni')">
                         <h3>Dondurmalı Browni</h3>
-                        <p>Taze ve El Yapımı</p>
                         <div class="price">160 ₺</div>
                     </div>
 
                     <div class="menu-item" onclick="showImage('malaga')">
                         <h3>Rose Malaga</h3>
-                        <p>Taze ve El Yapımı</p>
+                        <p>Kakaolu Kek, Pattisserie Krema, Muz ve Çikolata ile hazırlanır.</p>
+                        <div class="price">150 ₺</div>
+                    </div>
+
+                    <div class="menu-item" onclick="showImage('malaga')">
+                        <h3>TATLINI SEN YARAT</h3>
+                        <p>Lütfen kendi tatlınızı yaratmak için bu sekmeye tıklayın.</p>
                         <div class="price">150 ₺</div>
                     </div>
 
@@ -1155,7 +1196,10 @@
     <!-- Modal for Image -->
     <div id="modal" class="modal">
         <div class="modal-content">
-            <button class="close-btn" onclick="closeImage()">X</button>
+            <label class="close-btn" onclick="closeImage()">
+                <span class="line-top"></span>
+                <span class="line-bottom"></span>
+            </label>
             <div id="loadingSpinner" class="spinner"></div>
             <img id="modalImage" src="" alt="Product Image">
         </div>
