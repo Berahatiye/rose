@@ -101,17 +101,19 @@
         .menu-item {
             background-color: #fff;
             border-radius: 15px;
-            padding: 30px;
+            padding: 15px;
             text-align: center;
             box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
             transition: all 0.3s ease-in-out;
             cursor: pointer;
             position: relative;
             width: 75%;
+            justify-self: center;
+            align-content: center;
         }
 
         .menu-item:hover {
-            transform: translateY(-15px);
+            transform: translateY(-10px);
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
         }
 
@@ -289,8 +291,8 @@
         /* Stop Button */
         .stop-button {
             position: absolute;
-            top: 1px;
-            right: 1px;
+            top: 0;
+            right: 0;
             background-color: rgba(0, 0, 0, 0.6);
             color: white;
             border: none;
@@ -311,8 +313,8 @@
         .stop-message {
             display: none;
             position: absolute;
-            top: 1px;
-            right: 1px;
+            top: 0;
+            right: 0;
             font-size: 1rem;
             color: white;
             background-color: rgba(0, 0, 0, 0.7);
@@ -357,7 +359,7 @@
         /* Dots */
         .dot-container {
             position: absolute;
-            bottom: 0;
+            top: 0;
             left: 50%;
             transform: translateX(-50%);
             display: flex;
@@ -365,8 +367,8 @@
 
         .dot {
             height: 0.4rem;
-            width: 2.4rem;
-            margin: 0 5px;
+            width: 2.8rem;
+            margin: 0 2px;
             background-color: rgba(0, 0, 0, 0.5);
             border-radius: 50rem;
             display: inline-block;
@@ -444,8 +446,8 @@
             }
 
             .dot {
-                height: 0.5rem;
-                width: 3rem; 
+                height: 0.4rem;
+                width: 2.4rem; 
             }
 
 
@@ -983,7 +985,7 @@
             </div>
             <div class="menu-item" onclick="showImage('meyvesuyu')">
                 <h3>Meyve Suyu</h3>
-                <h3>Şeftali ve Karışık seçenekleriyle</h3>
+                <p>Şeftali ve Karışık seçenekleriyle</p>
                 <div class="price">50 ₺</div>
             </div>
             <div class="menu-item" onclick="showImage('redbull')">
@@ -1003,14 +1005,17 @@
 
                     <div class="menu-item" onclick="showImage('cikolatamilkshake')">
                         <h3>Çikolatalı Milkshake</h3>
+                        <p>Sütlü, Bitter ve Fildişi seçenekleriyle</p>
                         <div class="price">90 ₺</div>
                     </div>
                     <div class="menu-item" onclick="showImage('lotusmilkshake')">
                         <h3>Lotuslu Milkshake</h3>
+                        <p>Lotus Bisküvi ile Enfes Tat</p>
                         <div class="price">100 ₺</div>
                     </div>
                     <div class="menu-item" onclick="showImage('kitkatmilkshake')">
                         <h3>Kitkatlı Milkshake</h3>
+                        <p>Kitkat Bisküvi ile Enfes Tat</p>
                         <div class="price">100 ₺</div>
                     </div>
                     <div class="menu-item" onclick="showImage('cileklimilkshake')">
@@ -1031,18 +1036,22 @@
                     </div>
                     <div class="menu-item" onclick="showImage('cinshake')">
                         <h3>Cin Shake</h3>
+                        <p>Portakallı Bisküvi Tadında</p>
                         <div class="price">95 ₺</div>
                     </div>
                     <div class="menu-item" onclick="showImage('sogukcikolata')">
                         <h3>Soğuk Çikolata</h3>
+                        <p>Sütlü, Bitter veya Fildişi seçenekleriyle</p>
                         <div class="price">90 ₺</div>
                     </div>
                     <div class="menu-item" onclick="showImage('cikolatalifrozen')">
                         <h3>Çikolatalı Frozen</h3>
+                        <p>Sütlü, Bitter veya Fildişi seçenekleriyle</p>
                         <div class="price">90 ₺</div>
                     </div>
                     <div class="menu-item" onclick="showImage('meyvelifrozen')">
                         <h3>Meyveli Frozen</h3>
+                        <p>Frambuaz, Böğürtlen, Çilek veya Yeşil Elma seçenekleriyle</p>
                         <div class="price">90 ₺</div>
                     </div>
                     
@@ -1299,37 +1308,37 @@ function toggleContext(contextId) {
                     imageSrc = 'https://raw.githubusercontent.com/Berahatiye/rose/refs/heads/main/21-RedBull-scaled.jpeg';
                     break;
                     case 'cikolatamilkshake':
-                    imageSrc = 'https://raw.githubusercontent.com/Berahatiye/rose/refs/heads/main/21-RedBull-scaled.jpeg';
+                    imageSrc = 'https://raw.githubusercontent.com/Berahatiye/rose/refs/heads/main/7cikolatal%C4%B1.jpg';
                     break;
                     case 'lotusmilkshake':
-                    imageSrc = 'https://raw.githubusercontent.com/Berahatiye/rose/refs/heads/main/21-RedBull-scaled.jpeg';
+                    imageSrc = 'https://raw.githubusercontent.com/Berahatiye/rose/refs/heads/main/7cikolatal%C4%B1.jpg';
                     break;
                     case 'kitkatmilkshake':
-                    imageSrc = 'https://raw.githubusercontent.com/Berahatiye/rose/refs/heads/main/21-RedBull-scaled.jpeg';
+                    imageSrc = 'https://raw.githubusercontent.com/Berahatiye/rose/refs/heads/main/7cikolatal%C4%B1.jpg';
                     break;
                     case 'cileklimilkshake':
-                    imageSrc = 'https://raw.githubusercontent.com/Berahatiye/rose/refs/heads/main/21-RedBull-scaled.jpeg';
+                    imageSrc = 'https://raw.githubusercontent.com/Berahatiye/rose/refs/heads/main/2cilek.jpg';
                     break;
                     case 'bogurtlenmilkshake':
-                    imageSrc = 'https://raw.githubusercontent.com/Berahatiye/rose/refs/heads/main/21-RedBull-scaled.jpeg';
+                    imageSrc = 'https://raw.githubusercontent.com/Berahatiye/rose/refs/heads/main/3bogurtlen.jpg';
                     break;
                     case 'frambuazmilkshake':
-                    imageSrc = 'https://raw.githubusercontent.com/Berahatiye/rose/refs/heads/main/21-RedBull-scaled.jpeg';
+                    imageSrc = 'https://raw.githubusercontent.com/Berahatiye/rose/refs/heads/main/4frambuaz.jpg';
                     break;
                     case 'muzlumilkshake':
-                    imageSrc = 'https://raw.githubusercontent.com/Berahatiye/rose/refs/heads/main/21-RedBull-scaled.jpeg';
+                    imageSrc = 'https://raw.githubusercontent.com/Berahatiye/rose/refs/heads/main/5muz.jpg';
                     break;
                     case 'cinshake':
-                    imageSrc = 'https://raw.githubusercontent.com/Berahatiye/rose/refs/heads/main/21-RedBull-scaled.jpeg';
+                    imageSrc = 'https://raw.githubusercontent.com/Berahatiye/rose/refs/heads/main/6cinshake.jpg';
                     break;
                     case 'sogukcikolata':
-                    imageSrc = 'https://raw.githubusercontent.com/Berahatiye/rose/refs/heads/main/21-RedBull-scaled.jpeg';
+                    imageSrc = 'https://raw.githubusercontent.com/Berahatiye/rose/refs/heads/main/sogukcikolata.jpg';
                     break;
                     case 'cikolatalifrozen':
-                    imageSrc = 'https://raw.githubusercontent.com/Berahatiye/rose/refs/heads/main/21-RedBull-scaled.jpeg';
+                    imageSrc = 'https://raw.githubusercontent.com/Berahatiye/rose/refs/heads/main/cfrozen.jpg';
                     break;
                     case 'meyvelifrozen':
-                    imageSrc = 'https://raw.githubusercontent.com/Berahatiye/rose/refs/heads/main/21-RedBull-scaled.jpeg';
+                    imageSrc = 'https://raw.githubusercontent.com/Berahatiye/rose/refs/heads/main/frozen.jpg';
                     break;
                 default:
                     break;
