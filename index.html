@@ -125,6 +125,14 @@
             margin-top: 0;
         }
 
+        .h4h4 {
+            font-size: 1.8rem;
+            color: #777;
+            margin-bottom: 12px;
+            margin-top: 0;
+            border-bottom: 2px solid #777;
+        }
+
         .menu-item p {
             font-size: 1.1rem;
             color: #777;
@@ -136,6 +144,91 @@
             font-weight: bold;
             color: #5c4f3f;
         }
+
+
+
+        .tatlinikendinyarat {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            transition: opacity 0.3s ease-in-out;
+        }
+
+
+        .tatlinikendinyarat-content {
+            background-color: #fff;
+            border-radius: 15px;
+            padding: 20px;
+            max-width: 50%;
+            max-height: 80%;
+            overflow: auto;
+            position: relative;
+            margin-inline: auto;
+            top: 5vh;
+            text-align: center;
+        }
+
+
+        .close-btntatli {
+            position: absolute;
+            top: 2px;
+            right: 2px;
+            font-size: 2rem;
+            font-weight: bold;
+            color: #5c4f3f;
+            background: none;
+            border: none;
+            cursor: pointer;
+            transition: transform 0.15s ease-in-out;
+        }
+
+        .line-bottomtatli {
+        position: absolute;
+        height: 0.4rem;
+        background: #fa9db5;
+        width: 2.8rem;
+        transform: rotate(-45deg);
+        border-radius: 5px;
+        top: 1rem;
+        right: 0.1rem;
+        box-shadow: 0px 0px 3px 0px #fa9db5;
+    }
+
+    .line-toptatli {
+        position: absolute;
+        height: 0.4rem;
+        background: #fa9db5;
+        width: 2.8rem;
+        transform: rotate(45deg);
+        border-radius: 5px;
+        top: 1rem;
+        right: 0.1rem;
+        box-shadow: 0px 0px 3px 0px #fa9db5;
+    }
+
+
+
+        .close-btntatli:hover {
+            transform: scale(1.12);
+        }
+
+
+
+
+
+
+
+
+
+
+
 
         /* Modal */
         .modal {
@@ -197,7 +290,7 @@
         position: absolute;
         height: 0.4rem;
         background: #fa9db5;
-        width: 2rem;
+        width: 2.8rem;
         transform: rotate(-45deg);
         border-radius: 5px;
         top: 1rem;
@@ -209,7 +302,7 @@
         position: absolute;
         height: 0.4rem;
         background: #fa9db5;
-        width: 2rem;
+        width: 2.8rem;
         transform: rotate(45deg);
         border-radius: 5px;
         top: 1rem;
@@ -269,6 +362,10 @@
             .menu-item h3 {
                 font-size: 1.6rem;
             }
+
+            .h4h4 {
+            font-size: 1.4rem;
+        }
 
             .price {
                 font-size: 1.6rem;
@@ -1129,8 +1226,8 @@
 
                     <div class="menu-item" onclick="showImage('waffle')">
                         <h3>Waffle</h3>
-                        <p>30 ₺ fark ile Dondurma</p>
-                        <p>40 ₺ fark ile Bol Çikolata</p>
+                        <p><i>30 ₺ fark ile</i> Dondurma</p>
+                        <p><i>40 ₺ fark ile</i> Bol Çikolata</p>
                         <div class="price">165 ₺</div>
                     </div>
 
@@ -1156,7 +1253,7 @@
                         <h3>Cheescake</h3>
                         <p>Frambuaz Püre, Böğürtlen Püre, Limon Püre ve 5 ₺ farkı ile Çilek Püre seçenekleri,</p>
                         <p>Her birinde 5 ₺ fark ile; Sütlü Çikolata, Gold Çikolata ve Bitter Çikolata seçenekleri,</p>
-                        <p>5 ₺ fark ile; Kitkat ve 10 ₺ fark ile; Lotus </p>
+                        <p><i>5 ₺ fark ile;</i> Kitkat ve <i>10 ₺ fark ile;</i> Lotus </p>
                         <p><i>(Bütün tercihler; bir seçenek ile sınırldır.)</i></p>
                         <div class="price">150 ₺</div>
                     </div>
@@ -1172,11 +1269,90 @@
                         <div class="price">150 ₺</div>
                     </div>
 
-                    <div class="menu-item" onclick="showImage('malaga')">
+                    <div class="menu-item" onclick="openPopup('tatliniyarat')">
                         <h3>TATLINI SEN YARAT</h3>
                         <p>Lütfen kendi tatlınızı yaratmak için bu sekmeye tıklayın.</p>
-                        <div class="price">150 ₺</div>
+                        <div class="price">190 ₺</div>
                     </div>
+
+                    <div class="menu-item" onclick="showImage('chocotiramisu')">
+                        <h3>Rose Chocolate Tiramisu</h3>
+                        <p>Belçika Çikolata, Çilek, Muz, Kedidili, Kakao, Prenses Krema ve Espresso ile hazırlanan Eşsiz Bir Tat.</p>
+                        <div class="price">170 ₺</div>
+                    </div>
+
+                    <div class="menu-item" onclick="showImage('chocotiramisu')">
+                        <h3>CRO-WAFFLE</h3>
+                        <div class="h4h4">TATLI TABANI</div>
+                        <p><i>(Bir seçenek ile sınırlıdır.)</i></p>
+                        <p>Sütlü Belçika Çikolata, Bitter Belçika Çikolata, Gold Çikolata, Kitkat Çikolata, Lotus, Çilek Püre, Frambuaz Püre seçenekleriyle</p>
+
+                        <div class="h4h4">EXTRA</div>
+                        <p><i>30 ₺ fark ile;</i> Dondurma</p>
+                        <p><i>40 ₺ fark ile;</i> Bol Çikolata</p>
+
+                        <div class="price">190 ₺</div>
+                    </div>
+
+                    <div class="menu-item" onclick="showImage('rose-cro')">
+                        <h3>ROSE-CRO</h3>
+                        <p>Çilek, Muzlu, Çikolata ve kendi kremamızla hazırlanır.</p>
+                        <div class="price">175 ₺</div>
+                    </div>
+
+                    <div class="menu-item" onclick="showImage('cro-magnum')">
+                        <h3>CRO-MAGNUM</h3>
+                        <p>Kruvasan, Belçika Çikolatalı Krema ve Magnum ile hazırlanır.</p>
+                        <div class="price">190 ₺</div>
+                    </div>
+
+                    <div class="menu-item" onclick="showImage('croppuccino')">
+                        <h3>CROPPUCCİNO</h3>
+                        <p>Kruvasan, Belçika Çikolatası ve Cappuccino ile hazırlanır.</p>
+                        <div class="price">180 ₺</div>
+                    </div>
+
+                    <div class="menu-item" onclick="showImage('rose-cro-fondu')">
+                        <h3>ROSE-CRO FONDÜ</h3>
+                        <p>Çilek, Muz ve Çikolata ile servis edilir.</p>
+                        <div class="price">175 ₺</div>
+                    </div>
+
+                    <div class="menu-item" onclick="showImage('dondurmalisufle')">
+                        <h3>Dondurmalı Sufle</h3>
+                        <div class="price">160 ₺</div>
+                    </div>
+
+                    <div class="menu-item" onclick="showImage('katmer')">
+                        <h3>Katmer</h3>
+                        <div class="price">180 ₺</div>
+                    </div>
+
+                    <div class="menu-item" onclick="showImage('incirtatlisi')">
+                        <h3>İncir Tatlısı</h3>
+                        <div class="price">180 ₺</div>
+                    </div>
+
+                    <div class="menu-item" onclick="showImage('tekcikolatalifondu')">
+                        <h3>Tek Çikolatalı Fondü</h3>
+                        <div class="price">160 ₺</div>
+                    </div>
+
+                    <div class="menu-item" onclick="showImage('cikolatameyvecup')">
+                        <h3>Çikolata Meyveli Cup</h3>
+                        <div class="price">160 ₺</div>
+                    </div>
+
+                    <div class="menu-item" onclick="showImage('cilekcikolata')">
+                        <h3>Çilek Çikolata</h3>
+                        <div class="price">140 ₺</div>
+                    </div>
+
+                    <div class="menu-item" onclick="showImage('devilscake')">
+                        <h3>Devil's Cake</h3>
+                        <div class="price">160 ₺</div>
+                    </div>
+
 
                 </div>
             </div>
@@ -1202,6 +1378,45 @@
             </label>
             <div id="loadingSpinner" class="spinner"></div>
             <img id="modalImage" src="" alt="Product Image">
+        </div>
+    </div>
+
+
+    <div id="tatliniyarat" class="tatlinikendinyarat">
+        <div class="tatlinikendinyarat-content">
+            <label class="close-btntatli" onclick="closePopup()">
+                <span class="line-toptatli"></span>
+                <span class="line-bottomtatli"></span>
+            </label>
+            <h4>TATLI TABANI <i>(Bir seçenek tercihi ile sınırlıdır)</i></h4>
+            <p>Waffle Hamuru</p>
+            <p>Kruvasan <i>(15 ₺ fark ile)</i></p>
+            <p>Kakaolu Kek Parçaları</p>
+            <p>Profiterol Hamuru</p>
+
+            <h4>İÇ MALZEME <i>(Bir seçenek tercihi ile sınırlıdır)</i></h4>
+            <p>Prenses Krema (Pattisserie)</p>
+            <p>Krem Şanti</p>
+            <p>Vanilyalı Dondurma</p>
+            <p>Çilek Püre</p>
+            <p>Frambuaz Püre</p>
+
+            <h4>MEYVELER</h4>
+            <p>Çilek</p>
+            <p>Muz</p>
+
+            <h4>ÇİKOLATALAR <i>(Bir seçenek tercihi ile sınırlıdır)</i></h4>
+            <p>Sütlü Belçika Çikolatası</p>
+            <p>Bitter Belçika Çikolatası</p>
+            <p>Gold Çikolatası</p>
+            <p>Ganaj Çikolata</p>
+            <p>Lotus</p>
+            <p>Kitkat <i>(Belçika Çikolata ve Krema ile yapılır.)</i></p>
+
+            <h4>ÜST MALZEME</h4>
+            <p>Krep Kıtırı</p>
+            <p>Antep Fıstık Tozu</p>
+            <p>Ceviz</p>
         </div>
     </div>
 
@@ -1497,6 +1712,9 @@ function toggleContext(contextId) {
                     case 'malaga':
                     imageSrc = 'https://raw.githubusercontent.com/Berahatiye/rose/refs/heads/main/malaga.jpg';
                     break;
+                    case 'chocotiramisu':
+                    imageSrc = 'https://raw.githubusercontent.com/Berahatiye/rose/refs/heads/main/malaga.jpg';
+                    break;
                 default:
                     break;
             }
@@ -1525,10 +1743,17 @@ function toggleContext(contextId) {
 
 
 
+    // Function to open the popup
+    function openPopup() {
+      const popup = document.getElementById('tatliniyarat');
+      popup.style.display = 'block';
+    }
 
-
-
-
+    // Function to close the popup
+    function closePopup() {
+      const popup = document.getElementById('tatliniyarat');
+      popup.style.display = 'none';
+    }
 
 
 
