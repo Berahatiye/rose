@@ -668,6 +668,14 @@
             Dünya Kahveleri
         </div>
 
+        <div class="button" onclick="toggleContext('context4')">
+            Soğuk İçecekler
+        </div>
+
+
+
+
+
         <div class="contextorg">
             <p>Ürün sekmelerine tıklayarak örnek görsellere ulaşabilirsiniz, afiyet olsun.</p>
         </div>
@@ -875,6 +883,52 @@
         </div>
     </div>
 
+
+
+
+
+
+
+
+
+
+    <div class="context" id="context4">
+        <div class="menu-category">
+
+            <div class="menu-item" onclick="showImage('coollime')">
+                <h3>Cool Lime</h3>
+                <div class="price">65 ₺</div>
+            </div>
+            <div class="menu-item" onclick="showImage('bluesun')">
+                <h3>Blue Sun</h3>
+                <div class="price">70 ₺</div>
+            </div>
+            <div class="menu-item" onclick="showImage('limonata')">
+                <h3>Limonata</h3>
+                <div class="price">50 ₺</div>
+            </div>
+            <div class="menu-item" onclick="showImage('cileklilimonata')">
+                <h3>Çilekli Limonata</h3>
+                <div class="price">55 ₺</div>
+            </div>
+            <div class="menu-item" onclick="showImage('nanelilimonata')">
+                <h3>Naneli Limonata</h3>
+                <div class="price">55 ₺</div>
+            </div>
+            <div class="menu-item" onclick="showImage('dondurmalilimonata')">
+                <h3>Dondurmalı Limonata</h3>
+                <div class="price">65 ₺</div>
+            </div>
+            <div class="menu-item" onclick="showImage('cola')">
+                <h3>Cola</h3>
+                <div class="price">50 ₺</div>
+            </div>
+
+        </div>
+    </div>
+
+
+
     </section>
 
     <!-- Footer -->
@@ -1033,6 +1087,24 @@ function toggleContext(contextId) {
                     break;
                     case 'affogato':
                     imageSrc = 'https://raw.githubusercontent.com/Berahatiye/rose/refs/heads/main/11affogato.jpg';
+                    break;
+                    case 'filtrekahve':
+                    imageSrc = 'https://raw.githubusercontent.com/Berahatiye/rose/refs/heads/main/5americano.jpg';
+                    break;
+                    case 'aromalifiltrekahve':
+                    imageSrc = 'https://raw.githubusercontent.com/Berahatiye/rose/refs/heads/main/6sutluamericano.jpg';
+                    break;
+                    case 'icefiltrekahve':
+                    imageSrc = 'https://raw.githubusercontent.com/Berahatiye/rose/refs/heads/main/12%C4%B1cefiltre.jpg';
+                    break;
+                    case 'icelatte':
+                    imageSrc = 'https://raw.githubusercontent.com/Berahatiye/rose/refs/heads/main/13%C4%B1celatte.jpg';
+                    break;
+                    case 'icemocha':
+                    imageSrc = 'https://raw.githubusercontent.com/Berahatiye/rose/refs/heads/main/12%C4%B1cemocha.jpg';
+                    break;
+                    case 'icecaramelmacchiato':
+                    imageSrc = 'https://raw.githubusercontent.com/Berahatiye/rose/refs/heads/main/12%C4%B1cemocha.jpg';
                     break;
                 default:
                     break;
