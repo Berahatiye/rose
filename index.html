@@ -77,6 +77,10 @@
             padding: 0 20px;
         }
 
+        .kampan h2 {
+            border: none;
+        }
+
         h2 {
             margin-inline: auto;
             max-width: 85vh;
@@ -414,6 +418,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            border: 1px solid #F9F6EE;
         }
 
         /* Hide all images by default */
@@ -429,13 +434,12 @@
         /* Stop Button */
         .stop-button {
             position: absolute;
-            top: 0;
-            right: 0;
+            bottom: 0;
             background-color: rgba(0, 0, 0, 0.6);
             color: white;
             border: none;
             padding: 5px 10px;
-            font-size: 1rem;
+            font-size: 0.8rem;
             cursor: pointer;
             border-radius: 5px;
             z-index: 15;
@@ -451,9 +455,8 @@
         .stop-message {
             display: none;
             position: absolute;
-            top: 0;
-            right: 0;
-            font-size: 1rem;
+            bottom: 0;
+            font-size: 0.8rem;
             color: white;
             background-color: rgba(0, 0, 0, 0.7);
             padding: 5px 10px;
@@ -501,12 +504,13 @@
             left: 50%;
             transform: translateX(-50%);
             display: flex;
+            max-width: 96vh;
         }
 
         .dot {
-            height: 0.4rem;
-            width: 2.8rem;
-            margin: 0 2px;
+            height: 0.24rem;
+            width: 32vh;
+            margin: 0 1px;
             background-color: rgba(0, 0, 0, 0.5);
             border-radius: 50rem;
             display: inline-block;
@@ -528,23 +532,18 @@
                 font-size: 18px;
             }
 
+            .dot-container{
+                max-width: 81vh;
+            }
+
             .dot {
-                height: 0.6rem;
-                width: 3rem;
+                height: 0.3rem;
+                width: 27vh;
             }
 
 
             .slideshow-container {
-            position: relative;
             max-width: 90vh;
-            margin: auto;
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
-            margin-top: 9px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
         }
 
         /* Hide all images by default */
@@ -584,25 +583,17 @@
             }
 
             .dot {
-                height: 0.4rem;
-                width: 2.4rem; 
+                height: 0.2rem; 
             }
 
-
+            .dot-container{
+                max-width: 95%;
+            }
 
 
                /* Slideshow Container */
         .slideshow-container {
-            position: relative;
             max-width: 100%;
-            margin: auto;
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
-            margin-top: 9px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
         }
 
         /* Hide all images by default */
@@ -780,10 +771,10 @@
         </div>
 
         <!-- Stop Button -->
-        <button class="stop-button" onclick="stopSlideshow()">Durdur</button>
+        <button class="stop-button" onclick="stopSlideshow()">Otomatik Oynatmayı Durdur</button>
 
         <!-- Slideshow Message (Top-Right) -->
-        <div class="stop-message" id="stopMessage" onclick="resumeSlideshow()">Devam</div>
+        <div class="stop-message" id="stopMessage" onclick="resumeSlideshow()">Otomatik Oynatmatı Devam Ettir</div>
     </div>
 
 
