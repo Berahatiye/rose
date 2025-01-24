@@ -270,7 +270,7 @@
         }
 
         .modal img {
-            width: 50vh;
+            width: 60vh;
             height: auto;
             border-radius: 15px;
             display: none;
@@ -358,7 +358,7 @@
         /* Responsive Design */
         @media (max-width: 768px) {
             .menu-category {
-                grid-template-columns: 1fr 1fr;
+                grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
             }
         }
 
@@ -571,8 +571,6 @@
             display: none;
         }
     }
-
-
 
 
 
@@ -815,7 +813,25 @@
             Tostlar
         </div>
 
+        <div class="button" onclick="toggleContext('context8')">
+            Atıştırmalıklar
+        </div>
 
+        <div class="button" onclick="toggleContext('context9')">
+           Salatalar
+        </div>
+
+        <div class="button" onclick="toggleContext('context10')">
+            Makarnalar
+         </div>
+
+         <div class="button" onclick="toggleContext('context11')">
+            Pizzalar
+         </div>
+
+         <div class="button" onclick="toggleContext('context12')">
+            Kahvaltılar
+         </div>
 
         <div class="contextorg">
             <p>Ürün sekmelerine tıklayarak örnek görsellere ulaşabilirsiniz, afiyet olsun.</p>
@@ -1423,90 +1439,230 @@
             </div>
 
 
-            <div class="context" id="context7">
-                <div class="h4h4tost">Tost çeşitlerimizde <i><b>Yarım Porsiyon Seçeneği</b></i> mevcuttur.</div>
-               
+            <div class="context" id="context8">
                 <div class="menu-category">
 
-                    <div class="menu-item" onclick="showImage('karisiktost')">
-                        <h3>Karışık Tost</h3>
-                        <p>Sucuk, Kaşar, Salça, Ketçap, Mayonez, Rose Sos, Zeytin</p>
-                        <p><i>15 ₺ fark ile;</i> Extra Sos</p>
-                        <div class="price">125 ₺</div>
-                    </div>
-
-                    <div class="menu-item" onclick="showImage('kasarlitost')">
-                        <h3>Kaşarlı Tost</h3>
-                        <p>Kaşar, Salça, Ketçap, Mayonez, Rose Sos, Zeytin</p>
-                        <p><i>15 ₺ fark ile;</i> Extra Sos</p>
+                    <div class="menu-item" onclick="showImage('tonbaliksandwich')">
+                        <h3>Ton Balıklı Sandwich</h3>
                         <div class="price">115 ₺</div>
                     </div>
 
-                    <div class="menu-item" onclick="showImage('doublekasarlitost')">
-                        <h3>Double Kaşarlı Tost</h3>
-                        <p>Double Kaşar, Salça, Ketçap, Mayonez, Rose Sos, Zeytin</p>
-                        <p><i>15 ₺ fark ile;</i> Extra Sos</p>
-                        <div class="price">130 ₺</div>
+                    <div class="menu-item" onclick="showImage('soguksandwich')">
+                        <h3>Soğuk Sandwich</h3>
+                        <div class="price">100 ₺</div>
                     </div>
 
-                    <div class="menu-item" onclick="showImage('sucukluktost')">
-                        <h3>Sucuklu Tost</h3>
-                        <p>Sucuk, Salça, Ketçap, Mayonez, Rose Sos, Zeytin</p>
-                        <p><i>15 ₺ fark ile;</i> Extra Sos</p>
-                        <div class="price">120 ₺</div>
-                    </div>
-      
-                    <div class="menu-item" onclick="showImage('ucpeynirlitost')">
-                        <h3>Üç Peynirli Tost</h3>
-                        <p>Çoban Peynir, Kaşar, Cheddar Peynir, Mayonez, Rose Sos, Zeytin</p>
-                        <p><i>15 ₺ fark ile;</i> Extra Sos</p>
-                        <div class="price">130 ₺</div>
-                    </div>
-
-                    <div class="menu-item" onclick="showImage('feslegencobantost')">
-                        <h3>Fesleğen Çoban Peynirli Tost</h3>
-                        <p>Çoban Peynir, Kaşar, Cheddar Peynir, Fesleğen Sos, Mayonez, Rose Sos, Zeytin</p>
-                        <p><i>15 ₺ fark ile;</i> Extra Sos</p>
-                        <div class="price">130 ₺</div>
-                    </div>
-
-                    <div class="menu-item" onclick="showImage('fullkarisiktost')">
-                        <h3>Full Karışık Tost</h3>
-                        <p>Sucuk, Çoban Peynir, Kaşar, Cheddar Peynir, Felseğen Sos, Salça, Ketçap, Mayonez, Rose Sos, Zeytin</p>
-                        <p><i>15 ₺ fark ile;</i> Extra Sos</p>
-                        <div class="price">135 ₺</div>
-                    </div>
-
-                    <div class="menu-item" onclick="showImage('beyazpeynirlitost')">
-                        <h3>Beyaz Peynirli Tost</h3>
-                        <p>Çoban Peynir, Salça, Ketçap, Mayonez, Rose Sos, Zeytin</p>
-                        <p><i>15 ₺ fark ile;</i> Extra Sos</p>
-                        <div class="price">125 ₺</div>
-                    </div>
-
-                    <div class="menu-item" onclick="showImage('sebzelitost')">
-                        <h3>Sebzeli Tost</h3>
-                        <p>Kaşar, Köy Biber, Domates, Salça, Ketçap, Mayonez, Rose Sos, Zeytin</p>
-                        <p><i>15 ₺ fark ile;</i> Extra Sos</p>
-                        <div class="price">125 ₺</div>
-                    </div>
-
-                    <div class="menu-item" onclick="showImage('karisikkruvasantost')">
-                        <h3>Karışık Kruvasan Tost</h3>
-                        <p>Kaşar, Sucuk, Salça, Rose Sos, Zeytin</p>
-                        <p><i>15 ₺ fark ile;</i> Extra Sos</p>
-                        <div class="price">120 ₺</div>
-                    </div>
-
-                    <div class="menu-item" onclick="showImage('feslegenkruvasantost')">
-                        <h3>Fesleğenli Kruvasan Tost</h3>
-                        <p>Kaşar, Cheddar Peyniri, Fesleğen, Salça, Rose Sos, Zeytin</p>
-                        <p><i>15 ₺ fark ile;</i> Extra Sos</p>
-                        <div class="price">125 ₺</div>
+                    <div class="menu-item" onclick="showImage('elmadilimpatates')">
+                        <h3>Fırınd Elma Dilim Patates</h3>
+                        <div class="price">65 ₺</div>
                     </div>
 
                 </div>
             </div>
+
+
+
+            <div class="context" id="context9">
+                <div class="menu-category">
+
+                    <div class="menu-item" onclick="showImage('tonbaliksalata')">
+                        <h3>Ton Balıklı Salata/h3>
+                        <div class="price">170 ₺</div>
+                    </div>
+
+                    <div class="menu-item" onclick="showImage('beyazpeynirsalata')">
+                        <h3>Beyaz Peynirli Salata</h3>
+                        <div class="price">170 ₺</div>
+                    </div>
+
+                    <div class="menu-item" onclick="showImage('izgaratavuksalata')">
+                        <h3>Izgara Tavuk Salata</h3>
+                        <div class="price">170 ₺</div>
+                    </div>
+
+                    <div class="menu-item" onclick="showImage('citirtavuksalata')">
+                        <h3>Çıtır Tavuk Salata</h3>
+                        <p>Fırında pişirilir. Galeta unlu tavuk parçalrı ile servis edilir.</p>
+                        <div class="price">180 ₺</div>
+                    </div>
+
+                    <div class="menu-item" onclick="showImage('citirtavuk')">
+                        <h3>Çıtır Tavuk</h3>
+                        <p>Fırında pişirilir. Galeta unlu tavuk parçalrı ile servis edilir.</p>
+                        <div class="price">175 ₺</div>
+                    </div>
+
+                </div>
+            </div>
+
+
+
+
+
+            <div class="context" id="context10">
+                <div class="menu-category">
+
+                    <div class="menu-item" onclick="showImage('kremamantarmakarna')">
+                        <h3>Kremalı Mantarlı Makarna</h3>
+                        <div class="price">160 ₺</div>
+                    </div>
+
+                    <div class="menu-item" onclick="showImage('doritoslupennemakarna')">
+                        <h3>Doritoslu Penne Makarna</h3>
+                        <div class="price">160 ₺</div>
+                    </div>
+
+                    <div class="menu-item" onclick="showImage('manti')">
+                        <h3>Mantı</h3>
+                        <div class="price">160 ₺</div>
+                    </div>
+
+                    <div class="menu-item" onclick="showImage('sadenoodle')">
+                        <h3>Sade Noodle</h3>
+                        <div class="price">120 ₺</div>
+                    </div>
+
+                    <div class="menu-item" onclick="showImage('tonbaliklinoodle')">
+                        <h3>Ton Balıklı Noodle</h3>
+                        <div class="price">140 ₺</div>
+                    </div>
+
+                    <div class="menu-item" onclick="showImage('beyazpeynirlinoodle')">
+                        <h3>Beyaz Peynirli Noodle</h3>
+                        <div class="price">130 ₺</div>
+                    </div>
+
+                    <div class="menu-item" onclick="showImage('kozbiberlinoodle')">
+                        <h3>Köz Biberli Noodle</h3>
+                        <div class="price">135 ₺</div>
+                    </div>
+
+                </div>
+            </div>
+
+
+
+            <div class="context" id="context11">
+                <div class="menu-category">
+
+                    <div class="menu-item" onclick="showImage('karisikpizza')">
+                        <h3>Karışık Pizza</h3>
+                        <div class="price">160 ₺</div>
+                    </div>
+
+                    <div class="menu-item" onclick="showImage('sucuklupizza')">
+                        <h3>Sucuklu Pizza</h3>
+                        <div class="price">160 ₺</div>
+                    </div>
+
+                    <div class="menu-item" onclick="showImage('vejeteryanpizza')">
+                        <h3>Vejeteryan Pizza</h3>
+                        <div class="price">160 ₺</div>
+                    </div>
+
+                    <div class="menu-item" onclick="showImage('ucpeynirlipizza')">
+                        <h3>Üç Peynirli Pizza</h3>
+                        <div class="price">160 ₺</div>
+                    </div>
+
+                    <div class="menu-item" onclick="showImage('tonbaliklipizza')">
+                        <h3>Ton Balıklı Pizza</h3>
+                        <div class="price">165 ₺</div>
+                    </div>
+
+                    <div class="menu-item" onclick="showImage('margaritapizza')">
+                        <h3>Margarita Pizza</h3>
+                        <div class="price">160 ₺</div>
+                    </div>
+
+                    <div class="menu-item" onclick="showImage('margaritapizza')">
+                        <h3>PİZZANI SEN YARAT</h3>
+                        <div class="price">170 ₺</div>
+                    </div>
+
+                </div>
+            </div>
+
+
+
+
+
+
+
+            <div class="context" id="context12">
+                <div class="menu-category">
+
+                    <div class="menu-item" onclick="showImage('rosekahvalti')">
+                        <h3>Rose Kahvaltı</h3>
+                        <div class="price">200 ₺</div>
+                    </div>
+
+                    <div class="menu-item" onclick="showImage('simitkahvalti')">
+                        <h3>Simit Kahvaltı</h3>
+                        <div class="price">155 ₺</div>
+                    </div>
+
+                    <div class="menu-item" onclick="showImage('rosecrospecial')">
+                        <h3>ROSE-CRO Special</h3>
+                        <div class="price">155 ₺</div>
+                    </div>
+
+                    <div class="menu-item" onclick="showImage('feslegensimit')">
+                        <h3>Fesleğenli Simit Tabağı</h3>
+                        <div class="price">130 ₺</div>
+                    </div>
+
+                    
+                    <div class="menu-item" onclick="showImage('simittabagi')">
+                        <h3>Simit Tabağı</h3>
+                        <div class="price">135 ₺</div>
+                    </div>
+
+                    
+                    <div class="menu-item" onclick="showImage('menemen')">
+                        <h3>Menemen</h3>
+                        <div class="price">135 ₺</div>
+                    </div>
+
+                    
+                    <div class="menu-item" onclick="showImage('yumpat')">
+                        <h3>YUMPAT</h3>
+                        <div class="price">130 ₺</div>
+                    </div>
+
+                    
+                    <div class="menu-item" onclick="showImage('sahandayumurta')">
+                        <h3>Sahanda Yumurta</h3>
+                        <div class="price">110 ₺</div>
+                    </div>
+
+                    
+                    <div class="menu-item" onclick="showImage('omlet')">
+                        <h3>Omlet</h3>
+                        <div class="price">130 ₺</div>
+                    </div>
+
+                    
+                    <div class="menu-item" onclick="showImage('cikolatasimit')">
+                        <h3>Çikolata Simit</h3>
+                        <div class="price">115 ₺</div>
+                    </div>
+
+                    
+                    <div class="menu-item" onclick="showImage('kasarsimit')">
+                        <h3>Kaşar Simit</h3>
+                        <div class="price">115 ₺</div>
+                    </div>
+
+                    
+                    <div class="menu-item" onclick="showImage('simit')">
+                        <h3>Simit</h3>
+                        <div class="price">50 ₺</div>
+                    </div>
+
+                </div>
+            </div>
+
 
 
     </section>
@@ -1959,6 +2115,106 @@ function toggleContext(contextId) {
                     case 'feslegenkruvasantost':
                     imageSrc = 'https://raw.githubusercontent.com/Berahatiye/rose/refs/heads/main/feslegenkruvasantost.jpg';
                     break;
+                    case 'tonbaliksandwich':
+                    imageSrc = 'https://raw.githubusercontent.com/Berahatiye/rose/refs/heads/main/gorsel-eklenecek.jpg';
+                    break;
+                    case 'soguksandwich':
+                    imageSrc = 'https://raw.githubusercontent.com/Berahatiye/rose/refs/heads/main/gorsel-eklenecek.jpg';
+                    break;
+                    case 'elmadilimpatates':
+                    imageSrc = 'https://raw.githubusercontent.com/Berahatiye/rose/refs/heads/main/elma-dilim-patates.jpeg';
+                    break;
+                    case 'tonbaliksalata':
+                    imageSrc = 'https://raw.githubusercontent.com/Berahatiye/rose/refs/heads/main/tonbaliklisalata.jpeg';
+                    break;
+                    case 'beyazpeynirsalata':
+                    imageSrc = 'https://raw.githubusercontent.com/Berahatiye/rose/refs/heads/main/beyazsalata.jpeg';
+                    break;
+                    case 'izgaratavuksalata':
+                    imageSrc = 'https://raw.githubusercontent.com/Berahatiye/rose/refs/heads/main/gorsel-eklenecek.jpg';
+                    break;
+                    case 'citirtavuksalata':
+                    imageSrc = 'https://raw.githubusercontent.com/Berahatiye/rose/refs/heads/main/gorsel-eklenecek.jpg';
+                    break;
+                    case 'citirtavuk':
+                    imageSrc = 'https://raw.githubusercontent.com/Berahatiye/rose/refs/heads/main/citirtavuk.jpeg';
+                    break;
+                    case 'kremamantarmakarna':
+                    imageSrc = 'https://raw.githubusercontent.com/Berahatiye/rose/refs/heads/main/kremalimantarlimakarna.jpg';
+                    break;
+                    case 'doritoslupennemakarna':
+                    imageSrc = 'https://raw.githubusercontent.com/Berahatiye/rose/refs/heads/main/doritoslupennemakarna.jpg';
+                    break;
+                    case 'manti':
+                    imageSrc = 'https://raw.githubusercontent.com/Berahatiye/rose/refs/heads/main/manti.jpg';
+                    break;
+                    case 'sadenoodle':
+                    imageSrc = 'https://raw.githubusercontent.com/Berahatiye/rose/refs/heads/main/noddle.jpg';
+                    break;
+                    case 'tonbaliklinoodle':
+                    imageSrc = 'https://raw.githubusercontent.com/Berahatiye/rose/refs/heads/main/noddle.jpg';
+                    break;
+                    case 'beyazpeynirlinoodle':
+                    imageSrc = 'https://raw.githubusercontent.com/Berahatiye/rose/refs/heads/main/noddle.jpg';
+                    break;
+                    case 'kozbiberlinoodle':
+                    imageSrc = 'https://raw.githubusercontent.com/Berahatiye/rose/refs/heads/main/noddle.jpg';
+                    break;
+                    case 'karisikpizza':
+                    imageSrc = 'https://raw.githubusercontent.com/Berahatiye/rose/refs/heads/main/karisik.jpg';
+                    break;
+                    case 'sucuklupizza':
+                    imageSrc = 'https://raw.githubusercontent.com/Berahatiye/rose/refs/heads/main/sucuklu.jpg';
+                    break;
+                    case 'vejeteryanpizza':
+                    imageSrc = 'https://raw.githubusercontent.com/Berahatiye/rose/refs/heads/main/vejeteryan.jpg';
+                    break;
+                    case 'ucpeynirlipizza':
+                    imageSrc = 'https://raw.githubusercontent.com/Berahatiye/rose/refs/heads/main/ucpeynirli.jpg';
+                    break;
+                    case 'tonbaliklipizza':
+                    imageSrc = 'https://raw.githubusercontent.com/Berahatiye/rose/refs/heads/main/tonballikli.jpg';
+                    break;
+                    case 'margaritapizza':
+                    imageSrc = 'https://raw.githubusercontent.com/Berahatiye/rose/refs/heads/main/ucpeynirli.jpg';
+                    break;
+                    case 'rosekahvalti':
+                    imageSrc = '';
+                    break;
+                    case 'simitkahvalti':
+                    imageSrc = '';
+                    break;
+                    case 'rosecrospecial':
+                    imageSrc = '';
+                    break;
+                    case 'feslegensimit':
+                    imageSrc = '';
+                    break;
+                    case 'simittabagi':
+                    imageSrc = '';
+                    break;
+                    case 'menemen':
+                    imageSrc = '';
+                    break;
+                    case 'yumpat':
+                    imageSrc = '';
+                    break;
+                    case 'sahandayumurta':
+                    imageSrc = '';
+                    break;
+                    case 'omlet':
+                    imageSrc = '';
+                    break;
+                    case 'cikolatasimit':
+                    imageSrc = '';
+                    break;
+                    case 'kasarsimit':
+                    imageSrc = '';
+                    break;
+                    case 'simit':
+                    imageSrc = '';
+                    break;
+
                 default:
                     break;
             }
