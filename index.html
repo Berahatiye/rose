@@ -140,7 +140,7 @@
         }
 
         .price {
-            font-size: 1.6rem;
+            font-size: 1.8rem;
             font-weight: bold;
             color: #5c4f3f;
         }
@@ -191,9 +191,9 @@
 
         .line-bottomtatli {
         position: absolute;
-        height: 0.6rem;
+        height: 0.7rem;
         background: #fa9db5;
-        width: 3rem;
+        width: 3.2rem;
         transform: rotate(-45deg);
         border-radius: 5px;
         top: 1rem;
@@ -203,9 +203,9 @@
 
     .line-toptatli {
         position: absolute;
-        height: 0.6rem;
+        height: 0.7rem;
         background: #fa9db5;
-        width: 3rem;
+        width: 3.2rem;
         transform: rotate(45deg);
         border-radius: 5px;
         top: 1rem;
@@ -288,9 +288,9 @@
 
         .line-bottom {
         position: absolute;
-        height: 0.6rem;
+        height: 0.7rem;
         background: #fa9db5;
-        width: 3rem;
+        width: 3.2rem;
         transform: rotate(-45deg);
         border-radius: 5px;
         top: 1rem;
@@ -300,9 +300,9 @@
 
     .line-top {
         position: absolute;
-        height: 0.6rem;
+        height: 0.7rem;
         background: #fa9db5;
-        width: 3rem;
+        width: 3.2rem;
         transform: rotate(45deg);
         border-radius: 5px;
         top: 1rem;
@@ -804,6 +804,10 @@
 
         <div class="button" onclick="toggleContext('context6')">
             Tatlılar
+        </div>
+
+        <div class="button" onclick="toggleContext('context7')">
+            Tostlar
         </div>
 
 
@@ -1414,7 +1418,88 @@
             </div>
 
 
+            <div class="context" id="context7">
+                <div class="menu-category">
 
+                    <div class="menu-item" onclick="showImage('karisiktost')">
+                        <h3>Karışık Tost</h3>
+                        <p>Sucuk, Kaşar, Salça, Ketçap, Mayonez, Rose Sos, Zeytin</p>
+                        <p><i>15 ₺ fark ile;</i> Extra Sos</p>
+                        <div class="price">125 ₺</div>
+                    </div>
+
+                    <div class="menu-item" onclick="showImage('kasarlitost')">
+                        <h3>Kaşarlı Tost</h3>
+                        <p>Kaşar, Salça, Ketçap, Mayonez, Rose Sos, Zeytin</p>
+                        <p><i>15 ₺ fark ile;</i> Extra Sos</p>
+                        <div class="price">115 ₺</div>
+                    </div>
+
+                    <div class="menu-item" onclick="showImage('doublekasarlitost')">
+                        <h3>Double Kaşarlı Tost</h3>
+                        <p>Double Kaşar, Salça, Ketçap, Mayonez, Rose Sos, Zeytin</p>
+                        <p><i>15 ₺ fark ile;</i> Extra Sos</p>
+                        <div class="price">130 ₺</div>
+                    </div>
+
+                    <div class="menu-item" onclick="showImage('sucukluktost')">
+                        <h3>Sucuklu Tost</h3>
+                        <p>Sucuk, Salça, Ketçap, Mayonez, Rose Sos, Zeytin</p>
+                        <p><i>15 ₺ fark ile;</i> Extra Sos</p>
+                        <div class="price">120 ₺</div>
+                    </div>
+      
+                    <div class="menu-item" onclick="showImage('ucpeynirlitost')">
+                        <h3>Üç Peynirli Tost</h3>
+                        <p>Çoban Peynir, Kaşar, Cheddar Peynir, Mayonez, Rose Sos, Zeytin</p>
+                        <p><i>15 ₺ fark ile;</i> Extra Sos</p>
+                        <div class="price">130 ₺</div>
+                    </div>
+
+                    <div class="menu-item" onclick="showImage('feslegencobantost')">
+                        <h3>Fesleğen Çoban Peynirli Tost</h3>
+                        <p>Çoban Peynir, Kaşar, Cheddar Peynir, Fesleğen Sos, Mayonez, Rose Sos, Zeytin</p>
+                        <p><i>15 ₺ fark ile;</i> Extra Sos</p>
+                        <div class="price">130 ₺</div>
+                    </div>
+
+                    <div class="menu-item" onclick="showImage('fullkarisiktost')">
+                        <h3>Full Karışık Tost</h3>
+                        <p>Sucuk, Çoban Peynir, Kaşar, Cheddar Peynir, Felseğen Sos, Salça, Ketçap, Mayonez, Rose Sos, Zeytin</p>
+                        <p><i>15 ₺ fark ile;</i> Extra Sos</p>
+                        <div class="price">135 ₺</div>
+                    </div>
+
+                    <div class="menu-item" onclick="showImage('beyazpeynirlitost')">
+                        <h3>Beyaz Peynirli Tost</h3>
+                        <p>Çoban Peynir, Salça, Ketçap, Mayonez, Rose Sos, Zeytin</p>
+                        <p><i>15 ₺ fark ile;</i> Extra Sos</p>
+                        <div class="price">125 ₺</div>
+                    </div>
+
+                    <div class="menu-item" onclick="showImage('sebzelitost')">
+                        <h3>Sebzeli Tost</h3>
+                        <p>Kaşar, Köy Biber, Domates, Salça, Ketçap, Mayonez, Rose Sos, Zeytin</p>
+                        <p><i>15 ₺ fark ile;</i> Extra Sos</p>
+                        <div class="price">125 ₺</div>
+                    </div>
+
+                    <div class="menu-item" onclick="showImage('karisikkruvasantost')">
+                        <h3>Karışık Kruvasan Tost</h3>
+                        <p>Kaşar, Sucuk, Salça, Rose Sos, Zeytin</p>
+                        <p><i>15 ₺ fark ile;</i> Extra Sos</p>
+                        <div class="price">120 ₺</div>
+                    </div>
+
+                    <div class="menu-item" onclick="showImage('feslegenkruvasantost')">
+                        <h3>Karışık Kruvasan Tost</h3>
+                        <p>Kaşar, Cheddar Peyniri, Fesleğen, Salça, Rose Sos, Zeytin</p>
+                        <p><i>15 ₺ fark ile;</i> Extra Sos</p>
+                        <div class="price">125 ₺</div>
+                    </div>
+
+                </div>
+            </div>
 
 
     </section>
@@ -1799,12 +1884,72 @@ function toggleContext(contextId) {
                     imageSrc = 'https://raw.githubusercontent.com/Berahatiye/rose/refs/heads/main/tekcikolata.jpg';
                     break;
                     case 'cikolatameyvecup':
-                    imageSrc = '';
+                    imageSrc = 'https://raw.githubusercontent.com/Berahatiye/rose/refs/heads/main/cikolatalimeyvelicup.jpg';
                     break;
                     case 'cilekcikolata':
-                    imageSrc = '';
+                    imageSrc = 'https://raw.githubusercontent.com/Berahatiye/rose/refs/heads/main/cilekcklt.jpg';
                     break;
                     case 'devilscake':
+                    imageSrc = 'https://raw.githubusercontent.com/Berahatiye/rose/refs/heads/main/devils.jpg';
+                    break;
+                    case 'profiterol':
+                    imageSrc = 'https://raw.githubusercontent.com/Berahatiye/rose/refs/heads/main/profiterol.jpg';
+                    break;
+                    case 'churros':
+                    imageSrc = 'https://raw.githubusercontent.com/Berahatiye/rose/refs/heads/main/churros.jpg';
+                    break;
+                    case 'churrosbowl':
+                    imageSrc = 'https://raw.githubusercontent.com/Berahatiye/rose/refs/heads/main/churrosbowl.jpg';
+                    break;
+                    case 'dondurmaliislakkek':
+                    imageSrc = 'https://github.com/Berahatiye/rose/blob/main/dondurmaliislakkek.jpeg?raw=true';
+                    break;
+                    case 'kontes':
+                    imageSrc = 'https://raw.githubusercontent.com/Berahatiye/rose/refs/heads/main/kontes.jpg';
+                    break;
+                    case 'smoothiebowl':
+                    imageSrc = 'https://raw.githubusercontent.com/Berahatiye/rose/refs/heads/main/smootbownl.jpg';
+                    break;
+                    case 'chiapuding':
+                    imageSrc = 'https://raw.githubusercontent.com/Berahatiye/rose/refs/heads/main/ciapuding.jpg';
+                    break;
+                    case 'kurabiye':
+                    imageSrc = 'https://raw.githubusercontent.com/Berahatiye/rose/refs/heads/main/kurabiye.jpg';
+                    break;
+                    case 'sadedondurma':
+                    imageSrc = 'https://raw.githubusercontent.com/Berahatiye/rose/refs/heads/main/sadedondurma.png';
+                    break;
+                    case 'karisiktost':
+                    imageSrc = '';
+                    break;
+                    case 'kasarlitost':
+                    imageSrc = '';
+                    break;
+                    case 'doublekasarlitost':
+                    imageSrc = '';
+                    break;
+                    case 'sucuklutost':
+                    imageSrc = '';
+                    break;
+                    case 'ucpeynirlitost':
+                    imageSrc = '';
+                    break;
+                    case 'feslegencobantost':
+                    imageSrc = '';
+                    break;
+                    case 'fullkarisiktost':
+                    imageSrc = '';
+                    break;
+                    case 'beyazpeynirlitost':
+                    imageSrc = '';
+                    break;
+                    case 'sebzelitost':
+                    imageSrc = '';
+                    break;
+                    case 'karisikkruvasantost':
+                    imageSrc = '';
+                    break;
+                    case 'feslegenkruvasantost':
                     imageSrc = '';
                     break;
                 default:
