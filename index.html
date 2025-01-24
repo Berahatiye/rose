@@ -8,8 +8,72 @@
     <title>Rose Cafe Menu</title>
     <link rel="icon" type="image/x-icon" href="https://raw.githubusercontent.com/Berahatiye/rose/refs/heads/main/rosecafelogo.png">
     <style>
-
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
+
+
+
+        .sube{
+            display: block;
+            position: relative;
+        height: 2px;
+        background: #666666;
+        width: 40vh;
+        margin-inline: auto;
+        border-radius: 2px;
+        margin-top: 10px; 
+        margin-bottom: 10px;
+        }
+
+        .maps{
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background-color: #f5f5f7;
+            width: 32px;
+            height: 32px;
+            border-radius: 4px;
+            margin-inline: auto;
+            display: grid;
+            margin-top: 10px;
+        }
+
+        .subeler{
+            margin-top: 10px;
+        }
+
+        .cinarcik{
+            text-align: center;
+            margin-inline: auto;
+            font-weight: bolder;
+            color:#f5f5f7;
+        }
+
+
+        .cinarcikadres{
+            margin-top: 3px;
+            text-align: center;
+            margin-inline: auto;
+            font-weight: normal;
+            color: #f5f5f7;
+        }
+
+
+
+        .basarili{
+            text-align: center;
+            margin-inline: auto;
+            font-weight: bolder;
+            color:#f5f5f7;
+        }
+
+
+        .basariliadres{
+            margin-top: 3px;
+            text-align: center;
+            margin-inline: auto;
+            font-weight: normal;
+            color: #f5f5f7;
+        }
 
         /* Global Styles */
         body {
@@ -18,6 +82,8 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent !important;
+            outline: none !important;
         }
         
 
@@ -439,7 +505,7 @@
             color: white;
             border: none;
             padding: 5px 10px;
-            font-size: 0.8rem;
+            font-size: 0.9rem;
             cursor: pointer;
             border-radius: 5px;
             z-index: 15;
@@ -456,7 +522,7 @@
             display: none;
             position: absolute;
             bottom: 0;
-            font-size: 0.8rem;
+            font-size: 0.9rem;
             color: white;
             background-color: rgba(0, 0, 0, 0.7);
             padding: 5px 10px;
@@ -575,6 +641,12 @@
 
 
     @media (max-width: 480px) {
+        
+        .prev:active,
+        .next:active {
+            background-color: rgba(0, 0, 0, 0.6);
+        }
+
             .prev, .next {
         padding: 0.6rem;
         font-size: 1.8rem;
@@ -1325,7 +1397,7 @@
 
                     <div class="menu-item" onclick="openPopup('tatliniyarat')">
                         <h3>TATLINI SEN YARAT</h3>
-                        <p>Lütfen kendi tatlınızı yaratmak için bu sekmeye tıklayın.</p>
+                        <p>Malzeme Seçenekleri için lütfen bu sekmeye tıklayın.</p>
                         <div class="price">190 ₺</div>
                     </div>
 
@@ -1663,31 +1735,37 @@
 
                     <div class="menu-item" onclick="showImage('karisikpizza')">
                         <h3>Karışık Pizza</h3>
+                        <p>Sucuk, Salam, Sosis, Mantar, Zeytin, Mısır</p>
                         <div class="price">160 ₺</div>
                     </div>
 
                     <div class="menu-item" onclick="showImage('sucuklupizza')">
                         <h3>Sucuklu Pizza</h3>
+                        <p>Sucuk, Zeytin, Mısır</p>
                         <div class="price">160 ₺</div>
                     </div>
 
                     <div class="menu-item" onclick="showImage('vejeteryanpizza')">
                         <h3>Vejeteryan Pizza</h3>
+                        <p>Domates, Biber, Mantar, Zeytin, Mısır</p>
                         <div class="price">160 ₺</div>
                     </div>
 
                     <div class="menu-item" onclick="showImage('ucpeynirlipizza')">
                         <h3>Üç Peynirli Pizza</h3>
+                        <p>Cheddar Peyniri, Çoban Peyniri, Zeytin, Mısır</p>
                         <div class="price">160 ₺</div>
                     </div>
 
                     <div class="menu-item" onclick="showImage('tonbaliklipizza')">
                         <h3>Ton Balıklı Pizza</h3>
+                        <p>Ton Balık, Zeytin, Mısır</p>
                         <div class="price">165 ₺</div>
                     </div>
 
                     <div class="menu-item" onclick="showImage('margaritapizza')">
                         <h3>Margarita Pizza</h3>
+                        <p>Domates ile servis edilir.</p>
                         <div class="price">160 ₺</div>
                     </div>
 
@@ -1749,8 +1827,8 @@
                     
                     <div class="menu-item" onclick="showImage('yumpat')">
                         <h3>YUMPAT</h3>
-                        <div class="price">130 ₺</div>
                         <p>Patatesli Yumurta.</p>
+                        <div class="price">130 ₺</div>
                     </div>
 
                     
@@ -1799,7 +1877,24 @@
     <!-- Footer -->
     <footer>
         <img class="rosecafelogo" src="https://raw.githubusercontent.com/Berahatiye/rose/refs/heads/main/rosecafelogo.png" alt="Rose Cafe">
-        <p>&copy; 2025 Cosy Café. All rights reserved.</p>
+        <span class="sube"></span>
+        <div class="subeler">
+        <div class="basarili">ROSE CAFE Başarılı</div>
+        <div class="basariliadres">İstiklal, Başarılı Sk. No: 11-B</div>
+        <div class="maps"><a href="https://maps.app.goo.gl/Ry75dvzVQfvW7z1z7">
+            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="32" height="32" viewBox="0 0 48 48">
+            <path fill="#48b564" d="M35.76,26.36h0.01c0,0-3.77,5.53-6.94,9.64c-2.74,3.55-3.54,6.59-3.77,8.06	C24.97,44.6,24.53,45,24,45s-0.97-0.4-1.06-0.94c-0.23-1.47-1.03-4.51-3.77-8.06c-0.42-0.55-0.85-1.12-1.28-1.7L28.24,22l8.33-9.88	C37.49,14.05,38,16.21,38,18.5C38,21.4,37.17,24.09,35.76,26.36z"></path><path fill="#fcc60e" d="M28.24,22L17.89,34.3c-2.82-3.78-5.66-7.94-5.66-7.94h0.01c-0.3-0.48-0.57-0.97-0.8-1.48L19.76,15	c-0.79,0.95-1.26,2.17-1.26,3.5c0,3.04,2.46,5.5,5.5,5.5C25.71,24,27.24,23.22,28.24,22z"></path><path fill="#2c85eb" d="M28.4,4.74l-8.57,10.18L13.27,9.2C15.83,6.02,19.69,4,24,4C25.54,4,27.02,4.26,28.4,4.74z"></path><path fill="#ed5748" d="M19.83,14.92L19.76,15l-8.32,9.88C10.52,22.95,10,20.79,10,18.5c0-3.54,1.23-6.79,3.27-9.3	L19.83,14.92z"></path><path fill="#5695f6" d="M28.24,22c0.79-0.95,1.26-2.17,1.26-3.5c0-3.04-2.46-5.5-5.5-5.5c-1.71,0-3.24,0.78-4.24,2L28.4,4.74	c3.59,1.22,6.53,3.91,8.17,7.38L28.24,22z"></path>
+            </svg></a>
+        </div>
+        <span class="sube"></span>
+        <div class="cinarcik">ROSE CAFE Çınarcık</div>
+        <div class="cinarcikadres">İstiklal, Çınarcık Sk. No: 3-A</div>
+        <div class="maps"><a href="https://maps.app.goo.gl/NQVwgNaGJzhJoPrn8">
+            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="32" height="32" viewBox="0 0 48 48">
+            <path fill="#48b564" d="M35.76,26.36h0.01c0,0-3.77,5.53-6.94,9.64c-2.74,3.55-3.54,6.59-3.77,8.06	C24.97,44.6,24.53,45,24,45s-0.97-0.4-1.06-0.94c-0.23-1.47-1.03-4.51-3.77-8.06c-0.42-0.55-0.85-1.12-1.28-1.7L28.24,22l8.33-9.88	C37.49,14.05,38,16.21,38,18.5C38,21.4,37.17,24.09,35.76,26.36z"></path><path fill="#fcc60e" d="M28.24,22L17.89,34.3c-2.82-3.78-5.66-7.94-5.66-7.94h0.01c-0.3-0.48-0.57-0.97-0.8-1.48L19.76,15	c-0.79,0.95-1.26,2.17-1.26,3.5c0,3.04,2.46,5.5,5.5,5.5C25.71,24,27.24,23.22,28.24,22z"></path><path fill="#2c85eb" d="M28.4,4.74l-8.57,10.18L13.27,9.2C15.83,6.02,19.69,4,24,4C25.54,4,27.02,4.26,28.4,4.74z"></path><path fill="#ed5748" d="M19.83,14.92L19.76,15l-8.32,9.88C10.52,22.95,10,20.79,10,18.5c0-3.54,1.23-6.79,3.27-9.3	L19.83,14.92z"></path><path fill="#5695f6" d="M28.24,22c0.79-0.95,1.26-2.17,1.26-3.5c0-3.04-2.46-5.5-5.5-5.5c-1.71,0-3.24,0.78-4.24,2L28.4,4.74	c3.59,1.22,6.53,3.91,8.17,7.38L28.24,22z"></path>
+            </svg></a>
+        </div>
+        </div>
     </footer>
 
     <!-- Modal for Image -->
