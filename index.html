@@ -505,15 +505,18 @@
             color: white;
             border: none;
             padding: 5px 10px;
-            font-size: 0.9rem;
+            font-size: 1rem;
             cursor: pointer;
             border-radius: 5px;
             z-index: 15;
-            transition: background-color 0.3s;
+            transition: background-color 0.15s;
+            transition-behavior: normal;
+            transition-timing-function: ease;
+            transition-delay: 0s;
             font-weight: bold;
         }
 
-        .stop-button:hover {
+        .stop-button:active {
             background-color: rgba(0, 0, 0, 0.8);
         }
 
@@ -522,13 +525,21 @@
             display: none;
             position: absolute;
             bottom: 0;
-            font-size: 0.9rem;
+            font-size: 1rem;
             color: white;
             background-color: rgba(0, 0, 0, 0.7);
             padding: 5px 10px;
             border-radius: 5px;
             cursor: pointer;
             font-weight: bold;
+            transition: background-color 0.15s;
+            transition-behavior: normal;
+            transition-timing-function: ease;
+            transition-delay: 0s;
+        }
+
+        .stop-message:active {
+            background-color: rgba(0, 0, 0, 0.8);
         }
 
         /* Navigation Arrows */
@@ -539,28 +550,32 @@
             background-color: rgba(0, 0, 0, 0.4);
             color: white;
             border: none;
-            padding: 16px;
+            padding: 0.4rem;
             cursor: pointer;
-            font-size: 20px;
+            font-size: 3.2rem;
             font-weight: bold;
             border-radius: 1rem;
             z-index: 10;
-            transition: background-color 0.3s;
+            transition: background-color 0.15s;
+            transition-behavior: normal;
+            transition-timing-function: ease;
+            transition-delay: 0s;
+            text-align: center;
         }
 
         .prev {
-            left: 5px;
+            left: 2px;
             transform: translateY(-50%);
         }
 
         .next {
-            right: 5px;
+            right: 2px;
             transform: translateY(-50%);
         }
 
-        .prev:hover,
-        .next:hover {
-            background-color: rgba(0, 0, 0, 0.6);
+        .prev:active,
+        .next:active {
+            background-color: rgba(0, 0, 0, 0.8);
         }
 
         /* Dots */
@@ -590,21 +605,22 @@
 
 
 
+
         /* Responsive Design */
     @media (max-width: 768px) {
             .prev,
             .next {
-                padding: 12px;
-                font-size: 18px;
+                padding: 0.5rem;
+                font-size: 3rem;
             }
 
             .dot-container{
-                max-width: 81vh;
+                max-width: 72vh;
             }
 
             .dot {
                 height: 0.3rem;
-                width: 27vh;
+                width: 24vh;
             }
 
 
@@ -641,15 +657,10 @@
 
 
     @media (max-width: 480px) {
-        
-        .prev:active,
-        .next:active {
-            background-color: rgba(0, 0, 0, 0.6);
-        }
 
             .prev, .next {
-        padding: 0.6rem;
-        font-size: 1.8rem;
+        padding: 0.3rem;
+        font-size: 2.7rem;
             }
 
             .dot {
@@ -744,7 +755,7 @@
             border: none;
             border-radius: 5px;
             cursor: pointer;
-            transition: background-color 0.3s ease, transform 0.3s ease;
+            transition: background-color 0.15s ease, transform 0.15s ease;
             overflow: hidden;
             text-align: center; /* Align text to the left */
             margin-top: 5px;
@@ -753,13 +764,17 @@
             font-weight: bold;
             max-width: 85vh;
             margin-inline: auto;
-            transition: background-color 0.3s ease, transform 0.3s ease, height 0.3s ease; /* Add transition for height */
+            transition: background-color 0.15s ease, transform 0.15s ease, height 0.15s ease; /* Add transition for height */
             height: 30px; /* Initial height */
         }
 
-        .button:hover {
+        .button:active {
             background-color: #f799b1;
             transform: translateY(-2px);
+        }
+
+        .button-active{
+            background-color: #f799b1;
         }
 
         .button span {
@@ -2531,7 +2546,7 @@ function toggleContext(contextId) {
         function startSlideshow() {
             slideInterval = setInterval(function () {
                 plusSlides(1);
-            }, 5000);
+            }, 15000);
         }
 
         // Stop slideshow and display a message
@@ -2564,11 +2579,13 @@ buttons.forEach(button => {
     button.addEventListener('click', () => {
         // Add the "show-text" class to expand button and show the text
         button.classList.add('show-text');
+        button.classList.add('button-active');
 
         // Remove the class after 5 seconds to revert button to original height
         setTimeout(() => {
             button.classList.remove('show-text');
-        }, 2500); // Text visible for 5 seconds
+            button.classList.remove('button-active');
+        }, 5000);
     });
 });
         
