@@ -536,6 +536,7 @@
             transition-behavior: normal;
             transition-timing-function: ease;
             transition-delay: 0s;
+            z-index: 15;
         }
 
         .stop-message:active {
@@ -547,7 +548,7 @@
         .next {
             position: absolute;
             top: 50%;
-            background-color: rgba(0, 0, 0, 0.4);
+            background-color: transparent;
             color: white;
             border: none;
             padding: 0.4rem;
@@ -561,6 +562,8 @@
             transition-timing-function: ease;
             transition-delay: 0s;
             text-align: center;
+            width: 50%;
+            height: 100%;
         }
 
         .prev {
@@ -571,11 +574,6 @@
         .next {
             right: 2px;
             transform: translateY(-50%);
-        }
-
-        .prev:active,
-        .next:active {
-            background-color: rgba(0, 0, 0, 0.8);
         }
 
         /* Dots */
@@ -659,7 +657,7 @@
     @media (max-width: 480px) {
 
             .prev, .next {
-        padding: 0.3rem;
+        padding: 0.5rem;
         font-size: 2.7rem;
             }
 
@@ -862,8 +860,8 @@
         <img class="slide" src="https://raw.githubusercontent.com/Berahatiye/rose/refs/heads/main/Kampanya3ornek.jpg" alt="Campaign 3">
 
         <!-- Navigation Arrows -->
-        <button class="prev" onclick="plusSlides(-1)">&#10094;</button>
-        <button class="next" onclick="plusSlides(1)">&#10095;</button>
+        <button class="prev" onclick="plusSlides(-1)"> </button>
+        <button class="next" onclick="plusSlides(1)"> </button>
 
         <!-- Dots -->
         <div class="dot-container">
@@ -876,7 +874,7 @@
         <button class="stop-button" onclick="stopSlideshow()">Otomatik Oynatmayı Durdur</button>
 
         <!-- Slideshow Message (Top-Right) -->
-        <div class="stop-message" id="stopMessage" onclick="resumeSlideshow()">Otomatik Oynatmatı Devam Ettir</div>
+        <div class="stop-message" id="stopMessage" onclick="resumeSlideshow()">Otomatik Oynatmayı Devam Ettir</div>
     </div>
 
 
@@ -1967,28 +1965,24 @@
     <script>
 
 function toggleContext(contextId) {
-            // Get all context elements
-            const contexts = document.querySelectorAll('.context');
-            contexts.forEach(context => {
-                // If the context is not the one being clicked, hide it
-                if (context.id !== contextId) {
-                    context.classList.remove('show');
-                }
-            });
+    // Get all context elements
+    const contexts = document.querySelectorAll('.context');
+    contexts.forEach(context => {
+        // Hide all contexts except the clicked one
+        if (context.id !== contextId) {
+            context.classList.remove('show');
+        }
+    });
 
+    // Hide the contextorg element
+    const contextOrg = document.querySelector('.contextorg');
+    contextOrg.style.display = 'none';
 
-            const contextOrg = document.querySelector('.contextorg');
-            contextOrg.style.display = 'none'; // Hide the contextorg element
-
-
-            // Toggle the clicked context
-            const currentContext = document.getElementById(contextId);
-            if (currentContext.classList.contains('show')) {
-                currentContext.classList.remove('show');
-            } else {
-                currentContext.classList.add('show');
-            }
+    // Ensure the clicked context is shown
+    const currentContext = document.getElementById(contextId);
+    currentContext.classList.add('show'); // Always add the 'show' class
 }
+
 
 
 
