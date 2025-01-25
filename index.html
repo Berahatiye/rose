@@ -623,6 +623,7 @@
             transform: translateX(-50%);
             display: flex;
             max-width: 96vh;
+            z-index: 15;
         }
 
         .dot {
@@ -829,27 +830,11 @@
 
         .rosecafelogo {
             margin-inline: auto;
-            height: 5rem;
-            width: 5rem;
+            height: 5.6rem;
+            width: 5.6rem;
             border-radius: 50%;
         }
 
-        .contextorg {
-            display: grid; /* Initially hidden */
-            position: relative; /* Change to relative for better flow */
-            background-color: #F9F6EE;
-            padding: 10px;
-            border-radius: 5px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            margin-top: 1rem;
-            overflow: hidden; /* Hide overflow */
-            transition: opacity 0.3s ease, height 0.3s ease; /* Smooth transitions */
-            text-align: center;
-            color: #666666;
-            font-weight: bold;
-            font-family: 'Poppins', sans-serif;
-            font-size: 1rem;
-        }
 
 
         .context {
@@ -1878,10 +1863,6 @@
             </div>
         </div>
 
-        <div class="contextorg">
-            <p>Ürün sekmelerine tıklayarak örnek görsellere ulaşabilirsiniz, afiyet olsun.</p>
-        </div>
-
     </section>
 
     <!-- Footer -->
@@ -1979,10 +1960,6 @@ function toggleContext(contextId) {
             context.classList.remove('show');
         }
     });
-
-    // Hide the contextorg element
-    const contextOrg = document.querySelector('.contextorg');
-    contextOrg.style.display = 'none';
 
     // Toggle the clicked context
     const currentContext = document.getElementById(contextId);
