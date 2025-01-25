@@ -10,6 +10,13 @@
     <style>
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
 
+.button span{
+    color: #F9F6EE;
+    opacity: 0;
+    transition: opacity 0.15s ease;
+    display: block;
+    margin-top: 1px;
+}
 
 
         .sube{
@@ -23,6 +30,8 @@
         margin-top: 10px; 
         margin-bottom: 10px;
         }
+
+
 
         .maps{
             justify-content: center;
@@ -426,14 +435,40 @@
             .menu-category {
                 grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
             }
+
+            .button span {
+            font-size: 0.8rem;
         }
+
+        .button.show-text {
+            height: 50px; /* Height increases when clicked */
+        }
+
+        }
+
+        @media (min-width: 768px){
+            .button.show-text {
+            height: 45px; /* Height increases when clicked */
+        }
+
+        .button span {
+    font-size: 0.9rem;
+}
+        }
+
 
         @media (max-width: 480px) {
             .menu-category {
                 grid-template-columns: 1fr;
             }
-            
 
+            .button span {
+            font-size: 0.8rem;
+        }
+
+        .button.show-text {
+            height: 62px; /* Height increases when clicked */
+        }
 
             h2 {
                 font-size: 2.3rem;
@@ -779,13 +814,9 @@
             font-size: 0.9rem;
             color: #F9F6EE;
             opacity: 0; /* Initially hidden */
-            transition: opacity 0.3s ease;
+            transition: opacity 0.15s ease;
             display: block;
             margin-top: 1px; /* Space between button text and additional text */
-        }
-
-        .button.show-text {
-            height: 40px; /* Height increases when clicked */
         }
 
         .button.show-text span {
@@ -839,7 +870,7 @@
     </style>
 </head>
 
-<body>
+<body ontouchstart="">
 
     
     <div class="heado">
@@ -889,1001 +920,963 @@
         
         <div class="button" id="button1" onclick="toggleContext('context1')">
             Sıcak İçecekler
-            <span>Ürün Listesi Aşağıdadır.</span>
+            <span>Ürün sekmelerine tıklayarak örnek görsellere ulaşabilirsiniz, afiyet olsun.</span>
+        </div>
+
+        <div class="context" id="context1"> 
+            <div class="menu-category">
+                <div class="menu-item" onclick="showImage('cay')">
+                    <h3>Çay</h3>
+                    <div class="price">20 ₺</div>
+                </div>
+                <div class="menu-item" onclick="showImage('fincancay')">
+                    <h3>Fincan Çay</h3>
+                    <div class="price">24 ₺</div>
+                </div>
+                <div class="menu-item" onclick="showImage('sutlufincancay')">
+                    <h3>Sütlü Fincan Çay</h3>
+                    <div class="price">30 ₺</div>
+                </div>
+                <div class="menu-item" onclick="showImage('yesilcay')">
+                    <h3>Yeşil Çay</h3>
+                    <div class="price">65 ₺</div>
+                </div>
+                <div class="menu-item" onclick="showImage('kusburnu')">
+                    <h3>Kuşburnu</h3>
+                    <div class="price">65 ₺</div>
+                </div>
+                <div class="menu-item" onclick="showImage('adacayi')">
+                    <h3>Adaçayı</h3>
+                    <div class="price">65 ₺</div>
+                </div>
+                <div class="menu-item" onclick="showImage('ihlamur')">
+                    <h3>Ihlamur</h3>
+                    <div class="price">65 ₺</div>
+                </div>
+                <div class="menu-item" onclick="showImage('kiscayi')">
+                    <h3>Kış Çayı</h3>
+                    <div class="price">65 ₺</div>
+                </div>
+                <div class="menu-item" onclick="showImage('tazenanelimon')">
+                    <h3>Taze Nane Limon</h3>
+                    <div class="price">65 ₺</div>
+                </div>
+                <div class="menu-item" onclick="showImage('bogurtlen')">
+                    <h3>Böğürtlen</h3>
+                    <div class="price">65 ₺</div>
+                </div>
+                <div class="menu-item" onclick="showImage('sicaksut')">
+                    <h3>Sıcak Süt</h3>
+                    <div class="price">55 ₺</div>
+                </div>
+                <div class="menu-item" onclick="showImage('ballisut')">
+                    <h3>Ballı Süt</h3>
+                    <div class="price">65 ₺</div>
+                </div>
+                <div class="menu-item" onclick="showImage('salep')">
+                    <h3>Salep</h3>
+    
+                    <div class="price">70 ₺</div>
+                </div>
+                <div class="menu-item" onclick="showImage('cikolatasalep')">
+                    <h3>Çikolatalı Salep</h3>
+                    <p>Gerçek Çikolata ile Harmanlanmış Eşsiz Lezzet</p>
+                    <div class="price">80 ₺</div>
+                </div>
+                <div class="menu-item" onclick="showImage('sicakcikolata')">
+                    <h3>Sıcak Çikolata</h3>
+                    <p>Sütlü, Bitter veya Fildişi seçenekleriyle</p>
+                    <div class="price">80 ₺</div>
+                </div>
+                <div class="menu-item" onclick="showImage('turkkahvesicakcikolata')">
+                    <h3>Türk Kahveli Sıcak Çikolata</h3>
+                    <p>Sütlü, Bitter veya Fildişi seçenekleriyle</p>
+                    <div class="price">85 ₺</div>
+                </div>
+            </div>
         </div>
 
         <div class="button" id="button2" onclick="toggleContext('context2')">
             Türk Kahveleri
-            <span>Ürün Listesi Aşağıdadır.</span>
+            <span>Ürün sekmelerine tıklayarak örnek görsellere ulaşabilirsiniz, afiyet olsun.</span>
+        </div>
+
+        <div class="context" id="context2">
+            <div class="menu-category">
+                <div class="menu-item" onclick="showImage('turkkahvesi')">
+                    <h3>Türk Kahvesi</h3>
+                    <div class="price">50 ₺</div>
+                </div>
+                <div class="menu-item" onclick="showImage('cikolataliturkkahvesi')">
+                    <h3>Çikolatalı Türk Kahvesi</h3>
+                    <div class="price">55 ₺</div>
+                </div>
+                <div class="menu-item" onclick="showImage('sutluturkkahvesi')">
+                    <h3>Sütlü Türk Kahvesi</h3>
+                    <div class="price">55 ₺</div>
+                </div>
+                <div class="menu-item" onclick="showImage('damlaturkkahvesi')">
+                    <h3>Damla Sakızlı Türk Kahvesi</h3>
+                    <div class="price">55 ₺</div>
+                </div>
+                <div class="menu-item" onclick="showImage('dibekkahvesi')">
+                    <h3>Dibek Kahvesi</h3>
+                    <div class="price">55 ₺</div>
+                </div>
+                <div class="menu-item" onclick="showImage('antepfistikliturkkahvesi')">
+                    <h3>Antep Fıstıklı Türk Kahvesi</h3>
+                    <div class="price">55 ₺</div>
+                </div>
+                <div class="menu-item" onclick="showImage('doubleturkkahvesi')">
+                    <h3>Double Türk Kahvesi</h3>
+                    <div class="price">60 ₺</div>
+                </div>
+                <div class="menu-item" onclick="showImage('doubledibekkahvesi')">
+                    <h3>Double Türk Kahvesi</h3>
+                    <div class="price">65 ₺</div>
+                </div>
+                <div class="menu-item" onclick="showImage('doublecikolataliturkkahvesi')">
+                    <h3>Double Çikolatalı Türk Kahvesi</h3>
+                    <div class="price">70 ₺</div>
+                </div>
+                <div class="menu-item" onclick="showImage('doubledamlaturkkahvesi')">
+                    <h3>Double Damla Sakızlı Türk Kahvesi</h3>
+                    <div class="price">65 ₺</div>
+                </div>
+            </div>
         </div>
 
         <div class="button" id="button3" onclick="toggleContext('context3')">
             Dünya Kahveleri
-            <span>Ürün Listesi Aşağıdadır.</span>
+            <span>Ürün sekmelerine tıklayarak örnek görsellere ulaşabilirsiniz, afiyet olsun.</span>
+        </div>
+
+        <div class="context" id="context3">
+            <div class="menu-category">
+                <div class="menu-item" onclick="showImage('espresso')">
+                    <h3>Espresso</h3>
+                    <div class="price">55 ₺</div>
+                </div>
+                <div class="menu-item" onclick="showImage('doubleespresso')">
+                    <h3>Double Espresso</h3>
+                    <div class="price">65 ₺</div>
+                </div>
+                <div class="menu-item" onclick="showImage('latte')">
+                    <h3>Caffe Latte</h3>
+                    <p>Fındık, Irish, Caramel, Vanilya seçenekleriyle</p>
+                    <div class="price">80 ₺</div>
+                </div>
+                <div class="menu-item" onclick="showImage('cappuccino')">
+                    <h3>Caffe Cappuccino</h3>
+                    <div class="price">80 ₺</div>
+                </div>
+                <div class="menu-item" onclick="showImage('americano')">
+                    <h3>Americano</h3>
+                    <div class="price">75 ₺</div>
+                </div>
+                <div class="menu-item" onclick="showImage('sutluamericano')">
+                    <h3>Sütlü Americano</h3>
+                    <div class="price">80 ₺</div>
+                </div>
+                <div class="menu-item" onclick="showImage('caramelmaccioato')">
+                    <h3>Caramel Macchiato</h3>
+                    <div class="price">85 ₺</div>
+                </div>
+                <div class="menu-item" onclick="showImage('cafemocha')">
+                    <h3>Cafe Mocha</h3>
+                    <p>Sütlü, Bitter, Çikolata seçenekleriyle</p>
+                    <div class="price">90 ₺</div>
+                </div>
+                <div class="menu-item" onclick="showImage('espressoconpanna')">
+                    <h3>Espresso Con Panna</h3>
+                    <p>Çırpılmış krema ile tepesinde tek veya çift espresso ile birlikte</p>
+                    <div class="price">75 ₺</div>
+                </div>
+                <div class="menu-item" onclick="showImage('cortado')">
+                    <h3>Cortado</h3>
+                    <p>Espresso ve az miktarda sıcak süt ile</p>
+                    <div class="price">75 ₺</div>
+                </div>
+                <div class="menu-item" onclick="showImage('affogato')">
+                    <h3>Affogato</h3>
+                    <p>Dondurma üzerine sıcak espresso dökülerek hazırlanır</p>
+                    <div class="price">85 ₺</div>
+                </div>
+                <div class="menu-item" onclick="showImage('filtrekahve')">
+                    <h3>Filtre Kahve</h3>
+                    <div class="price">60 ₺</div>
+                </div>
+                <div class="menu-item" onclick="showImage('aromalifiltrekahve')">
+                    <h3>Aromalı Filtre Kahve</h3>
+                    <p>Sütlü, Fındık, Irish ve Çikolata seçenekleriyle</p>
+                    <div class="price">65 ₺</div>
+                </div>
+                <div class="menu-item" onclick="showImage('icefiltrekahve')">
+                    <h3>Ice Filtre Kahve</h3>
+                    <p>Sütlü, Fındık, Irish ve Çikolata seçenekleriyle</p>
+                    <div class="price">75 ₺</div>
+                </div>
+                <div class="menu-item" onclick="showImage('icelatte')">
+                    <h3>Ice Latte</h3>
+                    <p>Fındık, Irish ve Çikolata seçenekleriyle</p>
+                    <div class="price">85 ₺</div>
+                </div>
+                <div class="menu-item" onclick="showImage('icemocha')">
+                    <h3>Ice Mocha</h3>
+                    <p>Sütlü, Bitter ve Fildişi Çikolata seçenekleriyle</p>
+                    <div class="price">90 ₺</div>
+                </div>
+                <div class="menu-item" onclick="showImage('icecaramelmacchiato')">
+                    <h3>Ice Caramel Macchiato</h3>
+                    <div class="price">85 ₺</div>
+                </div>
+            </div>
         </div>
 
         <div class="button" id="button4" onclick="toggleContext('context4')">
             Soğuk İçecekler
-            <span>Ürün Listesi Aşağıdadır.</span>
+            <span>Ürün sekmelerine tıklayarak örnek görsellere ulaşabilirsiniz, afiyet olsun.</span>
+        </div>
+
+        <div class="context" id="context4">
+            <div class="menu-category">
+    
+                <div class="menu-item" onclick="showImage('coollime')">
+                    <h3>Cool Lime</h3>
+                    <p>Taze ve El Yapımı</p>
+                    <div class="price">65 ₺</div>
+                </div>
+                <div class="menu-item" onclick="showImage('bluesun')">
+                    <h3>Blue Sun</h3>
+                    <p>Taze ve El Yapımı</p>
+                    <div class="price">70 ₺</div>
+                </div>
+                <div class="menu-item" onclick="showImage('limonata')">
+                    <h3>Limonata</h3>
+                    <p>Taze ve El Yapımı Limonata</p>
+                    <div class="price">50 ₺</div>
+                </div>
+                <div class="menu-item" onclick="showImage('cileklilimonata')">
+                    <h3>Çilekli Limonata</h3>
+                    <p>Çilek ile harmanlanmış taze ve el yapımı limonata</p>
+                    <div class="price">55 ₺</div>
+                </div>
+                <div class="menu-item" onclick="showImage('nanelilimonata')">
+                    <h3>Naneli Limonata</h3>
+                    <p>Nane ile harmanlanmış taze ve el yapımı limonata</p>
+                    <div class="price">55 ₺</div>
+                </div>
+                <div class="menu-item" onclick="showImage('dondurmalilimonata')">
+                    <h3>Dondurmalı Limonata</h3>
+                    <p>Çilek, Frambuaz, Böğürtlen, Yeşil Elma seçenekleriyle</p>
+                    <div class="price">65 ₺</div>
+                </div>
+                <div class="menu-item" onclick="showImage('cola')">
+                    <h3>Cola</h3>
+                    <div class="price">50 ₺</div>
+                </div>
+                <div class="menu-item" onclick="showImage('sekersizcola')">
+                    <h3>Şekersiz Cola</h3>
+                    <div class="price">50 ₺</div>
+                </div>
+                <div class="menu-item" onclick="showImage('icetea')">
+                    <h3>Ice Tea</h3>
+                    <div class="price">50 ₺</div>
+                </div>
+                <div class="menu-item" onclick="showImage('soda')">
+                    <h3>Sade Soda</h3>
+                    <div class="price">35 ₺</div>
+                </div>
+                <div class="menu-item" onclick="showImage('tazemeyvelisoda')">
+                    <h3>Taze Meyveli Soda</h3>
+                    <div class="price">60 ₺</div>
+                </div>
+                <div class="menu-item" onclick="showImage('meyvelisoda')">
+                    <h3>Meyveli Soda</h3>
+                    <p>Elma ve Limon seçenekleriyle</p>
+                    <div class="price">40 ₺</div>
+                </div>
+                <div class="menu-item" onclick="showImage('churchill')">
+                    <h3>Churchill</h3>
+                    <div class="price">50 ₺</div>
+                </div>
+                <div class="menu-item" onclick="showImage('su')">
+                    <h3>Su</h3>
+                    <div class="price">20 ₺</div>
+                </div>
+                <div class="menu-item" onclick="showImage('portakalsu')">
+                    <h3>Sıkma Portakal Suyu</h3>
+                    <div class="price">75 ₺</div>
+                </div>
+                <div class="menu-item" onclick="showImage('limonlugazoz')">
+                    <h3>Limonlu Gazoz</h3>
+                    <div class="price">50 ₺</div>
+                </div>
+                <div class="menu-item" onclick="showImage('zencefilligazoz')">
+                    <h3>Zencefilli Gazoz</h3>
+                    <div class="price">50 ₺</div>
+                </div>
+                <div class="menu-item" onclick="showImage('ayran')">
+                    <h3>Ayran</h3>
+                    <div class="price">45 ₺</div>
+                </div>
+                <div class="menu-item" onclick="showImage('naneliayran')">
+                    <h3>Naneli Ayran</h3>
+                    <div class="price">55 ₺</div>
+                </div>
+                <div class="menu-item" onclick="showImage('meyvesuyu')">
+                    <h3>Meyve Suyu</h3>
+                    <p>Şeftali ve Karışık seçenekleriyle</p>
+                    <div class="price">50 ₺</div>
+                </div>
+                <div class="menu-item" onclick="showImage('redbull')">
+                    <h3>Red Bull</h3>
+                    <div class="price">75 ₺</div>
+                </div>
+    
+            </div>
         </div>
 
         <div class="button" id="button5" onclick="toggleContext('context5')">
             Milkshake
-            <span>Ürün Listesi Aşağıdadır.</span>
+            <span>Ürün sekmelerine tıklayarak örnek görsellere ulaşabilirsiniz, afiyet olsun.</span>
+        </div>
+
+        <div class="context" id="context5">
+            <div class="menu-category">
+
+                <div class="menu-item" onclick="showImage('cikolatamilkshake')">
+                    <h3>Çikolatalı Milkshake</h3>
+                    <p>Sütlü, Bitter ve Fildişi seçenekleriyle</p>
+                    <div class="price">90 ₺</div>
+                </div>
+                <div class="menu-item" onclick="showImage('lotusmilkshake')">
+                    <h3>Lotuslu Milkshake</h3>
+                    <p>Lotus Bisküvi ile Enfes Tat</p>
+                    <div class="price">100 ₺</div>
+                </div>
+                <div class="menu-item" onclick="showImage('kitkatmilkshake')">
+                    <h3>Kitkatlı Milkshake</h3>
+                    <p>Kitkat Bisküvi ile Enfes Tat</p>
+                    <div class="price">100 ₺</div>
+                </div>
+                <div class="menu-item" onclick="showImage('cileklimilkshake')">
+                    <h3>Çilekli Milkshake</h3>
+                    <div class="price">90 ₺</div>
+                </div>
+                <div class="menu-item" onclick="showImage('bogurtlenmilkshake')">
+                    <h3>Böğürtlen Milkshake</h3>
+                    <div class="price">90 ₺</div>
+                </div>
+                <div class="menu-item" onclick="showImage('frambuazmilkshake')">
+                    <h3>Frambuaz Milkshake</h3>
+                    <div class="price">90 ₺</div>
+                </div>
+                <div class="menu-item" onclick="showImage('muzlumilkshake')">
+                    <h3>Muzlu Milkshake</h3>
+                    <div class="price">90 ₺</div>
+                </div>
+                <div class="menu-item" onclick="showImage('cinshake')">
+                    <h3>Cin Shake</h3>
+                    <p>Portakallı Bisküvi Tadında</p>
+                    <div class="price">95 ₺</div>
+                </div>
+                <div class="menu-item" onclick="showImage('sogukcikolata')">
+                    <h3>Soğuk Çikolata</h3>
+                    <p>Sütlü, Bitter veya Fildişi seçenekleriyle</p>
+                    <div class="price">90 ₺</div>
+                </div>
+                <div class="menu-item" onclick="showImage('cikolatalifrozen')">
+                    <h3>Çikolatalı Frozen</h3>
+                    <p>Sütlü, Bitter veya Fildişi seçenekleriyle</p>
+                    <div class="price">90 ₺</div>
+                </div>
+                <div class="menu-item" onclick="showImage('meyvelifrozen')">
+                    <h3>Meyveli Frozen</h3>
+                    <p>Frambuaz, Böğürtlen, Çilek veya Yeşil Elma seçenekleriyle</p>
+                    <div class="price">90 ₺</div>
+                </div>
+                
+            </div>
         </div>
 
         <div class="button" id="button6" onclick="toggleContext('context6')">
             Tatlılar
-            <span>Ürün Listesi Aşağıdadır.</span>
+            <span>Ürün sekmelerine tıklayarak örnek görsellere ulaşabilirsiniz, afiyet olsun.</span>
+        </div>
+
+        <div class="context" id="context6">
+            <div class="menu-category">
+    
+                <div class="menu-item" onclick="showImage('magnolya')">
+                    <h3>Magnolya</h3>
+                    <p>Çilekli ve Muzlu seçenekleri,</p>
+                    <p>Sütlü Çikolata, Gold Çikolata ve Bitter Çikolata seçenekleri,</p>
+                    <p><i>10 ₺ fark karşılığında;</i> Lotuslu ve Kitkat seçenekleriyle birlikte.</p>
+                    <p><i>(Bütün tercihler; bir seçenek ile sınırldır.)</i></p>
+                    <div class="price">120 ₺</div>
+                </div>
+               
+                <div class="menu-item" onclick="showImage('madamerose')">
+                    <h3>Madame Rose</h3>
+                    <p>Sütlü Kakaolu Kek üzerinde; Belçika Çikolatalı Krema, Meyve Parçaları, Prenses Krema ve Krep Kıtırı ile.</p>
+                    <div class="price">160 ₺</div>
+                </div>
+    
+                <div class="menu-item" onclick="showImage('sansebastian')">
+                    <h3>San Sebastian</h3>
+                    <p>Sütlü Çikolata, Gold Çikolata ve Bitter Çikolata seçenekleriyle birlikte.</p>
+                    <p><i>(Bütün tercihler; bir seçenek ile sınırldır.)</i></p>
+                    <div class="price">160 ₺</div>
+                </div>
+
+                <div class="menu-item" onclick="showImage('rosespecial')">
+                    <h3>Rose Special</h3>
+                    <p>Ekler Hamuru, Pattisserie Krema, Çikolata ile;</p>
+                    <p>Çilek ve Muz seçenekleriyle birlikte.</p>
+                    <div class="price">170 ₺</div>
+                </div>
+
+                <div class="menu-item" onclick="showImage('waffle')">
+                    <h3>Waffle</h3>
+                    <p><i>30 ₺ fark ile</i> Dondurma</p>
+                    <p><i>40 ₺ fark ile</i> Bol Çikolata</p>
+                    <div class="price">165 ₺</div>
+                </div>
+
+                <div class="menu-item" onclick="showImage('helenistik')">
+                    <h3>Helenistik</h3>
+                    <p>Belçika Çikolatası, Çilek, Muz, Krem şanti ile birlikte Eşsiz Bir Tat</p>
+                    <div class="price">170 ₺</div>
+                </div>
+
+                <div class="menu-item" onclick="showImage('dubaicikolatatatli')">
+                    <h3>Dubai Çikolatası Tatlısı</h3>
+                    <p>Dubai Çikolatası ve Kesme Dondurma ile servis edilir.</p>
+                    <div class="price">210 ₺</div>
+                </div>
+
+                <div class="menu-item" onclick="showImage('dubaicikolata')">
+                    <h3>Dubai Çikolatası</h3>
+                    <p>El Yapımıdır.</p>
+                    <div class="price">450 ₺</div>
+                </div>
+
+                <div class="menu-item" onclick="showImage('cheescake')">
+                    <h3>Cheescake</h3>
+                    <p>Frambuaz Püre, Böğürtlen Püre, Limon Püre ve 5 ₺ farkı ile Çilek Püre seçenekleri,</p>
+                    <p>Her birinde 5 ₺ fark ile; Sütlü Çikolata, Gold Çikolata ve Bitter Çikolata seçenekleri,</p>
+                    <p><i>5 ₺ fark ile;</i> Kitkat ve <i>10 ₺ fark ile;</i> Lotus </p>
+                    <p><i>(Bütün tercihler; bir seçenek ile sınırldır.)</i></p>
+                    <div class="price">150 ₺</div>
+                </div>
+
+                <div class="menu-item" onclick="showImage('dondurmabrowni')">
+                    <h3>Dondurmalı Browni</h3>
+                    <div class="price">160 ₺</div>
+                </div>
+
+                <div class="menu-item" onclick="showImage('malaga')">
+                    <h3>Rose Malaga</h3>
+                    <p>Kakaolu Kek, Pattisserie Krema, Muz ve Çikolata ile hazırlanır.</p>
+                    <div class="price">150 ₺</div>
+                </div>
+
+                <div class="menu-item" onclick="openPopup('tatliniyarat')">
+                    <h3>TATLINI SEN YARAT</h3>
+                    <p>Malzeme Seçenekleri için lütfen bu sekmeye tıklayın.</p>
+                    <div class="price">190 ₺</div>
+                </div>
+
+                <div class="menu-item" onclick="showImage('chocotiramisu')">
+                    <h3>Rose Chocolate Tiramisu</h3>
+                    <p>Belçika Çikolata, Çilek, Muz, Kedidili, Kakao, Prenses Krema ve Espresso ile hazırlanan Eşsiz Bir Tat.</p>
+                    <div class="price">170 ₺</div>
+                </div>
+
+                <div class="menu-item" onclick="showImage('cro-waffle')">
+                    <h3>CRO-WAFFLE</h3>
+                    <div class="h4h4">TATLI TABANI</div>
+                    <p><i>(Bir seçenek ile sınırlıdır.)</i></p>
+                    <p>Sütlü Belçika Çikolata, Bitter Belçika Çikolata, Gold Çikolata, Kitkat Çikolata, Lotus, Çilek Püre, Frambuaz Püre seçenekleriyle</p>
+
+                    <div class="h4h4">EXTRA</div>
+                    <p><i>30 ₺ fark ile;</i> Dondurma</p>
+                    <p><i>40 ₺ fark ile;</i> Bol Çikolata</p>
+
+                    <div class="price">190 ₺</div>
+                </div>
+
+                <div class="menu-item" onclick="showImage('rose-cro')">
+                    <h3>ROSE-CRO</h3>
+                    <p>Çilek, Muz, Çikolata ve kendi kremamızla hazırlanır.</p>
+                    <div class="price">175 ₺</div>
+                </div>
+
+                <div class="menu-item" onclick="showImage('cro-magnum')">
+                    <h3>CRO-MAGNUM</h3>
+                    <p>Kruvasan, Belçika Çikolatalı Krema ve Magnum ile hazırlanır.</p>
+                    <div class="price">190 ₺</div>
+                </div>
+
+                <div class="menu-item" onclick="showImage('croppuccino')">
+                    <h3>CROPPUCCİNO</h3>
+                    <p>Kruvasan, Belçika Çikolatası ve Cappuccino ile hazırlanır.</p>
+                    <div class="price">180 ₺</div>
+                </div>
+
+                <div class="menu-item" onclick="showImage('rose-cro-fondu')">
+                    <h3>ROSE-CRO FONDÜ</h3>
+                    <p>Çilek, Muz ve Çikolata ile servis edilir.</p>
+                    <div class="price">175 ₺</div>
+                </div>
+
+                <div class="menu-item" onclick="showImage('dondurmalisufle')">
+                    <h3>Dondurmalı Sufle</h3>
+                    <div class="price">160 ₺</div>
+                </div>
+
+                <div class="menu-item" onclick="showImage('katmer')">
+                    <h3>Katmer</h3>
+                    <p>Dondurma ile servis edilir.</p>
+                    <div class="price">180 ₺</div>
+                </div>
+
+                <div class="menu-item" onclick="showImage('incirtatlisi')">
+                    <h3>İncir Tatlısı</h3>
+                    <p>Dondurma ile servis edilir.</p>
+                    <div class="price">180 ₺</div>
+                </div>
+
+                <div class="menu-item" onclick="showImage('tekcikolatalifondu')">
+                    <h3>Tek Çikolatalı Fondü</h3>
+                    <p>Sütlü ve Bitter seçenekleriyle</p>
+                    <div class="price">160 ₺</div>
+                </div>
+
+                <div class="menu-item" onclick="showImage('cikolatameyvecup')">
+                    <h3>Çikolata Meyveli Cup</h3>
+                    <div class="price">160 ₺</div>
+                </div>
+
+                <div class="menu-item" onclick="showImage('cilekcikolata')">
+                    <h3>Çilek Çikolata</h3>
+                    <div class="price">140 ₺</div>
+                </div>
+
+                <div class="menu-item" onclick="showImage('devilscake')">
+                    <h3>Devil's Cake</h3>
+                    <div class="price">160 ₺</div>
+                </div>
+                
+                <div class="menu-item" onclick="showImage('profiterol')">
+                    <h3>Profiterol</h3>
+                    <p>Sütlü ve Bitter seçenekleriyle</p>
+                    <div class="price">160 ₺</div>
+                </div>
+
+                <div class="menu-item" onclick="showImage('churros')">
+                    <h3>Churros</h3>
+                    <p>5 adet kızarmış Churros hamuru; Belçika çikolata ve Özel Rose Çikolata ile servis edilir.</p>
+                    <div class="price">160 ₺</div>
+                </div>
+
+                <div class="menu-item" onclick="showImage('churrosbowl')">
+                    <h3>Churros Bowl</h3>
+                    <p>Churros Parçaları ile hazırlanmış taban üzerinde; Çilek, Muz, ve Belçika Çİkolata ile servis edilir</p>
+                    <div class="price">160 ₺</div>
+                </div>
+
+                <div class="menu-item" onclick="showImage('dondurmaliislakkek')">
+                    <h3>Dondurmalı Islak Kek</h3>
+                    <p>Sütlü Kakaolu Kek üzerinde Özel Çikolata ve İki Top Sade Dondurma ile servis edilir</p>
+                    <div class="price">160 ₺</div>
+                </div>
+
+                <div class="menu-item" onclick="showImage('kontes')">
+                    <h3>Kontes</h3>
+                    <p>Sütlü Çikolata, tabak içinde; Krema, Meyve Parçaları, Prenses Krema, Kakaolu Kek Parçaları üzerinde Belçika Çikolata</p>
+                    <div class="price">160 ₺</div>
+                </div>
+
+                <div class="menu-item" onclick="showImage('smoothiebowl')">
+                    <h3>Smoothie Bowl</h3>
+                    <p>Diyet Tatlısıdır. Süzme Yoğurt, Bal, Muz, Çilek, Granola, Mavi Haşhaş ve Hindistan Cevizi ile hazırlanır.</p>
+                    <div class="price">180 ₺</div>
+                </div>
+
+                <div class="menu-item" onclick="showImage('chiapuding')">
+                    <h3>Chia Puding</h3>
+                    <p>Diyet Tatlısıdır. Çilek, Muz, Granol, Bal, Chia Puding, Ceviz ve Antep Fıstığı ile hazırlanır.</p>
+                    <div class="price">180 ₺</div>
+                </div>
+
+                <div class="menu-item" onclick="showImage('kurabiye')">
+                    <h3>Kurabiye</h3>
+                    <p>Zencefil ve Tarçınlı.</p>
+                    <div class="price">50 ₺</div>
+                </div>
+
+                <div class="menu-item" onclick="showImage('sadedondurma')">
+                    <h3>Sade Dondurma</h3>
+                    <p>Çikolata, Çilek, Frambuaz, Böğürtlen ve Karamel Sos seçenekleriyle Tek Top olarak servis edilir.</p>
+                    <div class="price">50 ₺</div>
+                </div>
+
+            </div>
         </div>
 
         <div class="button" id="button7" onclick="toggleContext('context7')">
             Tostlar
-            <span>Ürün Listesi Aşağıdadır.</span>
+            <span>Ürün sekmelerine tıklayarak örnek görsellere ulaşabilirsiniz, afiyet olsun.</span>
+        </div>
+
+        <div class="context" id="context7">
+            <div class="h4h4tost">Tost çeşitlerimizde <i><b>Yarım Porsiyon Seçeneği</b></i> mevcuttur.</div>
+           
+            <div class="menu-category">
+
+                <div class="menu-item" onclick="showImage('karisiktost')">
+                    <h3>Karışık Tost</h3>
+                    <p>Sucuk, Kaşar, Salça, Ketçap, Mayonez, Rose Sos, Zeytin</p>
+                    <p><i>15 ₺ fark ile;</i> Extra Sos</p>
+                    <div class="price">125 ₺</div>
+                </div>
+
+                <div class="menu-item" onclick="showImage('kasarlitost')">
+                    <h3>Kaşarlı Tost</h3>
+                    <p>Kaşar, Salça, Ketçap, Mayonez, Rose Sos, Zeytin</p>
+                    <p><i>15 ₺ fark ile;</i> Extra Sos</p>
+                    <div class="price">115 ₺</div>
+                </div>
+
+                <div class="menu-item" onclick="showImage('doublekasarlitost')">
+                    <h3>Double Kaşarlı Tost</h3>
+                    <p>Double Kaşar, Salça, Ketçap, Mayonez, Rose Sos, Zeytin</p>
+                    <p><i>15 ₺ fark ile;</i> Extra Sos</p>
+                    <div class="price">130 ₺</div>
+                </div>
+
+                <div class="menu-item" onclick="showImage('sucuklutost')">
+                    <h3>Sucuklu Tost</h3>
+                    <p>Sucuk, Salça, Ketçap, Mayonez, Rose Sos, Zeytin</p>
+                    <p><i>15 ₺ fark ile;</i> Extra Sos</p>
+                    <div class="price">120 ₺</div>
+                </div>
+  
+                <div class="menu-item" onclick="showImage('ucpeynirlitost')">
+                    <h3>Üç Peynirli Tost</h3>
+                    <p>Çoban Peynir, Kaşar, Cheddar Peynir, Mayonez, Rose Sos, Zeytin</p>
+                    <p><i>15 ₺ fark ile;</i> Extra Sos</p>
+                    <div class="price">130 ₺</div>
+                </div>
+
+                <div class="menu-item" onclick="showImage('feslegencobantost')">
+                    <h3>Fesleğen Çoban Peynirli Tost</h3>
+                    <p>Çoban Peynir, Kaşar, Cheddar Peynir, Fesleğen Sos, Mayonez, Rose Sos, Zeytin</p>
+                    <p><i>15 ₺ fark ile;</i> Extra Sos</p>
+                    <div class="price">130 ₺</div>
+                </div>
+
+                <div class="menu-item" onclick="showImage('fullkarisiktost')">
+                    <h3>Full Karışık Tost</h3>
+                    <p>Sucuk, Çoban Peynir, Kaşar, Cheddar Peynir, Felseğen Sos, Salça, Ketçap, Mayonez, Rose Sos, Zeytin</p>
+                    <p><i>15 ₺ fark ile;</i> Extra Sos</p>
+                    <div class="price">135 ₺</div>
+                </div>
+
+                <div class="menu-item" onclick="showImage('beyazpeynirlitost')">
+                    <h3>Beyaz Peynirli Tost</h3>
+                    <p>Çoban Peynir, Salça, Ketçap, Mayonez, Rose Sos, Zeytin</p>
+                    <p><i>15 ₺ fark ile;</i> Extra Sos</p>
+                    <div class="price">125 ₺</div>
+                </div>
+
+                <div class="menu-item" onclick="showImage('sebzelitost')">
+                    <h3>Sebzeli Tost</h3>
+                    <p>Kaşar, Köy Biber, Domates, Salça, Ketçap, Mayonez, Rose Sos, Zeytin</p>
+                    <p><i>15 ₺ fark ile;</i> Extra Sos</p>
+                    <div class="price">125 ₺</div>
+                </div>
+
+                <div class="menu-item" onclick="showImage('karisikkruvasantost')">
+                    <h3>Karışık Kruvasan Tost</h3>
+                    <p>Kaşar, Sucuk, Salça, Rose Sos, Zeytin</p>
+                    <p><i>15 ₺ fark ile;</i> Extra Sos</p>
+                    <div class="price">120 ₺</div>
+                </div>
+
+                <div class="menu-item" onclick="showImage('feslegenkruvasantost')">
+                    <h3>Fesleğenli Kruvasan Tost</h3>
+                    <p>Kaşar, Cheddar Peyniri, Fesleğen, Salça, Rose Sos, Zeytin</p>
+                    <p><i>15 ₺ fark ile;</i> Extra Sos</p>
+                    <div class="price">125 ₺</div>
+                </div>
+
+            </div>
         </div>
 
         <div class="button" id="button8" onclick="toggleContext('context8')">
             Atıştırmalıklar
-            <span>Ürün Listesi Aşağıdadır.</span>
+            <span>Ürün sekmelerine tıklayarak örnek görsellere ulaşabilirsiniz, afiyet olsun.</span>
+        </div>
+
+        <div class="context" id="context8">
+            <div class="menu-category">
+
+                <div class="menu-item" onclick="showImage('tonbaliksandwich')">
+                    <h3>Ton Balıklı Sandwich</h3>
+                    <div class="price">115 ₺</div>
+                </div>
+
+                <div class="menu-item" onclick="showImage('soguksandwich')">
+                    <h3>Soğuk Sandwich</h3>
+                    <div class="price">100 ₺</div>
+                </div>
+
+                <div class="menu-item" onclick="showImage('elmadilimpatates')">
+                    <h3>Fırınd Elma Dilim Patates</h3>
+                    <div class="price">65 ₺</div>
+                </div>
+
+            </div>
         </div>
 
         <div class="button" id="button9" onclick="toggleContext('context9')">
            Salatalar
-           <span>Ürün Listesi Aşağıdadır.</span>
+           <span>Ürün sekmelerine tıklayarak örnek görsellere ulaşabilirsiniz, afiyet olsun.</span>
+        </div>
+
+        <div class="context" id="context9">
+            <div class="menu-category">
+
+                <div class="menu-item" onclick="showImage('tonbaliksalata')">
+                    <h3>Ton Balıklı Salata</h3>
+                    <div class="price">170 ₺</div>
+                </div>
+
+                <div class="menu-item" onclick="showImage('beyazpeynirsalata')">
+                    <h3>Beyaz Peynirli Salata</h3>
+                    <div class="price">170 ₺</div>
+                </div>
+
+                <div class="menu-item" onclick="showImage('izgaratavuksalata')">
+                    <h3>Izgara Tavuk Salata</h3>
+                    <div class="price">170 ₺</div>
+                </div>
+
+                <div class="menu-item" onclick="showImage('citirtavuksalata')">
+                    <h3>Çıtır Tavuk Salata</h3>
+                    <p>Fırında pişirilir. Galeta unlu tavuk parçalrı ile servis edilir.</p>
+                    <div class="price">180 ₺</div>
+                </div>
+
+                <div class="menu-item" onclick="showImage('citirtavuk')">
+                    <h3>Çıtır Tavuk</h3>
+                    <p>Fırında pişirilir. Galeta unlu tavuk parçalrı ile servis edilir.</p>
+                    <div class="price">175 ₺</div>
+                </div>
+
+            </div>
         </div>
 
         <div class="button" id="button10" onclick="toggleContext('context10')">
             Makarnalar
-            <span>Ürün Listesi Aşağıdadır.</span>
+            <span>Ürün sekmelerine tıklayarak örnek görsellere ulaşabilirsiniz, afiyet olsun.</span>
          </div>
+
+         <div class="context" id="context10">
+            <div class="menu-category">
+
+                <div class="menu-item" onclick="showImage('kremamantarmakarna')">
+                    <h3>Kremalı Mantarlı Makarna</h3>
+                    <div class="price">160 ₺</div>
+                </div>
+
+                <div class="menu-item" onclick="showImage('doritoslupennemakarna')">
+                    <h3>Doritoslu Penne Makarna</h3>
+                    <p>Penne Makarna, Tereyağlı Mantar ve Krema ile hazırlanır. Mozarella Peyniri ile servis edilir.</p>
+                    <div class="price">160 ₺</div>
+                </div>
+
+                <div class="menu-item" onclick="showImage('manti')">
+                    <h3>Mantı</h3>
+                    <p>Penne Makarna Tereyağlı Domates ve Krema ile hazırlanır. Mozarella Peyniri ve Doritos ile servis edilir.</p>
+                    <div class="price">160 ₺</div>
+                </div>
+
+                <div class="menu-item" onclick="showImage('sadenoodle')">
+                    <h3>Sade Noodle</h3>
+                    <p>Cevizli Balkan Soslu olarak servis edilir.</p>
+                    <div class="price">120 ₺</div>
+                </div>
+
+                <div class="menu-item" onclick="showImage('tonbaliklinoodle')">
+                    <h3>Ton Balıklı Noodle</h3>
+                    <div class="price">140 ₺</div>
+                </div>
+
+                <div class="menu-item" onclick="showImage('beyazpeynirlinoodle')">
+                    <h3>Beyaz Peynirli Noodle</h3>
+                    <div class="price">130 ₺</div>
+                </div>
+
+                <div class="menu-item" onclick="showImage('kozbiberlinoodle')">
+                    <h3>Köz Biberli Noodle</h3>
+                    <div class="price">135 ₺</div>
+                </div>
+
+            </div>
+        </div>
 
          <div class="button" id="button11" onclick="toggleContext('context11')">
             Pizzalar
-            <span>Ürün Listesi Aşağıdadır.</span>
+            <span>Ürün sekmelerine tıklayarak örnek görsellere ulaşabilirsiniz, afiyet olsun.</span>
          </div>
+
+         
+         <div class="context" id="context11">
+            <div class="menu-category">
+
+                <div class="menu-item" onclick="showImage('karisikpizza')">
+                    <h3>Karışık Pizza</h3>
+                    <p>Sucuk, Salam, Sosis, Mantar, Zeytin, Mısır</p>
+                    <div class="price">160 ₺</div>
+                </div>
+
+                <div class="menu-item" onclick="showImage('sucuklupizza')">
+                    <h3>Sucuklu Pizza</h3>
+                    <p>Sucuk, Zeytin, Mısır</p>
+                    <div class="price">160 ₺</div>
+                </div>
+
+                <div class="menu-item" onclick="showImage('vejeteryanpizza')">
+                    <h3>Vejeteryan Pizza</h3>
+                    <p>Domates, Biber, Mantar, Zeytin, Mısır</p>
+                    <div class="price">160 ₺</div>
+                </div>
+
+                <div class="menu-item" onclick="showImage('ucpeynirlipizza')">
+                    <h3>Üç Peynirli Pizza</h3>
+                    <p>Cheddar Peyniri, Çoban Peyniri, Zeytin, Mısır</p>
+                    <div class="price">160 ₺</div>
+                </div>
+
+                <div class="menu-item" onclick="showImage('tonbaliklipizza')">
+                    <h3>Ton Balıklı Pizza</h3>
+                    <p>Ton Balık, Zeytin, Mısır</p>
+                    <div class="price">165 ₺</div>
+                </div>
+
+                <div class="menu-item" onclick="showImage('margaritapizza')">
+                    <h3>Margarita Pizza</h3>
+                    <p>Domates ile servis edilir.</p>
+                    <div class="price">160 ₺</div>
+                </div>
+
+                <div class="menu-item" onclick="showImage('margaritapizza')">
+                    <h3>PİZZANI SEN YARAT</h3>
+                    <div class="price">170 ₺</div>
+                </div>
+
+            </div>
+        </div>
 
          <div class="button" id="button12" onclick="toggleContext('context12')">
             Kahvaltılar
-            <span>Ürün Listesi Aşağıdadır.</span>
+            <span>Ürün sekmelerine tıklayarak örnek görsellere ulaşabilirsiniz, afiyet olsun.</span>
          </div>
+
+         <div class="context" id="context12">
+            <div class="menu-category">
+
+                <div class="menu-item" onclick="showImage('rosekahvalti')">
+                    <h3>Rose Kahvaltı</h3>
+                    <p>Beyaz Peynir, Kaşar Peyniri, Çeçil Peynir, Yeşil Zeytin, Siyah Zeytin, Bal, Reçel, Rose Sos, Patates, Sucuk, Özel Soslu Sosis, Dilim Salam, Tereyağ, Domates, Salatalık, Simit, Sahanda veya Haşlanmış Yumurta, Dilim Portakal, Ceviz, Kızarmış Ekmek, 1 adet Çay ile servis edilir.</p>
+                    <div class="price">200 ₺</div>
+                </div>
+
+                <div class="menu-item" onclick="showImage('simitkahvalti')">
+                    <h3>Simit Kahvaltı</h3>
+                    <p>Simit, Kaşar Peyniri, Beyaz Peynir, Yumurta, Rose Sos, Reçel, Domates, Salatalık, Zeytin ve 1 adet Çay ile servis edilir.</p>
+                    <div class="price">155 ₺</div>
+                </div>
+
+                <div class="menu-item" onclick="showImage('rosecrospecial')">
+                    <h3>ROSE-CRO Special</h3>
+                    <p>Kruvasan içeriğinde; Kaşar, Cheddar, Fesleğen Sos ve Yumurta yanında Rose Sos, Zeytin ve 1 adet Çay ile servis edilir.</p>
+                    <div class="price">155 ₺</div>
+                </div>
+
+                <div class="menu-item" onclick="showImage('feslegensimit')">
+                    <h3>Fesleğenli Simit Tabağı</h3>
+                    <p>Fesleğenli Simit, Beyaz Peynir, Rose Sos, Zeytin ve 1 adet Çay ile servis edilir.</p>
+                    <div class="price">130 ₺</div>
+                </div>
+
+                
+                <div class="menu-item" onclick="showImage('simittabagi')">
+                    <h3>Simit Tabağı</h3>
+                    <p>Simit, Beyaz Peynir, Rose Sos, Zeytin ve 1 adet Çay ile servis edilir.</p>
+                    <div class="price">135 ₺</div>
+                </div>
+
+                
+                <div class="menu-item" onclick="showImage('menemen')">
+                    <h3>Menemen</h3>
+                    <p>Karışık, Saçarlı, Sucuklu seçenekleriyle</p>
+                    <div class="price">135 ₺</div>
+                </div>
+
+                
+                <div class="menu-item" onclick="showImage('yumpat')">
+                    <h3>YUMPAT</h3>
+                    <p>Patatesli Yumurta.</p>
+                    <div class="price">130 ₺</div>
+                </div>
+
+                
+                <div class="menu-item" onclick="showImage('sahandayumurta')">
+                    <h3>Sahanda Yumurta</h3>
+                    <p>Tereyağlı Sahanda Yumurta</p>
+                    <p><i>15 ₺ fark ile;</i> Çift Yumurtalı</p>
+                    <div class="price">110 ₺</div>
+                </div>
+
+                
+                <div class="menu-item" onclick="showImage('omlet')">
+                    <h3>Omlet</h3>
+                    <p>Karışık, Kaşarlı, Sucuklu, Mantarlı seçenekleriyle.</p>
+                    <div class="price">130 ₺</div>
+                </div>
+
+                
+                <div class="menu-item" onclick="showImage('cikolatasimit')">
+                    <h3>Çikolata Simit</h3>
+                    <p>Simit, Çikolata ve 1 adet Çay ile servis edilir.</p>
+                    <div class="price">115 ₺</div>
+                </div>
+
+                
+                <div class="menu-item" onclick="showImage('kasarsimit')">
+                    <h3>Kaşar Simit</h3>
+                    <p>1 adet Çay, Simit Arası Kaşar, Rose Sos, ve Zeytin ile servis edilir.</p>
+                    <div class="price">115 ₺</div>
+                </div>
+
+                
+                <div class="menu-item" onclick="showImage('simit')">
+                    <h3>Simit</h3>
+                    <p>Simit, Rose Sos ile servis edilir.</p>
+                    <div class="price">50 ₺</div>
+                </div>
+
+            </div>
+        </div>
 
         <div class="contextorg">
             <p>Ürün sekmelerine tıklayarak örnek görsellere ulaşabilirsiniz, afiyet olsun.</p>
         </div>
-
-        <!-- Drinks -->
-    <div class="context" id="context1"> 
-        <div class="menu-category">
-            <div class="menu-item" onclick="showImage('cay')">
-                <h3>Çay</h3>
-                <div class="price">20 ₺</div>
-            </div>
-            <div class="menu-item" onclick="showImage('fincancay')">
-                <h3>Fincan Çay</h3>
-                <div class="price">24 ₺</div>
-            </div>
-            <div class="menu-item" onclick="showImage('sutlufincancay')">
-                <h3>Sütlü Fincan Çay</h3>
-                <div class="price">30 ₺</div>
-            </div>
-            <div class="menu-item" onclick="showImage('yesilcay')">
-                <h3>Yeşil Çay</h3>
-                <div class="price">65 ₺</div>
-            </div>
-            <div class="menu-item" onclick="showImage('kusburnu')">
-                <h3>Kuşburnu</h3>
-                <div class="price">65 ₺</div>
-            </div>
-            <div class="menu-item" onclick="showImage('adacayi')">
-                <h3>Adaçayı</h3>
-                <div class="price">65 ₺</div>
-            </div>
-            <div class="menu-item" onclick="showImage('ihlamur')">
-                <h3>Ihlamur</h3>
-                <div class="price">65 ₺</div>
-            </div>
-            <div class="menu-item" onclick="showImage('kiscayi')">
-                <h3>Kış Çayı</h3>
-                <div class="price">65 ₺</div>
-            </div>
-            <div class="menu-item" onclick="showImage('tazenanelimon')">
-                <h3>Taze Nane Limon</h3>
-                <div class="price">65 ₺</div>
-            </div>
-            <div class="menu-item" onclick="showImage('bogurtlen')">
-                <h3>Böğürtlen</h3>
-                <div class="price">65 ₺</div>
-            </div>
-            <div class="menu-item" onclick="showImage('sicaksut')">
-                <h3>Sıcak Süt</h3>
-                <div class="price">55 ₺</div>
-            </div>
-            <div class="menu-item" onclick="showImage('ballisut')">
-                <h3>Ballı Süt</h3>
-                <div class="price">65 ₺</div>
-            </div>
-            <div class="menu-item" onclick="showImage('salep')">
-                <h3>Salep</h3>
-
-                <div class="price">70 ₺</div>
-            </div>
-            <div class="menu-item" onclick="showImage('cikolatasalep')">
-                <h3>Çikolatalı Salep</h3>
-                <p>Gerçek Çikolata ile Harmanlanmış Eşsiz Lezzet</p>
-                <div class="price">80 ₺</div>
-            </div>
-            <div class="menu-item" onclick="showImage('sicakcikolata')">
-                <h3>Sıcak Çikolata</h3>
-                <p>Sütlü, Bitter veya Fildişi seçenekleriyle</p>
-                <div class="price">80 ₺</div>
-            </div>
-            <div class="menu-item" onclick="showImage('turkkahvesicakcikolata')">
-                <h3>Türk Kahveli Sıcak Çikolata</h3>
-                <p>Sütlü, Bitter veya Fildişi seçenekleriyle</p>
-                <div class="price">85 ₺</div>
-            </div>
-        </div>
-    </div>
-    
-        <!-- Desserts -->
-    <div class="context" id="context2">
-        <div class="menu-category">
-            <div class="menu-item" onclick="showImage('turkkahvesi')">
-                <h3>Türk Kahvesi</h3>
-                <div class="price">50 ₺</div>
-            </div>
-            <div class="menu-item" onclick="showImage('cikolataliturkkahvesi')">
-                <h3>Çikolatalı Türk Kahvesi</h3>
-                <div class="price">55 ₺</div>
-            </div>
-            <div class="menu-item" onclick="showImage('sutluturkkahvesi')">
-                <h3>Sütlü Türk Kahvesi</h3>
-                <div class="price">55 ₺</div>
-            </div>
-            <div class="menu-item" onclick="showImage('damlaturkkahvesi')">
-                <h3>Damla Sakızlı Türk Kahvesi</h3>
-                <div class="price">55 ₺</div>
-            </div>
-            <div class="menu-item" onclick="showImage('dibekkahvesi')">
-                <h3>Dibek Kahvesi</h3>
-                <div class="price">55 ₺</div>
-            </div>
-            <div class="menu-item" onclick="showImage('antepfistikliturkkahvesi')">
-                <h3>Antep Fıstıklı Türk Kahvesi</h3>
-                <div class="price">55 ₺</div>
-            </div>
-            <div class="menu-item" onclick="showImage('doubleturkkahvesi')">
-                <h3>Double Türk Kahvesi</h3>
-                <div class="price">60 ₺</div>
-            </div>
-            <div class="menu-item" onclick="showImage('doubledibekkahvesi')">
-                <h3>Double Türk Kahvesi</h3>
-                <div class="price">65 ₺</div>
-            </div>
-            <div class="menu-item" onclick="showImage('doublecikolataliturkkahvesi')">
-                <h3>Double Çikolatalı Türk Kahvesi</h3>
-                <div class="price">70 ₺</div>
-            </div>
-            <div class="menu-item" onclick="showImage('doubledamlaturkkahvesi')">
-                <h3>Double Damla Sakızlı Türk Kahvesi</h3>
-                <div class="price">65 ₺</div>
-            </div>
-        </div>
-    </div>
-
-        <!-- Meals -->
-    <div class="context" id="context3">
-        <div class="menu-category">
-            <div class="menu-item" onclick="showImage('espresso')">
-                <h3>Espresso</h3>
-                <div class="price">55 ₺</div>
-            </div>
-            <div class="menu-item" onclick="showImage('doubleespresso')">
-                <h3>Double Espresso</h3>
-                <div class="price">65 ₺</div>
-            </div>
-            <div class="menu-item" onclick="showImage('latte')">
-                <h3>Caffe Latte</h3>
-                <p>Fındık, Irish, Caramel, Vanilya seçenekleriyle</p>
-                <div class="price">80 ₺</div>
-            </div>
-            <div class="menu-item" onclick="showImage('cappuccino')">
-                <h3>Caffe Cappuccino</h3>
-                <div class="price">80 ₺</div>
-            </div>
-            <div class="menu-item" onclick="showImage('americano')">
-                <h3>Americano</h3>
-                <div class="price">75 ₺</div>
-            </div>
-            <div class="menu-item" onclick="showImage('sutluamericano')">
-                <h3>Sütlü Americano</h3>
-                <div class="price">80 ₺</div>
-            </div>
-            <div class="menu-item" onclick="showImage('caramelmaccioato')">
-                <h3>Caramel Macchiato</h3>
-                <div class="price">85 ₺</div>
-            </div>
-            <div class="menu-item" onclick="showImage('cafemocha')">
-                <h3>Cafe Mocha</h3>
-                <p>Sütlü, Bitter, Çikolata seçenekleriyle</p>
-                <div class="price">90 ₺</div>
-            </div>
-            <div class="menu-item" onclick="showImage('espressoconpanna')">
-                <h3>Espresso Con Panna</h3>
-                <p>Çırpılmış krema ile tepesinde tek veya çift espresso ile birlikte</p>
-                <div class="price">75 ₺</div>
-            </div>
-            <div class="menu-item" onclick="showImage('cortado')">
-                <h3>Cortado</h3>
-                <p>Espresso ve az miktarda sıcak süt ile</p>
-                <div class="price">75 ₺</div>
-            </div>
-            <div class="menu-item" onclick="showImage('affogato')">
-                <h3>Affogato</h3>
-                <p>Dondurma üzerine sıcak espresso dökülerek hazırlanır</p>
-                <div class="price">85 ₺</div>
-            </div>
-            <div class="menu-item" onclick="showImage('filtrekahve')">
-                <h3>Filtre Kahve</h3>
-                <div class="price">60 ₺</div>
-            </div>
-            <div class="menu-item" onclick="showImage('aromalifiltrekahve')">
-                <h3>Aromalı Filtre Kahve</h3>
-                <p>Sütlü, Fındık, Irish ve Çikolata seçenekleriyle</p>
-                <div class="price">65 ₺</div>
-            </div>
-            <div class="menu-item" onclick="showImage('icefiltrekahve')">
-                <h3>Ice Filtre Kahve</h3>
-                <p>Sütlü, Fındık, Irish ve Çikolata seçenekleriyle</p>
-                <div class="price">75 ₺</div>
-            </div>
-            <div class="menu-item" onclick="showImage('icelatte')">
-                <h3>Ice Latte</h3>
-                <p>Fındık, Irish ve Çikolata seçenekleriyle</p>
-                <div class="price">85 ₺</div>
-            </div>
-            <div class="menu-item" onclick="showImage('icemocha')">
-                <h3>Ice Mocha</h3>
-                <p>Sütlü, Bitter ve Fildişi Çikolata seçenekleriyle</p>
-                <div class="price">90 ₺</div>
-            </div>
-            <div class="menu-item" onclick="showImage('icecaramelmacchiato')">
-                <h3>Ice Caramel Macchiato</h3>
-                <div class="price">85 ₺</div>
-            </div>
-        </div>
-    </div>
-
-
-
-
-
-
-
-
-
-
-    <div class="context" id="context4">
-        <div class="menu-category">
-
-            <div class="menu-item" onclick="showImage('coollime')">
-                <h3>Cool Lime</h3>
-                <p>Taze ve El Yapımı</p>
-                <div class="price">65 ₺</div>
-            </div>
-            <div class="menu-item" onclick="showImage('bluesun')">
-                <h3>Blue Sun</h3>
-                <p>Taze ve El Yapımı</p>
-                <div class="price">70 ₺</div>
-            </div>
-            <div class="menu-item" onclick="showImage('limonata')">
-                <h3>Limonata</h3>
-                <p>Taze ve El Yapımı Limonata</p>
-                <div class="price">50 ₺</div>
-            </div>
-            <div class="menu-item" onclick="showImage('cileklilimonata')">
-                <h3>Çilekli Limonata</h3>
-                <p>Çilek ile harmanlanmış taze ve el yapımı limonata</p>
-                <div class="price">55 ₺</div>
-            </div>
-            <div class="menu-item" onclick="showImage('nanelilimonata')">
-                <h3>Naneli Limonata</h3>
-                <p>Nane ile harmanlanmış taze ve el yapımı limonata</p>
-                <div class="price">55 ₺</div>
-            </div>
-            <div class="menu-item" onclick="showImage('dondurmalilimonata')">
-                <h3>Dondurmalı Limonata</h3>
-                <p>Çilek, Frambuaz, Böğürtlen, Yeşil Elma seçenekleriyle</p>
-                <div class="price">65 ₺</div>
-            </div>
-            <div class="menu-item" onclick="showImage('cola')">
-                <h3>Cola</h3>
-                <div class="price">50 ₺</div>
-            </div>
-            <div class="menu-item" onclick="showImage('sekersizcola')">
-                <h3>Şekersiz Cola</h3>
-                <div class="price">50 ₺</div>
-            </div>
-            <div class="menu-item" onclick="showImage('icetea')">
-                <h3>Ice Tea</h3>
-                <div class="price">50 ₺</div>
-            </div>
-            <div class="menu-item" onclick="showImage('soda')">
-                <h3>Sade Soda</h3>
-                <div class="price">35 ₺</div>
-            </div>
-            <div class="menu-item" onclick="showImage('tazemeyvelisoda')">
-                <h3>Taze Meyveli Soda</h3>
-                <div class="price">60 ₺</div>
-            </div>
-            <div class="menu-item" onclick="showImage('meyvelisoda')">
-                <h3>Meyveli Soda</h3>
-                <p>Elma ve Limon seçenekleriyle</p>
-                <div class="price">40 ₺</div>
-            </div>
-            <div class="menu-item" onclick="showImage('churchill')">
-                <h3>Churchill</h3>
-                <div class="price">50 ₺</div>
-            </div>
-            <div class="menu-item" onclick="showImage('su')">
-                <h3>Su</h3>
-                <div class="price">20 ₺</div>
-            </div>
-            <div class="menu-item" onclick="showImage('portakalsu')">
-                <h3>Sıkma Portakal Suyu</h3>
-                <div class="price">75 ₺</div>
-            </div>
-            <div class="menu-item" onclick="showImage('limonlugazoz')">
-                <h3>Limonlu Gazoz</h3>
-                <div class="price">50 ₺</div>
-            </div>
-            <div class="menu-item" onclick="showImage('zencefilligazoz')">
-                <h3>Zencefilli Gazoz</h3>
-                <div class="price">50 ₺</div>
-            </div>
-            <div class="menu-item" onclick="showImage('ayran')">
-                <h3>Ayran</h3>
-                <div class="price">45 ₺</div>
-            </div>
-            <div class="menu-item" onclick="showImage('naneliayran')">
-                <h3>Naneli Ayran</h3>
-                <div class="price">55 ₺</div>
-            </div>
-            <div class="menu-item" onclick="showImage('meyvesuyu')">
-                <h3>Meyve Suyu</h3>
-                <p>Şeftali ve Karışık seçenekleriyle</p>
-                <div class="price">50 ₺</div>
-            </div>
-            <div class="menu-item" onclick="showImage('redbull')">
-                <h3>Red Bull</h3>
-                <div class="price">75 ₺</div>
-            </div>
-
-        </div>
-    </div>
-
-
-
-
-            <!-- Desserts -->
-            <div class="context" id="context5">
-                <div class="menu-category">
-
-                    <div class="menu-item" onclick="showImage('cikolatamilkshake')">
-                        <h3>Çikolatalı Milkshake</h3>
-                        <p>Sütlü, Bitter ve Fildişi seçenekleriyle</p>
-                        <div class="price">90 ₺</div>
-                    </div>
-                    <div class="menu-item" onclick="showImage('lotusmilkshake')">
-                        <h3>Lotuslu Milkshake</h3>
-                        <p>Lotus Bisküvi ile Enfes Tat</p>
-                        <div class="price">100 ₺</div>
-                    </div>
-                    <div class="menu-item" onclick="showImage('kitkatmilkshake')">
-                        <h3>Kitkatlı Milkshake</h3>
-                        <p>Kitkat Bisküvi ile Enfes Tat</p>
-                        <div class="price">100 ₺</div>
-                    </div>
-                    <div class="menu-item" onclick="showImage('cileklimilkshake')">
-                        <h3>Çilekli Milkshake</h3>
-                        <div class="price">90 ₺</div>
-                    </div>
-                    <div class="menu-item" onclick="showImage('bogurtlenmilkshake')">
-                        <h3>Böğürtlen Milkshake</h3>
-                        <div class="price">90 ₺</div>
-                    </div>
-                    <div class="menu-item" onclick="showImage('frambuazmilkshake')">
-                        <h3>Frambuaz Milkshake</h3>
-                        <div class="price">90 ₺</div>
-                    </div>
-                    <div class="menu-item" onclick="showImage('muzlumilkshake')">
-                        <h3>Muzlu Milkshake</h3>
-                        <div class="price">90 ₺</div>
-                    </div>
-                    <div class="menu-item" onclick="showImage('cinshake')">
-                        <h3>Cin Shake</h3>
-                        <p>Portakallı Bisküvi Tadında</p>
-                        <div class="price">95 ₺</div>
-                    </div>
-                    <div class="menu-item" onclick="showImage('sogukcikolata')">
-                        <h3>Soğuk Çikolata</h3>
-                        <p>Sütlü, Bitter veya Fildişi seçenekleriyle</p>
-                        <div class="price">90 ₺</div>
-                    </div>
-                    <div class="menu-item" onclick="showImage('cikolatalifrozen')">
-                        <h3>Çikolatalı Frozen</h3>
-                        <p>Sütlü, Bitter veya Fildişi seçenekleriyle</p>
-                        <div class="price">90 ₺</div>
-                    </div>
-                    <div class="menu-item" onclick="showImage('meyvelifrozen')">
-                        <h3>Meyveli Frozen</h3>
-                        <p>Frambuaz, Böğürtlen, Çilek veya Yeşil Elma seçenekleriyle</p>
-                        <div class="price">90 ₺</div>
-                    </div>
-                    
-                </div>
-            </div>
-        
-
-
-
-
-
-
-
-            <div class="context" id="context6">
-                <div class="menu-category">
-        
-                    <div class="menu-item" onclick="showImage('magnolya')">
-                        <h3>Magnolya</h3>
-                        <p>Çilekli ve Muzlu seçenekleri,</p>
-                        <p>Sütlü Çikolata, Gold Çikolata ve Bitter Çikolata seçenekleri,</p>
-                        <p><i>10 ₺ fark karşılığında;</i> Lotuslu ve Kitkat seçenekleriyle birlikte.</p>
-                        <p><i>(Bütün tercihler; bir seçenek ile sınırldır.)</i></p>
-                        <div class="price">120 ₺</div>
-                    </div>
-                   
-                    <div class="menu-item" onclick="showImage('madamerose')">
-                        <h3>Madame Rose</h3>
-                        <p>Sütlü Kakaolu Kek üzerinde; Belçika Çikolatalı Krema, Meyve Parçaları, Prenses Krema ve Krep Kıtırı ile.</p>
-                        <div class="price">160 ₺</div>
-                    </div>
-        
-                    <div class="menu-item" onclick="showImage('sansebastian')">
-                        <h3>San Sebastian</h3>
-                        <p>Sütlü Çikolata, Gold Çikolata ve Bitter Çikolata seçenekleriyle birlikte.</p>
-                        <p><i>(Bütün tercihler; bir seçenek ile sınırldır.)</i></p>
-                        <div class="price">160 ₺</div>
-                    </div>
-
-                    <div class="menu-item" onclick="showImage('rosespecial')">
-                        <h3>Rose Special</h3>
-                        <p>Ekler Hamuru, Pattisserie Krema, Çikolata ile;</p>
-                        <p>Çilek ve Muz seçenekleriyle birlikte.</p>
-                        <div class="price">170 ₺</div>
-                    </div>
-
-                    <div class="menu-item" onclick="showImage('waffle')">
-                        <h3>Waffle</h3>
-                        <p><i>30 ₺ fark ile</i> Dondurma</p>
-                        <p><i>40 ₺ fark ile</i> Bol Çikolata</p>
-                        <div class="price">165 ₺</div>
-                    </div>
-
-                    <div class="menu-item" onclick="showImage('helenistik')">
-                        <h3>Helenistik</h3>
-                        <p>Belçika Çikolatası, Çilek, Muz, Krem şanti ile birlikte Eşsiz Bir Tat</p>
-                        <div class="price">170 ₺</div>
-                    </div>
-
-                    <div class="menu-item" onclick="showImage('dubaicikolatatatli')">
-                        <h3>Dubai Çikolatası Tatlısı</h3>
-                        <p>Dubai Çikolatası ve Kesme Dondurma ile servis edilir.</p>
-                        <div class="price">210 ₺</div>
-                    </div>
-
-                    <div class="menu-item" onclick="showImage('dubaicikolata')">
-                        <h3>Dubai Çikolatası</h3>
-                        <p>El Yapımıdır.</p>
-                        <div class="price">450 ₺</div>
-                    </div>
-
-                    <div class="menu-item" onclick="showImage('cheescake')">
-                        <h3>Cheescake</h3>
-                        <p>Frambuaz Püre, Böğürtlen Püre, Limon Püre ve 5 ₺ farkı ile Çilek Püre seçenekleri,</p>
-                        <p>Her birinde 5 ₺ fark ile; Sütlü Çikolata, Gold Çikolata ve Bitter Çikolata seçenekleri,</p>
-                        <p><i>5 ₺ fark ile;</i> Kitkat ve <i>10 ₺ fark ile;</i> Lotus </p>
-                        <p><i>(Bütün tercihler; bir seçenek ile sınırldır.)</i></p>
-                        <div class="price">150 ₺</div>
-                    </div>
-
-                    <div class="menu-item" onclick="showImage('dondurmabrowni')">
-                        <h3>Dondurmalı Browni</h3>
-                        <div class="price">160 ₺</div>
-                    </div>
-
-                    <div class="menu-item" onclick="showImage('malaga')">
-                        <h3>Rose Malaga</h3>
-                        <p>Kakaolu Kek, Pattisserie Krema, Muz ve Çikolata ile hazırlanır.</p>
-                        <div class="price">150 ₺</div>
-                    </div>
-
-                    <div class="menu-item" onclick="openPopup('tatliniyarat')">
-                        <h3>TATLINI SEN YARAT</h3>
-                        <p>Malzeme Seçenekleri için lütfen bu sekmeye tıklayın.</p>
-                        <div class="price">190 ₺</div>
-                    </div>
-
-                    <div class="menu-item" onclick="showImage('chocotiramisu')">
-                        <h3>Rose Chocolate Tiramisu</h3>
-                        <p>Belçika Çikolata, Çilek, Muz, Kedidili, Kakao, Prenses Krema ve Espresso ile hazırlanan Eşsiz Bir Tat.</p>
-                        <div class="price">170 ₺</div>
-                    </div>
-
-                    <div class="menu-item" onclick="showImage('cro-waffle')">
-                        <h3>CRO-WAFFLE</h3>
-                        <div class="h4h4">TATLI TABANI</div>
-                        <p><i>(Bir seçenek ile sınırlıdır.)</i></p>
-                        <p>Sütlü Belçika Çikolata, Bitter Belçika Çikolata, Gold Çikolata, Kitkat Çikolata, Lotus, Çilek Püre, Frambuaz Püre seçenekleriyle</p>
-
-                        <div class="h4h4">EXTRA</div>
-                        <p><i>30 ₺ fark ile;</i> Dondurma</p>
-                        <p><i>40 ₺ fark ile;</i> Bol Çikolata</p>
-
-                        <div class="price">190 ₺</div>
-                    </div>
-
-                    <div class="menu-item" onclick="showImage('rose-cro')">
-                        <h3>ROSE-CRO</h3>
-                        <p>Çilek, Muz, Çikolata ve kendi kremamızla hazırlanır.</p>
-                        <div class="price">175 ₺</div>
-                    </div>
-
-                    <div class="menu-item" onclick="showImage('cro-magnum')">
-                        <h3>CRO-MAGNUM</h3>
-                        <p>Kruvasan, Belçika Çikolatalı Krema ve Magnum ile hazırlanır.</p>
-                        <div class="price">190 ₺</div>
-                    </div>
-
-                    <div class="menu-item" onclick="showImage('croppuccino')">
-                        <h3>CROPPUCCİNO</h3>
-                        <p>Kruvasan, Belçika Çikolatası ve Cappuccino ile hazırlanır.</p>
-                        <div class="price">180 ₺</div>
-                    </div>
-
-                    <div class="menu-item" onclick="showImage('rose-cro-fondu')">
-                        <h3>ROSE-CRO FONDÜ</h3>
-                        <p>Çilek, Muz ve Çikolata ile servis edilir.</p>
-                        <div class="price">175 ₺</div>
-                    </div>
-
-                    <div class="menu-item" onclick="showImage('dondurmalisufle')">
-                        <h3>Dondurmalı Sufle</h3>
-                        <div class="price">160 ₺</div>
-                    </div>
-
-                    <div class="menu-item" onclick="showImage('katmer')">
-                        <h3>Katmer</h3>
-                        <p>Dondurma ile servis edilir.</p>
-                        <div class="price">180 ₺</div>
-                    </div>
-
-                    <div class="menu-item" onclick="showImage('incirtatlisi')">
-                        <h3>İncir Tatlısı</h3>
-                        <p>Dondurma ile servis edilir.</p>
-                        <div class="price">180 ₺</div>
-                    </div>
-
-                    <div class="menu-item" onclick="showImage('tekcikolatalifondu')">
-                        <h3>Tek Çikolatalı Fondü</h3>
-                        <p>Sütlü ve Bitter seçenekleriyle</p>
-                        <div class="price">160 ₺</div>
-                    </div>
-
-                    <div class="menu-item" onclick="showImage('cikolatameyvecup')">
-                        <h3>Çikolata Meyveli Cup</h3>
-                        <div class="price">160 ₺</div>
-                    </div>
-
-                    <div class="menu-item" onclick="showImage('cilekcikolata')">
-                        <h3>Çilek Çikolata</h3>
-                        <div class="price">140 ₺</div>
-                    </div>
-
-                    <div class="menu-item" onclick="showImage('devilscake')">
-                        <h3>Devil's Cake</h3>
-                        <div class="price">160 ₺</div>
-                    </div>
-                    
-                    <div class="menu-item" onclick="showImage('profiterol')">
-                        <h3>Profiterol</h3>
-                        <p>Sütlü ve Bitter seçenekleriyle</p>
-                        <div class="price">160 ₺</div>
-                    </div>
-
-                    <div class="menu-item" onclick="showImage('churros')">
-                        <h3>Churros</h3>
-                        <p>5 adet kızarmış Churros hamuru; Belçika çikolata ve Özel Rose Çikolata ile servis edilir.</p>
-                        <div class="price">160 ₺</div>
-                    </div>
-
-                    <div class="menu-item" onclick="showImage('churrosbowl')">
-                        <h3>Churros Bowl</h3>
-                        <p>Churros Parçaları ile hazırlanmış taban üzerinde; Çilek, Muz, ve Belçika Çİkolata ile servis edilir</p>
-                        <div class="price">160 ₺</div>
-                    </div>
-
-                    <div class="menu-item" onclick="showImage('dondurmaliislakkek')">
-                        <h3>Dondurmalı Islak Kek</h3>
-                        <p>Sütlü Kakaolu Kek üzerinde Özel Çikolata ve İki Top Sade Dondurma ile servis edilir</p>
-                        <div class="price">160 ₺</div>
-                    </div>
-
-                    <div class="menu-item" onclick="showImage('kontes')">
-                        <h3>Kontes</h3>
-                        <p>Sütlü Çikolata, tabak içinde; Krema, Meyve Parçaları, Prenses Krema, Kakaolu Kek Parçaları üzerinde Belçika Çikolata</p>
-                        <div class="price">160 ₺</div>
-                    </div>
-
-                    <div class="menu-item" onclick="showImage('smoothiebowl')">
-                        <h3>Smoothie Bowl</h3>
-                        <p>Diyet Tatlısıdır. Süzme Yoğurt, Bal, Muz, Çilek, Granola, Mavi Haşhaş ve Hindistan Cevizi ile hazırlanır.</p>
-                        <div class="price">180 ₺</div>
-                    </div>
-
-                    <div class="menu-item" onclick="showImage('chiapuding')">
-                        <h3>Chia Puding</h3>
-                        <p>Diyet Tatlısıdır. Çilek, Muz, Granol, Bal, Chia Puding, Ceviz ve Antep Fıstığı ile hazırlanır.</p>
-                        <div class="price">180 ₺</div>
-                    </div>
-
-                    <div class="menu-item" onclick="showImage('kurabiye')">
-                        <h3>Kurabiye</h3>
-                        <p>Zencefil ve Tarçınlı.</p>
-                        <div class="price">50 ₺</div>
-                    </div>
-
-                    <div class="menu-item" onclick="showImage('sadedondurma')">
-                        <h3>Sade Dondurma</h3>
-                        <p>Çikolata, Çilek, Frambuaz, Böğürtlen ve Karamel Sos seçenekleriyle Tek Top olarak servis edilir.</p>
-                        <div class="price">50 ₺</div>
-                    </div>
-
-                </div>
-            </div>
-
-            <div class="context" id="context7">
-                <div class="h4h4tost">Tost çeşitlerimizde <i><b>Yarım Porsiyon Seçeneği</b></i> mevcuttur.</div>
-               
-                <div class="menu-category">
-
-                    <div class="menu-item" onclick="showImage('karisiktost')">
-                        <h3>Karışık Tost</h3>
-                        <p>Sucuk, Kaşar, Salça, Ketçap, Mayonez, Rose Sos, Zeytin</p>
-                        <p><i>15 ₺ fark ile;</i> Extra Sos</p>
-                        <div class="price">125 ₺</div>
-                    </div>
-
-                    <div class="menu-item" onclick="showImage('kasarlitost')">
-                        <h3>Kaşarlı Tost</h3>
-                        <p>Kaşar, Salça, Ketçap, Mayonez, Rose Sos, Zeytin</p>
-                        <p><i>15 ₺ fark ile;</i> Extra Sos</p>
-                        <div class="price">115 ₺</div>
-                    </div>
-
-                    <div class="menu-item" onclick="showImage('doublekasarlitost')">
-                        <h3>Double Kaşarlı Tost</h3>
-                        <p>Double Kaşar, Salça, Ketçap, Mayonez, Rose Sos, Zeytin</p>
-                        <p><i>15 ₺ fark ile;</i> Extra Sos</p>
-                        <div class="price">130 ₺</div>
-                    </div>
-
-                    <div class="menu-item" onclick="showImage('sucuklutost')">
-                        <h3>Sucuklu Tost</h3>
-                        <p>Sucuk, Salça, Ketçap, Mayonez, Rose Sos, Zeytin</p>
-                        <p><i>15 ₺ fark ile;</i> Extra Sos</p>
-                        <div class="price">120 ₺</div>
-                    </div>
-      
-                    <div class="menu-item" onclick="showImage('ucpeynirlitost')">
-                        <h3>Üç Peynirli Tost</h3>
-                        <p>Çoban Peynir, Kaşar, Cheddar Peynir, Mayonez, Rose Sos, Zeytin</p>
-                        <p><i>15 ₺ fark ile;</i> Extra Sos</p>
-                        <div class="price">130 ₺</div>
-                    </div>
-
-                    <div class="menu-item" onclick="showImage('feslegencobantost')">
-                        <h3>Fesleğen Çoban Peynirli Tost</h3>
-                        <p>Çoban Peynir, Kaşar, Cheddar Peynir, Fesleğen Sos, Mayonez, Rose Sos, Zeytin</p>
-                        <p><i>15 ₺ fark ile;</i> Extra Sos</p>
-                        <div class="price">130 ₺</div>
-                    </div>
-
-                    <div class="menu-item" onclick="showImage('fullkarisiktost')">
-                        <h3>Full Karışık Tost</h3>
-                        <p>Sucuk, Çoban Peynir, Kaşar, Cheddar Peynir, Felseğen Sos, Salça, Ketçap, Mayonez, Rose Sos, Zeytin</p>
-                        <p><i>15 ₺ fark ile;</i> Extra Sos</p>
-                        <div class="price">135 ₺</div>
-                    </div>
-
-                    <div class="menu-item" onclick="showImage('beyazpeynirlitost')">
-                        <h3>Beyaz Peynirli Tost</h3>
-                        <p>Çoban Peynir, Salça, Ketçap, Mayonez, Rose Sos, Zeytin</p>
-                        <p><i>15 ₺ fark ile;</i> Extra Sos</p>
-                        <div class="price">125 ₺</div>
-                    </div>
-
-                    <div class="menu-item" onclick="showImage('sebzelitost')">
-                        <h3>Sebzeli Tost</h3>
-                        <p>Kaşar, Köy Biber, Domates, Salça, Ketçap, Mayonez, Rose Sos, Zeytin</p>
-                        <p><i>15 ₺ fark ile;</i> Extra Sos</p>
-                        <div class="price">125 ₺</div>
-                    </div>
-
-                    <div class="menu-item" onclick="showImage('karisikkruvasantost')">
-                        <h3>Karışık Kruvasan Tost</h3>
-                        <p>Kaşar, Sucuk, Salça, Rose Sos, Zeytin</p>
-                        <p><i>15 ₺ fark ile;</i> Extra Sos</p>
-                        <div class="price">120 ₺</div>
-                    </div>
-
-                    <div class="menu-item" onclick="showImage('feslegenkruvasantost')">
-                        <h3>Fesleğenli Kruvasan Tost</h3>
-                        <p>Kaşar, Cheddar Peyniri, Fesleğen, Salça, Rose Sos, Zeytin</p>
-                        <p><i>15 ₺ fark ile;</i> Extra Sos</p>
-                        <div class="price">125 ₺</div>
-                    </div>
-
-                </div>
-            </div>
-
-            <div class="context" id="context8">
-                <div class="menu-category">
-
-                    <div class="menu-item" onclick="showImage('tonbaliksandwich')">
-                        <h3>Ton Balıklı Sandwich</h3>
-                        <div class="price">115 ₺</div>
-                    </div>
-
-                    <div class="menu-item" onclick="showImage('soguksandwich')">
-                        <h3>Soğuk Sandwich</h3>
-                        <div class="price">100 ₺</div>
-                    </div>
-
-                    <div class="menu-item" onclick="showImage('elmadilimpatates')">
-                        <h3>Fırınd Elma Dilim Patates</h3>
-                        <div class="price">65 ₺</div>
-                    </div>
-
-                </div>
-            </div>
-
-
-
-            <div class="context" id="context9">
-                <div class="menu-category">
-
-                    <div class="menu-item" onclick="showImage('tonbaliksalata')">
-                        <h3>Ton Balıklı Salata</h3>
-                        <div class="price">170 ₺</div>
-                    </div>
-
-                    <div class="menu-item" onclick="showImage('beyazpeynirsalata')">
-                        <h3>Beyaz Peynirli Salata</h3>
-                        <div class="price">170 ₺</div>
-                    </div>
-
-                    <div class="menu-item" onclick="showImage('izgaratavuksalata')">
-                        <h3>Izgara Tavuk Salata</h3>
-                        <div class="price">170 ₺</div>
-                    </div>
-
-                    <div class="menu-item" onclick="showImage('citirtavuksalata')">
-                        <h3>Çıtır Tavuk Salata</h3>
-                        <p>Fırında pişirilir. Galeta unlu tavuk parçalrı ile servis edilir.</p>
-                        <div class="price">180 ₺</div>
-                    </div>
-
-                    <div class="menu-item" onclick="showImage('citirtavuk')">
-                        <h3>Çıtır Tavuk</h3>
-                        <p>Fırında pişirilir. Galeta unlu tavuk parçalrı ile servis edilir.</p>
-                        <div class="price">175 ₺</div>
-                    </div>
-
-                </div>
-            </div>
-
-
-
-
-
-            <div class="context" id="context10">
-                <div class="menu-category">
-
-                    <div class="menu-item" onclick="showImage('kremamantarmakarna')">
-                        <h3>Kremalı Mantarlı Makarna</h3>
-                        <div class="price">160 ₺</div>
-                    </div>
-
-                    <div class="menu-item" onclick="showImage('doritoslupennemakarna')">
-                        <h3>Doritoslu Penne Makarna</h3>
-                        <p>Penne Makarna, Tereyağlı Mantar ve Krema ile hazırlanır. Mozarella Peyniri ile servis edilir.</p>
-                        <div class="price">160 ₺</div>
-                    </div>
-
-                    <div class="menu-item" onclick="showImage('manti')">
-                        <h3>Mantı</h3>
-                        <p>Penne Makarna Tereyağlı Domates ve Krema ile hazırlanır. Mozarella Peyniri ve Doritos ile servis edilir.</p>
-                        <div class="price">160 ₺</div>
-                    </div>
-
-                    <div class="menu-item" onclick="showImage('sadenoodle')">
-                        <h3>Sade Noodle</h3>
-                        <p>Cevizli Balkan Soslu olarak servis edilir.</p>
-                        <div class="price">120 ₺</div>
-                    </div>
-
-                    <div class="menu-item" onclick="showImage('tonbaliklinoodle')">
-                        <h3>Ton Balıklı Noodle</h3>
-                        <div class="price">140 ₺</div>
-                    </div>
-
-                    <div class="menu-item" onclick="showImage('beyazpeynirlinoodle')">
-                        <h3>Beyaz Peynirli Noodle</h3>
-                        <div class="price">130 ₺</div>
-                    </div>
-
-                    <div class="menu-item" onclick="showImage('kozbiberlinoodle')">
-                        <h3>Köz Biberli Noodle</h3>
-                        <div class="price">135 ₺</div>
-                    </div>
-
-                </div>
-            </div>
-
-
-
-            <div class="context" id="context11">
-                <div class="menu-category">
-
-                    <div class="menu-item" onclick="showImage('karisikpizza')">
-                        <h3>Karışık Pizza</h3>
-                        <p>Sucuk, Salam, Sosis, Mantar, Zeytin, Mısır</p>
-                        <div class="price">160 ₺</div>
-                    </div>
-
-                    <div class="menu-item" onclick="showImage('sucuklupizza')">
-                        <h3>Sucuklu Pizza</h3>
-                        <p>Sucuk, Zeytin, Mısır</p>
-                        <div class="price">160 ₺</div>
-                    </div>
-
-                    <div class="menu-item" onclick="showImage('vejeteryanpizza')">
-                        <h3>Vejeteryan Pizza</h3>
-                        <p>Domates, Biber, Mantar, Zeytin, Mısır</p>
-                        <div class="price">160 ₺</div>
-                    </div>
-
-                    <div class="menu-item" onclick="showImage('ucpeynirlipizza')">
-                        <h3>Üç Peynirli Pizza</h3>
-                        <p>Cheddar Peyniri, Çoban Peyniri, Zeytin, Mısır</p>
-                        <div class="price">160 ₺</div>
-                    </div>
-
-                    <div class="menu-item" onclick="showImage('tonbaliklipizza')">
-                        <h3>Ton Balıklı Pizza</h3>
-                        <p>Ton Balık, Zeytin, Mısır</p>
-                        <div class="price">165 ₺</div>
-                    </div>
-
-                    <div class="menu-item" onclick="showImage('margaritapizza')">
-                        <h3>Margarita Pizza</h3>
-                        <p>Domates ile servis edilir.</p>
-                        <div class="price">160 ₺</div>
-                    </div>
-
-                    <div class="menu-item" onclick="showImage('margaritapizza')">
-                        <h3>PİZZANI SEN YARAT</h3>
-                        <div class="price">170 ₺</div>
-                    </div>
-
-                </div>
-            </div>
-
-
-
-
-
-
-
-            <div class="context" id="context12">
-                <div class="menu-category">
-
-                    <div class="menu-item" onclick="showImage('rosekahvalti')">
-                        <h3>Rose Kahvaltı</h3>
-                        <p>Beyaz Peynir, Kaşar Peyniri, Çeçil Peynir, Yeşil Zeytin, Siyah Zeytin, Bal, Reçel, Rose Sos, Patates, Sucuk, Özel Soslu Sosis, Dilim Salam, Tereyağ, Domates, Salatalık, Simit, Sahanda veya Haşlanmış Yumurta, Dilim Portakal, Ceviz, Kızarmış Ekmek, 1 adet Çay ile servis edilir.</p>
-                        <div class="price">200 ₺</div>
-                    </div>
-
-                    <div class="menu-item" onclick="showImage('simitkahvalti')">
-                        <h3>Simit Kahvaltı</h3>
-                        <p>Simit, Kaşar Peyniri, Beyaz Peynir, Yumurta, Rose Sos, Reçel, Domates, Salatalık, Zeytin ve 1 adet Çay ile servis edilir.</p>
-                        <div class="price">155 ₺</div>
-                    </div>
-
-                    <div class="menu-item" onclick="showImage('rosecrospecial')">
-                        <h3>ROSE-CRO Special</h3>
-                        <p>Kruvasan içeriğinde; Kaşar, Cheddar, Fesleğen Sos ve Yumurta yanında Rose Sos, Zeytin ve 1 adet Çay ile servis edilir.</p>
-                        <div class="price">155 ₺</div>
-                    </div>
-
-                    <div class="menu-item" onclick="showImage('feslegensimit')">
-                        <h3>Fesleğenli Simit Tabağı</h3>
-                        <p>Fesleğenli Simit, Beyaz Peynir, Rose Sos, Zeytin ve 1 adet Çay ile servis edilir.</p>
-                        <div class="price">130 ₺</div>
-                    </div>
-
-                    
-                    <div class="menu-item" onclick="showImage('simittabagi')">
-                        <h3>Simit Tabağı</h3>
-                        <p>Simit, Beyaz Peynir, Rose Sos, Zeytin ve 1 adet Çay ile servis edilir.</p>
-                        <div class="price">135 ₺</div>
-                    </div>
-
-                    
-                    <div class="menu-item" onclick="showImage('menemen')">
-                        <h3>Menemen</h3>
-                        <p>Karışık, Saçarlı, Sucuklu seçenekleriyle</p>
-                        <div class="price">135 ₺</div>
-                    </div>
-
-                    
-                    <div class="menu-item" onclick="showImage('yumpat')">
-                        <h3>YUMPAT</h3>
-                        <p>Patatesli Yumurta.</p>
-                        <div class="price">130 ₺</div>
-                    </div>
-
-                    
-                    <div class="menu-item" onclick="showImage('sahandayumurta')">
-                        <h3>Sahanda Yumurta</h3>
-                        <p>Tereyağlı Sahanda Yumurta</p>
-                        <p><i>15 ₺ fark ile;</i> Çift Yumurtalı</p>
-                        <div class="price">110 ₺</div>
-                    </div>
-
-                    
-                    <div class="menu-item" onclick="showImage('omlet')">
-                        <h3>Omlet</h3>
-                        <p>Karışık, Kaşarlı, Sucuklu, Mantarlı seçenekleriyle.</p>
-                        <div class="price">130 ₺</div>
-                    </div>
-
-                    
-                    <div class="menu-item" onclick="showImage('cikolatasimit')">
-                        <h3>Çikolata Simit</h3>
-                        <p>Simit, Çikolata ve 1 adet Çay ile servis edilir.</p>
-                        <div class="price">115 ₺</div>
-                    </div>
-
-                    
-                    <div class="menu-item" onclick="showImage('kasarsimit')">
-                        <h3>Kaşar Simit</h3>
-                        <p>1 adet Çay, Simit Arası Kaşar, Rose Sos, ve Zeytin ile servis edilir.</p>
-                        <div class="price">115 ₺</div>
-                    </div>
-
-                    
-                    <div class="menu-item" onclick="showImage('simit')">
-                        <h3>Simit</h3>
-                        <p>Simit, Rose Sos ile servis edilir.</p>
-                        <div class="price">50 ₺</div>
-                    </div>
-
-                </div>
-            </div>
-
-
 
     </section>
 
@@ -1968,7 +1961,7 @@ function toggleContext(contextId) {
     // Get all context elements
     const contexts = document.querySelectorAll('.context');
     contexts.forEach(context => {
-        // Hide all contexts except the clicked one
+        // If the context is not the one being clicked, hide it
         if (context.id !== contextId) {
             context.classList.remove('show');
         }
@@ -1978,11 +1971,14 @@ function toggleContext(contextId) {
     const contextOrg = document.querySelector('.contextorg');
     contextOrg.style.display = 'none';
 
-    // Ensure the clicked context is shown
+    // Toggle the clicked context
     const currentContext = document.getElementById(contextId);
-    currentContext.classList.add('show'); // Always add the 'show' class
+    if (currentContext.classList.contains('show')) {
+        currentContext.classList.remove('show'); // Close if already open
+    } else {
+        currentContext.classList.add('show'); // Open if not open
+    }
 }
-
 
 
 
@@ -2579,7 +2575,7 @@ buttons.forEach(button => {
         setTimeout(() => {
             button.classList.remove('show-text');
             button.classList.remove('button-active');
-        }, 5000);
+        }, 10000);
     });
 });
         
