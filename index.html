@@ -373,16 +373,20 @@ html{
         .menu-item {
             background-color: #fff;
             border-radius: 15px;
-            padding: 15px;
+            padding: 5px;
             text-align: center;
             box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
             transition: all 0.3s ease-in-out;
             cursor: pointer;
             position: relative;
-            width: 75%;
+            width: 95%;
             justify-self: center;
             align-content: center;
         }
+
+    .fiyatlarsaga{
+        display: inline-flex;
+    }
 
         .menu-item:hover {
             transform: translateY(-10px);
@@ -392,8 +396,8 @@ html{
         .menu-item h3 {
             font-size: 2rem;
             color: #2b2d2f;
-            margin-bottom: 12px;
-            margin-top: 0;
+            margin-block: auto;
+            padding-right: 10px;
         }
 
         .h4h4 {
@@ -424,6 +428,8 @@ html{
             font-size: 1.8rem;
             font-weight: bold;
             color: #5c4f3f;
+            margin-left: auto;
+            margin-block: auto;
         }
 
 
@@ -1921,44 +1927,58 @@ html{
             <div class="menu-category">
 
                 <div class="menu-item" onclick="showImage('karisikpizza')">
+                    <div class="fiyatlarsaga">
                     <h3>Karışık Pizza</h3>
-                    <p>Sucuk, Salam, Sosis, Mantar, Zeytin, Mısır</p>
                     <div class="price">160 ₺</div>
+                    </div>
+                    <p>Sucuk, Salam, Sosis, Mantar, Zeytin, Mısır</p>
                 </div>
 
                 <div class="menu-item" onclick="showImage('sucuklupizza')">
+                    <div class="fiyatlarsaga">
                     <h3>Sucuklu Pizza</h3>
-                    <p>Sucuk, Zeytin, Mısır</p>
                     <div class="price">160 ₺</div>
+                    </div>
+                    <p>Sucuk, Zeytin, Mısır</p>
                 </div>
 
                 <div class="menu-item" onclick="showImage('vejeteryanpizza')">
+                    <div class="fiyatlarsaga">
                     <h3>Vejeteryan Pizza</h3>
-                    <p>Domates, Biber, Mantar, Zeytin, Mısır</p>
                     <div class="price">160 ₺</div>
+                    </div>
+                    <p>Domates, Biber, Mantar, Zeytin, Mısır</p>
                 </div>
 
                 <div class="menu-item" onclick="showImage('ucpeynirlipizza')">
+                    <div class="fiyatlarsaga">
                     <h3>Üç Peynirli Pizza</h3>
-                    <p>Cheddar Peyniri, Çoban Peyniri, Zeytin, Mısır</p>
                     <div class="price">160 ₺</div>
+                    </div>
+                    <p>Cheddar Peyniri, Çoban Peyniri, Zeytin, Mısır</p>
                 </div>
 
                 <div class="menu-item" onclick="showImage('tonbaliklipizza')">
+                    <div class="fiyatlarsaga">
                     <h3>Ton Balıklı Pizza</h3>
-                    <p>Ton Balık, Zeytin, Mısır</p>
                     <div class="price">165 ₺</div>
+                    </div>
+                    <p>Ton Balık, Zeytin, Mısır</p>
                 </div>
 
                 <div class="menu-item" onclick="showImage('margaritapizza')">
+                    <div class="fiyatlarsaga">
                     <h3>Margarita Pizza</h3>
-                    <p>Domates ile servis edilir.</p>
                     <div class="price">160 ₺</div>
+                    </div>
+                    <p>Domates ile servis edilir.</p>
                 </div>
 
                 <div class="menu-item" onclick="showImage('margaritapizza')">
+                    <div class="fiyatlarsaga">
                     <h3>PİZZANI SEN YARAT</h3>
                     <div class="price">170 ₺</div>
+                    </div>
                 </div>
 
             </div>
@@ -1973,84 +1993,108 @@ html{
             <div class="menu-category">
 
                 <div class="menu-item" onclick="showImage('rosekahvalti')">
+                    <div class="fiyatlarsaga">
                     <h3>Rose Kahvaltı</h3>
-                    <p>Beyaz Peynir, Kaşar Peyniri, Çeçil Peynir, Yeşil Zeytin, Siyah Zeytin, Bal, Reçel, Rose Sos, Patates, Sucuk, Özel Soslu Sosis, Dilim Salam, Tereyağ, Domates, Salatalık, Simit, Sahanda veya Haşlanmış Yumurta, Dilim Portakal, Ceviz, Kızarmış Ekmek, 1 adet Çay ile servis edilir.</p>
                     <div class="price">200 ₺</div>
+                    </div>
+                    <p>Beyaz Peynir, Kaşar Peyniri, Çeçil Peynir, Yeşil Zeytin, Siyah Zeytin, Bal, Reçel, Rose Sos, Patates, Sucuk, Özel Soslu Sosis, Dilim Salam, Tereyağ, Domates, Salatalık, Simit, Sahanda veya Haşlanmış Yumurta, Dilim Portakal, Ceviz, Kızarmış Ekmek, 1 adet Çay ile servis edilir.</p>
                 </div>
 
                 <div class="menu-item" onclick="showImage('simitkahvalti')">
+                    <div class="fiyatlarsaga">
                     <h3>Simit Kahvaltı</h3>
-                    <p>Simit, Kaşar Peyniri, Beyaz Peynir, Yumurta, Rose Sos, Reçel, Domates, Salatalık, Zeytin ve 1 adet Çay ile servis edilir.</p>
                     <div class="price">155 ₺</div>
+                    </div>
+                    <p>Simit, Kaşar Peyniri, Beyaz Peynir, Yumurta, Rose Sos, Reçel, Domates, Salatalık, Zeytin ve 1 adet Çay ile servis edilir.</p>
                 </div>
 
                 <div class="menu-item" onclick="showImage('rosecrospecial')">
+                    <div class="fiyatlarsaga">
                     <h3>ROSE-CRO Special</h3>
-                    <p>Kruvasan içeriğinde; Kaşar, Cheddar, Fesleğen Sos ve Yumurta yanında Rose Sos, Zeytin ve 1 adet Çay ile servis edilir.</p>
                     <div class="price">155 ₺</div>
+                    </div>
+                    <p>Kruvasan içeriğinde; Kaşar, Cheddar, Fesleğen Sos ve Yumurta yanında Rose Sos, Zeytin ve 1 adet Çay ile servis edilir.</p>
                 </div>
 
                 <div class="menu-item" onclick="showImage('feslegensimit')">
+                    <div class="fiyatlarsaga">
                     <h3>Fesleğenli Simit Tabağı</h3>
-                    <p>Fesleğenli Simit, Beyaz Peynir, Rose Sos, Zeytin ve 1 adet Çay ile servis edilir.</p>
                     <div class="price">130 ₺</div>
+                    </div>
+                    <p>Fesleğenli Simit, Beyaz Peynir, Rose Sos, Zeytin ve 1 adet Çay ile servis edilir.</p>
                 </div>
 
                 
                 <div class="menu-item" onclick="showImage('simittabagi')">
+                    <div class="fiyatlarsaga">
                     <h3>Simit Tabağı</h3>
-                    <p>Simit, Beyaz Peynir, Rose Sos, Zeytin ve 1 adet Çay ile servis edilir.</p>
                     <div class="price">135 ₺</div>
+                    </div>
+                    <p>Simit, Beyaz Peynir, Rose Sos, Zeytin ve 1 adet Çay ile servis edilir.</p>
                 </div>
 
                 
                 <div class="menu-item" onclick="showImage('menemen')">
+                    <div class="fiyatlarsaga">
                     <h3>Menemen</h3>
-                    <p>Karışık, Saçarlı, Sucuklu seçenekleriyle</p>
                     <div class="price">135 ₺</div>
+                    </div>
+                    <p>Karışık, Saçarlı, Sucuklu seçenekleriyle</p>
                 </div>
 
                 
                 <div class="menu-item" onclick="showImage('yumpat')">
+                    <div class="fiyatlarsaga">
                     <h3>YUMPAT</h3>
-                    <p>Patatesli Yumurta.</p>
                     <div class="price">130 ₺</div>
+                    </div>
+                    <p>Patatesli Yumurta.</p>
                 </div>
 
                 
                 <div class="menu-item" onclick="showImage('sahandayumurta')">
+                    <div class="fiyatlarsaga">
                     <h3>Sahanda Yumurta</h3>
+                    <div class="price">110 ₺</div>
+                    </div>
                     <p>Tereyağlı Sahanda Yumurta</p>
                     <p><i>15 ₺ fark ile;</i> Çift Yumurtalı</p>
-                    <div class="price">110 ₺</div>
                 </div>
 
                 
                 <div class="menu-item" onclick="showImage('omlet')">
+                    <div class="fiyatlarsaga">
                     <h3>Omlet</h3>
-                    <p>Karışık, Kaşarlı, Sucuklu, Mantarlı seçenekleriyle.</p>
                     <div class="price">130 ₺</div>
+                    </div>
+                    <p>Karışık, Kaşarlı, Sucuklu, Mantarlı seçenekleriyle.</p>
                 </div>
 
                 
                 <div class="menu-item" onclick="showImage('cikolatasimit')">
+                    <div class="fiyatlarsaga">
                     <h3>Çikolata Simit</h3>
-                    <p>Simit, Çikolata ve 1 adet Çay ile servis edilir.</p>
                     <div class="price">115 ₺</div>
+                    </div>
+                    <p>Simit, Çikolata ve 1 adet Çay ile servis edilir.</p>
                 </div>
 
                 
                 <div class="menu-item" onclick="showImage('kasarsimit')">
+                    <div class="fiyatlarsaga">
                     <h3>Kaşar Simit</h3>
-                    <p>1 adet Çay, Simit Arası Kaşar, Rose Sos, ve Zeytin ile servis edilir.</p>
                     <div class="price">115 ₺</div>
+                    </div>
+                    <p>1 adet Çay, Simit Arası Kaşar, Rose Sos, ve Zeytin ile servis edilir.</p>
                 </div>
 
                 
                 <div class="menu-item" onclick="showImage('simit')">
+                    <div class="fiyatlarsaga">
                     <h3>Simit</h3>
-                    <p>Simit, Rose Sos ile servis edilir.</p>
                     <div class="price">50 ₺</div>
+                    </div>
+                    <p>Simit, Rose Sos ile servis edilir.</p>
                 </div>
 
             </div>
