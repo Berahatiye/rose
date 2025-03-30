@@ -10,6 +10,12 @@
     <style>
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
 
+html{
+    -ms-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+}
+
 .yan{
     display: inline-flex;
 }
@@ -71,6 +77,11 @@
             display: grid;
             margin-top: 10px;
             margin-right: 1rem;
+        }
+
+        .maps:hover{
+            background-color: #666666;
+            transition: 0.10s !important;
         }
 
         .subeler{
@@ -140,8 +151,8 @@
 
             .rosecafelogo {
             margin-inline: auto;
-            height: 6rem;
-            width: 6rem;
+            height: 7rem;
+            width: 7rem;
             border-radius: 50%;
         }
 
@@ -652,7 +663,7 @@
         }
 
             h2 {
-                font-size: 2.5rem;
+                font-size: 2.2rem;
             }
 
             .menu-item h3 {
@@ -871,7 +882,13 @@
 
 
 
+
     @media (max-width: 480px) {
+
+        .maps:active{
+            background-color: #666666;
+            transition: 0.10s !important;
+        }
 
             .prev, .next {
         padding: 0.5rem;
@@ -1080,7 +1097,7 @@
     <!-- Main Menu Section -->
     <section>
         <div class="menu-header">
-            <h2>MENU</h2>
+            <h2>MENÜ</h2>
         </div>
         
         <div class="button" id="button1" onclick="toggleContext('context1')">
