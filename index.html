@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -182,16 +181,9 @@
 
 
         .sube{
-            display: block;
-            position: relative;
-        height: 2px;
-        background: #666666;
-        width: 40vh;
-        margin-inline: auto;
-        border-radius: 2px;
-        margin-top: 10px; 
-        margin-bottom: 10px;
+        width: 40vh !important;
         }
+
 
         .maps2{
             justify-content: center;
@@ -304,6 +296,10 @@
     margin: 0px;
     box-sizing: border-box;
     }
+
+    .sube{
+        width: 80vh;
+        }
 }
 
 /* Adjust further for extra small screens */
@@ -329,7 +325,7 @@
 
         .menu-header {
             text-align: center;
-            margin-bottom: 1rem;
+            margin-bottom: 0;
         }
 
 
@@ -344,13 +340,13 @@
         h2 {
             margin-inline: auto;
             max-width: 85vh;
-            font-size: 2.7rem;
+            font-size: 3rem;
             color: #383839;
             font-weight: bold;
             letter-spacing: 1px;
             margin-bottom: 1px;
             padding-bottom: 8px;
-            border-bottom: 4px solid #2b2d2f;
+            border: none;
             font-family: 'Poppins', sans-serif;
             text-align: center;
         }
@@ -633,7 +629,7 @@
 
         @media (min-width: 768px){
             .button.show-text {
-            height: 45px; /* Height increases when clicked */
+            height: 50px; /* Height increases when clicked */
         }
 
         .button span {
@@ -648,15 +644,15 @@
             }
 
             .button span {
-            font-size: 0.8rem;
+            font-size: 0.75rem;
         }
 
         .button.show-text {
-            height: 62px; /* Height increases when clicked */
+            height: 55px !important; /* Height increases when clicked */
         }
 
             h2 {
-                font-size: 2.3rem;
+                font-size: 2.5rem;
             }
 
             .menu-item h3 {
@@ -674,6 +670,7 @@
             .price {
                 font-size: 1.6rem;
             }
+
         }
 
 
@@ -906,17 +903,21 @@
         }
 
 
-
-
-
-
-
         .modal img {
             width: 100%;
             height: auto;
             border-radius: 15px;
             display: none;
         }
+
+
+
+        .button {
+            font-size: 1.4rem !important;
+            height: 30px !important; /* Initial height */
+            padding: 20px 4px !important;
+        }
+
     }
 
 
@@ -969,7 +970,7 @@
 
         .button {
             position: relative;
-            padding: 15px 30px;
+            padding: 20px 30px;
             background-color: #ffb3c7;
             color: #F9F6EE;
             border: none;
@@ -978,8 +979,8 @@
             transition: background-color 0.15s ease, transform 0.15s ease;
             overflow: hidden;
             text-align: center; /* Align text to the left */
-            margin-top: 5px;
-            font-size: 1.4rem;
+            margin-top: 10px;
+            font-size: 1.8rem;
             font-family: 'Poppins', sans-serif;
             font-weight: bold;
             max-width: 85vh;
@@ -1084,7 +1085,7 @@
         
         <div class="button" id="button1" onclick="toggleContext('context1')">
             Sıcak İçecekler
-            <span>Ürün sekmelerine tıklayarak örnek görsellere ulaşabilirsiniz, afiyet olsun.</span>
+            <span>Örnek ürün görselleri için üzerine tıklayınız, afiyet olsun.</span>
         </div>
 
         <div class="context" id="context1"> 
@@ -1162,7 +1163,7 @@
 
         <div class="button" id="button2" onclick="toggleContext('context2')">
             Türk Kahveleri
-            <span>Ürün sekmelerine tıklayarak örnek görsellere ulaşabilirsiniz, afiyet olsun.</span>
+            <span>Örnek ürün görselleri için üzerine tıklayınız, afiyet olsun.</span>
         </div>
 
         <div class="context" id="context2">
@@ -1212,7 +1213,7 @@
 
         <div class="button" id="button3" onclick="toggleContext('context3')">
             Dünya Kahveleri
-            <span>Ürün sekmelerine tıklayarak örnek görsellere ulaşabilirsiniz, afiyet olsun.</span>
+            <span>Örnek ürün görselleri için üzerine tıklayınız, afiyet olsun.</span>
         </div>
 
         <div class="context" id="context3">
@@ -1299,7 +1300,7 @@
 
         <div class="button" id="button4" onclick="toggleContext('context4')">
             Soğuk İçecekler
-            <span>Ürün sekmelerine tıklayarak örnek görsellere ulaşabilirsiniz, afiyet olsun.</span>
+            <span>Örnek ürün görselleri için üzerine tıklayınız, afiyet olsun.</span>
         </div>
 
         <div class="context" id="context4">
@@ -1403,7 +1404,7 @@
 
         <div class="button" id="button5" onclick="toggleContext('context5')">
             Milkshake
-            <span>Ürün sekmelerine tıklayarak örnek görsellere ulaşabilirsiniz, afiyet olsun.</span>
+            <span>Örnek ürün görselleri için üzerine tıklayınız, afiyet olsun.</span>
         </div>
 
         <div class="context" id="context5">
@@ -1466,7 +1467,7 @@
 
         <div class="button" id="button6" onclick="toggleContext('context6')">
             Tatlılar
-            <span>Ürün sekmelerine tıklayarak örnek görsellere ulaşabilirsiniz, afiyet olsun.</span>
+            <span>Örnek ürün görselleri için üzerine tıklayınız, afiyet olsun.</span>
         </div>
 
         <div class="context" id="context6">
@@ -1692,7 +1693,7 @@
 
         <div class="button" id="button7" onclick="toggleContext('context7')">
             Tostlar
-            <span>Ürün sekmelerine tıklayarak örnek görsellere ulaşabilirsiniz, afiyet olsun.</span>
+            <span>Örnek ürün görselleri için üzerine tıklayınız, afiyet olsun.</span>
         </div>
 
         <div class="context" id="context7">
@@ -1782,7 +1783,7 @@
 
         <div class="button" id="button8" onclick="toggleContext('context8')">
             Atıştırmalıklar
-            <span>Ürün sekmelerine tıklayarak örnek görsellere ulaşabilirsiniz, afiyet olsun.</span>
+            <span>Örnek ürün görselleri için üzerine tıklayınız, afiyet olsun.</span>
         </div>
 
         <div class="context" id="context8">
@@ -1808,7 +1809,7 @@
 
         <div class="button" id="button9" onclick="toggleContext('context9')">
            Salatalar
-           <span>Ürün sekmelerine tıklayarak örnek görsellere ulaşabilirsiniz, afiyet olsun.</span>
+           <span>Örnek ürün görselleri için üzerine tıklayınız, afiyet olsun.</span>
         </div>
 
         <div class="context" id="context9">
@@ -1846,7 +1847,7 @@
 
         <div class="button" id="button10" onclick="toggleContext('context10')">
             Makarnalar
-            <span>Ürün sekmelerine tıklayarak örnek görsellere ulaşabilirsiniz, afiyet olsun.</span>
+            <span>Örnek ürün görselleri için üzerine tıklayınız, afiyet olsun.</span>
          </div>
 
          <div class="context" id="context10">
@@ -1895,7 +1896,7 @@
 
          <div class="button" id="button11" onclick="toggleContext('context11')">
             Pizzalar
-            <span>Ürün sekmelerine tıklayarak örnek görsellere ulaşabilirsiniz, afiyet olsun.</span>
+            <span>Örnek ürün görselleri için üzerine tıklayınız, afiyet olsun.</span>
          </div>
 
          
@@ -1948,7 +1949,7 @@
 
          <div class="button" id="button12" onclick="toggleContext('context12')">
             Kahvaltılar
-            <span>Ürün sekmelerine tıklayarak örnek görsellere ulaşabilirsiniz, afiyet olsun.</span>
+            <span>Örnek ürün görselleri için üzerine tıklayınız, afiyet olsun.</span>
          </div>
 
          <div class="context" id="context12">
