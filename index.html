@@ -47,7 +47,7 @@ html{
             position: relative;
         height: 2px;
         background: #666666;
-        width: 100vh;
+        width: 60vh;
         margin-inline: auto;
         border-radius: 2px;
         margin-top: 10px; 
@@ -194,7 +194,7 @@ html{
 
 
         .sube{
-        width: 40vh !important;
+        width: 30vh !important;
         }
 
 
@@ -311,7 +311,7 @@ html{
     }
 
     .sube{
-        width: 80vh;
+        width: 40vh;
         }
 }
 
@@ -396,7 +396,7 @@ html{
         }
 
         .menu-item h3 {
-            font-size: 2rem;
+            font-size: 1.9rem;
             color: #2b2d2f;
             margin-block: auto;
             padding-right: 10px;
@@ -405,8 +405,7 @@ html{
         .h4h4 {
             font-size: 1.45rem;
             color: #777;
-            margin-bottom: 12px;
-            margin-top: 0;
+            margin-top: 5px;
             border-bottom: 2px solid #777;
         }
 
@@ -419,11 +418,9 @@ html{
             text-align: center;
         }
 
-
         .menu-item p {
-            font-size: 1rem;
+            font-size: 0.875rem;
             color: #777;
-            margin-bottom: 20px;
         }
 
         .price {
@@ -712,7 +709,7 @@ html{
    /* Slideshow Container */
    .slideshow-container {
             position: relative;
-            max-width: 125vh;
+            max-width: 100vh;
             margin: auto;
             border-radius: 15px;
             overflow: hidden;
@@ -860,7 +857,7 @@ html{
 
 
             .slideshow-container {
-            max-width: 90vh;
+            max-width: 90vh !important;
         }
 
         /* Hide all images by default */
@@ -915,7 +912,7 @@ html{
 
                /* Slideshow Container */
         .slideshow-container {
-            max-width: 100%;
+            max-width: 100% !important;
         }
 
         /* Hide all images by default */
@@ -1245,81 +1242,115 @@ html{
         <div class="context" id="context3">
             <div class="menu-category">
                 <div class="menu-item" onclick="showImage('espresso')">
+                    <div class="fiyatlarsaga">
                     <h3>Espresso</h3>
                     <div class="price">55 ₺</div>
+                    </div>
                 </div>
                 <div class="menu-item" onclick="showImage('doubleespresso')">
+                    <div class="fiyatlarsaga">
                     <h3>Double Espresso</h3>
                     <div class="price">65 ₺</div>
+                    </div>
                 </div>
                 <div class="menu-item" onclick="showImage('latte')">
+                    <div class="fiyatlarsaga">
                     <h3>Caffe Latte</h3>
-                    <p>Fındık, Irish, Caramel, Vanilya seçenekleriyle</p>
                     <div class="price">80 ₺</div>
+                    </div>
+                    <p>Fındık, Irish, Caramel, Vanilya seçenekleriyle</p>
                 </div>
                 <div class="menu-item" onclick="showImage('cappuccino')">
+                    <div class="fiyatlarsaga">
                     <h3>Caffe Cappuccino</h3>
                     <div class="price">80 ₺</div>
+                    </div>
                 </div>
                 <div class="menu-item" onclick="showImage('americano')">
+                    <div class="fiyatlarsaga">
                     <h3>Americano</h3>
                     <div class="price">75 ₺</div>
+                    </div>
                 </div>
                 <div class="menu-item" onclick="showImage('sutluamericano')">
+                    <div class="fiyatlarsaga">
                     <h3>Sütlü Americano</h3>
                     <div class="price">80 ₺</div>
+                    </div>
                 </div>
                 <div class="menu-item" onclick="showImage('caramelmaccioato')">
+                    <div class="fiyatlarsaga">
                     <h3>Caramel Macchiato</h3>
                     <div class="price">85 ₺</div>
+                    </div>
                 </div>
                 <div class="menu-item" onclick="showImage('cafemocha')">
+                    <div class="fiyatlarsaga">
                     <h3>Cafe Mocha</h3>
-                    <p>Sütlü, Bitter, Çikolata seçenekleriyle</p>
                     <div class="price">90 ₺</div>
+                    </div>
+                    <p>Sütlü, Bitter, Çikolata seçenekleriyle</p>
                 </div>
                 <div class="menu-item" onclick="showImage('espressoconpanna')">
+                    <div class="fiyatlarsaga">
                     <h3>Espresso Con Panna</h3>
-                    <p>Çırpılmış krema ile tepesinde tek veya çift espresso ile birlikte</p>
                     <div class="price">75 ₺</div>
+                    </div>
+                    <p>Çırpılmış krema ile tepesinde tek veya çift espresso ile birlikte</p>
                 </div>
                 <div class="menu-item" onclick="showImage('cortado')">
+                    <div class="fiyatlarsaga">
                     <h3>Cortado</h3>
-                    <p>Espresso ve az miktarda sıcak süt ile</p>
                     <div class="price">75 ₺</div>
+                    </div>
+                    <p>Espresso ve az miktarda sıcak süt ile</p>
                 </div>
                 <div class="menu-item" onclick="showImage('affogato')">
+                    <div class="fiyatlarsaga">
                     <h3>Affogato</h3>
-                    <p>Dondurma üzerine sıcak espresso dökülerek hazırlanır</p>
                     <div class="price">85 ₺</div>
+                    </div>
+                    <p>Dondurma üzerine sıcak espresso dökülerek hazırlanır</p>
                 </div>
                 <div class="menu-item" onclick="showImage('filtrekahve')">
+                    <div class="fiyatlarsaga">
                     <h3>Filtre Kahve</h3>
                     <div class="price">60 ₺</div>
+                    </div>
                 </div>
                 <div class="menu-item" onclick="showImage('aromalifiltrekahve')">
+                    <div class="fiyatlarsaga">
                     <h3>Aromalı Filtre Kahve</h3>
-                    <p>Sütlü, Fındık, Irish ve Çikolata seçenekleriyle</p>
                     <div class="price">65 ₺</div>
+                    </div>
+                    <p>Sütlü, Fındık, Irish ve Çikolata seçenekleriyle</p>
                 </div>
                 <div class="menu-item" onclick="showImage('icefiltrekahve')">
+                    <div class="fiyatlarsaga">
                     <h3>Ice Filtre Kahve</h3>
-                    <p>Sütlü, Fındık, Irish ve Çikolata seçenekleriyle</p>
                     <div class="price">75 ₺</div>
+                    </div>
+                    <p>Sütlü, Fındık, Irish ve Çikolata seçenekleriyle</p>
                 </div>
                 <div class="menu-item" onclick="showImage('icelatte')">
+                    <div class="fiyatlarsaga">
                     <h3>Ice Latte</h3>
-                    <p>Fındık, Irish ve Çikolata seçenekleriyle</p>
                     <div class="price">85 ₺</div>
+                    </div>
+                    <p>Fındık, Irish ve Çikolata seçenekleriyle</p>
                 </div>
                 <div class="menu-item" onclick="showImage('icemocha')">
+                    <div class="fiyatlarsaga">
                     <h3>Ice Mocha</h3>
-                    <p>Sütlü, Bitter ve Fildişi Çikolata seçenekleriyle</p>
                     <div class="price">90 ₺</div>
+                    </div>
+                    <p>Sütlü, Bitter ve Fildişi Çikolata seçenekleriyle</p>
                 </div>
                 <div class="menu-item" onclick="showImage('icecaramelmacchiato')">
+                    <div class="fiyatlarsaga">
                     <h3>Ice Caramel Macchiato</h3>
                     <div class="price">85 ₺</div>
+                    </div>
                 </div>
             </div>
         </div>
