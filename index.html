@@ -45,11 +45,11 @@ html{
         .sube{
             display: block;
             position: relative;
-        height: 2px;
+        height: 2.5px;
         background: #666666;
         width: 60vh;
         margin-inline: auto;
-        border-radius: 2px;
+        border-radius: 2.5px;
         margin-top: 10px; 
         margin-bottom: 10px;
         }
@@ -194,7 +194,7 @@ html{
 
 
         .sube{
-        width: 30vh !important;
+        width: 24vh !important;
         }
 
 
@@ -366,7 +366,7 @@ html{
 
         .menu-category {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            grid-template-columns: 1fr;
             gap: 30px;
             justify-items: center;
         }
@@ -396,7 +396,7 @@ html{
         }
 
         .menu-item h3 {
-            font-size: 1.9rem;
+            font-size: 1.6rem;
             color: #2b2d2f;
             margin-block: auto;
             padding-right: 10px;
@@ -424,7 +424,7 @@ html{
         }
 
         .price {
-            font-size: 1.8rem;
+            font-size: 1.6rem;
             font-weight: bold;
             color: #5c4f3f;
             margin-left: auto;
@@ -657,7 +657,7 @@ html{
 
         @media (max-width: 480px) {
             .menu-category {
-                grid-template-columns: 1fr;
+                grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));;
             }
 
             .button span {
@@ -936,7 +936,7 @@ html{
 
 
         .button {
-            font-size: 1.4rem !important;
+            font-size: 1.7rem !important;
             height: 30px !important; /* Initial height */
             padding: 20px 4px !important;
         }
@@ -1108,7 +1108,7 @@ html{
         
         <div class="button" id="button1" onclick="toggleContext('context1')">
             Sıcak İçecekler
-            <span>Örnek ürün görselleri için üzerine tıklayınız, afiyet olsun.</span>
+            <span><svg xmlns="http://www.w3.org/2000/svg" height="18" width="18" viewBox="0 0 512 512"><path fill="#666666" d="M149.1 64.8L138.7 96 64 96C28.7 96 0 124.7 0 160L0 416c0 35.3 28.7 64 64 64l384 0c35.3 0 64-28.7 64-64l0-256c0-35.3-28.7-64-64-64l-74.7 0L362.9 64.8C356.4 45.2 338.1 32 317.4 32L194.6 32c-20.7 0-39 13.2-45.5 32.8zM256 192a96 96 0 1 1 0 192 96 96 0 1 1 0-192z"/></svg> Örnek ürün görselleri için üzerine tıklayınız, afiyet olsun.</span>
         </div>
 
         <div class="context" id="context1"> 
@@ -1246,12 +1246,14 @@ html{
                     <h3>Espresso</h3>
                     <div class="price">55 ₺</div>
                     </div>
+                    <svg xmlns="http://www.w3.org/2000/svg" height="21" width="21" viewBox="0 0 512 512" style="display: block; margin-inline: auto;"><path fill="#666666" d="M149.1 64.8L138.7 96 64 96C28.7 96 0 124.7 0 160L0 416c0 35.3 28.7 64 64 64l384 0c35.3 0 64-28.7 64-64l0-256c0-35.3-28.7-64-64-64l-74.7 0L362.9 64.8C356.4 45.2 338.1 32 317.4 32L194.6 32c-20.7 0-39 13.2-45.5 32.8zM256 192a96 96 0 1 1 0 192 96 96 0 1 1 0-192z"/></svg>
                 </div>
                 <div class="menu-item" onclick="showImage('doubleespresso')">
                     <div class="fiyatlarsaga">
                     <h3>Double Espresso</h3>
                     <div class="price">65 ₺</div>
                     </div>
+                    <svg xmlns="http://www.w3.org/2000/svg" height="21" width="21" viewBox="0 0 512 512" style="display: block; margin-inline: auto;"><path fill="#666666" d="M149.1 64.8L138.7 96 64 96C28.7 96 0 124.7 0 160L0 416c0 35.3 28.7 64 64 64l384 0c35.3 0 64-28.7 64-64l0-256c0-35.3-28.7-64-64-64l-74.7 0L362.9 64.8C356.4 45.2 338.1 32 317.4 32L194.6 32c-20.7 0-39 13.2-45.5 32.8zM256 192a96 96 0 1 1 0 192 96 96 0 1 1 0-192z"/></svg>
                 </div>
                 <div class="menu-item" onclick="showImage('latte')">
                     <div class="fiyatlarsaga">
@@ -1259,24 +1261,28 @@ html{
                     <div class="price">80 ₺</div>
                     </div>
                     <p>Fındık, Irish, Caramel, Vanilya seçenekleriyle</p>
+                    <svg xmlns="http://www.w3.org/2000/svg" height="21" width="21" viewBox="0 0 512 512" style="display: block; margin-inline: auto;"><path fill="#666666" d="M149.1 64.8L138.7 96 64 96C28.7 96 0 124.7 0 160L0 416c0 35.3 28.7 64 64 64l384 0c35.3 0 64-28.7 64-64l0-256c0-35.3-28.7-64-64-64l-74.7 0L362.9 64.8C356.4 45.2 338.1 32 317.4 32L194.6 32c-20.7 0-39 13.2-45.5 32.8zM256 192a96 96 0 1 1 0 192 96 96 0 1 1 0-192z"/></svg>
                 </div>
                 <div class="menu-item" onclick="showImage('cappuccino')">
                     <div class="fiyatlarsaga">
                     <h3>Caffe Cappuccino</h3>
                     <div class="price">80 ₺</div>
                     </div>
+                    <svg xmlns="http://www.w3.org/2000/svg" height="21" width="21" viewBox="0 0 512 512" style="display: block; margin-inline: auto;"><path fill="#666666" d="M149.1 64.8L138.7 96 64 96C28.7 96 0 124.7 0 160L0 416c0 35.3 28.7 64 64 64l384 0c35.3 0 64-28.7 64-64l0-256c0-35.3-28.7-64-64-64l-74.7 0L362.9 64.8C356.4 45.2 338.1 32 317.4 32L194.6 32c-20.7 0-39 13.2-45.5 32.8zM256 192a96 96 0 1 1 0 192 96 96 0 1 1 0-192z"/></svg>
                 </div>
                 <div class="menu-item" onclick="showImage('americano')">
                     <div class="fiyatlarsaga">
                     <h3>Americano</h3>
                     <div class="price">75 ₺</div>
                     </div>
+                    <svg xmlns="http://www.w3.org/2000/svg" height="21" width="21" viewBox="0 0 512 512" style="display: block; margin-inline: auto;"><path fill="#666666" d="M149.1 64.8L138.7 96 64 96C28.7 96 0 124.7 0 160L0 416c0 35.3 28.7 64 64 64l384 0c35.3 0 64-28.7 64-64l0-256c0-35.3-28.7-64-64-64l-74.7 0L362.9 64.8C356.4 45.2 338.1 32 317.4 32L194.6 32c-20.7 0-39 13.2-45.5 32.8zM256 192a96 96 0 1 1 0 192 96 96 0 1 1 0-192z"/></svg>
                 </div>
                 <div class="menu-item" onclick="showImage('sutluamericano')">
                     <div class="fiyatlarsaga">
                     <h3>Sütlü Americano</h3>
                     <div class="price">80 ₺</div>
                     </div>
+                    <svg xmlns="http://www.w3.org/2000/svg" height="21" width="21" viewBox="0 0 512 512" style="display: block; margin-inline: auto;"><path fill="#666666" d="M149.1 64.8L138.7 96 64 96C28.7 96 0 124.7 0 160L0 416c0 35.3 28.7 64 64 64l384 0c35.3 0 64-28.7 64-64l0-256c0-35.3-28.7-64-64-64l-74.7 0L362.9 64.8C356.4 45.2 338.1 32 317.4 32L194.6 32c-20.7 0-39 13.2-45.5 32.8zM256 192a96 96 0 1 1 0 192 96 96 0 1 1 0-192z"/></svg>
                 </div>
                 <div class="menu-item" onclick="showImage('caramelmaccioato')">
                     <div class="fiyatlarsaga">
@@ -2916,7 +2922,11 @@ function toggleContext(contextId) {
 
             modalImage.src = imageSrc; // Set image source
             document.getElementById('modal').style.display = 'flex'; // Show modal
+
+            modalImage.loading = 'eager';
         }
+
+
 
         function closeImage() {
             document.getElementById('modal').style.display = 'none'; // Close modal
@@ -3032,7 +3042,7 @@ buttons.forEach(button => {
         setTimeout(() => {
             button.classList.remove('show-text');
             button.classList.remove('button-active');
-        }, 10000);
+        }, 7500);
     });
 });
         
