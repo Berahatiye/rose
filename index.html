@@ -693,190 +693,8 @@ html{
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-   /* Slideshow Container */
-   .slideshow-container {
-            position: relative;
-            max-width: 100vh;
-            margin: auto;
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
-            margin-top: 9px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            border: 1px solid #F9F6EE;
-        }
-
-        /* Hide all images by default */
-        .slide {
-            display: none;
-            width: 50%;
-            height: auto;
-            object-fit: cover;
-            border-radius: 15px;
-            transition: opacity 1s ease-in-out;
-        }
-
-        /* Stop Button */
-        .stop-button {
-            position: absolute;
-            bottom: 0;
-            background-color: rgba(0, 0, 0, 0.6);
-            color: white;
-            border: none;
-            padding: 5px 10px;
-            font-size: 1rem;
-            cursor: pointer;
-            border-radius: 5px;
-            z-index: 15;
-            transition: background-color 0.15s;
-            transition-behavior: normal;
-            transition-timing-function: ease;
-            transition-delay: 0s;
-            font-weight: bold;
-        }
-
-        .stop-button:active {
-            background-color: rgba(0, 0, 0, 0.8);
-        }
-
-        /* Slideshow Message (Top-Right) */
-        .stop-message {
-            display: none;
-            position: absolute;
-            bottom: 0;
-            font-size: 1rem;
-            color: white;
-            background-color: rgba(0, 0, 0, 0.7);
-            padding: 5px 10px;
-            border-radius: 5px;
-            cursor: pointer;
-            font-weight: bold;
-            transition: background-color 0.15s;
-            transition-behavior: normal;
-            transition-timing-function: ease;
-            transition-delay: 0s;
-            z-index: 15;
-        }
-
-        .stop-message:active {
-            background-color: rgba(0, 0, 0, 0.8);
-        }
-
-        /* Navigation Arrows */
-        .prev,
-        .next {
-            position: absolute;
-            top: 50%;
-            background-color: transparent;
-            color: white;
-            border: none;
-            padding: 0.4rem;
-            cursor: pointer;
-            font-size: 3.2rem;
-            font-weight: bold;
-            border-radius: 1rem;
-            z-index: 10;
-            transition: background-color 0.15s;
-            transition-behavior: normal;
-            transition-timing-function: ease;
-            transition-delay: 0s;
-            text-align: center;
-            width: 50%;
-            height: 100%;
-        }
-
-        .prev {
-            left: 2px;
-            transform: translateY(-50%);
-        }
-
-        .next {
-            right: 2px;
-            transform: translateY(-50%);
-        }
-
-        /* Dots */
-        .dot-container {
-            position: absolute;
-            top: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            display: flex;
-            max-width: 96vh;
-            z-index: 15;
-        }
-
-        .dot {
-            height: 0.32rem;
-            width: 32vh;
-            margin: 0 1px;
-            background-color: rgba(0, 0, 0, 0.5);
-            border-radius: 50rem;
-            display: inline-block;
-            transition: background-color 0.3s;
-            cursor: pointer;
-        }
-
-        .dot.active {
-            background-color: #f799b1;
-        }
-
-
-
         /* Responsive Design */
     @media (max-width: 768px) {
-            .prev,
-            .next {
-                padding: 0.5rem;
-                font-size: 3rem;
-            }
-
-            .dot-container{
-                max-width: 72vh;
-            }
-
-            .dot {
-                height: 0.34rem;
-                width: 24vh;
-            }
-
-
-            .slideshow-container {
-            max-width: 90vh !important;
-        }
-
-        /* Hide all images by default */
-        .slide {
-            display: none;
-            width: 80%;
-            height: auto;
-            object-fit: cover;
-            border-radius: 15px;
-            transition: opacity 1s ease-in-out;
-        }
-
-
-
-
-
-
-
-
 
         .modal img {
             width: 50vh;
@@ -896,34 +714,7 @@ html{
             transition: 0.10s !important;
         }
 
-            .prev, .next {
-        padding: 0.5rem;
-        font-size: 2.7rem;
-            }
 
-            .dot {
-                height: 0.36rem; 
-            }
-
-            .dot-container{
-                max-width: 95%;
-            }
-
-
-               /* Slideshow Container */
-        .slideshow-container {
-            max-width: 100% !important;
-        }
-
-        /* Hide all images by default */
-        .slide {
-            display: none;
-            width: 100%;
-            height: auto;
-            object-fit: cover;
-            border-radius: 15px;
-            transition: opacity 1s ease-in-out;
-        }
 
 
         .modal img {
@@ -1055,6 +846,125 @@ html{
             opacity: 1; /* Fade in */
             height: auto; /* Allow height to adjust */
         }
+
+
+
+
+
+
+
+
+
+
+
+
+        * {
+      outline: none;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .story-container {
+      position: relative;
+      width: 100%;
+      max-width: 420px;
+      aspect-ratio: 9 / 16;
+      overflow: hidden;
+      border-radius: 16px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+      background-color: transparent;
+      touch-action: manipulation;
+      cursor: pointer;
+      margin-inline: auto;
+    }
+
+    .slide {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: none;
+    }
+
+    .slide.active {
+      display: block;
+    }
+
+    .slide img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 16px;
+      -webkit-user-drag: none;
+      user-select: none;
+      pointer-events: none;
+    }
+
+    .progress-bar-container {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      right: 12px;
+      display: flex;
+      gap: 6px;
+      z-index: 10;
+    }
+
+    .progress-bar {
+      flex-grow: 1;
+      height: 4px;
+      background-color: rgba(255, 255, 255, 0.2);
+      border-radius: 2px;
+      overflow: hidden;
+    }
+
+    .progress-bar-fill {
+      height: 100%;
+      width: 0%;
+      background: linear-gradient(to right, #f799ff99, #f799b1);
+      border-radius: 2px;
+      transition: none;
+      box-shadow: 0 0 6px rgba(255, 255, 255, 0.6);
+    }
+
+    .nav-zone {
+      position: absolute;
+      top: 0;
+      width: 50%;
+      height: 100%;
+      z-index: 20;
+    }
+
+    .nav-left { left: 0; }
+    .nav-right { right: 0; }
+
+    /* Devices: Tablets and Below */
+    @media (max-width: 768px) {
+      .story-container {
+        width: 90%;
+      }
+    }
+
+    /* Very small phones */
+    @media (max-width: 480px) {
+      .story-container {
+        width: 95%;
+      }
+    }
+
+    /* Landscape on small devices */
+    @media (orientation: landscape) and (max-height: 480px) {
+      .story-container {
+        aspect-ratio: 16 / 9;
+      }
+    }
+
+    /* Large desktop screens — shrink display for aesthetic */
+    @media (min-width: 1024px) {
+      .story-container {
+        max-width: 360px;
+      }
+    }
     </style>
 </head>
 
@@ -1070,33 +980,23 @@ html{
     <h2>Kampanyalar</h2>
     </div>
 
-    <!-- Slideshow Container -->
-    <div class="slideshow-container">
-
+    <div class="story-container" id="story-container">
         <!-- Slides -->
-        <img class="slide" src="https://raw.githubusercontent.com/Berahatiye/rose/refs/heads/main/Kaampanya1ornek.jpg" alt="Campaign 1">
-        <img class="slide" src="https://raw.githubusercontent.com/Berahatiye/rose/refs/heads/main/Kampanya2ornek.jpg" alt="Campaign 2">
-        <img class="slide" src="https://raw.githubusercontent.com/Berahatiye/rose/refs/heads/main/Kampanya3ornek.jpg" alt="Campaign 3">
-
-        <!-- Navigation Arrows -->
-        <button class="prev" onclick="plusSlides(-1)"> </button>
-        <button class="next" onclick="plusSlides(1)"> </button>
-
-        <!-- Dots -->
-        <div class="dot-container">
-            <span class="dot" onclick="currentSlide(1)"></span>
-            <span class="dot" onclick="currentSlide(2)"></span>
-            <span class="dot" onclick="currentSlide(3)"></span>
+        <div class="slide active"><img src="https://raw.githubusercontent.com/Berahatiye/rose/refs/heads/main/Kampanya2ornek.jpg" alt="Slide 1" /></div>
+        <div class="slide"><img src="https://raw.githubusercontent.com/Berahatiye/rose/refs/heads/main/Kampanya3ornek.jpg" alt="Slide 2" /></div>
+        <div class="slide"><img src="https://raw.githubusercontent.com/Berahatiye/rose/refs/heads/main/Kaampanya1ornek.jpg" alt="Slide 3" /></div>
+    
+        <!-- Progress Bars -->
+        <div class="progress-bar-container">
+          <div class="progress-bar"><div class="progress-bar-fill"></div></div>
+          <div class="progress-bar"><div class="progress-bar-fill"></div></div>
+          <div class="progress-bar"><div class="progress-bar-fill"></div></div>
         </div>
-
-        <!-- Stop Button -->
-        <button class="stop-button" onclick="stopSlideshow()">Otomatik Oynatmayı Durdur</button>
-
-        <!-- Slideshow Message (Top-Right) -->
-        <div class="stop-message" id="stopMessage" onclick="resumeSlideshow()">Otomatik Oynatmayı Devam Ettir</div>
-    </div>
-
-
+    
+        <!-- Navigation Zones -->
+        <div class="nav-zone nav-left" data-dir="left"></div>
+        <div class="nav-zone nav-right" data-dir="right"></div>
+      </div>
 
 
 
@@ -2958,73 +2858,7 @@ function toggleContext(contextId) {
 
 
 
-        let slideIndex = 1;
-        let slideInterval;
-        let slideshowRunning = true;
-
-        // Function to show the current slide
-        function showSlides() {
-            let slides = document.getElementsByClassName("slide");
-            let dots = document.getElementsByClassName("dot");
-
-            if (slideIndex > slides.length) {
-                slideIndex = 1;
-            }
-            if (slideIndex < 1) {
-                slideIndex = slides.length;
-            }
-
-            // Hide all slides and remove active class from dots
-            for (let i = 0; i < slides.length; i++) {
-                slides[i].style.display = "none";
-            }
-            for (let i = 0; i < dots.length; i++) {
-                dots[i].classList.remove("active");
-            }
-
-            // Show the current slide and set the active dot
-            slides[slideIndex - 1].style.display = "block";
-            dots[slideIndex - 1].classList.add("active");
-        }
-
-        // Function to change slides manually
-        function plusSlides(n) {
-            slideIndex += n;
-            showSlides();
-        }
-
-        // Function to navigate directly to a slide
-        function currentSlide(n) {
-            slideIndex = n;
-            showSlides();
-        }
-
-        // Start slideshow automatically every 5 seconds
-        function startSlideshow() {
-            slideInterval = setInterval(function () {
-                plusSlides(1);
-            }, 15000);
-        }
-
-        // Stop slideshow and display a message
-        function stopSlideshow() {
-            clearInterval(slideInterval);
-            slideshowRunning = false;
-            document.getElementById('stopMessage').style.display = 'block';
-            document.querySelector('.stop-button').style.display = 'none';
-        }
-
-        // Resume slideshow when the message is clicked
-        function resumeSlideshow() {
-            slideshowRunning = true;
-            document.getElementById('stopMessage').style.display = 'none';
-            document.querySelector('.stop-button').style.display = 'block';
-            startSlideshow();
-        }
-
-        // Initialize the slideshow
-        showSlides();
-        startSlideshow();
+      
 
 
 
@@ -3046,6 +2880,116 @@ buttons.forEach(button => {
     });
 });
         
+
+
+
+
+
+
+
+
+
+const slides = document.querySelectorAll('.slide');
+    const fills = document.querySelectorAll('.progress-bar-fill');
+    const container = document.getElementById('story-container');
+    const navZones = document.querySelectorAll('.nav-zone');
+
+    const totalDuration = 6000;
+    let currentIndex = 0;
+    let startTime = null;
+    let pausedTime = 0;
+    let isPaused = false;
+    let animationFrame;
+    let autoNextTimer;
+
+    let pointerDownTime = 0;
+    const holdThreshold = 300; // ms
+
+    function showSlide(index) {
+      slides.forEach((s, i) => s.classList.toggle('active', i === index));
+      fills.forEach((f, i) => {
+        f.style.transition = 'none';
+        f.style.width = i < index ? '100%' : '0%';
+      });
+
+      startTime = performance.now();
+      pausedTime = 0;
+      isPaused = false;
+      animateProgress();
+      scheduleAutoNext();
+    }
+
+    function nextSlide() {
+      cancelAnimationFrame(animationFrame);
+      clearTimeout(autoNextTimer);
+      currentIndex = (currentIndex + 1) % slides.length;
+      showSlide(currentIndex);
+    }
+
+    function prevSlide() {
+      cancelAnimationFrame(animationFrame);
+      clearTimeout(autoNextTimer);
+      currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+      showSlide(currentIndex);
+    }
+
+    function animateProgress() {
+      if (isPaused) return;
+      const now = performance.now();
+      const elapsed = now - startTime - pausedTime;
+      const progress = Math.min(elapsed / totalDuration, 1);
+      fills[currentIndex].style.width = (progress * 100) + '%';
+      if (progress < 1) {
+        animationFrame = requestAnimationFrame(animateProgress);
+      }
+    }
+
+    function scheduleAutoNext() {
+      clearTimeout(autoNextTimer);
+      autoNextTimer = setTimeout(() => nextSlide(), totalDuration);
+    }
+
+    function pause() {
+      if (isPaused) return;
+      isPaused = true;
+      pausedTime += performance.now() - startTime;
+      clearTimeout(autoNextTimer);
+      cancelAnimationFrame(animationFrame);
+    }
+
+    function resume() {
+      if (!isPaused) return;
+      isPaused = false;
+      startTime = performance.now() - pausedTime;
+      animateProgress();
+      scheduleAutoNext();
+    }
+
+    navZones.forEach(zone => {
+      zone.addEventListener('pointerdown', (e) => {
+        pointerDownTime = Date.now();
+        pause();
+      });
+
+      zone.addEventListener('pointerup', (e) => {
+        const duration = Date.now() - pointerDownTime;
+        resume();
+
+        if (duration < holdThreshold) {
+          const direction = e.currentTarget.getAttribute('data-dir');
+          if (direction === 'left') {
+            prevSlide();
+          } else {
+            nextSlide();
+          }
+        }
+      });
+
+      zone.addEventListener('pointercancel', resume);
+      zone.addEventListener('pointerleave', resume);
+    });
+
+    showSlide(currentIndex);
 </script>
 
 </body>
