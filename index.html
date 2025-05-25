@@ -14,6 +14,7 @@ html{
     -ms-user-select: none;
     -webkit-user-select: none;
     user-select: none;
+    scroll-behavior: smooth;
 }
 
 .yan{
@@ -45,7 +46,7 @@ html{
             position: relative;
         height: 2.5px;
         background: #666666;
-        margin-inline: auto;
+        margin-inline: auto !important;
         border-radius: 2.5px;
         margin-top: 10px; 
         margin-bottom: 10px;
@@ -191,7 +192,7 @@ html{
 
 
         .sube{
-        width: 32vh !important;
+        width: 34vh !important;
         }
 
 
@@ -400,7 +401,7 @@ html{
         }
 
         .menu-item h3 {
-            font-size: 1.6rem;
+            font-size: 1.4rem;
             color: #2b2d2f;
             margin-block: auto;
             padding-right: 10px;
@@ -416,7 +417,7 @@ html{
         .h4h4tost {
             font-size: 1.45rem;
             color: #777;
-            margin-bottom: 12px;
+            margin-bottom: 26px;
             margin-top: 0;
             border-bottom: 2px solid #777;
             text-align: center;
@@ -428,7 +429,7 @@ html{
         }
 
         .price {
-            font-size: 1.6rem;
+            font-size: 1.4rem;
             font-weight: bold;
             color: #5c4f3f;
             margin-left: auto;
@@ -685,7 +686,7 @@ html{
             background-color: #2b2d2f;
             color: white;
             text-align: center;
-            padding: 20px;
+            padding: 10px;
             margin-top: 60px;
             font-size: 1rem;
         }
@@ -716,14 +717,14 @@ html{
         }
 
         .button.show-text {
-            height: 50px; /* Height increases when clicked */
+            height: 55px; /* Height increases when clicked */
         }
 
         }
 
         @media (min-width: 768px){
             .button.show-text {
-            height: 50px; /* Height increases when clicked */
+            height: 55px; /* Height increases when clicked */
         }
 
         .button span {
@@ -742,7 +743,7 @@ html{
         }
 
         .button.show-text {
-            height: 55px !important; /* Height increases when clicked */
+            height: 60px !important; /* Height increases when clicked */
         }
 
             h2 {
@@ -750,7 +751,7 @@ html{
             }
 
             .menu-item h3 {
-                font-size: 1.4rem;
+                font-size: 1.13rem;
             }
 
             .h4h4 {
@@ -759,10 +760,12 @@ html{
 
         .h4h4tost {
             font-size: 1.45rem;
+            margin-bottom: 26px;
+            margin-top: 0
         }
 
             .price {
-                font-size: 1.4rem;
+                font-size: 1.13rem;
             }
 
         }
@@ -935,7 +938,8 @@ html{
 
 
 
-        * {
+ 
+    * {
       outline: none;
       -webkit-tap-highlight-color: transparent;
     }
@@ -991,7 +995,7 @@ html{
       flex-grow: 1;
       height: 6px;
       background-color: rgba(255, 255, 255, 0.2);
-      border-radius: 2px;
+      border-radius: 6px;
       overflow: hidden;
     }
 
@@ -999,7 +1003,7 @@ html{
       height: 100%;
       width: 0%;
       background: linear-gradient(to right, #f799ff99, #f799b1);
-      border-radius: 2px;
+      border-radius: 6px;
       transition: none;
       box-shadow: 0 0 6px rgba(255, 255, 255, 0.6);
     }
@@ -1015,28 +1019,48 @@ html{
     .nav-left { left: 0; }
     .nav-right { right: 0; }
 
-    /* Devices: Tablets and Below */
+    /* Hint Message */
+    .hint {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: white;
+      font-size: 1rem;
+      background: rgba(0, 0, 0, 0.6);
+      padding: 10px 20px;
+      border-radius: 8px;
+      z-index: 30;
+      animation: fadeOut 2.8s ease-in-out 2.8s forwards;
+      pointer-events: none;
+    }
+
+    @keyframes fadeOut {
+      to {
+        opacity: 0;
+        visibility: hidden;
+      }
+    }
+
+    /* Responsive adjustments */
     @media (max-width: 768px) {
       .story-container {
         width: 90%;
       }
     }
 
-    /* Very small phones */
     @media (max-width: 480px) {
       .story-container {
         width: 95%;
       }
     }
 
-    /* Landscape on small devices */
     @media (orientation: landscape) and (max-height: 480px) {
       .story-container {
         aspect-ratio: 3 / 4;
       }
     }
 
-    /* Large desktop screens — shrink display for aesthetic */
     @media (min-width: 1024px) {
       .story-container {
         max-width: 360px;
@@ -1058,22 +1082,27 @@ html{
     </div>
 
     <div class="story-container" id="story-container">
-        <!-- Slides -->
-        <div class="slide active"><img src="https://raw.githubusercontent.com/Berahatiye/rose/refs/heads/main/Kampanya2ornek.jpg" alt="Slide 1" /></div>
-        <div class="slide"><img src="https://raw.githubusercontent.com/Berahatiye/rose/refs/heads/main/Kampanya3ornek.jpg" alt="Slide 2" /></div>
-        <div class="slide"><img src="https://raw.githubusercontent.com/Berahatiye/rose/refs/heads/main/Kaampanya1ornek.jpg" alt="Slide 3" /></div>
-    
-        <!-- Progress Bars -->
-        <div class="progress-bar-container">
-          <div class="progress-bar"><div class="progress-bar-fill"></div></div>
-          <div class="progress-bar"><div class="progress-bar-fill"></div></div>
-          <div class="progress-bar"><div class="progress-bar-fill"></div></div>
-        </div>
-    
-        <!-- Navigation Zones -->
-        <div class="nav-zone nav-left" data-dir="left"></div>
-        <div class="nav-zone nav-right" data-dir="right"></div>
-      </div>
+    <!-- Hint -->
+    <div class="hint">Daha fazla kampanya görmek için dokunun, afiyet olsun.</div>
+
+    <!-- Slides -->
+    <div class="slide active"><img id="kampanyagorsel" src="https://raw.githubusercontent.com/Berahatiye/rose/refs/heads/main/Kampanyamant%C4%B1.png" alt="Slide 1" /></div>
+    <div class="slide"><img id="kampanyagorsel" src="https://raw.githubusercontent.com/Berahatiye/rose/refs/heads/main/Kampanyaturkkahve.png" alt="Slide 2" /></div>
+    <div class="slide"><img id="kampanyagorsel" src="https://raw.githubusercontent.com/Berahatiye/rose/refs/heads/main/Kampanyapizza.png" alt="Slide 3" /></div>
+    <div class="slide"><img id="kampanyagorsel" src="https://raw.githubusercontent.com/Berahatiye/rose/refs/heads/main/Haftan%C4%B1n%20yedi%20g%C3%BCn%C3%BC_%C4%B0kincisi%20%252550_20250525_161012_0000.png" alt="Slide 4" /></div>
+
+    <!-- Progress Bars -->
+    <div class="progress-bar-container">
+      <div class="progress-bar"><div class="progress-bar-fill"></div></div>
+      <div class="progress-bar"><div class="progress-bar-fill"></div></div>
+      <div class="progress-bar"><div class="progress-bar-fill"></div></div>
+      <div class="progress-bar"><div class="progress-bar-fill"></div></div>
+    </div>
+
+    <!-- Navigation Zones -->
+    <div class="nav-zone nav-left" data-dir="left"></div>
+    <div class="nav-zone nav-right" data-dir="right"></div>
+  </div>
 
 
 
@@ -1093,98 +1122,98 @@ html{
                 <div class="menu-item" onclick="showImage('cay')">
                     <div class="fiyatlarsaga">
                     <h3>Çay</h3>
-                    <div class="price">20 ₺</div>
+                    <div class="price">25 ₺</div>
                     </div>
                     <svg xmlns="http://www.w3.org/2000/svg" height="21" width="21" viewBox="0 0 512 512" style="display: block; margin-inline: auto; margin-top: 10px;"><path fill="#666666" d="M149.1 64.8L138.7 96 64 96C28.7 96 0 124.7 0 160L0 416c0 35.3 28.7 64 64 64l384 0c35.3 0 64-28.7 64-64l0-256c0-35.3-28.7-64-64-64l-74.7 0L362.9 64.8C356.4 45.2 338.1 32 317.4 32L194.6 32c-20.7 0-39 13.2-45.5 32.8zM256 192a96 96 0 1 1 0 192 96 96 0 1 1 0-192z"/></svg>
                 </div>
                 <div class="menu-item" onclick="showImage('fincancay')">
                     <div class="fiyatlarsaga">
                     <h3>Fincan Çay</h3>
-                    <div class="price">24 ₺</div>
+                    <div class="price">30 ₺</div>
                     </div>
                     <svg xmlns="http://www.w3.org/2000/svg" height="21" width="21" viewBox="0 0 512 512" style="display: block; margin-inline: auto; margin-top: 10px;"><path fill="#666666" d="M149.1 64.8L138.7 96 64 96C28.7 96 0 124.7 0 160L0 416c0 35.3 28.7 64 64 64l384 0c35.3 0 64-28.7 64-64l0-256c0-35.3-28.7-64-64-64l-74.7 0L362.9 64.8C356.4 45.2 338.1 32 317.4 32L194.6 32c-20.7 0-39 13.2-45.5 32.8zM256 192a96 96 0 1 1 0 192 96 96 0 1 1 0-192z"/></svg>
                 </div>
                 <div class="menu-item" onclick="showImage('sutlufincancay')">
                     <div class="fiyatlarsaga">
                     <h3>Sütlü Fincan Çay</h3>
-                    <div class="price">30 ₺</div>
+                    <div class="price">35 ₺</div>
                     </div>
                     <svg xmlns="http://www.w3.org/2000/svg" height="21" width="21" viewBox="0 0 512 512" style="display: block; margin-inline: auto; margin-top: 10px;"><path fill="#666666" d="M149.1 64.8L138.7 96 64 96C28.7 96 0 124.7 0 160L0 416c0 35.3 28.7 64 64 64l384 0c35.3 0 64-28.7 64-64l0-256c0-35.3-28.7-64-64-64l-74.7 0L362.9 64.8C356.4 45.2 338.1 32 317.4 32L194.6 32c-20.7 0-39 13.2-45.5 32.8zM256 192a96 96 0 1 1 0 192 96 96 0 1 1 0-192z"/></svg>
                 </div>
                 <div class="menu-item" onclick="showImage('yesilcay')">
                     <div class="fiyatlarsaga">
                     <h3>Yeşil Çay</h3>
-                    <div class="price">65 ₺</div>
+                    <div class="price">75 ₺</div>
                     </div>
                     <svg xmlns="http://www.w3.org/2000/svg" height="21" width="21" viewBox="0 0 512 512" style="display: block; margin-inline: auto; margin-top: 10px;"><path fill="#666666" d="M149.1 64.8L138.7 96 64 96C28.7 96 0 124.7 0 160L0 416c0 35.3 28.7 64 64 64l384 0c35.3 0 64-28.7 64-64l0-256c0-35.3-28.7-64-64-64l-74.7 0L362.9 64.8C356.4 45.2 338.1 32 317.4 32L194.6 32c-20.7 0-39 13.2-45.5 32.8zM256 192a96 96 0 1 1 0 192 96 96 0 1 1 0-192z"/></svg>
                 </div>
                 <div class="menu-item" onclick="showImage('kusburnu')">
                     <div class="fiyatlarsaga">
                     <h3>Kuşburnu</h3>
-                    <div class="price">65 ₺</div>
+                    <div class="price">75 ₺</div>
                     </div>
                     <svg xmlns="http://www.w3.org/2000/svg" height="21" width="21" viewBox="0 0 512 512" style="display: block; margin-inline: auto; margin-top: 10px;"><path fill="#666666" d="M149.1 64.8L138.7 96 64 96C28.7 96 0 124.7 0 160L0 416c0 35.3 28.7 64 64 64l384 0c35.3 0 64-28.7 64-64l0-256c0-35.3-28.7-64-64-64l-74.7 0L362.9 64.8C356.4 45.2 338.1 32 317.4 32L194.6 32c-20.7 0-39 13.2-45.5 32.8zM256 192a96 96 0 1 1 0 192 96 96 0 1 1 0-192z"/></svg>
                 </div>
                 <div class="menu-item" onclick="showImage('adacayi')">
                     <div class="fiyatlarsaga">
                     <h3>Adaçayı</h3>
-                    <div class="price">65 ₺</div>
+                    <div class="price">75 ₺</div>
                     </div>
                     <svg xmlns="http://www.w3.org/2000/svg" height="21" width="21" viewBox="0 0 512 512" style="display: block; margin-inline: auto; margin-top: 10px;"><path fill="#666666" d="M149.1 64.8L138.7 96 64 96C28.7 96 0 124.7 0 160L0 416c0 35.3 28.7 64 64 64l384 0c35.3 0 64-28.7 64-64l0-256c0-35.3-28.7-64-64-64l-74.7 0L362.9 64.8C356.4 45.2 338.1 32 317.4 32L194.6 32c-20.7 0-39 13.2-45.5 32.8zM256 192a96 96 0 1 1 0 192 96 96 0 1 1 0-192z"/></svg>
                 </div>
                 <div class="menu-item" onclick="showImage('ihlamur')">
                     <div class="fiyatlarsaga">
                     <h3>Ihlamur</h3>
-                    <div class="price">65 ₺</div>
+                    <div class="price">75 ₺</div>
                     </div>
                     <svg xmlns="http://www.w3.org/2000/svg" height="21" width="21" viewBox="0 0 512 512" style="display: block; margin-inline: auto; margin-top: 10px;"><path fill="#666666" d="M149.1 64.8L138.7 96 64 96C28.7 96 0 124.7 0 160L0 416c0 35.3 28.7 64 64 64l384 0c35.3 0 64-28.7 64-64l0-256c0-35.3-28.7-64-64-64l-74.7 0L362.9 64.8C356.4 45.2 338.1 32 317.4 32L194.6 32c-20.7 0-39 13.2-45.5 32.8zM256 192a96 96 0 1 1 0 192 96 96 0 1 1 0-192z"/></svg>
                 </div>
                 <div class="menu-item" onclick="showImage('kiscayi')">
                     <div class="fiyatlarsaga">
                     <h3>Kış Çayı</h3>
-                    <div class="price">65 ₺</div>
+                    <div class="price">75 ₺</div>
                     </div>
                     <svg xmlns="http://www.w3.org/2000/svg" height="21" width="21" viewBox="0 0 512 512" style="display: block; margin-inline: auto; margin-top: 10px;"><path fill="#666666" d="M149.1 64.8L138.7 96 64 96C28.7 96 0 124.7 0 160L0 416c0 35.3 28.7 64 64 64l384 0c35.3 0 64-28.7 64-64l0-256c0-35.3-28.7-64-64-64l-74.7 0L362.9 64.8C356.4 45.2 338.1 32 317.4 32L194.6 32c-20.7 0-39 13.2-45.5 32.8zM256 192a96 96 0 1 1 0 192 96 96 0 1 1 0-192z"/></svg>
                 </div>
                 <div class="menu-item" onclick="showImage('tazenanelimon')">
                     <div class="fiyatlarsaga">
                     <h3>Taze Nane Limon</h3>
-                    <div class="price">65 ₺</div>
+                    <div class="price">75 ₺</div>
                     </div>
                     <svg xmlns="http://www.w3.org/2000/svg" height="21" width="21" viewBox="0 0 512 512" style="display: block; margin-inline: auto; margin-top: 10px;"><path fill="#666666" d="M149.1 64.8L138.7 96 64 96C28.7 96 0 124.7 0 160L0 416c0 35.3 28.7 64 64 64l384 0c35.3 0 64-28.7 64-64l0-256c0-35.3-28.7-64-64-64l-74.7 0L362.9 64.8C356.4 45.2 338.1 32 317.4 32L194.6 32c-20.7 0-39 13.2-45.5 32.8zM256 192a96 96 0 1 1 0 192 96 96 0 1 1 0-192z"/></svg>
                 </div>
                 <div class="menu-item" onclick="showImage('bogurtlen')">
                     <div class="fiyatlarsaga">
                     <h3>Böğürtlen</h3>
-                    <div class="price">65 ₺</div>
+                    <div class="price">75 ₺</div>
                     </div>
                     <svg xmlns="http://www.w3.org/2000/svg" height="21" width="21" viewBox="0 0 512 512" style="display: block; margin-inline: auto; margin-top: 10px;"><path fill="#666666" d="M149.1 64.8L138.7 96 64 96C28.7 96 0 124.7 0 160L0 416c0 35.3 28.7 64 64 64l384 0c35.3 0 64-28.7 64-64l0-256c0-35.3-28.7-64-64-64l-74.7 0L362.9 64.8C356.4 45.2 338.1 32 317.4 32L194.6 32c-20.7 0-39 13.2-45.5 32.8zM256 192a96 96 0 1 1 0 192 96 96 0 1 1 0-192z"/></svg>
                 </div>
                 <div class="menu-item" onclick="showImage('sicaksut')">
                     <div class="fiyatlarsaga">
                     <h3>Sıcak Süt</h3>
-                    <div class="price">55 ₺</div>
+                    <div class="price">60 ₺</div>
                     </div>
                     <svg xmlns="http://www.w3.org/2000/svg" height="21" width="21" viewBox="0 0 512 512" style="display: block; margin-inline: auto; margin-top: 10px;"><path fill="#666666" d="M149.1 64.8L138.7 96 64 96C28.7 96 0 124.7 0 160L0 416c0 35.3 28.7 64 64 64l384 0c35.3 0 64-28.7 64-64l0-256c0-35.3-28.7-64-64-64l-74.7 0L362.9 64.8C356.4 45.2 338.1 32 317.4 32L194.6 32c-20.7 0-39 13.2-45.5 32.8zM256 192a96 96 0 1 1 0 192 96 96 0 1 1 0-192z"/></svg>
                 </div>
                 <div class="menu-item" onclick="showImage('ballisut')">
                     <div class="fiyatlarsaga">
                     <h3>Ballı Süt</h3>
-                    <div class="price">65 ₺</div>
+                    <div class="price">75 ₺</div>
                     </div>
                     <svg xmlns="http://www.w3.org/2000/svg" height="21" width="21" viewBox="0 0 512 512" style="display: block; margin-inline: auto; margin-top: 10px;"><path fill="#666666" d="M149.1 64.8L138.7 96 64 96C28.7 96 0 124.7 0 160L0 416c0 35.3 28.7 64 64 64l384 0c35.3 0 64-28.7 64-64l0-256c0-35.3-28.7-64-64-64l-74.7 0L362.9 64.8C356.4 45.2 338.1 32 317.4 32L194.6 32c-20.7 0-39 13.2-45.5 32.8zM256 192a96 96 0 1 1 0 192 96 96 0 1 1 0-192z"/></svg>
                 </div>
                 <div class="menu-item" onclick="showImage('salep')">
                     <div class="fiyatlarsaga">
                     <h3>Salep</h3>
-                    <div class="price">70 ₺</div>
+                    <div class="price">75 ₺</div>
                     </div>
                     <svg xmlns="http://www.w3.org/2000/svg" height="21" width="21" viewBox="0 0 512 512" style="display: block; margin-inline: auto; margin-top: 10px;"><path fill="#666666" d="M149.1 64.8L138.7 96 64 96C28.7 96 0 124.7 0 160L0 416c0 35.3 28.7 64 64 64l384 0c35.3 0 64-28.7 64-64l0-256c0-35.3-28.7-64-64-64l-74.7 0L362.9 64.8C356.4 45.2 338.1 32 317.4 32L194.6 32c-20.7 0-39 13.2-45.5 32.8zM256 192a96 96 0 1 1 0 192 96 96 0 1 1 0-192z"/></svg>
                 </div>
                 <div class="menu-item" onclick="showImage('cikolatasalep')">
                     <div class="fiyatlarsaga">
                     <h3>Çikolatalı Salep</h3>
-                    <div class="price">80 ₺</div>
+                    <div class="price">85 ₺</div>
                     </div>
                     <p>Gerçek Çikolata ile Harmanlanmış Eşsiz Lezzet</p>
                     <svg xmlns="http://www.w3.org/2000/svg" height="21" width="21" viewBox="0 0 512 512" style="display: block; margin-inline: auto; margin-top: 10px;"><path fill="#666666" d="M149.1 64.8L138.7 96 64 96C28.7 96 0 124.7 0 160L0 416c0 35.3 28.7 64 64 64l384 0c35.3 0 64-28.7 64-64l0-256c0-35.3-28.7-64-64-64l-74.7 0L362.9 64.8C356.4 45.2 338.1 32 317.4 32L194.6 32c-20.7 0-39 13.2-45.5 32.8zM256 192a96 96 0 1 1 0 192 96 96 0 1 1 0-192z"/></svg>
@@ -1192,7 +1221,7 @@ html{
                 <div class="menu-item" onclick="showImage('sicakcikolata')">
                     <div class="fiyatlarsaga">
                     <h3>Sıcak Çikolata</h3>
-                    <div class="price">80 ₺</div>
+                    <div class="price">85 ₺</div>
                     </div>
                     <p>Sütlü, Bitter veya Fildişi seçenekleriyle</p>
                     <svg xmlns="http://www.w3.org/2000/svg" height="21" width="21" viewBox="0 0 512 512" style="display: block; margin-inline: auto; margin-top: 10px;"><path fill="#666666" d="M149.1 64.8L138.7 96 64 96C28.7 96 0 124.7 0 160L0 416c0 35.3 28.7 64 64 64l384 0c35.3 0 64-28.7 64-64l0-256c0-35.3-28.7-64-64-64l-74.7 0L362.9 64.8C356.4 45.2 338.1 32 317.4 32L194.6 32c-20.7 0-39 13.2-45.5 32.8zM256 192a96 96 0 1 1 0 192 96 96 0 1 1 0-192z"/></svg>
@@ -1200,7 +1229,7 @@ html{
                 <div class="menu-item" onclick="showImage('turkkahvesicakcikolata')">
                     <div class="fiyatlarsaga">
                     <h3>Türk Kahveli Sıcak Çikolata</h3>
-                    <div class="price">85 ₺</div>
+                    <div class="price">90 ₺</div>
                     </div>
                     <p>Sütlü, Bitter veya Fildişi seçenekleriyle</p>
                     <svg xmlns="http://www.w3.org/2000/svg" height="21" width="21" viewBox="0 0 512 512" style="display: block; margin-inline: auto; margin-top: 10px;"><path fill="#666666" d="M149.1 64.8L138.7 96 64 96C28.7 96 0 124.7 0 160L0 416c0 35.3 28.7 64 64 64l384 0c35.3 0 64-28.7 64-64l0-256c0-35.3-28.7-64-64-64l-74.7 0L362.9 64.8C356.4 45.2 338.1 32 317.4 32L194.6 32c-20.7 0-39 13.2-45.5 32.8zM256 192a96 96 0 1 1 0 192 96 96 0 1 1 0-192z"/></svg>
@@ -1218,70 +1247,70 @@ html{
                 <div class="menu-item" onclick="showImage('turkkahvesi')">
                     <div class="fiyatlarsaga">
                     <h3>Türk Kahvesi</h3>
-                    <div class="price">50 ₺</div>
+                    <div class="price">60 ₺</div>
                     </div>
                     <svg xmlns="http://www.w3.org/2000/svg" height="21" width="21" viewBox="0 0 512 512" style="display: block; margin-inline: auto; margin-top: 10px;"><path fill="#666666" d="M149.1 64.8L138.7 96 64 96C28.7 96 0 124.7 0 160L0 416c0 35.3 28.7 64 64 64l384 0c35.3 0 64-28.7 64-64l0-256c0-35.3-28.7-64-64-64l-74.7 0L362.9 64.8C356.4 45.2 338.1 32 317.4 32L194.6 32c-20.7 0-39 13.2-45.5 32.8zM256 192a96 96 0 1 1 0 192 96 96 0 1 1 0-192z"/></svg>
                 </div>
                 <div class="menu-item" onclick="showImage('cikolataliturkkahvesi')">
                     <div class="fiyatlarsaga">
                     <h3>Çikolatalı Türk Kahvesi</h3>
-                    <div class="price">55 ₺</div>
+                    <div class="price">65 ₺</div>
                     </div>
                     <svg xmlns="http://www.w3.org/2000/svg" height="21" width="21" viewBox="0 0 512 512" style="display: block; margin-inline: auto; margin-top: 10px;"><path fill="#666666" d="M149.1 64.8L138.7 96 64 96C28.7 96 0 124.7 0 160L0 416c0 35.3 28.7 64 64 64l384 0c35.3 0 64-28.7 64-64l0-256c0-35.3-28.7-64-64-64l-74.7 0L362.9 64.8C356.4 45.2 338.1 32 317.4 32L194.6 32c-20.7 0-39 13.2-45.5 32.8zM256 192a96 96 0 1 1 0 192 96 96 0 1 1 0-192z"/></svg>
                 </div>
                 <div class="menu-item" onclick="showImage('sutluturkkahvesi')">
                     <div class="fiyatlarsaga">
                     <h3>Sütlü Türk Kahvesi</h3>
-                    <div class="price">55 ₺</div>
+                    <div class="price">65 ₺</div>
                     </div>
                     <svg xmlns="http://www.w3.org/2000/svg" height="21" width="21" viewBox="0 0 512 512" style="display: block; margin-inline: auto; margin-top: 10px;"><path fill="#666666" d="M149.1 64.8L138.7 96 64 96C28.7 96 0 124.7 0 160L0 416c0 35.3 28.7 64 64 64l384 0c35.3 0 64-28.7 64-64l0-256c0-35.3-28.7-64-64-64l-74.7 0L362.9 64.8C356.4 45.2 338.1 32 317.4 32L194.6 32c-20.7 0-39 13.2-45.5 32.8zM256 192a96 96 0 1 1 0 192 96 96 0 1 1 0-192z"/></svg>
                 </div>
                 <div class="menu-item" onclick="showImage('damlaturkkahvesi')">
                     <div class="fiyatlarsaga">
                     <h3>Damla Sakızlı Türk Kahvesi</h3>
-                    <div class="price">55 ₺</div>
+                    <div class="price">65 ₺</div>
                     </div>
                     <svg xmlns="http://www.w3.org/2000/svg" height="21" width="21" viewBox="0 0 512 512" style="display: block; margin-inline: auto; margin-top: 10px;"><path fill="#666666" d="M149.1 64.8L138.7 96 64 96C28.7 96 0 124.7 0 160L0 416c0 35.3 28.7 64 64 64l384 0c35.3 0 64-28.7 64-64l0-256c0-35.3-28.7-64-64-64l-74.7 0L362.9 64.8C356.4 45.2 338.1 32 317.4 32L194.6 32c-20.7 0-39 13.2-45.5 32.8zM256 192a96 96 0 1 1 0 192 96 96 0 1 1 0-192z"/></svg>
                 </div>
                 <div class="menu-item" onclick="showImage('dibekkahvesi')">
                     <div class="fiyatlarsaga">
                     <h3>Dibek Kahvesi</h3>
-                    <div class="price">55 ₺</div>
+                    <div class="price">65 ₺</div>
                     </div>
                     <svg xmlns="http://www.w3.org/2000/svg" height="21" width="21" viewBox="0 0 512 512" style="display: block; margin-inline: auto; margin-top: 10px;"><path fill="#666666" d="M149.1 64.8L138.7 96 64 96C28.7 96 0 124.7 0 160L0 416c0 35.3 28.7 64 64 64l384 0c35.3 0 64-28.7 64-64l0-256c0-35.3-28.7-64-64-64l-74.7 0L362.9 64.8C356.4 45.2 338.1 32 317.4 32L194.6 32c-20.7 0-39 13.2-45.5 32.8zM256 192a96 96 0 1 1 0 192 96 96 0 1 1 0-192z"/></svg>
                 </div>
                 <div class="menu-item" onclick="showImage('antepfistikliturkkahvesi')">
                     <div class="fiyatlarsaga">
                     <h3>Antep Fıstıklı Türk Kahvesi</h3>
-                    <div class="price">55 ₺</div>
+                    <div class="price">65 ₺</div>
                     </div>
                     <svg xmlns="http://www.w3.org/2000/svg" height="21" width="21" viewBox="0 0 512 512" style="display: block; margin-inline: auto; margin-top: 10px;"><path fill="#666666" d="M149.1 64.8L138.7 96 64 96C28.7 96 0 124.7 0 160L0 416c0 35.3 28.7 64 64 64l384 0c35.3 0 64-28.7 64-64l0-256c0-35.3-28.7-64-64-64l-74.7 0L362.9 64.8C356.4 45.2 338.1 32 317.4 32L194.6 32c-20.7 0-39 13.2-45.5 32.8zM256 192a96 96 0 1 1 0 192 96 96 0 1 1 0-192z"/></svg>
                 </div>
                 <div class="menu-item" onclick="showImage('doubleturkkahvesi')">
                     <div class="fiyatlarsaga">
                     <h3>Double Türk Kahvesi</h3>
-                    <div class="price">60 ₺</div>
+                    <div class="price">70 ₺</div>
                     </div>
                     <svg xmlns="http://www.w3.org/2000/svg" height="21" width="21" viewBox="0 0 512 512" style="display: block; margin-inline: auto; margin-top: 10px;"><path fill="#666666" d="M149.1 64.8L138.7 96 64 96C28.7 96 0 124.7 0 160L0 416c0 35.3 28.7 64 64 64l384 0c35.3 0 64-28.7 64-64l0-256c0-35.3-28.7-64-64-64l-74.7 0L362.9 64.8C356.4 45.2 338.1 32 317.4 32L194.6 32c-20.7 0-39 13.2-45.5 32.8zM256 192a96 96 0 1 1 0 192 96 96 0 1 1 0-192z"/></svg>
                 </div>
                 <div class="menu-item" onclick="showImage('doubledibekkahvesi')">
                     <div class="fiyatlarsaga">
                     <h3>Double Dibek Kahvesi</h3>
-                    <div class="price">65 ₺</div>
+                    <div class="price">75 ₺</div>
                     </div>
                     <svg xmlns="http://www.w3.org/2000/svg" height="21" width="21" viewBox="0 0 512 512" style="display: block; margin-inline: auto; margin-top: 10px;"><path fill="#666666" d="M149.1 64.8L138.7 96 64 96C28.7 96 0 124.7 0 160L0 416c0 35.3 28.7 64 64 64l384 0c35.3 0 64-28.7 64-64l0-256c0-35.3-28.7-64-64-64l-74.7 0L362.9 64.8C356.4 45.2 338.1 32 317.4 32L194.6 32c-20.7 0-39 13.2-45.5 32.8zM256 192a96 96 0 1 1 0 192 96 96 0 1 1 0-192z"/></svg>
                 </div>
                 <div class="menu-item" onclick="showImage('doublecikolataliturkkahvesi')">
                     <div class="fiyatlarsaga">
                     <h3>Double Çikolatalı Türk Kahvesi</h3>
-                    <div class="price">70 ₺</div>
+                    <div class="price">80 ₺</div>
                     </div>
                     <svg xmlns="http://www.w3.org/2000/svg" height="21" width="21" viewBox="0 0 512 512" style="display: block; margin-inline: auto; margin-top: 10px;"><path fill="#666666" d="M149.1 64.8L138.7 96 64 96C28.7 96 0 124.7 0 160L0 416c0 35.3 28.7 64 64 64l384 0c35.3 0 64-28.7 64-64l0-256c0-35.3-28.7-64-64-64l-74.7 0L362.9 64.8C356.4 45.2 338.1 32 317.4 32L194.6 32c-20.7 0-39 13.2-45.5 32.8zM256 192a96 96 0 1 1 0 192 96 96 0 1 1 0-192z"/></svg>
                 </div>
                 <div class="menu-item" onclick="showImage('doubledamlaturkkahvesi')">
                     <div class="fiyatlarsaga">
                     <h3>Double Damla Sakızlı Türk Kahvesi</h3>
-                    <div class="price">65 ₺</div>
+                    <div class="price">75 ₺</div>
                     </div>
                     <svg xmlns="http://www.w3.org/2000/svg" height="21" width="21" viewBox="0 0 512 512" style="display: block; margin-inline: auto; margin-top: 10px;"><path fill="#666666" d="M149.1 64.8L138.7 96 64 96C28.7 96 0 124.7 0 160L0 416c0 35.3 28.7 64 64 64l384 0c35.3 0 64-28.7 64-64l0-256c0-35.3-28.7-64-64-64l-74.7 0L362.9 64.8C356.4 45.2 338.1 32 317.4 32L194.6 32c-20.7 0-39 13.2-45.5 32.8zM256 192a96 96 0 1 1 0 192 96 96 0 1 1 0-192z"/></svg>
                 </div>
@@ -1298,21 +1327,21 @@ html{
                 <div class="menu-item" onclick="showImage('espresso')">
                     <div class="fiyatlarsaga">
                     <h3>Espresso</h3>
-                    <div class="price">55 ₺</div>
+                    <div class="price">65 ₺</div>
                     </div>
                     <svg xmlns="http://www.w3.org/2000/svg" height="21" width="21" viewBox="0 0 512 512" style="display: block; margin-inline: auto; margin-top: 10px;"><path fill="#666666" d="M149.1 64.8L138.7 96 64 96C28.7 96 0 124.7 0 160L0 416c0 35.3 28.7 64 64 64l384 0c35.3 0 64-28.7 64-64l0-256c0-35.3-28.7-64-64-64l-74.7 0L362.9 64.8C356.4 45.2 338.1 32 317.4 32L194.6 32c-20.7 0-39 13.2-45.5 32.8zM256 192a96 96 0 1 1 0 192 96 96 0 1 1 0-192z"/></svg>
                 </div>
                 <div class="menu-item" onclick="showImage('doubleespresso')">
                     <div class="fiyatlarsaga">
                     <h3>Double Espresso</h3>
-                    <div class="price">65 ₺</div>
+                    <div class="price">75 ₺</div>
                     </div>
                     <svg xmlns="http://www.w3.org/2000/svg" height="21" width="21" viewBox="0 0 512 512" style="display: block; margin-inline: auto; margin-top: 10px;"><path fill="#666666" d="M149.1 64.8L138.7 96 64 96C28.7 96 0 124.7 0 160L0 416c0 35.3 28.7 64 64 64l384 0c35.3 0 64-28.7 64-64l0-256c0-35.3-28.7-64-64-64l-74.7 0L362.9 64.8C356.4 45.2 338.1 32 317.4 32L194.6 32c-20.7 0-39 13.2-45.5 32.8zM256 192a96 96 0 1 1 0 192 96 96 0 1 1 0-192z"/></svg>
                 </div>
                 <div class="menu-item" onclick="showImage('latte')">
                     <div class="fiyatlarsaga">
                     <h3>Caffe Latte</h3>
-                    <div class="price">80 ₺</div>
+                    <div class="price">90 ₺</div>
                     </div>
                     <p>Fındık, Irish, Caramel, Vanilya seçenekleriyle</p>
                     <svg xmlns="http://www.w3.org/2000/svg" height="21" width="21" viewBox="0 0 512 512" style="display: block; margin-inline: auto; margin-top: 10px;"><path fill="#666666" d="M149.1 64.8L138.7 96 64 96C28.7 96 0 124.7 0 160L0 416c0 35.3 28.7 64 64 64l384 0c35.3 0 64-28.7 64-64l0-256c0-35.3-28.7-64-64-64l-74.7 0L362.9 64.8C356.4 45.2 338.1 32 317.4 32L194.6 32c-20.7 0-39 13.2-45.5 32.8zM256 192a96 96 0 1 1 0 192 96 96 0 1 1 0-192z"/></svg>
@@ -1320,35 +1349,35 @@ html{
                 <div class="menu-item" onclick="showImage('cappuccino')">
                     <div class="fiyatlarsaga">
                     <h3>Caffe Cappuccino</h3>
-                    <div class="price">80 ₺</div>
+                    <div class="price">90 ₺</div>
                     </div>
                     <svg xmlns="http://www.w3.org/2000/svg" height="21" width="21" viewBox="0 0 512 512" style="display: block; margin-inline: auto; margin-top: 10px;"><path fill="#666666" d="M149.1 64.8L138.7 96 64 96C28.7 96 0 124.7 0 160L0 416c0 35.3 28.7 64 64 64l384 0c35.3 0 64-28.7 64-64l0-256c0-35.3-28.7-64-64-64l-74.7 0L362.9 64.8C356.4 45.2 338.1 32 317.4 32L194.6 32c-20.7 0-39 13.2-45.5 32.8zM256 192a96 96 0 1 1 0 192 96 96 0 1 1 0-192z"/></svg>
                 </div>
                 <div class="menu-item" onclick="showImage('americano')">
                     <div class="fiyatlarsaga">
                     <h3>Americano</h3>
-                    <div class="price">75 ₺</div>
+                    <div class="price">85 ₺</div>
                     </div>
                     <svg xmlns="http://www.w3.org/2000/svg" height="21" width="21" viewBox="0 0 512 512" style="display: block; margin-inline: auto; margin-top: 10px;"><path fill="#666666" d="M149.1 64.8L138.7 96 64 96C28.7 96 0 124.7 0 160L0 416c0 35.3 28.7 64 64 64l384 0c35.3 0 64-28.7 64-64l0-256c0-35.3-28.7-64-64-64l-74.7 0L362.9 64.8C356.4 45.2 338.1 32 317.4 32L194.6 32c-20.7 0-39 13.2-45.5 32.8zM256 192a96 96 0 1 1 0 192 96 96 0 1 1 0-192z"/></svg>
                 </div>
                 <div class="menu-item" onclick="showImage('sutluamericano')">
                     <div class="fiyatlarsaga">
                     <h3>Sütlü Americano</h3>
-                    <div class="price">80 ₺</div>
+                    <div class="price">90 ₺</div>
                     </div>
                     <svg xmlns="http://www.w3.org/2000/svg" height="21" width="21" viewBox="0 0 512 512" style="display: block; margin-inline: auto; margin-top: 10px;"><path fill="#666666" d="M149.1 64.8L138.7 96 64 96C28.7 96 0 124.7 0 160L0 416c0 35.3 28.7 64 64 64l384 0c35.3 0 64-28.7 64-64l0-256c0-35.3-28.7-64-64-64l-74.7 0L362.9 64.8C356.4 45.2 338.1 32 317.4 32L194.6 32c-20.7 0-39 13.2-45.5 32.8zM256 192a96 96 0 1 1 0 192 96 96 0 1 1 0-192z"/></svg>
                 </div>
                 <div class="menu-item" onclick="showImage('caramelmaccioato')">
                     <div class="fiyatlarsaga">
                     <h3>Caramel Macchiato</h3>
-                    <div class="price">85 ₺</div>
+                    <div class="price">95 ₺</div>
                     </div>
                     <svg xmlns="http://www.w3.org/2000/svg" height="21" width="21" viewBox="0 0 512 512" style="display: block; margin-inline: auto; margin-top: 10px;"><path fill="#666666" d="M149.1 64.8L138.7 96 64 96C28.7 96 0 124.7 0 160L0 416c0 35.3 28.7 64 64 64l384 0c35.3 0 64-28.7 64-64l0-256c0-35.3-28.7-64-64-64l-74.7 0L362.9 64.8C356.4 45.2 338.1 32 317.4 32L194.6 32c-20.7 0-39 13.2-45.5 32.8zM256 192a96 96 0 1 1 0 192 96 96 0 1 1 0-192z"/></svg>
                 </div>
                 <div class="menu-item" onclick="showImage('cafemocha')">
                     <div class="fiyatlarsaga">
                     <h3>Cafe Mocha</h3>
-                    <div class="price">90 ₺</div>
+                    <div class="price">100 ₺</div>
                     </div>
                     <p>Sütlü, Bitter, Çikolata seçenekleriyle</p>
                     <svg xmlns="http://www.w3.org/2000/svg" height="21" width="21" viewBox="0 0 512 512" style="display: block; margin-inline: auto; margin-top: 10px;"><path fill="#666666" d="M149.1 64.8L138.7 96 64 96C28.7 96 0 124.7 0 160L0 416c0 35.3 28.7 64 64 64l384 0c35.3 0 64-28.7 64-64l0-256c0-35.3-28.7-64-64-64l-74.7 0L362.9 64.8C356.4 45.2 338.1 32 317.4 32L194.6 32c-20.7 0-39 13.2-45.5 32.8zM256 192a96 96 0 1 1 0 192 96 96 0 1 1 0-192z"/></svg>
@@ -1356,7 +1385,7 @@ html{
                 <div class="menu-item" onclick="showImage('espressoconpanna')">
                     <div class="fiyatlarsaga">
                     <h3>Espresso Con Panna</h3>
-                    <div class="price">75 ₺</div>
+                    <div class="price">85 ₺</div>
                     </div>
                     <p>Çırpılmış krema ile tepesinde tek veya çift espresso ile birlikte</p>
                     <svg xmlns="http://www.w3.org/2000/svg" height="21" width="21" viewBox="0 0 512 512" style="display: block; margin-inline: auto; margin-top: 10px;"><path fill="#666666" d="M149.1 64.8L138.7 96 64 96C28.7 96 0 124.7 0 160L0 416c0 35.3 28.7 64 64 64l384 0c35.3 0 64-28.7 64-64l0-256c0-35.3-28.7-64-64-64l-74.7 0L362.9 64.8C356.4 45.2 338.1 32 317.4 32L194.6 32c-20.7 0-39 13.2-45.5 32.8zM256 192a96 96 0 1 1 0 192 96 96 0 1 1 0-192z"/></svg>
@@ -1364,7 +1393,7 @@ html{
                 <div class="menu-item" onclick="showImage('cortado')">
                     <div class="fiyatlarsaga">
                     <h3>Cortado</h3>
-                    <div class="price">75 ₺</div>
+                    <div class="price">85 ₺</div>
                     </div>
                     <p>Espresso ve az miktarda sıcak süt ile</p>
                     <svg xmlns="http://www.w3.org/2000/svg" height="21" width="21" viewBox="0 0 512 512" style="display: block; margin-inline: auto; margin-top: 10px;"><path fill="#666666" d="M149.1 64.8L138.7 96 64 96C28.7 96 0 124.7 0 160L0 416c0 35.3 28.7 64 64 64l384 0c35.3 0 64-28.7 64-64l0-256c0-35.3-28.7-64-64-64l-74.7 0L362.9 64.8C356.4 45.2 338.1 32 317.4 32L194.6 32c-20.7 0-39 13.2-45.5 32.8zM256 192a96 96 0 1 1 0 192 96 96 0 1 1 0-192z"/></svg>
@@ -1372,7 +1401,7 @@ html{
                 <div class="menu-item" onclick="showImage('affogato')">
                     <div class="fiyatlarsaga">
                     <h3>Affogato</h3>
-                    <div class="price">85 ₺</div>
+                    <div class="price">95 ₺</div>
                     </div>
                     <p>Dondurma üzerine sıcak espresso dökülerek hazırlanır</p>
                     <svg xmlns="http://www.w3.org/2000/svg" height="21" width="21" viewBox="0 0 512 512" style="display: block; margin-inline: auto; margin-top: 10px;"><path fill="#666666" d="M149.1 64.8L138.7 96 64 96C28.7 96 0 124.7 0 160L0 416c0 35.3 28.7 64 64 64l384 0c35.3 0 64-28.7 64-64l0-256c0-35.3-28.7-64-64-64l-74.7 0L362.9 64.8C356.4 45.2 338.1 32 317.4 32L194.6 32c-20.7 0-39 13.2-45.5 32.8zM256 192a96 96 0 1 1 0 192 96 96 0 1 1 0-192z"/></svg>
@@ -1380,14 +1409,14 @@ html{
                 <div class="menu-item" onclick="showImage('filtrekahve')">
                     <div class="fiyatlarsaga">
                     <h3>Filtre Kahve</h3>
-                    <div class="price">60 ₺</div>
+                    <div class="price">70 ₺</div>
                     </div>
                     <svg xmlns="http://www.w3.org/2000/svg" height="21" width="21" viewBox="0 0 512 512" style="display: block; margin-inline: auto; margin-top: 10px;"><path fill="#666666" d="M149.1 64.8L138.7 96 64 96C28.7 96 0 124.7 0 160L0 416c0 35.3 28.7 64 64 64l384 0c35.3 0 64-28.7 64-64l0-256c0-35.3-28.7-64-64-64l-74.7 0L362.9 64.8C356.4 45.2 338.1 32 317.4 32L194.6 32c-20.7 0-39 13.2-45.5 32.8zM256 192a96 96 0 1 1 0 192 96 96 0 1 1 0-192z"/></svg>
                 </div>
                 <div class="menu-item" onclick="showImage('aromalifiltrekahve')">
                     <div class="fiyatlarsaga">
                     <h3>Aromalı Filtre Kahve</h3>
-                    <div class="price">65 ₺</div>
+                    <div class="price">75 ₺</div>
                     </div>
                     <p>Sütlü, Fındık, Irish ve Çikolata seçenekleriyle</p>
                     <svg xmlns="http://www.w3.org/2000/svg" height="21" width="21" viewBox="0 0 512 512" style="display: block; margin-inline: auto; margin-top: 10px;"><path fill="#666666" d="M149.1 64.8L138.7 96 64 96C28.7 96 0 124.7 0 160L0 416c0 35.3 28.7 64 64 64l384 0c35.3 0 64-28.7 64-64l0-256c0-35.3-28.7-64-64-64l-74.7 0L362.9 64.8C356.4 45.2 338.1 32 317.4 32L194.6 32c-20.7 0-39 13.2-45.5 32.8zM256 192a96 96 0 1 1 0 192 96 96 0 1 1 0-192z"/></svg>
@@ -1395,7 +1424,7 @@ html{
                 <div class="menu-item" onclick="showImage('icefiltrekahve')">
                     <div class="fiyatlarsaga">
                     <h3>Ice Filtre Kahve</h3>
-                    <div class="price">75 ₺</div>
+                    <div class="price">85 ₺</div>
                     </div>
                     <p>Sütlü, Fındık, Irish ve Çikolata seçenekleriyle</p>
                     <svg xmlns="http://www.w3.org/2000/svg" height="21" width="21" viewBox="0 0 512 512" style="display: block; margin-inline: auto; margin-top: 10px;"><path fill="#666666" d="M149.1 64.8L138.7 96 64 96C28.7 96 0 124.7 0 160L0 416c0 35.3 28.7 64 64 64l384 0c35.3 0 64-28.7 64-64l0-256c0-35.3-28.7-64-64-64l-74.7 0L362.9 64.8C356.4 45.2 338.1 32 317.4 32L194.6 32c-20.7 0-39 13.2-45.5 32.8zM256 192a96 96 0 1 1 0 192 96 96 0 1 1 0-192z"/></svg>
@@ -1403,7 +1432,7 @@ html{
                 <div class="menu-item" onclick="showImage('icelatte')">
                     <div class="fiyatlarsaga">
                     <h3>Ice Latte</h3>
-                    <div class="price">85 ₺</div>
+                    <div class="price">95 ₺</div>
                     </div>
                     <p>Fındık, Irish ve Çikolata seçenekleriyle</p>
                     <svg xmlns="http://www.w3.org/2000/svg" height="21" width="21" viewBox="0 0 512 512" style="display: block; margin-inline: auto; margin-top: 10px;"><path fill="#666666" d="M149.1 64.8L138.7 96 64 96C28.7 96 0 124.7 0 160L0 416c0 35.3 28.7 64 64 64l384 0c35.3 0 64-28.7 64-64l0-256c0-35.3-28.7-64-64-64l-74.7 0L362.9 64.8C356.4 45.2 338.1 32 317.4 32L194.6 32c-20.7 0-39 13.2-45.5 32.8zM256 192a96 96 0 1 1 0 192 96 96 0 1 1 0-192z"/></svg>
@@ -1411,7 +1440,7 @@ html{
                 <div class="menu-item" onclick="showImage('icemocha')">
                     <div class="fiyatlarsaga">
                     <h3>Ice Mocha</h3>
-                    <div class="price">90 ₺</div>
+                    <div class="price">100 ₺</div>
                     </div>
                     <p>Sütlü, Bitter ve Fildişi Çikolata seçenekleriyle</p>
                     <svg xmlns="http://www.w3.org/2000/svg" height="21" width="21" viewBox="0 0 512 512" style="display: block; margin-inline: auto; margin-top: 10px;"><path fill="#666666" d="M149.1 64.8L138.7 96 64 96C28.7 96 0 124.7 0 160L0 416c0 35.3 28.7 64 64 64l384 0c35.3 0 64-28.7 64-64l0-256c0-35.3-28.7-64-64-64l-74.7 0L362.9 64.8C356.4 45.2 338.1 32 317.4 32L194.6 32c-20.7 0-39 13.2-45.5 32.8zM256 192a96 96 0 1 1 0 192 96 96 0 1 1 0-192z"/></svg>
@@ -1419,7 +1448,7 @@ html{
                 <div class="menu-item" onclick="showImage('icecaramelmacchiato')">
                     <div class="fiyatlarsaga">
                     <h3>Ice Caramel Macchiato</h3>
-                    <div class="price">85 ₺</div>
+                    <div class="price">95 ₺</div>
                     </div>
                     <svg xmlns="http://www.w3.org/2000/svg" height="21" width="21" viewBox="0 0 512 512" style="display: block; margin-inline: auto; margin-top: 10px;"><path fill="#666666" d="M149.1 64.8L138.7 96 64 96C28.7 96 0 124.7 0 160L0 416c0 35.3 28.7 64 64 64l384 0c35.3 0 64-28.7 64-64l0-256c0-35.3-28.7-64-64-64l-74.7 0L362.9 64.8C356.4 45.2 338.1 32 317.4 32L194.6 32c-20.7 0-39 13.2-45.5 32.8zM256 192a96 96 0 1 1 0 192 96 96 0 1 1 0-192z"/></svg>
                 </div>
@@ -1437,7 +1466,7 @@ html{
                 <div class="menu-item" onclick="showImage('coollime')">
                     <div class="fiyatlarsaga">
                     <h3>Cool Lime</h3>
-                    <div class="price">65 ₺</div>
+                    <div class="price">75 ₺</div>
                     </div>
                     <p>Taze ve El Yapımı</p>
                     <svg xmlns="http://www.w3.org/2000/svg" height="21" width="21" viewBox="0 0 512 512" style="display: block; margin-inline: auto; margin-top: 10px;"><path fill="#666666" d="M149.1 64.8L138.7 96 64 96C28.7 96 0 124.7 0 160L0 416c0 35.3 28.7 64 64 64l384 0c35.3 0 64-28.7 64-64l0-256c0-35.3-28.7-64-64-64l-74.7 0L362.9 64.8C356.4 45.2 338.1 32 317.4 32L194.6 32c-20.7 0-39 13.2-45.5 32.8zM256 192a96 96 0 1 1 0 192 96 96 0 1 1 0-192z"/></svg>
@@ -1445,7 +1474,7 @@ html{
                 <div class="menu-item" onclick="showImage('bluesun')">
                     <div class="fiyatlarsaga">
                     <h3>Blue Sun</h3>
-                    <div class="price">70 ₺</div>
+                    <div class="price">90 ₺</div>
                     </div>
                     <p>Taze ve El Yapımı</p>
                     <svg xmlns="http://www.w3.org/2000/svg" height="21" width="21" viewBox="0 0 512 512" style="display: block; margin-inline: auto; margin-top: 10px;"><path fill="#666666" d="M149.1 64.8L138.7 96 64 96C28.7 96 0 124.7 0 160L0 416c0 35.3 28.7 64 64 64l384 0c35.3 0 64-28.7 64-64l0-256c0-35.3-28.7-64-64-64l-74.7 0L362.9 64.8C356.4 45.2 338.1 32 317.4 32L194.6 32c-20.7 0-39 13.2-45.5 32.8zM256 192a96 96 0 1 1 0 192 96 96 0 1 1 0-192z"/></svg>
@@ -1453,7 +1482,7 @@ html{
                 <div class="menu-item" onclick="showImage('limonata')">
                     <div class="fiyatlarsaga">
                     <h3>Limonata</h3>
-                    <div class="price">50 ₺</div>
+                    <div class="price">65 ₺</div>
                     </div>
                     <p>Taze ve El Yapımı Limonata</p>
                     <svg xmlns="http://www.w3.org/2000/svg" height="21" width="21" viewBox="0 0 512 512" style="display: block; margin-inline: auto; margin-top: 10px;"><path fill="#666666" d="M149.1 64.8L138.7 96 64 96C28.7 96 0 124.7 0 160L0 416c0 35.3 28.7 64 64 64l384 0c35.3 0 64-28.7 64-64l0-256c0-35.3-28.7-64-64-64l-74.7 0L362.9 64.8C356.4 45.2 338.1 32 317.4 32L194.6 32c-20.7 0-39 13.2-45.5 32.8zM256 192a96 96 0 1 1 0 192 96 96 0 1 1 0-192z"/></svg>
@@ -1461,7 +1490,7 @@ html{
                 <div class="menu-item" onclick="showImage('cileklilimonata')">
                     <div class="fiyatlarsaga">
                     <h3>Çilekli Limonata</h3>
-                    <div class="price">55 ₺</div>
+                    <div class="price">70 ₺</div>
                     </div>
                     <p>Çilek ile harmanlanmış taze ve el yapımı limonata</p>
                     <svg xmlns="http://www.w3.org/2000/svg" height="21" width="21" viewBox="0 0 512 512" style="display: block; margin-inline: auto; margin-top: 10px;"><path fill="#666666" d="M149.1 64.8L138.7 96 64 96C28.7 96 0 124.7 0 160L0 416c0 35.3 28.7 64 64 64l384 0c35.3 0 64-28.7 64-64l0-256c0-35.3-28.7-64-64-64l-74.7 0L362.9 64.8C356.4 45.2 338.1 32 317.4 32L194.6 32c-20.7 0-39 13.2-45.5 32.8zM256 192a96 96 0 1 1 0 192 96 96 0 1 1 0-192z"/></svg>
@@ -1469,7 +1498,7 @@ html{
                 <div class="menu-item" onclick="showImage('nanelilimonata')">
                     <div class="fiyatlarsaga">
                     <h3>Naneli Limonata</h3>
-                    <div class="price">55 ₺</div>
+                    <div class="price">70 ₺</div>
                     </div>
                     <p>Nane ile harmanlanmış taze ve el yapımı limonata</p>
                     <svg xmlns="http://www.w3.org/2000/svg" height="21" width="21" viewBox="0 0 512 512" style="display: block; margin-inline: auto; margin-top: 10px;"><path fill="#666666" d="M149.1 64.8L138.7 96 64 96C28.7 96 0 124.7 0 160L0 416c0 35.3 28.7 64 64 64l384 0c35.3 0 64-28.7 64-64l0-256c0-35.3-28.7-64-64-64l-74.7 0L362.9 64.8C356.4 45.2 338.1 32 317.4 32L194.6 32c-20.7 0-39 13.2-45.5 32.8zM256 192a96 96 0 1 1 0 192 96 96 0 1 1 0-192z"/></svg>
@@ -1477,7 +1506,7 @@ html{
                 <div class="menu-item" onclick="showImage('dondurmalilimonata')">
                     <div class="fiyatlarsaga">
                     <h3>Dondurmalı Limonata</h3>
-                    <div class="price">65 ₺</div>
+                    <div class="price">80 ₺</div>
                     </div>
                     <p>Çilek, Frambuaz, Böğürtlen, Yeşil Elma seçenekleriyle</p>
                     <svg xmlns="http://www.w3.org/2000/svg" height="21" width="21" viewBox="0 0 512 512" style="display: block; margin-inline: auto; margin-top: 10px;"><path fill="#666666" d="M149.1 64.8L138.7 96 64 96C28.7 96 0 124.7 0 160L0 416c0 35.3 28.7 64 64 64l384 0c35.3 0 64-28.7 64-64l0-256c0-35.3-28.7-64-64-64l-74.7 0L362.9 64.8C356.4 45.2 338.1 32 317.4 32L194.6 32c-20.7 0-39 13.2-45.5 32.8zM256 192a96 96 0 1 1 0 192 96 96 0 1 1 0-192z"/></svg>
@@ -1485,42 +1514,42 @@ html{
                 <div class="menu-item" onclick="showImage('cola')">
                     <div class="fiyatlarsaga">
                     <h3>Cola</h3>
-                    <div class="price">50 ₺</div>
+                    <div class="price">60 ₺</div>
                     </div>
                     <svg xmlns="http://www.w3.org/2000/svg" height="21" width="21" viewBox="0 0 512 512" style="display: block; margin-inline: auto; margin-top: 10px;"><path fill="#666666" d="M149.1 64.8L138.7 96 64 96C28.7 96 0 124.7 0 160L0 416c0 35.3 28.7 64 64 64l384 0c35.3 0 64-28.7 64-64l0-256c0-35.3-28.7-64-64-64l-74.7 0L362.9 64.8C356.4 45.2 338.1 32 317.4 32L194.6 32c-20.7 0-39 13.2-45.5 32.8zM256 192a96 96 0 1 1 0 192 96 96 0 1 1 0-192z"/></svg>
                 </div>
                 <div class="menu-item" onclick="showImage('sekersizcola')">
                     <div class="fiyatlarsaga">
                     <h3>Şekersiz Cola</h3>
-                    <div class="price">50 ₺</div>
+                    <div class="price">60 ₺</div>
                     </div>
                     <svg xmlns="http://www.w3.org/2000/svg" height="21" width="21" viewBox="0 0 512 512" style="display: block; margin-inline: auto; margin-top: 10px;"><path fill="#666666" d="M149.1 64.8L138.7 96 64 96C28.7 96 0 124.7 0 160L0 416c0 35.3 28.7 64 64 64l384 0c35.3 0 64-28.7 64-64l0-256c0-35.3-28.7-64-64-64l-74.7 0L362.9 64.8C356.4 45.2 338.1 32 317.4 32L194.6 32c-20.7 0-39 13.2-45.5 32.8zM256 192a96 96 0 1 1 0 192 96 96 0 1 1 0-192z"/></svg>
                 </div>
                 <div class="menu-item" onclick="showImage('icetea')">
                     <div class="fiyatlarsaga">
                     <h3>Ice Tea</h3>
-                    <div class="price">50 ₺</div>
+                    <div class="price">60 ₺</div>
                     </div>
                     <svg xmlns="http://www.w3.org/2000/svg" height="21" width="21" viewBox="0 0 512 512" style="display: block; margin-inline: auto; margin-top: 10px;"><path fill="#666666" d="M149.1 64.8L138.7 96 64 96C28.7 96 0 124.7 0 160L0 416c0 35.3 28.7 64 64 64l384 0c35.3 0 64-28.7 64-64l0-256c0-35.3-28.7-64-64-64l-74.7 0L362.9 64.8C356.4 45.2 338.1 32 317.4 32L194.6 32c-20.7 0-39 13.2-45.5 32.8zM256 192a96 96 0 1 1 0 192 96 96 0 1 1 0-192z"/></svg>
                 </div>
                 <div class="menu-item" onclick="showImage('soda')">
                     <div class="fiyatlarsaga">
                     <h3>Sade Soda</h3>
-                    <div class="price">35 ₺</div>
+                    <div class="price">40 ₺</div>
                     </div>
                     <svg xmlns="http://www.w3.org/2000/svg" height="21" width="21" viewBox="0 0 512 512" style="display: block; margin-inline: auto; margin-top: 10px;"><path fill="#666666" d="M149.1 64.8L138.7 96 64 96C28.7 96 0 124.7 0 160L0 416c0 35.3 28.7 64 64 64l384 0c35.3 0 64-28.7 64-64l0-256c0-35.3-28.7-64-64-64l-74.7 0L362.9 64.8C356.4 45.2 338.1 32 317.4 32L194.6 32c-20.7 0-39 13.2-45.5 32.8zM256 192a96 96 0 1 1 0 192 96 96 0 1 1 0-192z"/></svg>
                 </div>
                 <div class="menu-item" onclick="showImage('tazemeyvelisoda')">
                     <div class="fiyatlarsaga">
                     <h3>Taze Meyveli Soda</h3>
-                    <div class="price">60 ₺</div>
+                    <div class="price">75 ₺</div>
                     </div>
                     <svg xmlns="http://www.w3.org/2000/svg" height="21" width="21" viewBox="0 0 512 512" style="display: block; margin-inline: auto; margin-top: 10px;"><path fill="#666666" d="M149.1 64.8L138.7 96 64 96C28.7 96 0 124.7 0 160L0 416c0 35.3 28.7 64 64 64l384 0c35.3 0 64-28.7 64-64l0-256c0-35.3-28.7-64-64-64l-74.7 0L362.9 64.8C356.4 45.2 338.1 32 317.4 32L194.6 32c-20.7 0-39 13.2-45.5 32.8zM256 192a96 96 0 1 1 0 192 96 96 0 1 1 0-192z"/></svg>
                 </div>
                 <div class="menu-item" onclick="showImage('meyvelisoda')">
                     <div class="fiyatlarsaga">
                     <h3>Meyveli Soda</h3>
-                    <div class="price">40 ₺</div>
+                    <div class="price">45 ₺</div>
                     </div>
                     <p>Elma ve Limon seçenekleriyle</p>
                     <svg xmlns="http://www.w3.org/2000/svg" height="21" width="21" viewBox="0 0 512 512" style="display: block; margin-inline: auto; margin-top: 10px;"><path fill="#666666" d="M149.1 64.8L138.7 96 64 96C28.7 96 0 124.7 0 160L0 416c0 35.3 28.7 64 64 64l384 0c35.3 0 64-28.7 64-64l0-256c0-35.3-28.7-64-64-64l-74.7 0L362.9 64.8C356.4 45.2 338.1 32 317.4 32L194.6 32c-20.7 0-39 13.2-45.5 32.8zM256 192a96 96 0 1 1 0 192 96 96 0 1 1 0-192z"/></svg>
@@ -1528,56 +1557,56 @@ html{
                 <div class="menu-item" onclick="showImage('churchill')">
                     <div class="fiyatlarsaga">
                     <h3>Churchill</h3>
-                    <div class="price">50 ₺</div>
+                    <div class="price">60 ₺</div>
                     </div>
                     <svg xmlns="http://www.w3.org/2000/svg" height="21" width="21" viewBox="0 0 512 512" style="display: block; margin-inline: auto; margin-top: 10px;"><path fill="#666666" d="M149.1 64.8L138.7 96 64 96C28.7 96 0 124.7 0 160L0 416c0 35.3 28.7 64 64 64l384 0c35.3 0 64-28.7 64-64l0-256c0-35.3-28.7-64-64-64l-74.7 0L362.9 64.8C356.4 45.2 338.1 32 317.4 32L194.6 32c-20.7 0-39 13.2-45.5 32.8zM256 192a96 96 0 1 1 0 192 96 96 0 1 1 0-192z"/></svg>
                 </div>
                 <div class="menu-item" onclick="showImage('su')">
                     <div class="fiyatlarsaga">
                     <h3>Su</h3>
-                    <div class="price">20 ₺</div>
+                    <div class="price">25 ₺</div>
                     </div>
                     <svg xmlns="http://www.w3.org/2000/svg" height="21" width="21" viewBox="0 0 512 512" style="display: block; margin-inline: auto; margin-top: 10px;"><path fill="#666666" d="M149.1 64.8L138.7 96 64 96C28.7 96 0 124.7 0 160L0 416c0 35.3 28.7 64 64 64l384 0c35.3 0 64-28.7 64-64l0-256c0-35.3-28.7-64-64-64l-74.7 0L362.9 64.8C356.4 45.2 338.1 32 317.4 32L194.6 32c-20.7 0-39 13.2-45.5 32.8zM256 192a96 96 0 1 1 0 192 96 96 0 1 1 0-192z"/></svg>
                 </div>
                 <div class="menu-item" onclick="showImage('portakalsu')">
                     <div class="fiyatlarsaga">
                     <h3>Sıkma Portakal Suyu</h3>
-                    <div class="price">75 ₺</div>
+                    <div class="price">85 ₺</div>
                     </div>
                     <svg xmlns="http://www.w3.org/2000/svg" height="21" width="21" viewBox="0 0 512 512" style="display: block; margin-inline: auto; margin-top: 10px;"><path fill="#666666" d="M149.1 64.8L138.7 96 64 96C28.7 96 0 124.7 0 160L0 416c0 35.3 28.7 64 64 64l384 0c35.3 0 64-28.7 64-64l0-256c0-35.3-28.7-64-64-64l-74.7 0L362.9 64.8C356.4 45.2 338.1 32 317.4 32L194.6 32c-20.7 0-39 13.2-45.5 32.8zM256 192a96 96 0 1 1 0 192 96 96 0 1 1 0-192z"/></svg>
                 </div>
                 <div class="menu-item" onclick="showImage('limonlugazoz')">
                     <div class="fiyatlarsaga">
                     <h3>Limonlu Gazoz</h3>
-                    <div class="price">50 ₺</div>
+                    <div class="price">60 ₺</div>
                     </div>
                     <svg xmlns="http://www.w3.org/2000/svg" height="21" width="21" viewBox="0 0 512 512" style="display: block; margin-inline: auto; margin-top: 10px;"><path fill="#666666" d="M149.1 64.8L138.7 96 64 96C28.7 96 0 124.7 0 160L0 416c0 35.3 28.7 64 64 64l384 0c35.3 0 64-28.7 64-64l0-256c0-35.3-28.7-64-64-64l-74.7 0L362.9 64.8C356.4 45.2 338.1 32 317.4 32L194.6 32c-20.7 0-39 13.2-45.5 32.8zM256 192a96 96 0 1 1 0 192 96 96 0 1 1 0-192z"/></svg>
                 </div>
                 <div class="menu-item" onclick="showImage('zencefilligazoz')">
                     <div class="fiyatlarsaga">
                     <h3>Zencefilli Gazoz</h3>
-                    <div class="price">50 ₺</div>
+                    <div class="price">60 ₺</div>
                     </div>
                     <svg xmlns="http://www.w3.org/2000/svg" height="21" width="21" viewBox="0 0 512 512" style="display: block; margin-inline: auto; margin-top: 10px;"><path fill="#666666" d="M149.1 64.8L138.7 96 64 96C28.7 96 0 124.7 0 160L0 416c0 35.3 28.7 64 64 64l384 0c35.3 0 64-28.7 64-64l0-256c0-35.3-28.7-64-64-64l-74.7 0L362.9 64.8C356.4 45.2 338.1 32 317.4 32L194.6 32c-20.7 0-39 13.2-45.5 32.8zM256 192a96 96 0 1 1 0 192 96 96 0 1 1 0-192z"/></svg>
                 </div>
                 <div class="menu-item" onclick="showImage('ayran')">
                     <div class="fiyatlarsaga">
                     <h3>Ayran</h3>
-                    <div class="price">45 ₺</div>
+                    <div class="price">50 ₺</div>
                     </div>
                     <svg xmlns="http://www.w3.org/2000/svg" height="21" width="21" viewBox="0 0 512 512" style="display: block; margin-inline: auto; margin-top: 10px;"><path fill="#666666" d="M149.1 64.8L138.7 96 64 96C28.7 96 0 124.7 0 160L0 416c0 35.3 28.7 64 64 64l384 0c35.3 0 64-28.7 64-64l0-256c0-35.3-28.7-64-64-64l-74.7 0L362.9 64.8C356.4 45.2 338.1 32 317.4 32L194.6 32c-20.7 0-39 13.2-45.5 32.8zM256 192a96 96 0 1 1 0 192 96 96 0 1 1 0-192z"/></svg>
                 </div>
                 <div class="menu-item" onclick="showImage('naneliayran')">
                     <div class="fiyatlarsaga">
                     <h3>Naneli Ayran</h3>
-                    <div class="price">55 ₺</div>
+                    <div class="price">60 ₺</div>
                     </div>
                     <svg xmlns="http://www.w3.org/2000/svg" height="21" width="21" viewBox="0 0 512 512" style="display: block; margin-inline: auto; margin-top: 10px;"><path fill="#666666" d="M149.1 64.8L138.7 96 64 96C28.7 96 0 124.7 0 160L0 416c0 35.3 28.7 64 64 64l384 0c35.3 0 64-28.7 64-64l0-256c0-35.3-28.7-64-64-64l-74.7 0L362.9 64.8C356.4 45.2 338.1 32 317.4 32L194.6 32c-20.7 0-39 13.2-45.5 32.8zM256 192a96 96 0 1 1 0 192 96 96 0 1 1 0-192z"/></svg>
                 </div>
                 <div class="menu-item" onclick="showImage('meyvesuyu')">
                     <div class="fiyatlarsaga">
                     <h3>Meyve Suyu</h3>
-                    <div class="price">50 ₺</div>
+                    <div class="price">60 ₺</div>
                     </div>
                     <p>Şeftali ve Karışık seçenekleriyle</p>
                     <svg xmlns="http://www.w3.org/2000/svg" height="21" width="21" viewBox="0 0 512 512" style="display: block; margin-inline: auto; margin-top: 10px;"><path fill="#666666" d="M149.1 64.8L138.7 96 64 96C28.7 96 0 124.7 0 160L0 416c0 35.3 28.7 64 64 64l384 0c35.3 0 64-28.7 64-64l0-256c0-35.3-28.7-64-64-64l-74.7 0L362.9 64.8C356.4 45.2 338.1 32 317.4 32L194.6 32c-20.7 0-39 13.2-45.5 32.8zM256 192a96 96 0 1 1 0 192 96 96 0 1 1 0-192z"/></svg>
@@ -1585,7 +1614,7 @@ html{
                 <div class="menu-item" onclick="showImage('redbull')">
                     <div class="fiyatlarsaga">
                     <h3>Red Bull</h3>
-                    <div class="price">75 ₺</div>
+                    <div class="price">80 ₺</div>
                     </div>
                     <svg xmlns="http://www.w3.org/2000/svg" height="21" width="21" viewBox="0 0 512 512" style="display: block; margin-inline: auto; margin-top: 10px;"><path fill="#666666" d="M149.1 64.8L138.7 96 64 96C28.7 96 0 124.7 0 160L0 416c0 35.3 28.7 64 64 64l384 0c35.3 0 64-28.7 64-64l0-256c0-35.3-28.7-64-64-64l-74.7 0L362.9 64.8C356.4 45.2 338.1 32 317.4 32L194.6 32c-20.7 0-39 13.2-45.5 32.8zM256 192a96 96 0 1 1 0 192 96 96 0 1 1 0-192z"/></svg>
                 </div>
@@ -1604,7 +1633,7 @@ html{
                 <div class="menu-item" onclick="showImage('cikolatamilkshake')">
                     <div class="fiyatlarsaga">
                     <h3>Çikolatalı Milkshake</h3>
-                    <div class="price">90 ₺</div>
+                    <div class="price">100 ₺</div>
                     </div>
                     <p>Sütlü, Bitter ve Fildişi seçenekleriyle</p>
                     <svg xmlns="http://www.w3.org/2000/svg" height="21" width="21" viewBox="0 0 512 512" style="display: block; margin-inline: auto; margin-top: 10px;"><path fill="#666666" d="M149.1 64.8L138.7 96 64 96C28.7 96 0 124.7 0 160L0 416c0 35.3 28.7 64 64 64l384 0c35.3 0 64-28.7 64-64l0-256c0-35.3-28.7-64-64-64l-74.7 0L362.9 64.8C356.4 45.2 338.1 32 317.4 32L194.6 32c-20.7 0-39 13.2-45.5 32.8zM256 192a96 96 0 1 1 0 192 96 96 0 1 1 0-192z"/></svg>
@@ -1612,7 +1641,7 @@ html{
                 <div class="menu-item" onclick="showImage('lotusmilkshake')">
                     <div class="fiyatlarsaga">
                     <h3>Lotuslu Milkshake</h3>
-                    <div class="price">100 ₺</div>
+                    <div class="price">110 ₺</div>
                     </div>
                     <p>Lotus Bisküvi ile Enfes Tat</p>
                     <svg xmlns="http://www.w3.org/2000/svg" height="21" width="21" viewBox="0 0 512 512" style="display: block; margin-inline: auto; margin-top: 10px;"><path fill="#666666" d="M149.1 64.8L138.7 96 64 96C28.7 96 0 124.7 0 160L0 416c0 35.3 28.7 64 64 64l384 0c35.3 0 64-28.7 64-64l0-256c0-35.3-28.7-64-64-64l-74.7 0L362.9 64.8C356.4 45.2 338.1 32 317.4 32L194.6 32c-20.7 0-39 13.2-45.5 32.8zM256 192a96 96 0 1 1 0 192 96 96 0 1 1 0-192z"/></svg>
@@ -1620,7 +1649,7 @@ html{
                 <div class="menu-item" onclick="showImage('kitkatmilkshake')">
                     <div class="fiyatlarsaga">
                     <h3>Kitkatlı Milkshake</h3>
-                    <div class="price">100 ₺</div>
+                    <div class="price">110 ₺</div>
                     </div>
                     <p>Kitkat Bisküvi ile Enfes Tat</p>
                     <svg xmlns="http://www.w3.org/2000/svg" height="21" width="21" viewBox="0 0 512 512" style="display: block; margin-inline: auto; margin-top: 10px;"><path fill="#666666" d="M149.1 64.8L138.7 96 64 96C28.7 96 0 124.7 0 160L0 416c0 35.3 28.7 64 64 64l384 0c35.3 0 64-28.7 64-64l0-256c0-35.3-28.7-64-64-64l-74.7 0L362.9 64.8C356.4 45.2 338.1 32 317.4 32L194.6 32c-20.7 0-39 13.2-45.5 32.8zM256 192a96 96 0 1 1 0 192 96 96 0 1 1 0-192z"/></svg>
@@ -1628,35 +1657,35 @@ html{
                 <div class="menu-item" onclick="showImage('cileklimilkshake')">
                     <div class="fiyatlarsaga">
                     <h3>Çilekli Milkshake</h3>
-                    <div class="price">90 ₺</div>
+                    <div class="price">100 ₺</div>
                     </div>
                     <svg xmlns="http://www.w3.org/2000/svg" height="21" width="21" viewBox="0 0 512 512" style="display: block; margin-inline: auto; margin-top: 10px;"><path fill="#666666" d="M149.1 64.8L138.7 96 64 96C28.7 96 0 124.7 0 160L0 416c0 35.3 28.7 64 64 64l384 0c35.3 0 64-28.7 64-64l0-256c0-35.3-28.7-64-64-64l-74.7 0L362.9 64.8C356.4 45.2 338.1 32 317.4 32L194.6 32c-20.7 0-39 13.2-45.5 32.8zM256 192a96 96 0 1 1 0 192 96 96 0 1 1 0-192z"/></svg>
                 </div>
                 <div class="menu-item" onclick="showImage('bogurtlenmilkshake')">
                     <div class="fiyatlarsaga">
                     <h3>Böğürtlen Milkshake</h3>
-                    <div class="price">90 ₺</div>
+                    <div class="price">100 ₺</div>
                     </div>
                     <svg xmlns="http://www.w3.org/2000/svg" height="21" width="21" viewBox="0 0 512 512" style="display: block; margin-inline: auto; margin-top: 10px;"><path fill="#666666" d="M149.1 64.8L138.7 96 64 96C28.7 96 0 124.7 0 160L0 416c0 35.3 28.7 64 64 64l384 0c35.3 0 64-28.7 64-64l0-256c0-35.3-28.7-64-64-64l-74.7 0L362.9 64.8C356.4 45.2 338.1 32 317.4 32L194.6 32c-20.7 0-39 13.2-45.5 32.8zM256 192a96 96 0 1 1 0 192 96 96 0 1 1 0-192z"/></svg>
                 </div>
                 <div class="menu-item" onclick="showImage('frambuazmilkshake')">
                     <div class="fiyatlarsaga">
                     <h3>Frambuaz Milkshake</h3>
-                    <div class="price">90 ₺</div>
+                    <div class="price">100 ₺</div>
                     </div>
                     <svg xmlns="http://www.w3.org/2000/svg" height="21" width="21" viewBox="0 0 512 512" style="display: block; margin-inline: auto; margin-top: 10px;"><path fill="#666666" d="M149.1 64.8L138.7 96 64 96C28.7 96 0 124.7 0 160L0 416c0 35.3 28.7 64 64 64l384 0c35.3 0 64-28.7 64-64l0-256c0-35.3-28.7-64-64-64l-74.7 0L362.9 64.8C356.4 45.2 338.1 32 317.4 32L194.6 32c-20.7 0-39 13.2-45.5 32.8zM256 192a96 96 0 1 1 0 192 96 96 0 1 1 0-192z"/></svg>
                 </div>
                 <div class="menu-item" onclick="showImage('muzlumilkshake')">
                     <div class="fiyatlarsaga">
                     <h3>Muzlu Milkshake</h3>
-                    <div class="price">90 ₺</div>
+                    <div class="price">100 ₺</div>
                     </div>
                     <svg xmlns="http://www.w3.org/2000/svg" height="21" width="21" viewBox="0 0 512 512" style="display: block; margin-inline: auto; margin-top: 10px;"><path fill="#666666" d="M149.1 64.8L138.7 96 64 96C28.7 96 0 124.7 0 160L0 416c0 35.3 28.7 64 64 64l384 0c35.3 0 64-28.7 64-64l0-256c0-35.3-28.7-64-64-64l-74.7 0L362.9 64.8C356.4 45.2 338.1 32 317.4 32L194.6 32c-20.7 0-39 13.2-45.5 32.8zM256 192a96 96 0 1 1 0 192 96 96 0 1 1 0-192z"/></svg>
                 </div>
                 <div class="menu-item" onclick="showImage('cinshake')">
                     <div class="fiyatlarsaga">
                     <h3>Cin Shake</h3>
-                    <div class="price">95 ₺</div>
+                    <div class="price">110 ₺</div>
                     </div>
                     <p>Portakallı Bisküvi Tadında</p>
                     <svg xmlns="http://www.w3.org/2000/svg" height="21" width="21" viewBox="0 0 512 512" style="display: block; margin-inline: auto; margin-top: 10px;"><path fill="#666666" d="M149.1 64.8L138.7 96 64 96C28.7 96 0 124.7 0 160L0 416c0 35.3 28.7 64 64 64l384 0c35.3 0 64-28.7 64-64l0-256c0-35.3-28.7-64-64-64l-74.7 0L362.9 64.8C356.4 45.2 338.1 32 317.4 32L194.6 32c-20.7 0-39 13.2-45.5 32.8zM256 192a96 96 0 1 1 0 192 96 96 0 1 1 0-192z"/></svg>
@@ -1664,7 +1693,7 @@ html{
                 <div class="menu-item" onclick="showImage('sogukcikolata')">
                     <div class="fiyatlarsaga">
                     <h3>Soğuk Çikolata</h3>
-                    <div class="price">90 ₺</div>
+                    <div class="price">100 ₺</div>
                     </div>
                     <p>Sütlü, Bitter veya Fildişi seçenekleriyle</p>
                     <svg xmlns="http://www.w3.org/2000/svg" height="21" width="21" viewBox="0 0 512 512" style="display: block; margin-inline: auto; margin-top: 10px;"><path fill="#666666" d="M149.1 64.8L138.7 96 64 96C28.7 96 0 124.7 0 160L0 416c0 35.3 28.7 64 64 64l384 0c35.3 0 64-28.7 64-64l0-256c0-35.3-28.7-64-64-64l-74.7 0L362.9 64.8C356.4 45.2 338.1 32 317.4 32L194.6 32c-20.7 0-39 13.2-45.5 32.8zM256 192a96 96 0 1 1 0 192 96 96 0 1 1 0-192z"/></svg>
@@ -1672,7 +1701,7 @@ html{
                 <div class="menu-item" onclick="showImage('cikolatalifrozen')">
                     <div class="fiyatlarsaga">
                     <h3>Çikolatalı Frozen</h3>
-                    <div class="price">90 ₺</div>
+                    <div class="price">100 ₺</div>
                     </div>
                     <p>Sütlü, Bitter veya Fildişi seçenekleriyle</p>
                     <svg xmlns="http://www.w3.org/2000/svg" height="21" width="21" viewBox="0 0 512 512" style="display: block; margin-inline: auto; margin-top: 10px;"><path fill="#666666" d="M149.1 64.8L138.7 96 64 96C28.7 96 0 124.7 0 160L0 416c0 35.3 28.7 64 64 64l384 0c35.3 0 64-28.7 64-64l0-256c0-35.3-28.7-64-64-64l-74.7 0L362.9 64.8C356.4 45.2 338.1 32 317.4 32L194.6 32c-20.7 0-39 13.2-45.5 32.8zM256 192a96 96 0 1 1 0 192 96 96 0 1 1 0-192z"/></svg>
@@ -1680,7 +1709,7 @@ html{
                 <div class="menu-item" onclick="showImage('meyvelifrozen')">
                     <div class="fiyatlarsaga">
                     <h3>Meyveli Frozen</h3>
-                    <div class="price">90 ₺</div>
+                    <div class="price">100 ₺</div>
                     </div>
                     <p>Frambuaz, Böğürtlen, Çilek veya Yeşil Elma seçenekleriyle</p>
                     <svg xmlns="http://www.w3.org/2000/svg" height="21" width="21" viewBox="0 0 512 512" style="display: block; margin-inline: auto; margin-top: 10px;"><path fill="#666666" d="M149.1 64.8L138.7 96 64 96C28.7 96 0 124.7 0 160L0 416c0 35.3 28.7 64 64 64l384 0c35.3 0 64-28.7 64-64l0-256c0-35.3-28.7-64-64-64l-74.7 0L362.9 64.8C356.4 45.2 338.1 32 317.4 32L194.6 32c-20.7 0-39 13.2-45.5 32.8zM256 192a96 96 0 1 1 0 192 96 96 0 1 1 0-192z"/></svg>
@@ -1700,7 +1729,7 @@ html{
                 <div class="menu-item" onclick="showImage('magnolya')">
                     <div class="fiyatlarsaga">
                     <h3>Magnolya</h3>
-                    <div class="price">135 ₺</div>
+                    <div class="price">150 ₺</div>
                     </div>
                     <p>Çilekli ve Muzlu seçenekleri,</p>
                     <p>Sütlü Çikolata, Gold Çikolata ve Bitter Çikolata seçenekleri,</p>
@@ -1712,7 +1741,7 @@ html{
                 <div class="menu-item" onclick="showImage('madamerose')">
                     <div class="fiyatlarsaga">
                     <h3>Madame Rose</h3>
-                    <div class="price">160 ₺</div>
+                    <div class="price">180 ₺</div>
                     </div>
                     <p>Sütlü Kakaolu Kek üzerinde; Belçika Çikolatalı Krema, Meyve Parçaları, Prenses Krema ve Krep Kıtırı ile.</p>
                     <svg xmlns="http://www.w3.org/2000/svg" height="21" width="21" viewBox="0 0 512 512" style="display: block; margin-inline: auto; margin-top: 10px;"><path fill="#666666" d="M149.1 64.8L138.7 96 64 96C28.7 96 0 124.7 0 160L0 416c0 35.3 28.7 64 64 64l384 0c35.3 0 64-28.7 64-64l0-256c0-35.3-28.7-64-64-64l-74.7 0L362.9 64.8C356.4 45.2 338.1 32 317.4 32L194.6 32c-20.7 0-39 13.2-45.5 32.8zM256 192a96 96 0 1 1 0 192 96 96 0 1 1 0-192z"/></svg>
@@ -1721,7 +1750,7 @@ html{
                 <div class="menu-item" onclick="showImage('sansebastian')">
                     <div class="fiyatlarsaga">
                     <h3>San Sebastian</h3>
-                    <div class="price">160 ₺</div>
+                    <div class="price">180 ₺</div>
                     </div>
                     <p>Sütlü Çikolata, Gold Çikolata ve Bitter Çikolata seçenekleriyle birlikte.</p>
                     <p><i>(Bütün tercihler; bir seçenek ile sınırldır.)</i></p>
@@ -1778,7 +1807,7 @@ html{
                 <div class="menu-item" onclick="showImage('cheescake')">
                     <div class="fiyatlarsaga">
                     <h3>Cheescake</h3>
-                    <div class="price">150 ₺</div>
+                    <div class="price">160 ₺</div>
                     </div>
                     <p>Frambuaz Püre, Böğürtlen Püre, Limon Püre ve 5 ₺ farkı ile Çilek Püre seçenekleri,</p>
                     <p>Her birinde 5 ₺ fark ile; Sütlü Çikolata, Gold Çikolata ve Bitter Çikolata seçenekleri,</p>
@@ -1815,7 +1844,7 @@ html{
                 <div class="menu-item" onclick="showImage('chocotiramisu')">
                     <div class="fiyatlarsaga">
                     <h3>Rose Chocolate Tiramisu</h3>
-                    <div class="price">170 ₺</div>
+                    <div class="price">180 ₺</div>
                     </div>
                     <p>Belçika Çikolata, Çilek, Muz, Kedidili, Kakao, Prenses Krema ve Espresso ile hazırlanan Eşsiz Bir Tat.</p>
                     <svg xmlns="http://www.w3.org/2000/svg" height="21" width="21" viewBox="0 0 512 512" style="display: block; margin-inline: auto; margin-top: 10px;"><path fill="#666666" d="M149.1 64.8L138.7 96 64 96C28.7 96 0 124.7 0 160L0 416c0 35.3 28.7 64 64 64l384 0c35.3 0 64-28.7 64-64l0-256c0-35.3-28.7-64-64-64l-74.7 0L362.9 64.8C356.4 45.2 338.1 32 317.4 32L194.6 32c-20.7 0-39 13.2-45.5 32.8zM256 192a96 96 0 1 1 0 192 96 96 0 1 1 0-192z"/></svg>
@@ -1840,7 +1869,7 @@ html{
                 <div class="menu-item" onclick="showImage('rose-cro')">
                     <div class="fiyatlarsaga">
                     <h3>ROSE-CRO</h3>
-                    <div class="price">185 ₺</div>
+                    <div class="price">190 ₺</div>
                     </div>
                     <p>Çilek, Muz, Çikolata ve kendi kremamızla hazırlanır.</p>
                     <svg xmlns="http://www.w3.org/2000/svg" height="21" width="21" viewBox="0 0 512 512" style="display: block; margin-inline: auto; margin-top: 10px;"><path fill="#666666" d="M149.1 64.8L138.7 96 64 96C28.7 96 0 124.7 0 160L0 416c0 35.3 28.7 64 64 64l384 0c35.3 0 64-28.7 64-64l0-256c0-35.3-28.7-64-64-64l-74.7 0L362.9 64.8C356.4 45.2 338.1 32 317.4 32L194.6 32c-20.7 0-39 13.2-45.5 32.8zM256 192a96 96 0 1 1 0 192 96 96 0 1 1 0-192z"/></svg>
@@ -1927,7 +1956,7 @@ html{
                 <div class="menu-item" onclick="showImage('devilscake')">
                     <div class="fiyatlarsaga">
                     <h3>Devil's Cake</h3>
-                    <div class="price">175 ₺</div>
+                    <div class="price">180 ₺</div>
                     </div>
                     <svg xmlns="http://www.w3.org/2000/svg" height="21" width="21" viewBox="0 0 512 512" style="display: block; margin-inline: auto; margin-top: 10px;"><path fill="#666666" d="M149.1 64.8L138.7 96 64 96C28.7 96 0 124.7 0 160L0 416c0 35.3 28.7 64 64 64l384 0c35.3 0 64-28.7 64-64l0-256c0-35.3-28.7-64-64-64l-74.7 0L362.9 64.8C356.4 45.2 338.1 32 317.4 32L194.6 32c-20.7 0-39 13.2-45.5 32.8zM256 192a96 96 0 1 1 0 192 96 96 0 1 1 0-192z"/></svg>
                 </div>
@@ -1935,7 +1964,7 @@ html{
                 <div class="menu-item" onclick="showImage('profiterol')">
                     <div class="fiyatlarsaga">
                     <h3>Profiterol</h3>
-                    <div class="price">170 ₺</div>
+                    <div class="price">180 ₺</div>
                     </div>
                     <p>Sütlü ve Bitter seçenekleriyle</p>
                     <svg xmlns="http://www.w3.org/2000/svg" height="21" width="21" viewBox="0 0 512 512" style="display: block; margin-inline: auto; margin-top: 10px;"><path fill="#666666" d="M149.1 64.8L138.7 96 64 96C28.7 96 0 124.7 0 160L0 416c0 35.3 28.7 64 64 64l384 0c35.3 0 64-28.7 64-64l0-256c0-35.3-28.7-64-64-64l-74.7 0L362.9 64.8C356.4 45.2 338.1 32 317.4 32L194.6 32c-20.7 0-39 13.2-45.5 32.8zM256 192a96 96 0 1 1 0 192 96 96 0 1 1 0-192z"/></svg>
@@ -1971,7 +2000,7 @@ html{
                 <div class="menu-item" onclick="showImage('kontes')">
                     <div class="fiyatlarsaga">
                     <h3>Kontes</h3>
-                    <div class="price">170 ₺</div>
+                    <div class="price">180 ₺</div>
                     </div>
                     <p>Sütlü Çikolata, tabak içinde; Krema, Meyve Parçaları, Prenses Krema, Kakaolu Kek Parçaları üzerinde Belçika Çikolata</p>
                     <svg xmlns="http://www.w3.org/2000/svg" height="21" width="21" viewBox="0 0 512 512" style="display: block; margin-inline: auto; margin-top: 10px;"><path fill="#666666" d="M149.1 64.8L138.7 96 64 96C28.7 96 0 124.7 0 160L0 416c0 35.3 28.7 64 64 64l384 0c35.3 0 64-28.7 64-64l0-256c0-35.3-28.7-64-64-64l-74.7 0L362.9 64.8C356.4 45.2 338.1 32 317.4 32L194.6 32c-20.7 0-39 13.2-45.5 32.8zM256 192a96 96 0 1 1 0 192 96 96 0 1 1 0-192z"/></svg>
@@ -1995,19 +2024,19 @@ html{
                     <svg xmlns="http://www.w3.org/2000/svg" height="21" width="21" viewBox="0 0 512 512" style="display: block; margin-inline: auto; margin-top: 10px;"><path fill="#666666" d="M149.1 64.8L138.7 96 64 96C28.7 96 0 124.7 0 160L0 416c0 35.3 28.7 64 64 64l384 0c35.3 0 64-28.7 64-64l0-256c0-35.3-28.7-64-64-64l-74.7 0L362.9 64.8C356.4 45.2 338.1 32 317.4 32L194.6 32c-20.7 0-39 13.2-45.5 32.8zM256 192a96 96 0 1 1 0 192 96 96 0 1 1 0-192z"/></svg>
                 </div>
 
-                <div class="menu-item" onclick="showImage('kurabiye')">
+                <div class="menu-item" onclick="showImage('cupcake')">
                     <div class="fiyatlarsaga">
-                    <h3>Kurabiye</h3>
+                    <h3>Kremalı Cupcake</h3>
                     <div class="price">50 ₺</div>
                     </div>
-                    <p>Zencefil ve Tarçınlı.</p>
+                    <p>Prenses Kremalı ve Şantili Kakaoulu Kek.</p>
                     <svg xmlns="http://www.w3.org/2000/svg" height="21" width="21" viewBox="0 0 512 512" style="display: block; margin-inline: auto; margin-top: 10px;"><path fill="#666666" d="M149.1 64.8L138.7 96 64 96C28.7 96 0 124.7 0 160L0 416c0 35.3 28.7 64 64 64l384 0c35.3 0 64-28.7 64-64l0-256c0-35.3-28.7-64-64-64l-74.7 0L362.9 64.8C356.4 45.2 338.1 32 317.4 32L194.6 32c-20.7 0-39 13.2-45.5 32.8zM256 192a96 96 0 1 1 0 192 96 96 0 1 1 0-192z"/></svg>
                 </div>
 
                 <div class="menu-item" onclick="showImage('sadedondurma')">
                     <div class="fiyatlarsaga">
                     <h3>Sade Dondurma</h3>
-                    <div class="price">50 ₺</div>
+                    <div class="price">60 ₺</div>
                     </div>
                     <p>Çikolata, Çilek, Frambuaz, Böğürtlen ve Karamel Sos seçenekleriyle Tek Top olarak servis edilir.</p>
                     <svg xmlns="http://www.w3.org/2000/svg" height="21" width="21" viewBox="0 0 512 512" style="display: block; margin-inline: auto; margin-top: 10px;"><path fill="#666666" d="M149.1 64.8L138.7 96 64 96C28.7 96 0 124.7 0 160L0 416c0 35.3 28.7 64 64 64l384 0c35.3 0 64-28.7 64-64l0-256c0-35.3-28.7-64-64-64l-74.7 0L362.9 64.8C356.4 45.2 338.1 32 317.4 32L194.6 32c-20.7 0-39 13.2-45.5 32.8zM256 192a96 96 0 1 1 0 192 96 96 0 1 1 0-192z"/></svg>
@@ -2029,7 +2058,7 @@ html{
                 <div class="menu-item" onclick="showImage('karisiktost')">
                     <div class="fiyatlarsaga">
                     <h3>Karışık Tost</h3>
-                    <div class="price">125 ₺</div>
+                    <div class="price">135 ₺</div>
                     </div>
                     <p>Sucuk, Kaşar, Salça, Ketçap, Mayonez, Rose Sos, Zeytin</p>
                     <p><i>15 ₺ fark ile;</i> Extra Sos</p>
@@ -2039,7 +2068,7 @@ html{
                 <div class="menu-item" onclick="showImage('kasarlitost')">
                     <div class="fiyatlarsaga">
                     <h3>Kaşarlı Tost</h3>
-                    <div class="price">115 ₺</div>
+                    <div class="price">125 ₺</div>
                     </div>
                     <p>Kaşar, Salça, Ketçap, Mayonez, Rose Sos, Zeytin</p>
                     <p><i>15 ₺ fark ile;</i> Extra Sos</p>
@@ -2049,7 +2078,7 @@ html{
                 <div class="menu-item" onclick="showImage('doublekasarlitost')">
                     <div class="fiyatlarsaga">
                     <h3>Double Kaşarlı Tost</h3>
-                    <div class="price">130 ₺</div>
+                    <div class="price">140 ₺</div>
                     </div>
                     <p>Double Kaşar, Salça, Ketçap, Mayonez, Rose Sos, Zeytin</p>
                     <p><i>15 ₺ fark ile;</i> Extra Sos</p>
@@ -2059,7 +2088,7 @@ html{
                 <div class="menu-item" onclick="showImage('sucuklutost')">
                     <div class="fiyatlarsaga">
                     <h3>Sucuklu Tost</h3>
-                    <div class="price">120 ₺</div>
+                    <div class="price">130 ₺</div>
                     </div>
                     <p>Sucuk, Salça, Ketçap, Mayonez, Rose Sos, Zeytin</p>
                     <p><i>15 ₺ fark ile;</i> Extra Sos</p>
@@ -2069,7 +2098,7 @@ html{
                 <div class="menu-item" onclick="showImage('ucpeynirlitost')">
                     <div class="fiyatlarsaga">
                     <h3>Üç Peynirli Tost</h3>
-                    <div class="price">130 ₺</div>
+                    <div class="price">140 ₺</div>
                     </div>
                     <p>Çoban Peynir, Kaşar, Cheddar Peynir, Mayonez, Rose Sos, Zeytin</p>
                     <p><i>15 ₺ fark ile;</i> Extra Sos</p>
@@ -2079,7 +2108,7 @@ html{
                 <div class="menu-item" onclick="showImage('feslegencobantost')">
                     <div class="fiyatlarsaga">
                     <h3>Fesleğen Çoban Peynirli Tost</h3>
-                    <div class="price">130 ₺</div>
+                    <div class="price">140 ₺</div>
                     </div>
                     <p>Çoban Peynir, Kaşar, Cheddar Peynir, Fesleğen Sos, Mayonez, Rose Sos, Zeytin</p>
                     <p><i>15 ₺ fark ile;</i> Extra Sos</p>
@@ -2089,7 +2118,7 @@ html{
                 <div class="menu-item" onclick="showImage('fullkarisiktost')">
                     <div class="fiyatlarsaga">
                     <h3>Full Karışık Tost</h3>
-                    <div class="price">135 ₺</div>
+                    <div class="price">145 ₺</div>
                     </div>
                     <p>Sucuk, Çoban Peynir, Kaşar, Cheddar Peynir, Felseğen Sos, Salça, Ketçap, Mayonez, Rose Sos, Zeytin</p>
                     <p><i>15 ₺ fark ile;</i> Extra Sos</p>
@@ -2099,7 +2128,7 @@ html{
                 <div class="menu-item" onclick="showImage('beyazpeynirlitost')">
                     <div class="fiyatlarsaga">
                     <h3>Beyaz Peynirli Tost</h3>
-                    <div class="price">125 ₺</div>
+                    <div class="price">135 ₺</div>
                     </div>
                     <p>Çoban Peynir, Salça, Ketçap, Mayonez, Rose Sos, Zeytin</p>
                     <p><i>15 ₺ fark ile;</i> Extra Sos</p>
@@ -2109,7 +2138,7 @@ html{
                 <div class="menu-item" onclick="showImage('sebzelitost')">
                     <div class="fiyatlarsaga">
                     <h3>Sebzeli Tost</h3>
-                    <div class="price">125 ₺</div>
+                    <div class="price">135 ₺</div>
                     </div>
                     <p>Kaşar, Köy Biber, Domates, Salça, Ketçap, Mayonez, Rose Sos, Zeytin</p>
                     <p><i>15 ₺ fark ile;</i> Extra Sos</p>
@@ -2119,7 +2148,7 @@ html{
                 <div class="menu-item" onclick="showImage('karisikkruvasantost')">
                     <div class="fiyatlarsaga">
                     <h3>Karışık Kruvasan Tost</h3>
-                    <div class="price">120 ₺</div>
+                    <div class="price">130 ₺</div>
                     </div>
                     <p>Kaşar, Sucuk, Salça, Rose Sos, Zeytin</p>
                     <p><i>15 ₺ fark ile;</i> Extra Sos</p>
@@ -2150,7 +2179,7 @@ html{
                 <div class="menu-item" onclick="showImage('tonbaliksandwich')">
                     <div class="fiyatlarsaga">
                     <h3>Ton Balıklı Sandwich</h3>
-                    <div class="price">115 ₺</div>
+                    <div class="price">125 ₺</div>
                     </div>
                     <svg xmlns="http://www.w3.org/2000/svg" height="21" width="21" viewBox="0 0 512 512" style="display: block; margin-inline: auto; margin-top: 10px;"><path fill="#666666" d="M149.1 64.8L138.7 96 64 96C28.7 96 0 124.7 0 160L0 416c0 35.3 28.7 64 64 64l384 0c35.3 0 64-28.7 64-64l0-256c0-35.3-28.7-64-64-64l-74.7 0L362.9 64.8C356.4 45.2 338.1 32 317.4 32L194.6 32c-20.7 0-39 13.2-45.5 32.8zM256 192a96 96 0 1 1 0 192 96 96 0 1 1 0-192z"/></svg>
                 </div>
@@ -2185,7 +2214,7 @@ html{
                 <div class="menu-item" onclick="showImage('tonbaliksalata')">
                     <div class="fiyatlarsaga">
                     <h3>Ton Balıklı Salata</h3>
-                    <div class="price">180 ₺</div>
+                    <div class="price">190 ₺</div>
                     </div>
                     <svg xmlns="http://www.w3.org/2000/svg" height="21" width="21" viewBox="0 0 512 512" style="display: block; margin-inline: auto; margin-top: 10px;"><path fill="#666666" d="M149.1 64.8L138.7 96 64 96C28.7 96 0 124.7 0 160L0 416c0 35.3 28.7 64 64 64l384 0c35.3 0 64-28.7 64-64l0-256c0-35.3-28.7-64-64-64l-74.7 0L362.9 64.8C356.4 45.2 338.1 32 317.4 32L194.6 32c-20.7 0-39 13.2-45.5 32.8zM256 192a96 96 0 1 1 0 192 96 96 0 1 1 0-192z"/></svg>
                 </div>
@@ -2193,7 +2222,7 @@ html{
                 <div class="menu-item" onclick="showImage('beyazpeynirsalata')">
                     <div class="fiyatlarsaga">
                     <h3>Beyaz Peynirli Salata</h3>
-                    <div class="price">180 ₺</div>
+                    <div class="price">190 ₺</div>
                     </div>
                     <svg xmlns="http://www.w3.org/2000/svg" height="21" width="21" viewBox="0 0 512 512" style="display: block; margin-inline: auto; margin-top: 10px;"><path fill="#666666" d="M149.1 64.8L138.7 96 64 96C28.7 96 0 124.7 0 160L0 416c0 35.3 28.7 64 64 64l384 0c35.3 0 64-28.7 64-64l0-256c0-35.3-28.7-64-64-64l-74.7 0L362.9 64.8C356.4 45.2 338.1 32 317.4 32L194.6 32c-20.7 0-39 13.2-45.5 32.8zM256 192a96 96 0 1 1 0 192 96 96 0 1 1 0-192z"/></svg>
                 </div>
@@ -2201,7 +2230,7 @@ html{
                 <div class="menu-item" onclick="showImage('izgaratavuksalata')">
                     <div class="fiyatlarsaga">
                     <h3>Izgara Tavuk Salata</h3>
-                    <div class="price">180 ₺</div>
+                    <div class="price">189 ₺</div>
                     </div>
                     <svg xmlns="http://www.w3.org/2000/svg" height="21" width="21" viewBox="0 0 512 512" style="display: block; margin-inline: auto; margin-top: 10px;"><path fill="#666666" d="M149.1 64.8L138.7 96 64 96C28.7 96 0 124.7 0 160L0 416c0 35.3 28.7 64 64 64l384 0c35.3 0 64-28.7 64-64l0-256c0-35.3-28.7-64-64-64l-74.7 0L362.9 64.8C356.4 45.2 338.1 32 317.4 32L194.6 32c-20.7 0-39 13.2-45.5 32.8zM256 192a96 96 0 1 1 0 192 96 96 0 1 1 0-192z"/></svg>
                 </div>
@@ -2209,7 +2238,7 @@ html{
                 <div class="menu-item" onclick="showImage('citirtavuksalata')">
                     <div class="fiyatlarsaga">
                     <h3>Çıtır Tavuk Salata</h3>
-                    <div class="price">190 ₺</div>
+                    <div class="price">195 ₺</div>
                     </div>
                     <p>Fırında pişirilir. Galeta unlu tavuk parçaları ile servis edilir.</p>
                     <svg xmlns="http://www.w3.org/2000/svg" height="21" width="21" viewBox="0 0 512 512" style="display: block; margin-inline: auto; margin-top: 10px;"><path fill="#666666" d="M149.1 64.8L138.7 96 64 96C28.7 96 0 124.7 0 160L0 416c0 35.3 28.7 64 64 64l384 0c35.3 0 64-28.7 64-64l0-256c0-35.3-28.7-64-64-64l-74.7 0L362.9 64.8C356.4 45.2 338.1 32 317.4 32L194.6 32c-20.7 0-39 13.2-45.5 32.8zM256 192a96 96 0 1 1 0 192 96 96 0 1 1 0-192z"/></svg>
@@ -2218,7 +2247,7 @@ html{
                 <div class="menu-item" onclick="showImage('citirtavuk')">
                     <div class="fiyatlarsaga">
                     <h3>Çıtır Tavuk</h3>
-                    <div class="price">185 ₺</div>
+                    <div class="price">190 ₺</div>
                     </div>
                     <p>Fırında pişirilir. Galeta unlu tavuk parçaları ile servis edilir.</p>
                     <svg xmlns="http://www.w3.org/2000/svg" height="21" width="21" viewBox="0 0 512 512" style="display: block; margin-inline: auto; margin-top: 10px;"><path fill="#666666" d="M149.1 64.8L138.7 96 64 96C28.7 96 0 124.7 0 160L0 416c0 35.3 28.7 64 64 64l384 0c35.3 0 64-28.7 64-64l0-256c0-35.3-28.7-64-64-64l-74.7 0L362.9 64.8C356.4 45.2 338.1 32 317.4 32L194.6 32c-20.7 0-39 13.2-45.5 32.8zM256 192a96 96 0 1 1 0 192 96 96 0 1 1 0-192z"/></svg>
@@ -2238,7 +2267,7 @@ html{
                 <div class="menu-item" onclick="showImage('kremamantarmakarna')">
                     <div class="fiyatlarsaga">
                     <h3>Kremalı Mantarlı Makarna</h3>
-                    <div class="price">180 ₺</div>
+                    <div class="price">190 ₺</div>
                     </div>
                     <svg xmlns="http://www.w3.org/2000/svg" height="21" width="21" viewBox="0 0 512 512" style="display: block; margin-inline: auto; margin-top: 10px;"><path fill="#666666" d="M149.1 64.8L138.7 96 64 96C28.7 96 0 124.7 0 160L0 416c0 35.3 28.7 64 64 64l384 0c35.3 0 64-28.7 64-64l0-256c0-35.3-28.7-64-64-64l-74.7 0L362.9 64.8C356.4 45.2 338.1 32 317.4 32L194.6 32c-20.7 0-39 13.2-45.5 32.8zM256 192a96 96 0 1 1 0 192 96 96 0 1 1 0-192z"/></svg>
                 </div>
@@ -2246,7 +2275,7 @@ html{
                 <div class="menu-item" onclick="showImage('doritoslupennemakarna')">
                     <div class="fiyatlarsaga">
                     <h3>Doritoslu Penne Makarna</h3>
-                    <div class="price">180 ₺</div>
+                    <div class="price">190 ₺</div>
                     </div>
                     <p>Penne Makarna, Tereyağlı Mantar ve Krema ile hazırlanır. Mozarella Peyniri ile servis edilir.</p>
                     <svg xmlns="http://www.w3.org/2000/svg" height="21" width="21" viewBox="0 0 512 512" style="display: block; margin-inline: auto; margin-top: 10px;"><path fill="#666666" d="M149.1 64.8L138.7 96 64 96C28.7 96 0 124.7 0 160L0 416c0 35.3 28.7 64 64 64l384 0c35.3 0 64-28.7 64-64l0-256c0-35.3-28.7-64-64-64l-74.7 0L362.9 64.8C356.4 45.2 338.1 32 317.4 32L194.6 32c-20.7 0-39 13.2-45.5 32.8zM256 192a96 96 0 1 1 0 192 96 96 0 1 1 0-192z"/></svg>
@@ -2255,7 +2284,7 @@ html{
                 <div class="menu-item" onclick="showImage('manti')">
                     <div class="fiyatlarsaga">
                     <h3>Mantı</h3>
-                    <div class="price">180 ₺</div>
+                    <div class="price">185 ₺</div>
                     </div>
                     <p>Penne Makarna Tereyağlı Domates ve Krema ile hazırlanır. Mozarella Peyniri ve Doritos ile servis edilir.</p>
                     <svg xmlns="http://www.w3.org/2000/svg" height="21" width="21" viewBox="0 0 512 512" style="display: block; margin-inline: auto; margin-top: 10px;"><path fill="#666666" d="M149.1 64.8L138.7 96 64 96C28.7 96 0 124.7 0 160L0 416c0 35.3 28.7 64 64 64l384 0c35.3 0 64-28.7 64-64l0-256c0-35.3-28.7-64-64-64l-74.7 0L362.9 64.8C356.4 45.2 338.1 32 317.4 32L194.6 32c-20.7 0-39 13.2-45.5 32.8zM256 192a96 96 0 1 1 0 192 96 96 0 1 1 0-192z"/></svg>
@@ -2264,7 +2293,7 @@ html{
                 <div class="menu-item" onclick="showImage('sadenoodle')">
                     <div class="fiyatlarsaga">
                     <h3>Sade Noodle</h3>
-                    <div class="price">130 ₺</div>
+                    <div class="price">140 ₺</div>
                     </div>
                     <p>Cevizli Balkan Soslu olarak servis edilir.</p>
                     <svg xmlns="http://www.w3.org/2000/svg" height="21" width="21" viewBox="0 0 512 512" style="display: block; margin-inline: auto; margin-top: 10px;"><path fill="#666666" d="M149.1 64.8L138.7 96 64 96C28.7 96 0 124.7 0 160L0 416c0 35.3 28.7 64 64 64l384 0c35.3 0 64-28.7 64-64l0-256c0-35.3-28.7-64-64-64l-74.7 0L362.9 64.8C356.4 45.2 338.1 32 317.4 32L194.6 32c-20.7 0-39 13.2-45.5 32.8zM256 192a96 96 0 1 1 0 192 96 96 0 1 1 0-192z"/></svg>
@@ -2273,7 +2302,7 @@ html{
                 <div class="menu-item" onclick="showImage('tonbaliklinoodle')">
                     <div class="fiyatlarsaga">
                     <h3>Ton Balıklı Noodle</h3>
-                    <div class="price">150 ₺</div>
+                    <div class="price">160 ₺</div>
                     </div>
                     <svg xmlns="http://www.w3.org/2000/svg" height="21" width="21" viewBox="0 0 512 512" style="display: block; margin-inline: auto; margin-top: 10px;"><path fill="#666666" d="M149.1 64.8L138.7 96 64 96C28.7 96 0 124.7 0 160L0 416c0 35.3 28.7 64 64 64l384 0c35.3 0 64-28.7 64-64l0-256c0-35.3-28.7-64-64-64l-74.7 0L362.9 64.8C356.4 45.2 338.1 32 317.4 32L194.6 32c-20.7 0-39 13.2-45.5 32.8zM256 192a96 96 0 1 1 0 192 96 96 0 1 1 0-192z"/></svg>
                 </div>
@@ -2281,7 +2310,7 @@ html{
                 <div class="menu-item" onclick="showImage('beyazpeynirlinoodle')">
                     <div class="fiyatlarsaga">
                     <h3>Beyaz Peynirli Noodle</h3>
-                    <div class="price">140 ₺</div>
+                    <div class="price">150 ₺</div>
                     </div>
                     <svg xmlns="http://www.w3.org/2000/svg" height="21" width="21" viewBox="0 0 512 512" style="display: block; margin-inline: auto; margin-top: 10px;"><path fill="#666666" d="M149.1 64.8L138.7 96 64 96C28.7 96 0 124.7 0 160L0 416c0 35.3 28.7 64 64 64l384 0c35.3 0 64-28.7 64-64l0-256c0-35.3-28.7-64-64-64l-74.7 0L362.9 64.8C356.4 45.2 338.1 32 317.4 32L194.6 32c-20.7 0-39 13.2-45.5 32.8zM256 192a96 96 0 1 1 0 192 96 96 0 1 1 0-192z"/></svg>
                 </div>
@@ -2289,7 +2318,7 @@ html{
                 <div class="menu-item" onclick="showImage('kozbiberlinoodle')">
                     <div class="fiyatlarsaga">
                     <h3>Köz Biberli Noodle</h3>
-                    <div class="price">145 ₺</div>
+                    <div class="price">155 ₺</div>
                     </div>
                     <svg xmlns="http://www.w3.org/2000/svg" height="21" width="21" viewBox="0 0 512 512" style="display: block; margin-inline: auto; margin-top: 10px;"><path fill="#666666" d="M149.1 64.8L138.7 96 64 96C28.7 96 0 124.7 0 160L0 416c0 35.3 28.7 64 64 64l384 0c35.3 0 64-28.7 64-64l0-256c0-35.3-28.7-64-64-64l-74.7 0L362.9 64.8C356.4 45.2 338.1 32 317.4 32L194.6 32c-20.7 0-39 13.2-45.5 32.8zM256 192a96 96 0 1 1 0 192 96 96 0 1 1 0-192z"/></svg>
                 </div>
@@ -2309,7 +2338,7 @@ html{
                 <div class="menu-item" onclick="showImage('karisikpizza')">
                     <div class="fiyatlarsaga">
                     <h3>Karışık Pizza</h3>
-                    <div class="price">180 ₺</div>
+                    <div class="price">190 ₺</div>
                     </div>
                     <p>Sucuk, Salam, Sosis, Mantar, Zeytin, Mısır</p>
                     <svg xmlns="http://www.w3.org/2000/svg" height="21" width="21" viewBox="0 0 512 512" style="display: block; margin-inline: auto; margin-top: 10px;"><path fill="#666666" d="M149.1 64.8L138.7 96 64 96C28.7 96 0 124.7 0 160L0 416c0 35.3 28.7 64 64 64l384 0c35.3 0 64-28.7 64-64l0-256c0-35.3-28.7-64-64-64l-74.7 0L362.9 64.8C356.4 45.2 338.1 32 317.4 32L194.6 32c-20.7 0-39 13.2-45.5 32.8zM256 192a96 96 0 1 1 0 192 96 96 0 1 1 0-192z"/></svg>
@@ -2318,7 +2347,7 @@ html{
                 <div class="menu-item" onclick="showImage('sucuklupizza')">
                     <div class="fiyatlarsaga">
                     <h3>Sucuklu Pizza</h3>
-                    <div class="price">180 ₺</div>
+                    <div class="price">190 ₺</div>
                     </div>
                     <p>Sucuk, Zeytin, Mısır</p>
                     <svg xmlns="http://www.w3.org/2000/svg" height="21" width="21" viewBox="0 0 512 512" style="display: block; margin-inline: auto; margin-top: 10px;"><path fill="#666666" d="M149.1 64.8L138.7 96 64 96C28.7 96 0 124.7 0 160L0 416c0 35.3 28.7 64 64 64l384 0c35.3 0 64-28.7 64-64l0-256c0-35.3-28.7-64-64-64l-74.7 0L362.9 64.8C356.4 45.2 338.1 32 317.4 32L194.6 32c-20.7 0-39 13.2-45.5 32.8zM256 192a96 96 0 1 1 0 192 96 96 0 1 1 0-192z"/></svg>
@@ -2327,7 +2356,7 @@ html{
                 <div class="menu-item" onclick="showImage('vejeteryanpizza')">
                     <div class="fiyatlarsaga">
                     <h3>Vejeteryan Pizza</h3>
-                    <div class="price">180 ₺</div>
+                    <div class="price">190 ₺</div>
                     </div>
                     <p>Domates, Biber, Mantar, Zeytin, Mısır</p>
                     <svg xmlns="http://www.w3.org/2000/svg" height="21" width="21" viewBox="0 0 512 512" style="display: block; margin-inline: auto; margin-top: 10px;"><path fill="#666666" d="M149.1 64.8L138.7 96 64 96C28.7 96 0 124.7 0 160L0 416c0 35.3 28.7 64 64 64l384 0c35.3 0 64-28.7 64-64l0-256c0-35.3-28.7-64-64-64l-74.7 0L362.9 64.8C356.4 45.2 338.1 32 317.4 32L194.6 32c-20.7 0-39 13.2-45.5 32.8zM256 192a96 96 0 1 1 0 192 96 96 0 1 1 0-192z"/></svg>
@@ -2336,7 +2365,7 @@ html{
                 <div class="menu-item" onclick="showImage('ucpeynirlipizza')">
                     <div class="fiyatlarsaga">
                     <h3>Üç Peynirli Pizza</h3>
-                    <div class="price">180 ₺</div>
+                    <div class="price">190 ₺</div>
                     </div>
                     <p>Cheddar Peyniri, Çoban Peyniri, Zeytin, Mısır</p>
                     <svg xmlns="http://www.w3.org/2000/svg" height="21" width="21" viewBox="0 0 512 512" style="display: block; margin-inline: auto; margin-top: 10px;"><path fill="#666666" d="M149.1 64.8L138.7 96 64 96C28.7 96 0 124.7 0 160L0 416c0 35.3 28.7 64 64 64l384 0c35.3 0 64-28.7 64-64l0-256c0-35.3-28.7-64-64-64l-74.7 0L362.9 64.8C356.4 45.2 338.1 32 317.4 32L194.6 32c-20.7 0-39 13.2-45.5 32.8zM256 192a96 96 0 1 1 0 192 96 96 0 1 1 0-192z"/></svg>
@@ -2345,7 +2374,7 @@ html{
                 <div class="menu-item" onclick="showImage('tonbaliklipizza')">
                     <div class="fiyatlarsaga">
                     <h3>Ton Balıklı Pizza</h3>
-                    <div class="price">190 ₺</div>
+                    <div class="price">195 ₺</div>
                     </div>
                     <p>Ton Balık, Zeytin, Mısır</p>
                     <svg xmlns="http://www.w3.org/2000/svg" height="21" width="21" viewBox="0 0 512 512" style="display: block; margin-inline: auto; margin-top: 10px;"><path fill="#666666" d="M149.1 64.8L138.7 96 64 96C28.7 96 0 124.7 0 160L0 416c0 35.3 28.7 64 64 64l384 0c35.3 0 64-28.7 64-64l0-256c0-35.3-28.7-64-64-64l-74.7 0L362.9 64.8C356.4 45.2 338.1 32 317.4 32L194.6 32c-20.7 0-39 13.2-45.5 32.8zM256 192a96 96 0 1 1 0 192 96 96 0 1 1 0-192z"/></svg>
@@ -2354,7 +2383,7 @@ html{
                 <div class="menu-item" onclick="showImage('margaritapizza')">
                     <div class="fiyatlarsaga">
                     <h3>Margarita Pizza</h3>
-                    <div class="price">180 ₺</div>
+                    <div class="price">185 ₺</div>
                     </div>
                     <p>Domates ile servis edilir.</p>
                     <svg xmlns="http://www.w3.org/2000/svg" height="21" width="21" viewBox="0 0 512 512" style="display: block; margin-inline: auto; margin-top: 10px;"><path fill="#666666" d="M149.1 64.8L138.7 96 64 96C28.7 96 0 124.7 0 160L0 416c0 35.3 28.7 64 64 64l384 0c35.3 0 64-28.7 64-64l0-256c0-35.3-28.7-64-64-64l-74.7 0L362.9 64.8C356.4 45.2 338.1 32 317.4 32L194.6 32c-20.7 0-39 13.2-45.5 32.8zM256 192a96 96 0 1 1 0 192 96 96 0 1 1 0-192z"/></svg>
@@ -2363,7 +2392,7 @@ html{
                 <div class="menu-item" onclick="openPopupp('pizzaniyarat')">
                     <div class="fiyatlarsaga">
                     <h3>PİZZANI SEN YARAT</h3>
-                    <div class="price">190 ₺</div>
+                    <div class="price">195 ₺</div>
                     </div>
                     <p><i>Malzeme Seçenekleri için lütfen bu sekmeye tıklayın.</i></p>
                 </div>
@@ -2382,7 +2411,7 @@ html{
                 <div class="menu-item" onclick="showImage('rosekahvalti')">
                     <div class="fiyatlarsaga">
                     <h3>Rose Kahvaltı</h3>
-                    <div class="price">230 ₺</div>
+                    <div class="price">250 ₺</div>
                     </div>
                     <p>Beyaz Peynir, Kaşar Peyniri, Çeçil Peynir, Yeşil Zeytin, Siyah Zeytin, Bal, Reçel, Rose Sos, Patates, Sucuk, Özel Soslu Sosis, Dilim Salam, Tereyağ, Domates, Salatalık, Simit, Sahanda veya Haşlanmış Yumurta, Dilim Portakal, Ceviz, Kızarmış Ekmek, 1 adet Çay ile servis edilir.</p>
                     <svg xmlns="http://www.w3.org/2000/svg" height="21" width="21" viewBox="0 0 512 512" style="display: block; margin-inline: auto; margin-top: 10px;"><path fill="#666666" d="M149.1 64.8L138.7 96 64 96C28.7 96 0 124.7 0 160L0 416c0 35.3 28.7 64 64 64l384 0c35.3 0 64-28.7 64-64l0-256c0-35.3-28.7-64-64-64l-74.7 0L362.9 64.8C356.4 45.2 338.1 32 317.4 32L194.6 32c-20.7 0-39 13.2-45.5 32.8zM256 192a96 96 0 1 1 0 192 96 96 0 1 1 0-192z"/></svg>
@@ -2391,7 +2420,7 @@ html{
                 <div class="menu-item" onclick="showImage('simitkahvalti')">
                     <div class="fiyatlarsaga">
                     <h3>Simit Kahvaltı</h3>
-                    <div class="price">175 ₺</div>
+                    <div class="price">195 ₺</div>
                     </div>
                     <p>Simit, Kaşar Peyniri, Beyaz Peynir, Yumurta, Rose Sos, Reçel, Domates, Salatalık, Zeytin ve 1 adet Çay ile servis edilir.</p>
                     <svg xmlns="http://www.w3.org/2000/svg" height="21" width="21" viewBox="0 0 512 512" style="display: block; margin-inline: auto; margin-top: 10px;"><path fill="#666666" d="M149.1 64.8L138.7 96 64 96C28.7 96 0 124.7 0 160L0 416c0 35.3 28.7 64 64 64l384 0c35.3 0 64-28.7 64-64l0-256c0-35.3-28.7-64-64-64l-74.7 0L362.9 64.8C356.4 45.2 338.1 32 317.4 32L194.6 32c-20.7 0-39 13.2-45.5 32.8zM256 192a96 96 0 1 1 0 192 96 96 0 1 1 0-192z"/></svg>
@@ -2400,7 +2429,7 @@ html{
                 <div class="menu-item" onclick="showImage('rosecrospecial')">
                     <div class="fiyatlarsaga">
                     <h3>ROSE-CRO Special</h3>
-                    <div class="price">160 ₺</div>
+                    <div class="price">170 ₺</div>
                     </div>
                     <p>Kruvasan içeriğinde; Kaşar, Cheddar, Fesleğen Sos ve Yumurta yanında Rose Sos, Zeytin ve 1 adet Çay ile servis edilir.</p>
                     <svg xmlns="http://www.w3.org/2000/svg" height="21" width="21" viewBox="0 0 512 512" style="display: block; margin-inline: auto; margin-top: 10px;"><path fill="#666666" d="M149.1 64.8L138.7 96 64 96C28.7 96 0 124.7 0 160L0 416c0 35.3 28.7 64 64 64l384 0c35.3 0 64-28.7 64-64l0-256c0-35.3-28.7-64-64-64l-74.7 0L362.9 64.8C356.4 45.2 338.1 32 317.4 32L194.6 32c-20.7 0-39 13.2-45.5 32.8zM256 192a96 96 0 1 1 0 192 96 96 0 1 1 0-192z"/></svg>
@@ -2409,7 +2438,7 @@ html{
                 <div class="menu-item" onclick="showImage('feslegensimit')">
                     <div class="fiyatlarsaga">
                     <h3>Fesleğenli Simit Tabağı</h3>
-                    <div class="price">140 ₺</div>
+                    <div class="price">150 ₺</div>
                     </div>
                     <p>Fesleğenli Simit, Beyaz Peynir, Rose Sos, Zeytin ve 1 adet Çay ile servis edilir.</p>
                     <svg xmlns="http://www.w3.org/2000/svg" height="21" width="21" viewBox="0 0 512 512" style="display: block; margin-inline: auto; margin-top: 10px;"><path fill="#666666" d="M149.1 64.8L138.7 96 64 96C28.7 96 0 124.7 0 160L0 416c0 35.3 28.7 64 64 64l384 0c35.3 0 64-28.7 64-64l0-256c0-35.3-28.7-64-64-64l-74.7 0L362.9 64.8C356.4 45.2 338.1 32 317.4 32L194.6 32c-20.7 0-39 13.2-45.5 32.8zM256 192a96 96 0 1 1 0 192 96 96 0 1 1 0-192z"/></svg>
@@ -2429,7 +2458,7 @@ html{
                 <div class="menu-item" onclick="showImage('menemen')">
                     <div class="fiyatlarsaga">
                     <h3>Menemen</h3>
-                    <div class="price">145 ₺</div>
+                    <div class="price">150 ₺</div>
                     </div>
                     <p>Karışık, Saçarlı, Sucuklu seçenekleriyle</p>
                     <svg xmlns="http://www.w3.org/2000/svg" height="21" width="21" viewBox="0 0 512 512" style="display: block; margin-inline: auto; margin-top: 10px;"><path fill="#666666" d="M149.1 64.8L138.7 96 64 96C28.7 96 0 124.7 0 160L0 416c0 35.3 28.7 64 64 64l384 0c35.3 0 64-28.7 64-64l0-256c0-35.3-28.7-64-64-64l-74.7 0L362.9 64.8C356.4 45.2 338.1 32 317.4 32L194.6 32c-20.7 0-39 13.2-45.5 32.8zM256 192a96 96 0 1 1 0 192 96 96 0 1 1 0-192z"/></svg>
@@ -2439,7 +2468,7 @@ html{
                 <div class="menu-item" onclick="showImage('yumpat')">
                     <div class="fiyatlarsaga">
                     <h3>YUMPAT</h3>
-                    <div class="price">140 ₺</div>
+                    <div class="price">150 ₺</div>
                     </div>
                     <p>Patatesli Yumurta.</p>
                     <svg xmlns="http://www.w3.org/2000/svg" height="21" width="21" viewBox="0 0 512 512" style="display: block; margin-inline: auto; margin-top: 10px;"><path fill="#666666" d="M149.1 64.8L138.7 96 64 96C28.7 96 0 124.7 0 160L0 416c0 35.3 28.7 64 64 64l384 0c35.3 0 64-28.7 64-64l0-256c0-35.3-28.7-64-64-64l-74.7 0L362.9 64.8C356.4 45.2 338.1 32 317.4 32L194.6 32c-20.7 0-39 13.2-45.5 32.8zM256 192a96 96 0 1 1 0 192 96 96 0 1 1 0-192z"/></svg>
@@ -2460,7 +2489,7 @@ html{
                 <div class="menu-item" onclick="showImage('omlet')">
                     <div class="fiyatlarsaga">
                     <h3>Omlet</h3>
-                    <div class="price">140 ₺</div>
+                    <div class="price">150 ₺</div>
                     </div>
                     <p>Karışık, Kaşarlı, Sucuklu, Mantarlı seçenekleriyle.</p>
                     <svg xmlns="http://www.w3.org/2000/svg" height="21" width="21" viewBox="0 0 512 512" style="display: block; margin-inline: auto; margin-top: 10px;"><path fill="#666666" d="M149.1 64.8L138.7 96 64 96C28.7 96 0 124.7 0 160L0 416c0 35.3 28.7 64 64 64l384 0c35.3 0 64-28.7 64-64l0-256c0-35.3-28.7-64-64-64l-74.7 0L362.9 64.8C356.4 45.2 338.1 32 317.4 32L194.6 32c-20.7 0-39 13.2-45.5 32.8zM256 192a96 96 0 1 1 0 192 96 96 0 1 1 0-192z"/></svg>
@@ -2617,7 +2646,7 @@ html{
             <p>Cheddar Peynir</p>
             <p>Zeytin</p>
             <p>Mısır</p>
-            <p>Kruvasan <i>(35 ₺ fark ile)</i></p>
+            <p>Ton Balık <i>(35 ₺ fark ile)</i></p>
         </div>
     </div>
 
@@ -2968,8 +2997,8 @@ function toggleContext(contextId) {
                     case 'chiapuding':
                     imageSrc = 'https://raw.githubusercontent.com/Berahatiye/rose/refs/heads/main/ciapuding.jpg';
                     break;
-                    case 'kurabiye':
-                    imageSrc = 'https://raw.githubusercontent.com/Berahatiye/rose/refs/heads/main/kurabiye.jpg';
+                    case 'cupcake':
+                    imageSrc = 'https://raw.githubusercontent.com/Berahatiye/rose/refs/heads/main/CUPCAKE.jpg';
                     break;
                     case 'sadedondurma':
                     imageSrc = 'https://raw.githubusercontent.com/Berahatiye/rose/refs/heads/main/sadedondurma.png';
@@ -3185,7 +3214,7 @@ buttons.forEach(button => {
         setTimeout(() => {
             button.classList.remove('show-text');
             button.classList.remove('button-active');
-        }, 5500);
+        }, 5100);
     });
 });
         
@@ -3202,8 +3231,9 @@ const slides = document.querySelectorAll('.slide');
     const fills = document.querySelectorAll('.progress-bar-fill');
     const container = document.getElementById('story-container');
     const navZones = document.querySelectorAll('.nav-zone');
+    const kampanyaImage = document.getElementById('kampanyagorsel');
 
-    const totalDuration = 6000;
+    const totalDuration = 10000;
     let currentIndex = 0;
     let startTime = null;
     let pausedTime = 0;
@@ -3212,7 +3242,7 @@ const slides = document.querySelectorAll('.slide');
     let autoNextTimer;
 
     let pointerDownTime = 0;
-    const holdThreshold = 300; // ms
+    const holdThreshold = 300;
 
     function showSlide(index) {
       slides.forEach((s, i) => s.classList.toggle('active', i === index));
@@ -3299,6 +3329,8 @@ const slides = document.querySelectorAll('.slide');
     });
 
     showSlide(currentIndex);
+
+    kampanyaImage.loading = 'eager';
 </script>
 
 </body>
