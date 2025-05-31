@@ -933,7 +933,7 @@ html{
       -webkit-tap-highlight-color: transparent;
     }
 
-    .story-container {
+        .story-container {
       position: relative;
       width: 100%;
       max-width: 420px;
@@ -941,11 +941,11 @@ html{
       overflow: hidden;
       border-radius: 16px;
       box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
-      background-color: transparent;
+      background-color: #000;
       touch-action: manipulation;
       cursor: pointer;
-      margin-inline: auto;
-      margin-top: 5vh;
+      margin-inline: auto !important;
+      margin-top: 6vh;
     }
 
     .slide {
@@ -964,7 +964,7 @@ html{
     .slide img {
       width: 100%;
       height: 100%;
-      object-fit: fill;
+      object-fit: cover;
       border-radius: 16px;
       -webkit-user-drag: none;
       user-select: none;
@@ -987,6 +987,7 @@ html{
       background-color: rgba(255, 255, 255, 0.2);
       border-radius: 6px;
       overflow: hidden;
+      position: relative;
     }
 
     .progress-bar-fill {
@@ -994,8 +995,9 @@ html{
       width: 0%;
       background: linear-gradient(to right, #f799ff99, #f799b1);
       border-radius: 6px;
-      transition: none;
       box-shadow: 0 0 6px rgba(255, 255, 255, 0.6);
+      transition: none;
+      will-change: width;
     }
 
     .nav-zone {
@@ -1009,30 +1011,61 @@ html{
     .nav-left { left: 0; }
     .nav-right { right: 0; }
 
-    /* Hint Message */
-    .hint {
+    .profile-info {
       position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      color: white;
-      font-size: 1rem;
-      background: rgba(0, 0, 0, 0.6);
-      padding: 10px 20px;
-      border-radius: 8px;
-      z-index: 30;
-      animation: fadeOut 0.15s ease-in-out 4.85s forwards;
-      pointer-events: none;
+      bottom: 12px;
+      left: 12px;
+      display: flex;
+      align-items: center;
+      z-index: 15;
+      background-color: rgba(0, 0, 0, 0.5);
+      padding: 6px 10px;
+      border-radius: 20px;
+      backdrop-filter: blur(4px);
     }
 
-    @keyframes fadeOut {
-      to {
-        opacity: 0;
-        visibility: hidden;
+    .profile-info img {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-right: 8px;
+    }
+
+    .profile-info span {
+      color: #fff;
+      font-size: 14px;
+      font-weight: 500;
+    }
+
+    .loader62 {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border-radius: 16px;
+      background: linear-gradient(
+        to right,
+        #2c2c2c 0%,
+        #3a3a3a 20%,
+        #2c2c2c 40%,
+        #2c2c2c 100%
+      );
+      background-size: 200% 100%;
+      animation: shimmer 1.4s infinite linear;
+      z-index: 2;
+    }
+
+    @keyframes shimmer {
+      0% {
+        background-position: -100% 0;
+      }
+      100% {
+        background-position: 100% 0;
       }
     }
 
-    /* Responsive adjustments */
     @media (max-width: 768px) {
       .story-container {
         width: 90%;
@@ -1045,16 +1078,56 @@ html{
       }
     }
 
-    @media (orientation: landscape) and (max-height: 480px) {
-      .story-container {
-        aspect-ratio: 3 / 4;
+
+
+
+    
+
+
+
+        .hello-button {
+      position: fixed;
+      bottom: 5vh;
+      right: 5vw;
+      background-color: #007bff;
+      color: #fff;
+      padding: 1em 1.5em;
+      border: none;
+      border-radius: 0.5em;
+      font-size: 1rem;
+      cursor: pointer;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      transition: background-color 0.3s ease, transform 0.2s ease;
+      z-index: 9999;
+    }
+
+    .hello-button:hover {
+      background-color: #0056b3;
+      transform: scale(1.05);
+    }
+
+    @media (max-width: 768px) {
+      .hello-button {
+        padding: 0.8em 1.2em;
+        font-size: 0.9rem;
+        bottom: 4vh;
+        right: 4vw;
       }
     }
 
-    @media (min-width: 1024px) {
-      .story-container {
-        max-width: 360px;
+    @media (max-width: 480px) {
+      .hello-button {
+        padding: 0.7em 1em;
+        font-size: 0.85rem;
+        bottom: 3vh;
+        right: 3vw;
       }
+    }
+
+
+        #helloBtn.hidden {
+      opacity: 0;
+      pointer-events: none;
     }
     </style>
 </head>
@@ -1066,15 +1139,26 @@ html{
             <div class="neon-text">Rose ile Hayat Tatlıdır</div>
     </div>
 
-    <div class="story-container" id="story-container">
-    <!-- Hint -->
-    <div class="hint">Daha fazla kampanya görmek için dokununuz.</div>
+    <button id="helloBtn" class="hello-button" onclick="this.style.display='none'">Menüye Geç</button>
 
+<div class="story-container" id="story-container">
     <!-- Slides -->
-    <div class="slide active"><img id="kampanyagorsel" src="https://raw.githubusercontent.com/Berahatiye/rose/refs/heads/main/Kampanyamant%C4%B1.png" alt="Slide 1" /></div>
-    <div class="slide"><img id="kampanyagorsel" src="https://raw.githubusercontent.com/Berahatiye/rose/refs/heads/main/Kampanyaturkkahve.png" alt="Slide 2" /></div>
-    <div class="slide"><img id="kampanyagorsel" src="https://raw.githubusercontent.com/Berahatiye/rose/refs/heads/main/Kampanyapizza.png" alt="Slide 3" /></div>
-    <div class="slide"><img id="kampanyagorsel" src="https://raw.githubusercontent.com/Berahatiye/rose/refs/heads/main/Haftan%C4%B1n%20yedi%20g%C3%BCn%C3%BC_%C4%B0kincisi%20%252550_20250525_161012_0000.png" alt="Slide 4" /></div>
+    <div class="slide active">
+      <div class="loader62"></div>
+      <img src="https://raw.githubusercontent.com/Berahatiye/rose/refs/heads/main/Kampanyamant%C4%B1.png" alt="Slide 1" />
+    </div>
+    <div class="slide">
+      <div class="loader62"></div>
+      <img src="https://raw.githubusercontent.com/Berahatiye/rose/refs/heads/main/Kampanyaturkkahve.png" alt="Slide 2" />
+    </div>
+    <div class="slide">
+      <div class="loader62"></div>
+      <img src="https://raw.githubusercontent.com/Berahatiye/rose/refs/heads/main/Kampanyapizza.png" alt="Slide 3" />
+    </div>
+    <div class="slide">
+      <div class="loader62"></div>
+      <img src="https://raw.githubusercontent.com/Berahatiye/rose/refs/heads/main/Haftan%C4%B1n%20yedi%20g%C3%BCn%C3%BC_%C4%B0kincisi%20%252550_20250525_161012_0000.png" alt="Slide 4" />
+    </div>
 
     <!-- Progress Bars -->
     <div class="progress-bar-container">
@@ -1084,15 +1168,19 @@ html{
       <div class="progress-bar"><div class="progress-bar-fill"></div></div>
     </div>
 
+    <!-- Profile Info -->
+    <div class="profile-info">
+      <img src="https://raw.githubusercontent.com/Berahatiye/rose/refs/heads/main/rosecafelogo.png" alt="Profile" />
+      <span>@rosecafesite</span>
+    </div>
+
     <!-- Navigation Zones -->
     <div class="nav-zone nav-left" data-dir="left"></div>
     <div class="nav-zone nav-right" data-dir="right"></div>
   </div>
 
-
-
     <!-- Main Menu Section -->
-    <section>
+    <section id="mennu">
         
         <div class="button" id="button1" onclick="toggleContext('context1')">
             Sıcak İçecekler
@@ -3208,101 +3296,121 @@ buttons.forEach(button => {
 
 
 
-
-const slides = document.querySelectorAll('.slide');
+    const slides = document.querySelectorAll('.slide');
     const fills = document.querySelectorAll('.progress-bar-fill');
-    const container = document.getElementById('story-container');
     const navZones = document.querySelectorAll('.nav-zone');
-    const kampanyaImage = document.getElementById('kampanyagorsel');
-
     const totalDuration = 6000;
+
     let currentIndex = 0;
     let startTime = null;
-    let pausedTime = 0;
+    let elapsedBeforePause = 0;
+    let animationFrameId = null;
+    let autoNextTimerId = null;
     let isPaused = false;
-    let animationFrame;
-    let autoNextTimer;
-
     let pointerDownTime = 0;
     const holdThreshold = 300;
 
     function showSlide(index) {
-      slides.forEach((s, i) => s.classList.toggle('active', i === index));
-      fills.forEach((f, i) => {
-        f.style.transition = 'none';
-        f.style.width = i < index ? '100%' : '0%';
+      cancelAnimationFrame(animationFrameId);
+      clearTimeout(autoNextTimerId);
+      isPaused = false;
+      elapsedBeforePause = 0;
+
+      slides.forEach((slide, i) => {
+        const loader62 = slide.querySelector('.loader62');
+        const img = slide.querySelector('img');
+        const fill = fills[i];
+
+        if (i === index) {
+          slide.classList.add('active');
+          fill.style.transition = 'none';
+          fill.style.width = '0%';
+          loader62.style.display = 'block';
+
+          if (img.complete && img.naturalWidth !== 0) {
+            startProgress(index);
+          } else {
+            img.onload = () => startProgress(index);
+          }
+        } else {
+          slide.classList.remove('active');
+          fill.style.transition = 'none';
+          fill.style.width = i < index ? '100%' : '0%';
+          loader62.style.display = 'none';
+          img.onload = null;
+        }
       });
 
+      currentIndex = index;
+    }
+
+    function startProgress(index) {
+      const loader622 = slides[index].querySelector('.loader62');
+      loader622.style.display = 'none';
+
       startTime = performance.now();
-      pausedTime = 0;
-      isPaused = false;
-      animateProgress();
-      scheduleAutoNext();
+      fills[index].style.transition = `width linear ${totalDuration}ms`;
+      fills[index].style.width = '100%';
+
+      autoNextTimerId = setTimeout(() => nextSlide(), totalDuration);
+      animationFrameId = requestAnimationFrame(progressFrame);
     }
 
-    function nextSlide() {
-      cancelAnimationFrame(animationFrame);
-      clearTimeout(autoNextTimer);
-      currentIndex = (currentIndex + 1) % slides.length;
-      showSlide(currentIndex);
-    }
-
-    function prevSlide() {
-      cancelAnimationFrame(animationFrame);
-      clearTimeout(autoNextTimer);
-      currentIndex = (currentIndex - 1 + slides.length) % slides.length;
-      showSlide(currentIndex);
-    }
-
-    function animateProgress() {
+    function progressFrame() {
       if (isPaused) return;
       const now = performance.now();
-      const elapsed = now - startTime - pausedTime;
-      const progress = Math.min(elapsed / totalDuration, 1);
-      fills[currentIndex].style.width = (progress * 100) + '%';
-      if (progress < 1) {
-        animationFrame = requestAnimationFrame(animateProgress);
-      }
-    }
+      const elapsed = now - startTime + elapsedBeforePause;
+      if (elapsed >= totalDuration) return;
 
-    function scheduleAutoNext() {
-      clearTimeout(autoNextTimer);
-      autoNextTimer = setTimeout(() => nextSlide(), totalDuration);
+      const percent = (elapsed / totalDuration) * 100;
+      fills[currentIndex].style.transition = 'none';
+      fills[currentIndex].style.width = percent + '%';
+
+      animationFrameId = requestAnimationFrame(progressFrame);
     }
 
     function pause() {
       if (isPaused) return;
       isPaused = true;
-      pausedTime += performance.now() - startTime;
-      clearTimeout(autoNextTimer);
-      cancelAnimationFrame(animationFrame);
+      elapsedBeforePause += performance.now() - startTime;
+      clearTimeout(autoNextTimerId);
+      cancelAnimationFrame(animationFrameId);
     }
 
     function resume() {
       if (!isPaused) return;
       isPaused = false;
-      startTime = performance.now() - pausedTime;
-      animateProgress();
-      scheduleAutoNext();
+      startTime = performance.now();
+      const remaining = totalDuration - elapsedBeforePause;
+
+      fills[currentIndex].style.transition = `width linear ${remaining}ms`;
+      fills[currentIndex].style.width = '100%';
+
+      autoNextTimerId = setTimeout(() => nextSlide(), remaining);
+      animationFrameId = requestAnimationFrame(progressFrame);
+    }
+
+    function nextSlide() {
+      const next = (currentIndex + 1) % slides.length;
+      showSlide(next);
+    }
+
+    function prevSlide() {
+      const prev = (currentIndex - 1 + slides.length) % slides.length;
+      showSlide(prev);
     }
 
     navZones.forEach(zone => {
-      zone.addEventListener('pointerdown', (e) => {
+      zone.addEventListener('pointerdown', () => {
         pointerDownTime = Date.now();
         pause();
       });
 
       zone.addEventListener('pointerup', (e) => {
-        const duration = Date.now() - pointerDownTime;
+        const held = Date.now() - pointerDownTime;
         resume();
-
-        if (duration < holdThreshold) {
-          const direction = e.currentTarget.getAttribute('data-dir');
-          if (direction === 'left') {
-            prevSlide();
-          } else {
-            nextSlide();
-          }
+        if (held < holdThreshold) {
+          e.currentTarget.getAttribute('data-dir') === 'left' ? prevSlide() : nextSlide();
         }
       });
 
@@ -3311,9 +3419,6 @@ const slides = document.querySelectorAll('.slide');
     });
 
     showSlide(currentIndex);
-
-    kampanyaImage.loading = 'auto';
-
 
 
 
@@ -3330,6 +3435,34 @@ const slides = document.querySelectorAll('.slide');
       const bottom = document.getElementById('scrollbottomm');
       bottom.scrollIntoView({ behavior: 'smooth' });
     });
+
+
+
+
+    document.getElementById('helloBtn').addEventListener('click', function () {
+      const bottom = document.getElementById('mennu');
+      bottom.scrollIntoView({ behavior: 'smooth' });
+    });
+    
+
+        const btn = document.getElementById('helloBtn');
+    const hideSection = document.getElementById('mennu');
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            btn.classList.add('hidden');
+          } else {
+            btn.classList.remove('hidden');
+          }
+        });
+      }, 
+      { threshold: 0.1 } // Trigger when 10% of the section is visible
+    );
+
+    observer.observe(hideSection);
+
 
 </script>
 
