@@ -44,7 +44,7 @@ html{
         .sube{
             display: block;
             position: relative;
-        height: 2.5px;
+        height: 3px;
         background: #666666;
         margin-inline: auto !important;
         border-radius: 2.5px;
@@ -192,7 +192,7 @@ html{
 
 
         .sube{
-        width: 34vh !important;
+        width: 35.2vh !important;
         }
 
 
@@ -339,20 +339,6 @@ html{
             max-width: 1200px;
             padding: 0 20px;
             margin-inline: auto;
-        }
-
-        .menu-header {
-            text-align: center;
-            margin-bottom: 0;
-        }
-
-
-        .kampan{
-            padding: 0 20px;
-        }
-
-        .kampan h2 {
-            border: none;
         }
 
         h2 {
@@ -959,6 +945,7 @@ html{
       touch-action: manipulation;
       cursor: pointer;
       margin-inline: auto;
+      margin-top: 5vh;
     }
 
     .slide {
@@ -1034,7 +1021,7 @@ html{
       padding: 10px 20px;
       border-radius: 8px;
       z-index: 30;
-      animation: fadeOut 2.8s ease-in-out 2.8s forwards;
+      animation: fadeOut 0.15s ease-in-out 4.85s forwards;
       pointer-events: none;
     }
 
@@ -1075,18 +1062,13 @@ html{
 <body ontouchstart="">
 
     
-    <div class="heado">
+    <div id="scrollbottomm" class="heado">
             <div class="neon-text">Rose ile Hayat Tatlıdır</div>
-    </div>
-
-
-    <div class="kampan">
-    <h2>Kampanyalar</h2>
     </div>
 
     <div class="story-container" id="story-container">
     <!-- Hint -->
-    <div class="hint">Daha fazla kampanya görmek için dokunun, afiyet olsun.</div>
+    <div class="hint">Daha fazla kampanya görmek için dokununuz.</div>
 
     <!-- Slides -->
     <div class="slide active"><img id="kampanyagorsel" src="https://raw.githubusercontent.com/Berahatiye/rose/refs/heads/main/Kampanyamant%C4%B1.png" alt="Slide 1" /></div>
@@ -1111,9 +1093,6 @@ html{
 
     <!-- Main Menu Section -->
     <section>
-        <div class="menu-header">
-            <h2>MENÜ</h2>
-        </div>
         
         <div class="button" id="button1" onclick="toggleContext('context1')">
             Sıcak İçecekler
@@ -2534,9 +2513,9 @@ html{
     </section>
 
     <!-- Footer -->
-    <footer>
+    <footer id="bottomm">
     <div class="logoiletisim">
-        <img class="rosecafelogo" src="https://raw.githubusercontent.com/Berahatiye/rose/refs/heads/main/rosecafelogo.png" alt="Rose Cafe">
+        <img id="scrolltopp" class="rosecafelogo" src="https://raw.githubusercontent.com/Berahatiye/rose/refs/heads/main/rosecafelogo.png" alt="Rose Cafe">
     </div>
     <div class="instagram">
     <a href="https://www.instagram.com/rosecafesite/"><svg class="insta" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="4rem" height="4rem" viewBox="0,0,256,256">
@@ -3217,7 +3196,7 @@ buttons.forEach(button => {
         setTimeout(() => {
             button.classList.remove('show-text');
             button.classList.remove('button-active');
-        }, 5100);
+        }, 4500);
     });
 });
         
@@ -3236,7 +3215,7 @@ const slides = document.querySelectorAll('.slide');
     const navZones = document.querySelectorAll('.nav-zone');
     const kampanyaImage = document.getElementById('kampanyagorsel');
 
-    const totalDuration = 10000;
+    const totalDuration = 6000;
     let currentIndex = 0;
     let startTime = null;
     let pausedTime = 0;
@@ -3334,6 +3313,24 @@ const slides = document.querySelectorAll('.slide');
     showSlide(currentIndex);
 
     kampanyaImage.loading = 'eager';
+
+
+
+
+
+    document.getElementById('scrollbottomm').addEventListener('click', function () {
+      const bottom = document.getElementById('bottomm');
+      bottom.scrollIntoView({ behavior: 'smooth' });
+    });
+
+
+
+
+    document.getElementById('scrolltopp').addEventListener('click', function () {
+      const bottom = document.getElementById('scrollbottomm');
+      bottom.scrollIntoView({ behavior: 'smooth' });
+    });
+
 </script>
 
 </body>
