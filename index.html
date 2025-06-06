@@ -411,15 +411,6 @@ html{
             text-align: center;
         }
 
-        .h4h4alergen {
-            font-size: 1.45rem;
-            color: #777;
-            margin-bottom: 6px;
-            margin-top: 0;
-            border-bottom: 2px solid #777;
-            text-align: center;
-        }
-
         .menu-item p {
             font-size: 0.875rem;
             color: #777;
@@ -592,6 +583,90 @@ html{
 
 
 
+
+
+
+   
+        .alerjentablosu {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            transition: opacity 0.3s ease-in-out;
+        }
+
+
+        .alerjentablosu-content {
+            background-color: #fff;
+            border-radius: 15px;
+            padding: 20px;
+            max-width: 50%;
+            max-height: 80%;
+            overflow: auto;
+            position: relative;
+            margin-inline: auto;
+            top: 5vh;
+            text-align: center;
+        }
+
+
+        .close-btnalerjentablosu {
+            position: absolute;
+            top: 2px;
+            right: 2px;
+            font-size: 2rem;
+            font-weight: bold;
+            color: #5c4f3f;
+            background: none;
+            border: none;
+            cursor: pointer;
+            transition: transform 0.15s ease-in-out;
+        }
+
+        .line-bottomalerjentablosu {
+        position: absolute;
+        height: 0.7rem;
+        background: #fa9db5;
+        width: 3.2rem;
+        transform: rotate(-45deg);
+        border-radius: 5px;
+        top: 1rem;
+        right: 0.1rem;
+        box-shadow: 0px 0px 3px 0px #fa9db5;
+    }
+
+    .line-topalerjentablosu {
+        position: absolute;
+        height: 0.7rem;
+        background: #fa9db5;
+        width: 3.2rem;
+        transform: rotate(45deg);
+        border-radius: 5px;
+        top: 1rem;
+        right: 0.1rem;
+        box-shadow: 0px 0px 3px 0px #fa9db5;
+    }
+
+
+
+        .close-btnalerjentablosu:hover {
+            transform: scale(1.12);
+        }
+
+
+
+
+
+
+
+
+
         /* Modal */
         .modal {
             display: none;
@@ -758,12 +833,6 @@ html{
         .h4h4tost {
             font-size: 1.45rem;
             margin-bottom: 26px;
-            margin-top: 0
-        }
-
-        .h4h4alergen {
-            font-size: 1.45rem;
-            margin-bottom: 6px;
             margin-top: 0
         }
 
@@ -998,7 +1067,7 @@ html{
     .progress-bar {
       flex-grow: 1;
       height: 6px;
-      background-color: rgba(255, 255, 255, 0.2);
+      background-color: rgba(255, 255, 255, 0.4);
       border-radius: 6px;
       overflow: hidden;
       position: relative;
@@ -1027,13 +1096,13 @@ html{
 
     .profile-info {
       position: absolute;
-      bottom: 12px;
-      left: 12px;
+      bottom: 2px;
+      left: 2px;
       display: flex;
       align-items: center;
-      z-index: 9999;
+      z-index: 999;
       background-color: rgba(0, 0, 0, 0.5);
-      padding: 6px 10px;
+      padding: 3px 6px;
       border-radius: 20px;
       backdrop-filter: blur(4px);
     }
@@ -1143,6 +1212,29 @@ html{
       opacity: 0;
       pointer-events: none;
     }
+
+
+
+
+
+
+
+
+    #allergenButton {
+      position: fixed;
+      bottom: 2px;
+      left: 2px;
+      padding: 8px 16px;
+      background-color: rgb(45, 52, 54, 0.4);
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 15px;
+      cursor: pointer;
+      z-index: 9999;
+      display: none;
+    }
+
     </style>
 </head>
 
@@ -1203,9 +1295,8 @@ html{
 
         <div class="context" id="context1">
 
-            <div class="h4h4alergen">Alerjen Uyarıları</div>
             
-            <div style="display: flex; justify-content: center; margin-bottom: 3vh;">
+            <div style="display: flex; justify-content: center; margin-bottom: 3vh; border-bottom: thin solid; border-bottom-color: #666;">
             <img style="border-radius: 50%; width: 35px; height: 35px;" src="https://raw.githubusercontent.com/Berahatiye/rose/refs/heads/main/suttt.png"></img>
             </div>
             
@@ -1336,9 +1427,8 @@ html{
 
         <div class="context" id="context2">
             
-            <div class="h4h4alergen">Alerjen Uyarıları</div>
 
-            <div style="display: flex; justify-content: center; margin-bottom: 3vh;">
+            <div style="display: flex; justify-content: center; margin-bottom: 3vh; border-bottom: thin solid; border-bottom-color: #666;">
             <img style="border-radius: 50%; width: 35px; height: 35px;" src="https://raw.githubusercontent.com/Berahatiye/rose/refs/heads/main/suttt.png"></img>
             </div>
             
@@ -1423,9 +1513,8 @@ html{
 
         <div class="context" id="context3">
 
-            <div class="h4h4alergen">Alerjen Uyarıları</div>
             
-            <div style="display: flex; justify-content: center; margin-bottom: 3vh;">
+            <div style="display: flex; justify-content: center; margin-bottom: 3vh; border-bottom: thin solid; border-bottom-color: #666;">
             <img style="border-radius: 50%; width: 35px; height: 35px;" src="https://raw.githubusercontent.com/Berahatiye/rose/refs/heads/main/suttt.png"></img>
             </div>
 
@@ -1735,9 +1824,8 @@ html{
 
         <div class="context" id="context5">
             
-            <div class="h4h4alergen">Alerjen Uyarıları</div>
             
-            <div style="display: flex; justify-content: center; margin-bottom: 3vh;">
+            <div style="display: flex; justify-content: center; margin-bottom: 3vh; border-bottom: thin solid; border-bottom-color: #666;">
             <img style="border-radius: 50%; width: 35px; height: 35px;" src="https://raw.githubusercontent.com/Berahatiye/rose/refs/heads/main/suttt.png"></img>            
             </div>
 
@@ -1839,9 +1927,8 @@ html{
 
         <div class="context" id="context6">
             
-            <div class="h4h4alergen">Alerjen Uyarıları</div>
             
-            <div style="display: flex; justify-content: center; margin-bottom: 3vh;">
+            <div style="display: flex; justify-content: center; margin-bottom: 3vh; border-bottom: thin solid; border-bottom-color: #666;">
             <img style="border-radius: 50%; width: 35px; height: 35px;" src="https://raw.githubusercontent.com/Berahatiye/rose/refs/heads/main/suttt.png"></img>
             <img style="border-radius: 50%; width: 35px; height: 35px;" src="https://raw.githubusercontent.com/Berahatiye/rose/refs/heads/main/bugday.png"></img>
             <img style="border-radius: 50%; width: 35px; height: 35px;" src="https://raw.githubusercontent.com/Berahatiye/rose/refs/heads/main/yumurta.png"></img>            
@@ -2175,9 +2262,8 @@ html{
 
         <div class="context" id="context7">
 
-            <div class="h4h4alergen">Alerjen Uyarıları</div>
             
-            <div style="display: flex; justify-content: center; margin-bottom: 3vh;">
+            <div style="display: flex; justify-content: center; margin-bottom: 3vh; border-bottom: thin solid; border-bottom-color: #666;">
             <img style="border-radius: 50%; width: 35px; height: 35px;" src="https://raw.githubusercontent.com/Berahatiye/rose/refs/heads/main/suttt.png"></img>
             <img style="border-radius: 50%; width: 35px; height: 35px;" src="https://raw.githubusercontent.com/Berahatiye/rose/refs/heads/main/bugday.png"></img>
             <img style="border-radius: 50%; width: 35px; height: 35px;" src="https://raw.githubusercontent.com/Berahatiye/rose/refs/heads/main/yumurta.png"></img>            
@@ -2307,9 +2393,8 @@ html{
 
         <div class="context" id="context8">
 
-            <div class="h4h4alergen">Alerjen Uyarıları</div>
             
-            <div style="display: flex; justify-content: center; margin-bottom: 3vh;">
+            <div style="display: flex; justify-content: center; margin-bottom: 3vh; border-bottom: thin solid; border-bottom-color: #666;">
             <img style="border-radius: 50%; width: 35px; height: 35px;" src="https://raw.githubusercontent.com/Berahatiye/rose/refs/heads/main/suttt.png"></img>
             <img style="border-radius: 50%; width: 35px; height: 35px;" src="https://raw.githubusercontent.com/Berahatiye/rose/refs/heads/main/bugday.png"></img>
             <img style="border-radius: 50%; width: 35px; height: 35px;" src="https://raw.githubusercontent.com/Berahatiye/rose/refs/heads/main/yumurta.png"></img>
@@ -2352,9 +2437,8 @@ html{
 
         <div class="context" id="context9">
 
-            <div class="h4h4alergen">Alerjen Uyarıları</div>
             
-            <div style="display: flex; justify-content: center; margin-bottom: 3vh;">
+            <div style="display: flex; justify-content: center; margin-bottom: 3vh; border-bottom: thin solid; border-bottom-color: #666;">
             <img style="border-radius: 50%; width: 35px; height: 35px;" src="https://raw.githubusercontent.com/Berahatiye/rose/refs/heads/main/suttt.png"></img>
             <img style="border-radius: 50%; width: 35px; height: 35px;" src="https://raw.githubusercontent.com/Berahatiye/rose/refs/heads/main/bugday.png"></img>
             <img style="border-radius: 50%; width: 35px; height: 35px;" src="https://raw.githubusercontent.com/Berahatiye/rose/refs/heads/main/yumurta.png"></img>
@@ -2415,9 +2499,8 @@ html{
 
          <div class="context" id="context10">
             
-            <div class="h4h4alergen">Alerjen Uyarıları</div>
             
-            <div style="display: flex; justify-content: center; margin-bottom: 3vh;">
+            <div style="display: flex; justify-content: center; margin-bottom: 3vh; border-bottom: thin solid; border-bottom-color: #666;">
             <img style="border-radius: 50%; width: 35px; height: 35px;" src="https://raw.githubusercontent.com/Berahatiye/rose/refs/heads/main/suttt.png"></img>
             <img style="border-radius: 50%; width: 35px; height: 35px;" src="https://raw.githubusercontent.com/Berahatiye/rose/refs/heads/main/bugday.png"></img>
             <img style="border-radius: 50%; width: 35px; height: 35px;" src="https://raw.githubusercontent.com/Berahatiye/rose/refs/heads/main/yumurta.png"></img>
@@ -2498,9 +2581,8 @@ html{
          
          <div class="context" id="context11">
 
-            <div class="h4h4alergen">Alerjen Uyarıları</div>
             
-            <div style="display: flex; justify-content: center; margin-bottom: 3vh;">
+            <div style="display: flex; justify-content: center; margin-bottom: 3vh; border-bottom: thin solid; border-bottom-color: #666;">
             <img style="border-radius: 50%; width: 35px; height: 35px;" src="https://raw.githubusercontent.com/Berahatiye/rose/refs/heads/main/suttt.png"></img>
             <img style="border-radius: 50%; width: 35px; height: 35px;" src="https://raw.githubusercontent.com/Berahatiye/rose/refs/heads/main/bugday.png"></img>
             <img style="border-radius: 50%; width: 35px; height: 35px;" src="https://raw.githubusercontent.com/Berahatiye/rose/refs/heads/main/yumurta.png"></img>
@@ -2582,9 +2664,8 @@ html{
 
          <div class="context" id="context12">
 
-            <div class="h4h4alergen">Alerjen Uyarıları</div>
             
-            <div style="display: flex; justify-content: center; margin-bottom: 3vh;">
+            <div style="display: flex; justify-content: center; margin-bottom: 3vh; border-bottom: thin solid; border-bottom-color: #666;">
             <img style="border-radius: 50%; width: 35px; height: 35px;" src="https://raw.githubusercontent.com/Berahatiye/rose/refs/heads/main/suttt.png"></img>
             <img style="border-radius: 50%; width: 35px; height: 35px;" src="https://raw.githubusercontent.com/Berahatiye/rose/refs/heads/main/bugday.png"></img>
             <img style="border-radius: 50%; width: 35px; height: 35px;" src="https://raw.githubusercontent.com/Berahatiye/rose/refs/heads/main/yumurta.png"></img>
@@ -2836,26 +2917,63 @@ html{
         </div>
     </div>
 
+    <div id="alerjentablosu" class="alerjentablosu">
+        <div class="alerjentablosu-content">
+            <label class="close-btnalerjentablosu" onclick="closePopuppalerjen()">
+                <span class="line-topalerjentablosu"></span>
+                <span class="line-bottomalerjentablosu"></span>
+            </label>
+            <h4 style="border-bottom: 2px solid #777;">ALERJEN TABLOSU</h4>
+            <p><i><b>Gördüğünüz Ürün Listesinde;</b><i></p>
+
+            <div style="display: flex;">    
+            <img style="border-radius: 50%; width: 35px; height: 35px;" src="https://raw.githubusercontent.com/Berahatiye/rose/refs/heads/main/suttt.png"></img> <p>Süt ve Süt Ürünleri</p>
+            </div>
+
+            <div style="display: flex;">    
+            <img style="border-radius: 50%; width: 35px; height: 35px;" src="https://raw.githubusercontent.com/Berahatiye/rose/refs/heads/main/yumurta.png"></img> <p>Yumurta ve Ürünleri</p>
+            </div>
+
+            <div style="display: flex;">    
+            <img style="border-radius: 50%; width: 35px; height: 35px;" src="https://raw.githubusercontent.com/Berahatiye/rose/refs/heads/main/bugday.png"></img> <p>Gluten ve Ürünleri</p>
+            </div>
+
+            <div style="display: flex;">    
+            <img style="border-radius: 50%; width: 35px; height: 35px;" src="https://raw.githubusercontent.com/Berahatiye/rose/refs/heads/main/balik.png"></img> <p>Balık ve Ürünleri</p>
+            </div>
+
+            <div style="display: flex;">    
+            <img style="border-radius: 50%; width: 35px; height: 35px;" src="https://raw.githubusercontent.com/Berahatiye/rose/refs/heads/main/ceviz.png"></img> <p>Sert Kabuklu Meyveler ve Ürünleri</p>
+            </div>
+
+            <p><i><b>Bulunmaktadır.</b><i></p>
+        </div>
+    </div>
+
+
+    <button id="allergenButton" onclick="openPopuppalerjen('alerjentablosu')">Alerjenler</button>
+
     <!-- JavaScript for Modal and Loading Animation -->
     <script>
 
 function toggleContext(contextId) {
-    // Get all context elements
-    const contexts = document.querySelectorAll('.context');
-    contexts.forEach(context => {
-        // If the context is not the one being clicked, hide it
-        if (context.id !== contextId) {
-            context.classList.remove('show');
-        }
-    });
-
-    // Toggle the clicked context
-    const currentContext = document.getElementById(contextId);
-    if (currentContext.classList.contains('show')) {
-        currentContext.classList.remove('show'); // Close if already open
-    } else {
-        currentContext.classList.add('show'); // Open if not open
+  // Hide all other context elements
+  const contexts = document.querySelectorAll('.context');
+  contexts.forEach(context => {
+    if (context.id !== contextId) {
+      context.classList.remove('show');
     }
+  });
+
+  // Toggle the selected context
+  const current = document.getElementById(contextId);
+  current.classList.toggle('show');
+
+  // Scroll the toggle button itself into view
+  const button = document.querySelector(`[onclick="toggleContext('${contextId}')"]`);
+  if (button) {
+    button.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
 }
 
 
@@ -3379,6 +3497,17 @@ function toggleContext(contextId) {
     }
 
 
+        function openPopuppalerjen() {
+      const popup = document.getElementById('alerjentablosu');
+      popup.style.display = 'block';
+    }
+
+    // Function to close the popup
+    function closePopuppalerjen() {
+      const popup = document.getElementById('alerjentablosu');
+      popup.style.display = 'none';
+    }
+
 
 
 
@@ -3589,7 +3718,40 @@ buttons.forEach(button => {
     observer.observe(hideSection);
 
 
+
+
+
+
+    const sectionallergen = document.getElementById('mennu');
+    const allergenButton = document.getElementById('allergenButton');
+
+    const observerallergen = new IntersectionObserver((entries) => {
+      const isSectionVisible = entries.some(entry =>
+        entry.target === sectionallergen && entry.isIntersecting
+      );
+
+      const anyContextVisible = [...document.querySelectorAll('.context.show')].some(context => {
+        const rect = context.getBoundingClientRect();
+        return rect.top < window.innerHeight && rect.bottom > 0;
+      });
+
+      if (isSectionVisible || anyContextVisible) {
+        allergenButton.style.display = 'block';
+      } else {
+        allergenButton.style.display = 'none';
+      }
+    }, {
+      threshold: 0.2
+    });
+
+    // Observe the section
+    observerallergen.observe(sectionallergen);
+
+    // Observe all context elements
+    const allContexts = document.querySelectorAll('.context');
+    allContexts.forEach(context => observerallergen.observe(context));
 </script>
+
 
 </body>
 
